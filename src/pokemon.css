@@ -1,0 +1,132 @@
+
+.pokemon_type_normal {
+	border-color: #C6C6A7;
+	background-color: #C6C6A7;
+	background-image: url('/public/images/types/POKEMON_TYPE_NORMAL.png');
+	color: #6D6D4E;
+}
+
+.pokemon_type_fighting {
+	border-color: #D67873;
+	background-color: #D67873;
+	background-image: url('/public/images/types/POKEMON_TYPE_FIGHTING.png');
+	color: #7D1F1A;
+}
+
+.pokemon_type_flying {
+	border-color: #C6B7F5;
+	background-color: #C6B7F5;
+	background-image: url('/public/images/types/POKEMON_TYPE_FLYING.png');
+	color: #6D5E9C;
+}
+
+.pokemon_type_poison {
+	border-color: #C183C1;
+	background-color: #C183C1;
+	background-image: url('/public/images/types/POKEMON_TYPE_POISON.png');
+	color: #682A68;
+}
+
+.pokemon_type_ground {
+	border-color: #EBD69D;
+	background-color: #EBD69D;
+	background-image: url('/public/images/types/POKEMON_TYPE_GROUND.png');
+	color: #927D44;
+}
+
+.pokemon_type_rock {
+	border-color: #D1C17D;
+	background-color: #D1C17D;
+	background-image: url('/public/images/types/POKEMON_TYPE_ROCK.png');
+	color: #71601a;
+}
+
+.pokemon_type_bug {
+	border-color: #C6D16E;
+	background-color: #C6D16E;
+	background-image: url('/public/images/types/POKEMON_TYPE_BUG.png');
+	color: #6D7815;
+}
+
+.pokemon_type_ghost {
+	border-color: #A292BC;
+	background-color: #A292BC;
+	background-image: url('/public/images/types/POKEMON_TYPE_GHOST.png');
+	color: #493963;
+}
+
+.pokemon_type_steel {
+	border-color: #D1D1E0;
+	background-color: #D1D1E0;
+	background-image: url('/public/images/types/POKEMON_TYPE_STEEL.png');
+	color: #787887;
+}
+
+.pokemon_type_fire {
+	border-color: #F5AC78;
+	background-color: #F5AC78;
+	background-image: url('/public/images/types/POKEMON_TYPE_FIRE.png');
+	color: #BD550B;
+}
+
+.pokemon_type_water {
+	border-color: #9DB7F5;
+	background-color: #9DB7F5;
+	background-image: url('/public/images/types/POKEMON_TYPE_WATER.png');
+	color: #2B4686;
+}
+
+.pokemon_type_grass {
+	border-color: #A7DB8D;
+	background-color: #A7DB8D;
+	background-image: url('/public/images/types/POKEMON_TYPE_GRASS.png');
+	color: #244811;
+}
+
+.pokemon_type_grass .isFocused {
+	background-color: transparent;
+	border-radius: 2rem;
+	color: #244811;
+}
+
+.pokemon_type_electric {
+	border-color: #FAE078;
+	background-color: #FAE078;
+	background-image: url('/public/images/types/POKEMON_TYPE_ELECTRIC.png');
+	color: #A1871F;
+}
+
+.pokemon_type_psychic {
+	border-color: #FA92B2;
+	background-color: #FA92B2;
+	background-image: url('/public/images/types/POKEMON_TYPE_PSYCHIC.png');
+	color: #A13959;
+}
+
+.pokemon_type_ice {
+	border-color: #BCE6E6;
+	background-color: #BCE6E6;
+	background-image: url('/public/images/types/POKEMON_TYPE_ICE.png');
+	color: #2D8080;
+}
+
+.pokemon_type_dragon {
+	border-color: #A27DFA;
+	background-color: #A27DFA;
+	background-image: url('/public/images/types/POKEMON_TYPE_DRAGON.png');
+	color: #3E1F8A;
+}
+
+.pokemon_type_dark {
+	border-color: #A29288;
+	background-color: #A29288;
+	background-image: url('/public/images/types/POKEMON_TYPE_DARK.png');
+	color: #49392F;
+}
+
+.pokemon_type_fairy {
+	border-color: #F4BDC9;
+	background-color: #F4BDC9;
+	background-image: url('/public/images/types/POKEMON_TYPE_FAIRY.png');
+	color: #9B6470;
+}

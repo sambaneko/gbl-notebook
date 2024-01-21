@@ -1,0 +1,20 @@
+RESOURCE ID: mountain_cup_great_title
+TEXT: Mountain Cup: Great League Edition
+
+RESOURCE ID: little_cup_title
+TEXT: Little Cup
+
+RESOURCE ID: spring_cup_great_title
+TEXT: Spring Cup: Great League Edition
+
+RESOURCE ID: color_cup_great_title
+TEXT: Color Cup: Great League Edition
+
+RESOURCE ID: fantasy_cup_ultra_title
+TEXT: Fantasy Cup: Ultra League Edition
+
+RESOURCE ID: fantasy_cup_great_title
+TEXT: Fantasy Cup: Great League Edition
+
+RESOURCE ID: sunshine_cup_great_title
+TEXT: Sunshine Cup: Great League Edition
