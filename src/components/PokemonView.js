@@ -24,7 +24,7 @@ export default function PokemonView({
 		? moveList.find(({ value }) => value == pokemon.charge2.value)
 		: null
 
-	return <div className={'opponent pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >
+	return <div className={'pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >
 		<div className={'flex-row pokemon-type-box-heading ' + myPokemon.types[0].toLowerCase()}>
 			<h3>{myPokemon.label}</h3>
 			<div className="type-list">

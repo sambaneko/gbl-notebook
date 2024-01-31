@@ -3,7 +3,10 @@
 	padding: 0;
 }
 
-html { font-size: 62.5%; /* 1rem = 10px */ }
+html {
+	font-size: 62.5%;
+	/* 1rem = 10px */
+}
 
 body {
 	font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Helvetica Neue', sans-serif;
@@ -21,28 +24,28 @@ body {
 	flex-direction: column;
 }
 
-#top {
+#cup-select {
 	padding: 2rem;
 	border-bottom: 1px solid black;
 	background-color: #1c8696;
 	display: flex;
 }
 
-#cup-selection-wrapper {
+#cup-select > div {
 	flex-grow: 1;
 }
 
-#cups-wrapper {
+#cup-wrapper {
 	display: flex;
 	flex-grow: 1;
 }
 
-#side {
+#team-holder {
 	min-width: 30rem;
 	box-sizing: border-box;
 }
 
-#side .teams-wrapper {
+#team-holder .teams-wrapper {
 	background-color: #fff;
 	border-radius: .5rem;
 	padding: 1.5rem 1rem;
@@ -50,7 +53,7 @@ body {
 	box-shadow: 0 0 3px 2px rgba(51, 51, 51, 0.3);
 }
 
-#side h3 {
+#team-holder h3 {
 	background-color: #7dd5aa;
 	color: #fff;
 	font-size: 1.4rem;
@@ -261,6 +264,11 @@ textarea {
 	margin-right: 0 !important;
 }
 
+.flex-container {
+	display: flex;
+	gap: 1rem;
+}
+
 .text-small {
 	font-size: 1.2rem;
 }
@@ -310,17 +318,9 @@ label.checkbox input {
 	border-radius: .8rem;
 	padding: 1.5rem 1rem;
 	display: flex;
+	gap: 1rem;
 	justify-content: space-between;
 	cursor: pointer;
-	margin: 1rem 0;
-}
-
-.cup-team-box:first-child {
-	margin-top: 0;
-}
-
-.cup-team-box:last-child {
-	margin-bottom: 0;
 }
 
 .cup-team-mon {
@@ -332,11 +332,7 @@ label.checkbox input {
 	min-width: 5rem;
 	min-height: 5rem;
 	display: flex;
-}
-
-.cup-team-mon img {
-	display: block;
-	margin: auto;
+	flex: 1 1 auto;
 }
 
 .pokemon_type {
@@ -408,9 +404,7 @@ label.checkbox input {
 	border-width: .2rem;
 	border-radius: .5rem;
 	background: none;
-	position: relative;
 	padding: 1rem 1rem 0 1rem;
-	width: 22rem;
 }
 
 .pokemon-type-box-heading {
@@ -425,10 +419,14 @@ label.checkbox input {
 	border-radius: .5rem;
 }
 
-.opponents-list {
-	display: flex;
-	flex-wrap: wrap;
+.grid-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 	gap: 1rem;
+}
+
+.team-grid {
+	grid-template-columns: repeat(3, minmax(22rem, 1fr));
 }
 
 .remove-opponent {
@@ -504,7 +502,6 @@ label.checkbox input {
 
 .cup-section .cup-section-body {
 	padding: 1rem;
-	display: flex;
 }
 
 .flex {
@@ -521,11 +518,25 @@ label.checkbox input {
 }
 
 /* Grid Items */
-.gi-g1 { grid-area: grid1; }
-.gi-g2 { grid-area: grid2; }
-.gi-g3 { grid-area: grid3; }
-.gi-g4 { grid-area: grid4; }
-.gi-g5 { grid-area: grid5; }
+.gi-g1 {
+	grid-area: grid1;
+}
+
+.gi-g2 {
+	grid-area: grid2;
+}
+
+.gi-g3 {
+	grid-area: grid3;
+}
+
+.gi-g4 {
+	grid-area: grid4;
+}
+
+.gi-g5 {
+	grid-area: grid5;
+}
 
 /* Grid Containers */
 .gc {
@@ -555,4 +566,81 @@ label.checkbox input {
 	text-transform: uppercase;
 	font-size: 1rem;
 	color: #868686;
+}
+
+#switch-team {
+	display: none;
+	width: 100%;
+}
+
+.teams-wrapper p {
+	margin-bottom: 0;
+}
+
+.teams-wrapper-inner {
+	margin-top: 1rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+}
+
+.pokemon-sprite {
+	object-fit: contain;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	display: block;
+}
+
+.cup-team-mon .pokemon-sprite {
+	max-height: 4rem;
+}
+
+.pokemon-type-box .pokemon-sprite {
+	max-height: 10rem;
+}
+
+@media screen and (max-width: 900px) {
+	#cup-wrapper {
+		flex-direction: column;
+	}
+
+	#cup-data {
+		flex-grow: 1;
+	}
+
+	#switch-team {
+		display: block;
+	}
+
+	.on-narrow-hide {
+		display: none;
+	}
+
+	.on-narrow-flex-col {
+		flex-direction: column;
+	}
+
+	.teams-wrapper-inner {
+		flex-direction: row;
+	}
+
+	.teams-wrapper-inner.isClosed {
+		display: none;
+	}
+
+	.cup-team-box {
+		gap: 1.6rem;
+	}
+
+	.pokemon-sprite {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		max-height: 12rem;
+	}
+
+	.team-grid {
+		grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+	}	
+
 }

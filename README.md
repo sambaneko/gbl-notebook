@@ -11,7 +11,7 @@ I also wanted to keep track of the opponents I would regularly encounter in each
 
 ## Updates and Notes
 
-Initial commit; I'm not expecting anyone to be seeing or using this yet... I'm sure there are many bugs.  I'm currently using this exclusively on desktop, so the layout isn't great on small screens.
+Continuing initial dev; I'm not expecting anyone to be seeing or using this yet... I'm sure there are many bugs.  I'm mostly using this on desktop, but added some small-screen styling.
 
 ## Preview
 

@@ -2,10 +2,6 @@ import { Plus } from '../images'
 
 export default function PokemonSprite({ pokemon, size, style }) {
 	let myStyle = style ? { ...style } : {}
-	myStyle.maxWidth = size ? size + 'px' : '100px'
-	myStyle.maxHeight = size ? size + 'px' : '100px'
-	myStyle.margin = 'auto'
-	myStyle.display = 'block'
 
 	if (pokemon) {
 		let imageName = (
@@ -21,6 +17,7 @@ export default function PokemonSprite({ pokemon, size, style }) {
 			) + '.icon.png'
 
 		return <img
+			className="pokemon-sprite"
 			src={process.env.PUBLIC_URL + '/images/pokemon/' + imageName}
 			alt=''
 			style={myStyle}
@@ -36,7 +33,8 @@ export default function PokemonSprite({ pokemon, size, style }) {
 		display: 'inline-block',
 		width: '100%',
 		position: 'relative',
-		margin: 'auto'
+		margin: 'auto',
+		color: '#ececec'
 	}
 
 	xStyle.width = size ? size + 'px' : '100px'
