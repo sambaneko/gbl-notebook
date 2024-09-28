@@ -1,7 +1,6 @@
 import Select, { components } from 'react-select'
-import { pokemonList } from '../store'
 
-export default function PokemonSelect({ onSelected, selectedCup, excludeList }) {
+export default function PokemonSelect({ pokemon, onSelected, exclude, defaultValue }) {
 	const Option = (props) => {
 		return <div className={'pokemon_option pokemon_type ' + props.data.types[0].toLowerCase()}>
 			<div className="type-list">
@@ -27,54 +26,27 @@ export default function PokemonSelect({ onSelected, selectedCup, excludeList }) 
 		</components.MenuList>
 	}
 
-	const filterPokemonByCup = () => {
-		let filteredOpts = [...pokemonList]
+	const filterPokemon = () => {
+		let filteredOpts = [...pokemon]
 
-		if (selectedCup?.allowedTypes) {
-			filteredOpts = filteredOpts.filter((mon) => {
-				return (
-					mon.types.filter(type => selectedCup.allowedTypes.includes(type))
-				).length > 0
-			})
-		}
-
-		if (selectedCup?.whiteList) {
-			filteredOpts = filteredOpts.filter((mon) => {
-				return selectedCup.whiteList.includes(mon.pokemonId) ||
-					selectedCup.whiteList.includes(mon.pokemonId + ', ' + mon.form)
-			})
-		}
-
-		if (selectedCup?.banList) {
-			filteredOpts = filteredOpts.filter((mon) => {
-				return !(
-					selectedCup.banList.includes(mon.pokemonId) ||
-					selectedCup.banList.includes(mon.pokemonId + ', ' + mon.form)
-				)
-			})
-		}
-
-		if (excludeList) {
+		if (exclude) {
 			filteredOpts = filteredOpts.filter((mon) =>
-				!excludeList.includes(mon.templateId)
+				!exclude.includes(mon.templateId)
 			)
 		}
 
 		return filteredOpts
 	}
 
-	return <div>
-		<label>Pokemon</label>
-		<Select
-			components={{ MenuList, Option }}
-			options={filterPokemonByCup()}
-			classNames={{
-				option: ({ isDisabled, isFocused, isSelected }) =>
-					isFocused ? 'isFocused' : ''
-			}}
-			onChange={onSelected}
-			isDisabled={selectedCup === undefined}
-		/* menuIsOpen={true} - helpful for debugging styles */
-		/>
-	</div>
+	return <Select
+		components={{ MenuList, Option }}
+		options={filterPokemon()}
+		classNames={{
+			option: ({ isDisabled, isFocused, isSelected }) =>
+				isFocused ? 'isFocused' : ''
+		}}
+		onChange={onSelected}
+		defaultValue={defaultValue}
+	/* menuIsOpen={true} - helpful for debugging styles */
+	/>
 }

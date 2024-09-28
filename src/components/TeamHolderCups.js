@@ -9,7 +9,7 @@ import {
 import PokemonSprite from './PokemonSprite'
 import { RoundedSquarePlus } from '../images'
 
-export default function TeamHolder({ selectedCup, selectedSeason, cupData }) {
+export default function TeamHolderCups({ selectedCup, selectedSeason, cupData }) {
 	const dispatch = useDispatch()
 	const appData = useSelector((state) => state.appData)
 	const [openOnNarrow, setOpenOnNarrow] = useState(false)
@@ -33,7 +33,7 @@ export default function TeamHolder({ selectedCup, selectedSeason, cupData }) {
 	return <div id="team-holder">
 		<h3 className="on-narrow-hide">Teams</h3>
 		{selectedCup !== null && <div className="teams-wrapper">
-			{appData.seasons[selectedSeason.value].cups[selectedCup.value]
+			{appData.cups[selectedCup.value]
 				? <>
 					<button
 						className="app-like"

@@ -6,14 +6,15 @@ import {
 } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
-import store from './store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor, store } from './store'
 
 import './pokemon.css'
 import './index.css'
 
 import Root from './routes/root'
 import Index from './routes/index'
-import Cups, { loader as cupLoader } from './routes/cups'
+import Season, { loader as seasonLoader } from './routes/season'
 import Error from './routes/error'
 
 const router = createBrowserRouter([
@@ -23,9 +24,9 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <Index /> },
 			{
-				path: "cups/:cupId?",
-				element: <Cups />,
-				loader: cupLoader,
+				path: "season/:seasonId?/:cupId?",
+				element: <Season />,
+				loader: seasonLoader,
 			}
 		],
 		errorElement: <Error />
@@ -35,7 +36,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<RouterProvider router={router} />
+			<PersistGate loading={null} persistor={persistor}>
+				<RouterProvider router={router} />
+			</PersistGate>
 		</Provider>
 	</React.StrictMode>
 )

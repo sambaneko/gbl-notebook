@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import PokemonSprite from './PokemonSprite'
 import { ArrowUp, ArrowDown, Edit, X } from '../images'
 import { pokemonList, moveList } from '../store'
@@ -8,13 +9,22 @@ export default function PokemonView({
 	onRemove,
 	onMoveUp,
 	onMoveDown,
-	showStats
+	showStats,
+	onDragEnter,
+	onDragStart,
+	onDragEnd
 }) {
+	const appData = useSelector((state) => state.appData)
+
 	if (pokemon === null) {
 		return <div className="pokemon-type-box team-placeholder"
 			onClick={onEdit}>
 			<PokemonSprite size="100" />
 		</div>
+	}
+
+	if (typeof pokemon === 'number') {
+		pokemon = appData.pokemon.find(({ id }) => id == pokemon)
 	}
 
 	const myPokemon = pokemonList.find(({ value }) => value == pokemon.templateId)
@@ -24,9 +34,14 @@ export default function PokemonView({
 		? moveList.find(({ value }) => value == pokemon.charge2.value)
 		: null
 
-	return <div className={'pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >
+	return <div draggable onDragEnter={onDragEnter} onDragStart={onDragStart} onDragEnd={onDragEnd} className={'pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >
 		<div className={'flex-row pokemon-type-box-heading ' + myPokemon.types[0].toLowerCase()}>
-			<h3>{myPokemon.label}</h3>
+			<h3>{
+				typeof pokemon['name'] !== 'undefined' &&
+					pokemon['name'] !== ''
+					? pokemon.name
+					: myPokemon.label
+			}</h3>
 			<div className="type-list">
 				{myPokemon.types.map((type) =>
 					<span

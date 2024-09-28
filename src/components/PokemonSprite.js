@@ -2,6 +2,8 @@ import { Plus } from '../images'
 
 export default function PokemonSprite({ pokemon, size, style }) {
 	let myStyle = style ? { ...style } : {}
+	let imgPath = process.env.REACT_APP_POKEMON_IMAGES_PATH 
+		?? process.env.PUBLIC_URL + '/images/pokemon'
 
 	if (pokemon) {
 		let imageName = (
@@ -18,7 +20,7 @@ export default function PokemonSprite({ pokemon, size, style }) {
 
 		return <img
 			className="pokemon-sprite"
-			src={process.env.PUBLIC_URL + '/images/pokemon/' + imageName}
+			src={imgPath + '/' + imageName}
 			alt=''
 			style={myStyle}
 			onError={({ currentTarget }) => {

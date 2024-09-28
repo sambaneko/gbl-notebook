@@ -1,16 +1,40 @@
+import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { addOpponent } from '../store'
+import { updatePokemon } from '../store'
 import PokemonView from './PokemonView'
 import PokemonEditor from '../components/PokemonEditor'
 
-export default function OpponentsView({ selectedCup, cupData, showModal, setEditingPokemon, removeMon, moveMon }) {
+export default function OpponentsView({ selectedCup, selectedSeason, cupData, showModal, setEditingPokemon, removeMon, moveMon }) {
 	const dispatch = useDispatch()
 
-	const saveOpponent = (opponent) => {
-		dispatch(addOpponent({
+	const saveEditedPokemon = (editedMon, saveTemplate, templateIndex) => {
+		dispatch(updatePokemon({
 			cup: selectedCup.templateId,
-			opponent
+			monIndex: null,
+			teamIndex: null,
+			pokemon: editedMon,
+			saveTemplate,
+			templateIndex,
+			season: selectedSeason.value
 		}))
+	}
+
+	let todoItemDrag = useRef()
+	let todoItemDragOver = useRef()
+
+	const dragStart = (e, index) => {
+		todoItemDrag.current = index
+	}
+
+	const dragEnter = (e, index) => {
+		todoItemDragOver.current = index
+	}
+
+	const dragEnd = (e, index) => {
+		let moveBy = todoItemDragOver.current - todoItemDrag.current
+		if (moveBy !== 0) {
+			moveMon(todoItemDrag.current, moveBy)
+		}
 	}
 
 	return <section className="cup-section">
@@ -22,9 +46,13 @@ export default function OpponentsView({ selectedCup, cupData, showModal, setEdit
 				className="app-like"
 				onClick={() =>
 					showModal(<PokemonEditor
+						editType="oppo"
 						pokemon={null}
-						onSave={(opponent) => saveOpponent(opponent)}
-						enableStats={false}
+						onSave={(
+							editedMon, saveTemplate, templateIndex
+						) => saveEditedPokemon(
+							editedMon, saveTemplate, templateIndex
+						)}
 						selectedCup={selectedCup}
 					/>)
 				}
@@ -38,7 +66,7 @@ export default function OpponentsView({ selectedCup, cupData, showModal, setEdit
 						key={'opponent_' + monIndex}
 						pokemon={mon}
 						showStats={false}
-						onEdit={() => setEditingPokemon({ teamIndex: null, mon, monIndex, stats: false })}
+						onEdit={() => setEditingPokemon({ teamIndex: null, mon, monIndex, stats: false, editType: 'oppo' })}
 						onRemove={() => removeMon(monIndex)}
 						onMoveUp={() => {
 							if (monIndex >= 1) {
@@ -50,6 +78,9 @@ export default function OpponentsView({ selectedCup, cupData, showModal, setEdit
 								moveMon(monIndex, 1)
 							}
 						}}
+						onDragStart={e => dragStart(e, monIndex)}
+						onDragEnter={e => dragEnter(e, monIndex)}
+						onDragEnd={e => dragEnd(e, monIndex)}
 					/>
 				)}
 			</div>

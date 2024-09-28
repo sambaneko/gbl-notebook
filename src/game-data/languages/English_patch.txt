@@ -18,3 +18,12 @@ TEXT: Fantasy Cup: Great League Edition
 
 RESOURCE ID: sunshine_cup_great_title
 TEXT: Sunshine Cup: Great League Edition
+
+RESOURCE ID: galar_great_cup_title
+TEXT: Galar Cup: Great League Edition
+
+RESOURCE ID: galar_little_cup_title
+TEXT: Galar Cup: Little Edition
+
+RESOURCE ID: move_name_0401
+TEXT: Psywave
