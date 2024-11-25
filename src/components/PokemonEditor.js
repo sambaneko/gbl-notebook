@@ -71,18 +71,17 @@ export default function PokemonEditor({
 							resetTemplates((prev) => prev + 1)
 
 							setAvailableTemplates(
-								appData.templates.map((template, templateIndex) => {
-									if (
-										template.templateType == editType &&
-										template.templateId == mon.templateId
-									) {
-										return {
+								appData.templates.map((template, templateIndex) => 
+
+									template.templateId == mon.templateId
+										? {
 											template,
 											templateIndex,
-											...pokemonList.find(({ value }) => value == template.templateId)
+											...pokemonList.find(({ templateId }) => templateId == template.templateId)
 										}
-									}
-								}).filter(n => n)
+										: null
+
+								).filter(n => n)
 							)
 						}}
 						defaultValue={pokemonData}
@@ -91,8 +90,8 @@ export default function PokemonEditor({
 
 				{availableTemplates.length > 0 && <div className="grid-fashion template-box">
 					<label>Templates</label>
-					{availableTemplates.map((mon) =>
-						<div className={'pointer pokemon_option pokemon_type ' + mon.types[0].toLowerCase()}>
+					{availableTemplates.map((mon, i) =>
+						<div className={'pointer pokemon_option pokemon_type ' + mon.types[0].toLowerCase()} key={`tmp${i}`}>
 							<div className="type-list">
 								{
 									mon.types.map((type) =>
@@ -103,13 +102,13 @@ export default function PokemonEditor({
 									)
 								}
 							</div>
-							<div style={{padding: '8px 12px'}}
-							onClick={() => {
-								setPokemonData(mon)
-								setEditedMon(mon.template)
-								setUsingTemplate(mon.templateIndex)
-								resetSelector((prev) => prev + 1)
-							}}
+							<div style={{ padding: '8px 12px' }}
+								onClick={() => {
+									setPokemonData(mon)
+									setEditedMon(mon.template)
+									setUsingTemplate(mon.templateIndex)
+									resetSelector((prev) => prev + 1)
+								}}
 							>{mon.label}</div>
 						</div>
 					)}
@@ -145,10 +144,12 @@ export default function PokemonEditor({
 								return { ...styles, padding: '2rem' }
 							}
 						}}
-						onChange={(fast) => setEditedMon({ ...editedMon, fast })}
+						onChange={(move) => setEditedMon({
+							...editedMon, fast: move.templateId
+						})}
 						isDisabled={Object.keys(editedMon ?? {}).length <= 0}
 						defaultValue={
-							moveList.find(({ value }) => value === editedMon?.fast?.value)
+							moveList.find(({ templateId }) => templateId === editedMon?.fast)
 						}
 					/>
 				</div>
@@ -156,17 +157,19 @@ export default function PokemonEditor({
 					<label>Charge Move</label>
 					<Select
 						options={
-							moveList.filter(({ value }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge2?.value !== value)
+							moveList.filter(({ value, templateId }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge2 !== templateId)
 						}
 						styles={{
 							option: (styles, { data, isDisabled, isFocused, isSelected }) => {
 								return { ...styles, padding: '2rem' }
 							}
 						}}
-						onChange={(charge1) => setEditedMon({ ...editedMon, charge1 })}
+						onChange={(move) => setEditedMon({
+							...editedMon, charge1: move.templateId
+						})}
 						isDisabled={Object.keys(editedMon ?? {}).length <= 0}
 						defaultValue={
-							moveList.find(({ value }) => value === editedMon?.charge1?.value)
+							moveList.find(({ templateId }) => templateId === editedMon?.charge1)
 						}
 					/>
 				</div>
@@ -174,17 +177,19 @@ export default function PokemonEditor({
 					<label>Charge Move</label>
 					<Select
 						options={
-							moveList.filter(({ value }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge1?.value !== value)
+							moveList.filter(({ value, templateId }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge1 !== templateId)
 						}
 						styles={{
 							option: (styles, { data, isDisabled, isFocused, isSelected }) => {
 								return { ...styles, padding: '2rem' }
 							}
 						}}
-						onChange={(charge2) => setEditedMon({ ...editedMon, charge2 })}
+						onChange={(move) => setEditedMon({
+							...editedMon, charge2: move.templateId
+						})}
 						isDisabled={Object.keys(editedMon ?? {}).length <= 0}
 						defaultValue={
-							moveList.find(({ value }) => value === editedMon?.charge2?.value)
+							moveList.find(({ templateId }) => templateId === editedMon?.charge2)
 						}
 					/>
 				</div>

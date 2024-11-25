@@ -23,7 +23,7 @@ export default function Settings() {
 	const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 	const deleteAppData = () => {
 		setMyState('deleting')
-		dispatch(importAppData({}))
+		dispatch(importAppData(null))
 	}
 
 	useEffect(() => {

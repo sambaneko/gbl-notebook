@@ -28,10 +28,10 @@ export default function PokemonView({
 	}
 
 	const myPokemon = pokemonList.find(({ value }) => value == pokemon.templateId)
-	const myFastMove = moveList.find(({ value }) => value == pokemon.fast.value)
-	const myChargeMove1 = moveList.find(({ value }) => value == pokemon.charge1.value)
+	const myFastMove = moveList.find(({ templateId }) => templateId == pokemon.fast)
+	const myChargeMove1 = moveList.find(({ templateId }) => templateId == pokemon.charge1)
 	const myChargeMove2 = pokemon['charge2']
-		? moveList.find(({ value }) => value == pokemon.charge2.value)
+		? moveList.find(({ templateId }) => templateId == pokemon.charge2)
 		: null
 
 	return <div draggable onDragEnter={onDragEnter} onDragStart={onDragStart} onDragEnd={onDragEnd} className={'pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >

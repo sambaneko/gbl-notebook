@@ -3,11 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import {
 	seasonList,
 	leaguesList,
-	currentSeason,
-	defaultCup,
-	updatePokemon,
-	removePokemon,
-	rearrangePokemon
+	updateTeamMember,
+	updateTemplate
 } from '../store'
 import { useLoaderData, useOutletContext, useNavigate } from "react-router-dom"
 import Select from 'react-select'
@@ -25,7 +22,7 @@ export function loader({ params }) {
 					? season.slug == params.seasonId
 					: season.value == params.seasonId
 			}
-		) ?? null,
+		) ?? seasonList[1],
 		cup: leaguesList.find(
 			({ slug }) => slug === params.cupId
 		) ?? null
@@ -34,59 +31,18 @@ export function loader({ params }) {
 
 export default function Season() {
 	const loaderData = useLoaderData()
+	const navigate = useNavigate()
+	const [showModal] = useOutletContext()
+	const dispatch = useDispatch()
+
 	const selectedSeason = loaderData.season
 	const selectedCup = loaderData.cup
-	const [showModal] = useOutletContext()
-	const navigate = useNavigate()
-	const dispatch = useDispatch()
+	const appData = useSelector((state) => state.appData)
 
 	const seasonCups = [
 		...seasonList.find(({ value }) => value == 0).cups,
 		...selectedSeason.cups
 	]
-
-	const appData = useSelector((state) => state.appData)
-
-	if (appData['seasons'] === undefined) {
-		appData.seasons = {}
-	}
-
-	if (selectedSeason !== null) {
-		if (
-			appData.seasons[selectedSeason.value] === undefined ||
-			Object.keys(appData.seasons[selectedSeason.value]).length <= 0
-		) {
-			if (selectedCup !== null) {
-				console.log('t1')
-				appData.seasons[selectedSeason.value] = {
-					cups: {
-						[selectedCup.value]: { ...defaultCup }
-					}
-				}
-			} else {
-				console.log('t2')
-				appData.seasons[selectedSeason.value] = { cups: {} }
-			}
-		}
-
-
-	}
-
-	const initCupData = () => {
-		if (selectedSeason !== null && selectedCup !== null) {
-			return appData.seasons[selectedSeason.value]?.cups[selectedCup.value]
-				? { ...defaultCup, ...appData.seasons[selectedSeason.value].cups[selectedCup.value] }
-				: defaultCup
-		} else {
-			return defaultCup
-		}
-	}
-
-	const [cupData, setCupData] = useState(initCupData())
-
-	useEffect(() => {
-		setCupData(initCupData())
-	}, [selectedSeason, selectedCup, appData.seasons])
 
 	const [editingPokemon, setEditingPokemon] = useState()
 
@@ -107,36 +63,26 @@ export default function Season() {
 	}, [editingPokemon])
 
 	const saveEditedPokemon = (editedMon, saveTemplate, templateIndex) => {
-		dispatch(updatePokemon({
-			season: selectedSeason.value,
-			cup: selectedCup.templateId,
-			monIndex: editingPokemon.monIndex,
-			teamIndex: editingPokemon.teamIndex,
-			pokemon: editedMon,
-			saveTemplate,
-			templateIndex
-		}))
+		dispatch(
+			updateTeamMember({
+				id: editingPokemon.id,
+				teamIndex: editingPokemon.teamIndex,
+				team: {
+					season: selectedSeason.value,
+					cup: selectedCup.templateId
+				},
+				pokemon: editedMon
+			})
+		)
+		if (saveTemplate) {
+			dispatch(
+				updateTemplate({
+					templateIndex, pokemon: editedMon
+				})
+			)
+		}
 		setEditingPokemon(null)
 		showModal(null)
-	}
-
-	const removeMon = (monIndex, teamIndex = null) => {
-		dispatch(removePokemon({
-			season: selectedSeason.value,
-			cup: selectedCup.templateId,
-			monIndex,
-			teamIndex
-		}))
-	}
-
-	const moveMon = (monIndex, direction, teamIndex = null) => {
-		dispatch(rearrangePokemon({
-			season: selectedSeason.value,
-			cup: selectedCup.templateId,
-			monIndex,
-			direction,
-			teamIndex
-		}))
 	}
 
 	return <>
@@ -193,15 +139,72 @@ export default function Season() {
 			</div>
 		</div>
 		<div id="cup-wrapper">
-			<TeamHolder {...{ selectedCup, selectedSeason, cupData }} />
+			<TeamHolder
+				canAdd={selectedCup !== null && selectedSeason !== null}
+				teams={
+					appData.teams.filter(
+						({ cup, season }) => 
+							cup == selectedCup.templateId && 
+							(
+								selectedSeason.slug == 'all' ||
+								season == selectedSeason.value
+							)
+					)
+				}
+				current={
+					appData.current.find(
+						({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
+					)?.id || null
+				}
+				fave={
+					appData.faves.find(
+						({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
+					)?.id || null
+				}
+				season={selectedSeason?.value || null}
+				cup={selectedCup?.templateId || null}
+			/>
 			<div id="cup-data">
 				{(selectedSeason == null || selectedCup == null) && <>
 					<h2>Welcome to GBL Notebook</h2>
 					<p>Select a Season and Cup above to get started.</p>
 				</>}
 				{(selectedSeason && selectedCup) && <>
-					<TeamView {...{ selectedCup, selectedSeason, cupData, setEditingPokemon, removeMon, moveMon, showModal }} />
-					<OpponentsView {...{ selectedCup, selectedSeason, cupData, setEditingPokemon, removeMon, moveMon, showModal }} />
+					<TeamView
+						{...{ selectedCup, selectedSeason, setEditingPokemon, showModal }}
+						team={
+							(() => {
+								let tId = appData.current.find(
+									({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
+								)?.id || null
+
+								return appData.teams.find(
+									({ id }) => id == tId
+								)
+							})()
+						}
+						fave={
+							(() => {
+								let tId = appData.current.find(
+									({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
+								)?.id || null
+
+								return appData.faves.find(
+									({ id }) => id == tId
+								) !== undefined
+							})()
+						}
+					/>
+					<OpponentsView
+						{...{ selectedCup, setEditingPokemon, showModal }}
+						opponents={
+							appData.opponents.filter(
+								({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
+							)
+						}
+						season={selectedSeason?.value || null}
+						cup={selectedCup?.templateId || null}
+					/>
 				</>}
 			</div>
 		</div>

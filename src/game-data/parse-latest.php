@@ -27,6 +27,8 @@ $output = [
 	'moves' => []
 ];
 
+$forms = [];
+
 foreach ($latestJson as $jsonObj) {
 	if (isset($jsonObj->data->pokemonSettings)) {
 		$pokemon = parsePokemonData($jsonObj, $langLines);
@@ -34,6 +36,27 @@ foreach ($latestJson as $jsonObj) {
 			$output['pokemon'][] = $pokemon;
 		}
 	}
+
+	if (isset($jsonObj->data->formSettings)) {
+		if (
+			isset($jsonObj->data->formSettings->pokemon) &&
+			isset($jsonObj->data->formSettings->forms)
+		) {
+			$monForms = [];
+
+			foreach (
+				$jsonObj->data->formSettings->forms as $form
+			) {
+				if (isset($form->form)) {
+					$monForms[] = $form->form;
+				}
+			}
+
+			if (!empty($monForms)) {
+				$forms[$jsonObj->data->formSettings->pokemon] = $monForms;
+			}
+		}
+	}	
 
 	if (isset($jsonObj->data->combatLeague)) {
 		$move = parseLeagueData($jsonObj, $langLines);
@@ -46,6 +69,34 @@ foreach ($latestJson as $jsonObj) {
 		$output['moves'][] = parseMoveData($jsonObj, $langLines);
 	}	
 }
+
+// this prunes out forms that are not actually accessible,
+// like Shellos w/o an east/west designation
+foreach ($forms as $pokemon => $formNames) {
+	$indices = array_keys(
+			array_filter(
+				$output['pokemon'], 
+				function($subArray) use ($pokemon) {
+					return $subArray['pokemonId'] === $pokemon;
+				}
+		)
+	);
+
+	foreach ($indices as $i) {
+		if (
+			!isset($output['pokemon'][$i]['form']) ||
+			!in_array(
+				$output['pokemon'][$i]['form'],
+				$formNames
+			)
+		) {
+			unset($output['pokemon'][$i]);
+		}
+	}
+}
+
+// the form filtering causes explicit indices; get rid of them
+$output['pokemon'] = array_values($output['pokemon']);
 
 foreach ($output as $name => $data) {
 	file_put_contents("parsed/{$name}.json", json_encode($data, JSON_PRETTY_PRINT));

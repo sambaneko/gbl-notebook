@@ -5,14 +5,13 @@ function parsePokemonData($jsonObj, $langLines) {
 
 	if (
 		!(
-			// exclude atypical forms
-			substr($jsonObj->templateId, -7) == '_NORMAL' ||
-			substr($jsonObj->templateId, -5) == '_2019' ||
+			// exclude atypical costume forms
+			substr($jsonObj->templateId, -5) == '_2019' /*||
 			(
 				// exclude a bajillion different pikas
 				$dexNumber == '0025' &&
 				$jsonObj->templateId != 'V0025_POKEMON_PIKACHU'
-			)
+			)*/
 		)
 	) {
 		$stg = $jsonObj->data->pokemonSettings;
@@ -34,22 +33,23 @@ function parsePokemonData($jsonObj, $langLines) {
 
 		$label = 'pokemon_name_' . $dexNumber;
 		$label = isset($langLines[$label]) ? $langLines[$label] : $label;
-		$form = 'NORMAL';
 
 		if (isset($stg->form)) {
-			$formSplit = explode('_', $stg->form, 2);
-			$form = $formSplit[1];
+			$form = $stg->form;
+			$shortForm = substr($form, strlen($stg->pokemonId) + 1);
 
-			if ($form == 'ALOLA') {
+			if ($shortForm == 'ALOLA') {
 				$label .= " ({$langLines['alola_pokedex_header']})";
 			}
-			if ($form == 'GALARIAN') {
+			if ($shortForm == 'GALARIAN') {
 				$label .= " ({$langLines['galarian_pokedex_header']})";
 			}	
 			
-			$formLang = 'form_' . strtolower($form);
-			if (isset($langLines[$formLang])) {
-				$label .= " ({$langLines[$formLang]})";
+			if ($shortForm != 'NORMAL') {
+				$formLang = 'form_' . strtolower($shortForm);
+				if (isset($langLines[$formLang])) {
+					$label .= " ({$langLines[$formLang]})";
+				}
 			}
 		}
 
@@ -63,7 +63,14 @@ function parsePokemonData($jsonObj, $langLines) {
 			'shadowAvailable' => isset($stg->shadow)
 		];
 
+		if (isset($form)) {
+			$data['form'] = $form;
+			$data['shortForm'] = $shortForm;
+		}
+
 		// this is only applicable in two cases
+		// todo: welp
+		/*
 		if (
 			$form == 'NORMAL' && (
 				$dexNumber == 646 || $dexNumber == 649
@@ -71,11 +78,11 @@ function parsePokemonData($jsonObj, $langLines) {
 		) {
 			$data['image'] = "pm{$dexNumber}.fNORMAL";
 		}
+			*/
 		
 		return array_merge(
 			$data, compact(
-				'label', 'form', 'types',
-				'fastMoves', 'chargeMoves'
+				'label', 'types', 'fastMoves', 'chargeMoves'
 			)
 		);
 	}

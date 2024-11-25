@@ -17,7 +17,11 @@ export default function PokemonSelectFromCup({
 		if (selectedCup?.whiteList) {
 			filteredOpts = filteredOpts.filter((mon) => {
 				return selectedCup.whiteList.includes(mon.pokemonId) ||
-					selectedCup.whiteList.includes(mon.pokemonId + ', ' + mon.form)
+					(
+						mon.shortForm
+							? selectedCup.banList.includes(mon.pokemonId + ', ' + mon.shortForm)
+							: false
+					)
 			})
 		}
 
@@ -25,7 +29,11 @@ export default function PokemonSelectFromCup({
 			filteredOpts = filteredOpts.filter((mon) => {
 				return !(
 					selectedCup.banList.includes(mon.pokemonId) ||
-					selectedCup.banList.includes(mon.pokemonId + ', ' + mon.form)
+					(
+						mon.shortForm
+							? selectedCup.banList.includes(mon.pokemonId + ', ' + mon.shortForm)
+							: false
+					)
 				)
 			})
 		}

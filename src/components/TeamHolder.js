@@ -3,37 +3,31 @@ import { useSelector, useDispatch } from 'react-redux'
 import {
 	pokemonList,
 	defaultCup,
-	addTeam,
-	updateCurrentTeam
+	saveTeam,
+	updateCurrent
 } from '../store'
 import PokemonSprite from './PokemonSprite'
 import { RoundedSquarePlus } from '../images'
 
-export default function TeamHolder({ selectedCup, selectedSeason, cupData }) {
+export default function TeamHolder({ canAdd, teams, current, fave, season, cup }) {
 	const dispatch = useDispatch()
 	const appData = useSelector((state) => state.appData)
 	const [openOnNarrow, setOpenOnNarrow] = useState(false)
 
 	const addEmptyTeam = () => {
-		dispatch(addTeam({
-			season: selectedSeason.value,
-			cup: selectedCup.templateId,
-			team: { ...defaultCup.teams[0] }
-		}))
+		dispatch(saveTeam({ season, cup }))
 	}
 
-	const switchTeam = (teamIndex) => {
-		dispatch(updateCurrentTeam({
-			season: selectedSeason.value,
-			cup: selectedCup.templateId,
-			teamIndex
+	const switchTeam = (id) => {
+		dispatch(updateCurrent({
+			season, cup, id
 		}))
 	}
 
 	return <div id="team-holder">
 		<h3 className="on-narrow-hide">Teams</h3>
-		{selectedCup !== null && <div className="teams-wrapper">
-			{appData.seasons[selectedSeason.value].cups[selectedCup.value]
+		<div className="teams-wrapper">
+			{canAdd
 				? <>
 					<button
 						className="app-like"
@@ -41,8 +35,8 @@ export default function TeamHolder({ selectedCup, selectedSeason, cupData }) {
 						style={{ color: '#fff', width: '100%' }}
 					><RoundedSquarePlus /> New Team</button>
 					<div className={'teams-wrapper-inner' + (openOnNarrow ? ' isOpen' : ' isClosed')}>
-						{cupData.teams.map((team, teamIndex) =>
-							<div key={'team_' + teamIndex} className={'cup-team-box' + (teamIndex == cupData.currentTeam ? ' current' : '') + (team?.fave ? ' fave-team' : '')} onClick={() => switchTeam(teamIndex)}>
+						{teams.map((team, teamIndex) =>
+							<div key={'team_' + teamIndex} className={'cup-team-box' + (team.id == current ? ' current' : '') + (team.id == fave ? ' fave-team' : '')} onClick={() => switchTeam(team.id)}>
 								{Array.from({ length: 3 }).map(
 									(m, i) => <div key={'team_' + teamIndex + '_mon_' + i} className="cup-team-mon">
 										<PokemonSprite
@@ -63,6 +57,6 @@ export default function TeamHolder({ selectedCup, selectedSeason, cupData }) {
 			}
 
 			<button id="switch-team" className="small-upper text-center" style={{ border: '1px solid #ececec', color: '#000', padding: '1rem', borderRadius: '.8rem', marginTop: '1rem', background: 'none' }} onClick={() => setOpenOnNarrow(!openOnNarrow)}>{openOnNarrow ? 'Close' : 'Switch Team'}</button>
-		</div>}
+		</div>
 	</div>
 }

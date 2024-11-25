@@ -27,3 +27,6 @@ TEXT: Galar Cup: Little Edition
 
 RESOURCE ID: move_name_0401
 TEXT: Psywave
+
+RESOURCE ID: move_name_0464
+TEXT: Rage Fist

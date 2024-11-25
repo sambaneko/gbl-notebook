@@ -10,8 +10,8 @@ export default function PokemonSprite({ pokemon, size, style }) {
 			pokemon['image']
 				? pokemon['image']
 				: 'pm' + pokemon.dexNumber + (
-					pokemon['form'] && pokemon['form'] != 'NORMAL'
-						? '.f' + pokemon.form.toUpperCase()
+					pokemon['shortForm'] && pokemon['shortForm'] != 'NORMAL'
+						? '.f' + pokemon.shortForm.toUpperCase()
 						: ''
 				)
 		) + (
