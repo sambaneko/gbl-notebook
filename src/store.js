@@ -14,10 +14,15 @@ import { v4 as uuidv4 } from 'uuid'
 
 const persistConfig = { key: 'root', storage }
 const intlDtFormat = new Intl.DateTimeFormat(undefined, {
-	dateStyle: 'short',
-	timeStyle: 'short',
-	hourCycle: 'h12',
-	timeZone: process.env.REACT_APP_USE_TZ
+	...{
+		dateStyle: 'short',
+		timeStyle: 'short',
+		hourCycle: 'h12'
+	},
+	...(process.env.REACT_APP_USE_TZ !== ''
+		? { timeZone: process.env.REACT_APP_USE_TZ }
+		: {}
+	)
 })
 
 export const defaultCup = {
