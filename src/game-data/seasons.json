@@ -10,6 +10,19 @@
 		]
 	},
 	{
+		"label": "Season 21 - Dual Destiny",
+		"value": 21,
+		"slug": "21-dual-destiny",
+		"cups": [
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_FANTASY",
+			"COMBAT_LEAGUE_VS_SEEKER_LITTLE_HOLIDAY",
+			"COMBAT_LEAGUE_VS_SEEKER_COLOR_GREAT",
+			"COMBAT_LEAGUE_VS_SEEKER_LITTLE_JUNGLE",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_LOVE",
+			"COMBAT_LEAGUE_VS_SEEKER_MASTER_MEGAS"
+		]		
+	},
+	{
 		"label": "Season 20 - Max Out",
 		"value": 20,
 		"slug": "20-max-out",
