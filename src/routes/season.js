@@ -44,6 +44,43 @@ export default function Season() {
 		...selectedSeason.cups
 	]
 
+	const getCurrentTeamId = () => appData.current.find(
+		({ cup, season }) =>
+			cup == (
+				selectedCup === null
+					? null : selectedCup.templateId
+			) &&
+			season == (
+				selectedSeason === null
+					? null : selectedSeason.value
+			)
+	)?.id || null
+
+	const [currentTeamId, setCurrentTeamId] = useState(getCurrentTeamId())
+
+	const getPreviousSeason = () => {
+		if (
+			selectedCup !== null &&
+			appData.opponents.length > 0
+		) {
+			let previousSeasons = (
+				appData.opponents.map(
+					({ cup, season }) => cup == selectedCup.templateId
+						? season : 0
+				)
+			).sort((a, b) => b - a)
+
+			return previousSeasons[0]
+		} else return 0;
+	}
+
+	const [previousSeason, setPreviousSeason] = useState(getPreviousSeason())
+
+	useEffect(() => {
+		setCurrentTeamId(getCurrentTeamId())
+		setPreviousSeason(getPreviousSeason())
+	}, [selectedSeason, selectedCup, appData.current])
+
 	const [editingPokemon, setEditingPokemon] = useState()
 
 	useEffect(() => {
@@ -140,12 +177,14 @@ export default function Season() {
 		</div>
 		<div id="cup-wrapper">
 			<TeamHolder
-				canAdd={selectedCup !== null && selectedSeason !== null}
 				teams={
 					appData.teams.filter(
-						({ cup, season }) => 
-							cup == selectedCup.templateId && 
+						({ cup, season }) =>
 							(
+								selectedCup !== null
+									? cup == selectedCup.templateId
+									: false
+							) && (
 								selectedSeason.slug == 'all' ||
 								season == selectedSeason.value
 							)
@@ -153,15 +192,13 @@ export default function Season() {
 				}
 				current={
 					appData.current.find(
-						({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
+						({ cup, season }) =>
+							(cup == selectedCup?.templateId || false) &&
+							season == selectedSeason.value
 					)?.id || null
 				}
-				fave={
-					appData.faves.find(
-						({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
-					)?.id || null
-				}
-				season={selectedSeason?.value || null}
+				faves={appData.faves}
+				season={selectedSeason !== null ? selectedSeason.value : null}
 				cup={selectedCup?.templateId || null}
 			/>
 			<div id="cup-data">
@@ -169,42 +206,32 @@ export default function Season() {
 					<h2>Welcome to GBL Notebook</h2>
 					<p>Select a Season and Cup above to get started.</p>
 				</>}
-				{(selectedSeason && selectedCup) && <>
+				{currentTeamId !== null && <>
 					<TeamView
-						{...{ selectedCup, selectedSeason, setEditingPokemon, showModal }}
-						team={
-							(() => {
-								let tId = appData.current.find(
+						{...{ setEditingPokemon, showModal }}
+						season={selectedSeason !== null ? selectedSeason.value : null}
+						team={appData.teams.find(
+							({ id }) => id == currentTeamId
+						)}
+						fave={appData.faves.find(
+							({ id }) => id == currentTeamId
+						) !== undefined}
+					/>
+					{selectedSeason.slug != 'all'
+						? <OpponentsView
+							{...{ selectedCup, setEditingPokemon, showModal, previousSeason }}
+							opponents={
+								appData.opponents.filter(
 									({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
-								)?.id || null
-
-								return appData.teams.find(
-									({ id }) => id == tId
 								)
-							})()
-						}
-						fave={
-							(() => {
-								let tId = appData.current.find(
-									({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
-								)?.id || null
-
-								return appData.faves.find(
-									({ id }) => id == tId
-								) !== undefined
-							})()
-						}
-					/>
-					<OpponentsView
-						{...{ selectedCup, setEditingPokemon, showModal }}
-						opponents={
-							appData.opponents.filter(
-								({ cup, season }) => cup == selectedCup.templateId && season == selectedSeason.value
-							)
-						}
-						season={selectedSeason?.value || null}
-						cup={selectedCup?.templateId || null}
-					/>
+							}
+							season={selectedSeason?.value || null}
+							cup={selectedCup?.templateId || null}
+						/>
+						: <div className="notice-box">
+							Select a season to view Opponents
+						</div>
+					}
 				</>}
 			</div>
 		</div>

@@ -32,7 +32,7 @@ body {
 	gap: 4rem;
 }
 
-#cup-select > div {
+#cup-select>div {
 	flex-grow: 1;
 }
 
@@ -112,6 +112,18 @@ select {
 	background-color: #fff;
 	width: 100%;
 	box-sizing: border-box;
+}
+
+input[type="text"][disabled], 
+input[type="number"][disabled], 
+select[disabled],
+.disabled {
+	opacity: 50%;
+}
+
+input.invalidField,
+div.invalidField {
+	background-color: #fffbe5;
 }
 
 select,
@@ -224,6 +236,8 @@ button.filled.with-svg {
 
 button svg {
 	vertical-align: middle;
+	position: relative;
+	top: -1px;
 }
 
 @keyframes ButtonClick {
@@ -245,6 +259,10 @@ textarea {
 	font-size: inherit;
 	font-family: inherit;
 	padding: 1rem;
+}
+
+textarea[disabled] {
+	background-color: #f0f8ff;
 }
 
 .flex-row,
@@ -287,7 +305,7 @@ label {
 	margin-bottom: .5rem;
 	text-transform: uppercase;
 	font-size: 1.1rem;
-	color: #868686;	
+	color: #868686;
 }
 
 label.checkbox {
@@ -305,14 +323,20 @@ label.checkbox input {
 
 .team-placeholder {
 	color: #ececec;
-	background-color: #d9edf0;
-	border-color: #d9edf0;
+	background-color: #f0f8ff;
 	min-height: 30rem;
-	display: flex;
-	cursor: pointer;
+	border: solid .2rem #d9edf0;
+	border-radius: .5rem;
+	padding: 1rem 1rem 0 1rem;
 }
 
-.team-placeholder:hover {
+.team-placeholder.editable {
+	background-color: #fff;
+	cursor: pointer;
+	display: flex;
+}
+
+.team-placeholder.editable:hover {
 	background-color: #f3feff !important;
 	color: #b3b3b3 !important;
 }
@@ -334,7 +358,7 @@ label.checkbox input {
 }
 
 .cup-team-box.current.fave-team {
-	background-color: #ffe59e; 
+	background-color: #ffe59e;
 	border-color: #dfa812;
 }
 
@@ -438,6 +462,16 @@ label.checkbox input {
 	border-radius: .5rem;
 }
 
+.notice-box {
+	border: 1px solid #83EADC;
+	padding: 1rem;
+	border-radius: .5rem;
+	color: #1c8696;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	text-align: center;
+}
+
 .grid-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
@@ -526,6 +560,7 @@ label.checkbox input {
 .cup-team-box.fave-team {
 	background-color: #fff2cf;
 }
+
 .cup-section.fave-team .cup-section-head {
 	background: #ffe59e;
 }
@@ -580,11 +615,25 @@ label.checkbox input {
 		"grid3 grid4 grid5";
 }
 
-.grid1 { grid-area: grid1; }
-.grid2 { grid-area: grid2; }
-.grid3 { grid-area: grid3; }
-.grid4 { grid-area: grid4; }
-.grid5 { grid-area: grid5; }
+.grid1 {
+	grid-area: grid1;
+}
+
+.grid2 {
+	grid-area: grid2;
+}
+
+.grid3 {
+	grid-area: grid3;
+}
+
+.grid4 {
+	grid-area: grid4;
+}
+
+.grid5 {
+	grid-area: grid5;
+}
 
 .pointer {
 	cursor: pointer;
@@ -669,6 +718,6 @@ label.checkbox input {
 
 	.team-grid {
 		grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-	}	
+	}
 
 }

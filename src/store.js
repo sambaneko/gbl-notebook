@@ -278,6 +278,21 @@ export const slice = createSlice({
 					({ id }) => id == action.payload
 				), 1
 			)
+		},
+		importOpponents: (state, action) => {
+			let toImport = state.opponents.filter(
+				({ season, cup }) =>
+					season == action.payload.previousSeason &&
+					cup == action.payload.cup
+			)
+
+			toImport.map((opponent) =>
+				state.opponents.push({
+					...opponent,
+					season: action.payload.season,
+					id: getId(state.opponents)
+				})
+			)
 		}
 	}
 })
@@ -294,7 +309,8 @@ export const {
 	removeTeamMember,
 	updateOpponent,
 	moveOpponent,
-	removeOpponent
+	removeOpponent,
+	importOpponents
 } = slice.actions
 
 const userReducer = combineReducers({ appData: slice.reducer })

@@ -1,6 +1,12 @@
 import Select, { components } from 'react-select'
 
-export default function PokemonSelect({ pokemon, onSelected, exclude, defaultValue }) {
+export default function PokemonSelect({ 
+	pokemon, 
+	onSelected, 
+	exclude, 
+	defaultValue,
+	isInvalid 
+}) {
 	const Option = (props) => {
 		return <div className={'pokemon_option pokemon_type ' + props.data.types[0].toLowerCase()}>
 			<div className="type-list">
@@ -42,6 +48,7 @@ export default function PokemonSelect({ pokemon, onSelected, exclude, defaultVal
 		components={{ MenuList, Option }}
 		options={filterPokemon()}
 		classNames={{
+			control: (state) => isInvalid ? 'invalidField' : '',
 			option: ({ isDisabled, isFocused, isSelected }) =>
 				isFocused ? 'isFocused' : ''
 		}}

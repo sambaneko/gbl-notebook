@@ -8,7 +8,7 @@ import StarFilled from '../images/StarFilled'
 import Trash from '../images/Trash'
 import styled from 'styled-components'
 
-export default function TeamView({ selectedCup, selectedSeason, cupData, setEditingPokemon, showModal, team, fave }) {
+export default function TeamView({ season, setEditingPokemon, showModal, team, fave }) {
 	const dispatch = useDispatch()
 
 	const [teamNotes, setTeamNotes] = useState('')
@@ -68,15 +68,17 @@ export default function TeamView({ selectedCup, selectedSeason, cupData, setEdit
 								key: `tm${teamIndex}`,
 								pokemon: team?.mons[teamIndex] ?? null,
 								showStats: true,
-								onEdit: () => {
-									setEditingPokemon({
-										editType: 'team',
-										id: team?.id ?? null,
-										teamIndex,
-										mon: team?.mons[teamIndex] ?? null,
-										exclude: team?.mons.map(({ templateId }) => templateId) ?? []
-									})
-								},
+								onEdit: season === null
+									? null
+									: () => {
+										setEditingPokemon({
+											editType: 'team',
+											id: team?.id ?? null,
+											teamIndex,
+											mon: team?.mons[teamIndex] ?? null,
+											exclude: team?.mons.map(({ templateId }) => templateId) ?? []
+										})
+									},
 								onRemove: () => dispatch(
 									removeTeamMember({
 										id: team?.id ?? null,
@@ -108,39 +110,32 @@ export default function TeamView({ selectedCup, selectedSeason, cupData, setEdit
 						onChange={(ev) => setTeamNotes(ev.target.value)}
 						value={teamNotes}
 						style={{ resize: 'none', flexGrow: '1', borderRadius: '.5rem', border: 'none' }}
+						disabled={season === null}
 					></textarea>
 				</div>
 			</div>
 
 			<div style={{ display: 'flex', color: '#999', marginTop: '.5rem', marginBottom: '-.5rem', padding: '0 1rem' }}>
 				<div style={{ flexGrow: 1, lineHeight: '4rem', fontSize: '1.4rem' }}>
-					{(selectedSeason.slug == 'all' &&
-						team?.season
-					) &&
+					{!season &&
 						<span style={{ marginRight: '.5rem' }}>
 							<button
 								className="plain"
+								style={{ fontWeight: 600, marginRight: '1rem' }}
 								onClick={() => {/*showModal(
-								<TeamDataEditor
-									cupId={selectedCup.templateId}
-									id={cupData.currentTeam}
-									selectedSeason={selectedSeason}
-								/>
-							)*/}}
+									<TeamDataEditor
+										cupId={selectedCup.templateId}
+										id={cupData.currentTeam}
+										selectedSeason={selectedSeason}
+									/>
+								)*/}}
 							>{
 									(seasonList.find(({ value }) => value == team?.season)).label
 								}</button>
 						</span>
 					}
-					{team?.created !== undefined &&
-						<span>Created: {(() => {
-							let d = new Date(team.created)
-							return `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}/${d.getFullYear()}`
-						})()}</span>
-					}
-					{team?.modified !== undefined &&
-						<span style={{ marginLeft: '.5rem' }}>Modified: {team.modified}</span>
-					}
+					<span>Created: {team?.created || '???'}</span>
+					<span style={{ marginLeft: '.5rem' }}>Modified: {team?.modified || '???'}</span>
 				</div>
 				<div style={{ display: 'flex', minWidth: '30rem' }}>
 					{showDeleteConfirm

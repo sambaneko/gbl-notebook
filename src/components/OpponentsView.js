@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { updateOpponent, updateTemplate, moveOpponent, removeOpponent } from '../store'
+import { updateOpponent, updateTemplate, moveOpponent, removeOpponent, importOpponents } from '../store'
 import PokemonView from './PokemonView'
 import PokemonEditor from '../components/PokemonEditor'
 
-export default function OpponentsView({ showModal, opponents, season, cup, selectedCup }) {
+export default function OpponentsView({ showModal, opponents, season, cup, selectedCup, previousSeason }) {
 	const dispatch = useDispatch()
 
 	const saveEditedPokemon = (editedMon, saveTemplate, templateIndex, id) => {
@@ -61,10 +61,22 @@ export default function OpponentsView({ showModal, opponents, season, cup, selec
 			</div>
 			<button type="button"
 				className="app-like"
+				onClick={() =>					
+					dispatch( /** todo: this should have a confirmation */
+						importOpponents({
+							previousSeason, season, cup
+						})
+					)
+				}
+				style={{ marginRight: '1rem' }}
+			> Import Previous
+			</button>
+			<button type="button"
+				className="app-like"
 				onClick={() =>
 					showModal(
 						<PokemonEditor
-							editType="oppo"
+							editType="opponent"
 							pokemon={null}
 							onSave={(
 								editedMon, saveTemplate, templateIndex
@@ -88,7 +100,7 @@ export default function OpponentsView({ showModal, opponents, season, cup, selec
 						onEdit={() =>
 							showModal(
 								<PokemonEditor
-									editType="oppo"
+									editType="opponent"
 									pokemon={mon}
 									onSave={(
 										editedMon, saveTemplate, templateIndex

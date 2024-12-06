@@ -1,7 +1,12 @@
 import PokemonSelect from './PokemonSelect'
 
 export default function PokemonSelectFromCup({
-	pokemon, onSelected, selectedCup, exclude, defaultValue
+	pokemon, 
+	onSelected, 
+	selectedCup, 
+	exclude, 
+	defaultValue,
+	isInvalid
 }) {
 	const filterPokemonByCup = () => {
 		let filteredOpts = [...pokemon]
@@ -45,7 +50,7 @@ export default function PokemonSelectFromCup({
 		<label>Pokemon</label>
 		<PokemonSelect
 			pokemon={filterPokemonByCup()}
-			{...{ onSelected, exclude, defaultValue }}
+			{...{ onSelected, exclude, defaultValue, isInvalid }}
 		/>
 	</div>
 }

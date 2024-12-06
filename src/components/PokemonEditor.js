@@ -19,8 +19,43 @@ export default function PokemonEditor({
 			: { fastMoves: [], chargeMoves: [] }
 	)
 	const [editedMon, setEditedMon] = useState(pokemon)
+	const [invalidFields, setInvalidFields] = useState([])
+	const [monPopulated, setMonPopulated] = useState(false)
+
+	useEffect(() => {
+		setMonPopulated(
+			Object.keys(editedMon ?? {}).length > 0
+		)
+	}, [editedMon])
 
 	const saveEdits = () => {
+		setInvalidFields([])
+
+		if (!editedMon) {
+			setInvalidFields(['pokemon'])
+			return
+		}
+
+		let requiredFields = ['fast', 'charge1']
+
+		if (editType != 'opponent') {
+			requiredFields.push('name')
+		}
+
+		let invalid = requiredFields.filter((req) => {
+			if (
+				editedMon[req] === undefined ||
+				editedMon[req]?.trim() === ''
+			) {
+				return req
+			}
+		})
+
+		if (invalid.length) {
+			setInvalidFields(invalid)
+			return
+		}
+
 		onSave && onSave(editedMon, saveTemplate, usingTemplate)
 		setEditedMon(null)
 		resetEditor((prev) => prev + 1)
@@ -61,37 +96,51 @@ export default function PokemonEditor({
 						exclude={excludeList}
 						onSelected={(mon) => {
 							setPokemonData(mon)
-							setEditedMon({
+
+							let eMon = {
 								templateId: mon.templateId,
 								shadow: false,
 								purified: false,
 								shiny: false
-							})
+							}
+							
+							if (editType == 'team') {
+								eMon.name = mon.label	
+							}		
+
+							setEditedMon(eMon)
+
 							setUsingTemplate(null)
 							resetTemplates((prev) => prev + 1)
 
 							setAvailableTemplates(
-								appData.templates.map((template, templateIndex) => 
-
-									template.templateId == mon.templateId
+								appData.templates.map((template, templateIndex) =>
+									(
+										template.templateId == mon.templateId &&
+										(
+											editType == 'team'
+												? template.name !== undefined
+												: template.name === undefined
+										)
+									)
 										? {
 											template,
 											templateIndex,
 											...pokemonList.find(({ templateId }) => templateId == template.templateId)
 										}
 										: null
-
 								).filter(n => n)
 							)
 						}}
 						defaultValue={pokemonData}
+						isInvalid={invalidFields.includes('pokemon')}
 					/>
 				</div>
 
 				{availableTemplates.length > 0 && <div className="grid-fashion template-box">
 					<label>Templates</label>
 					{availableTemplates.map((mon, i) =>
-						<div className={'pointer pokemon_option pokemon_type ' + mon.types[0].toLowerCase()} key={`tmp${i}`}>
+						<div className={'pointer pokemon_option pokemon_type ' + mon.types[0].toLowerCase()} key={i}>
 							<div className="type-list">
 								{
 									mon.types.map((type) =>
@@ -109,7 +158,16 @@ export default function PokemonEditor({
 									setUsingTemplate(mon.templateIndex)
 									resetSelector((prev) => prev + 1)
 								}}
-							>{mon.label}</div>
+							>{
+									mon.template.name === undefined
+										? mon.label
+										: (
+											mon.template.name == ''
+												? mon.label
+												: mon.template.name
+										)
+
+								}</div>
 						</div>
 					)}
 				</div>}
@@ -119,16 +177,18 @@ export default function PokemonEditor({
 		}
 
 		{editType == 'team' &&
-			<div className="grid-fashion">
-				<label>Name</label>
-				<input type="text" min="0"
-					onBlur={(ev) => setEditedMon({
-						...editedMon,
-						name: ev.target.value
-					})}
-					defaultValue={editedMon?.name}
-				/>
-			</div>
+		<div className="grid-fashion">
+			<label>Name</label>
+			<input type="text" min="0"
+				onBlur={(ev) => setEditedMon({
+					...editedMon,
+					name: ev.target.value
+				})}
+				defaultValue={editedMon?.name}
+				disabled={!monPopulated}
+				className={invalidFields.includes('name') ? 'invalidField' : ''}
+			/>
+		</div>
 		}
 
 		<div key={'fields-' + fieldsItr}>
@@ -147,10 +207,13 @@ export default function PokemonEditor({
 						onChange={(move) => setEditedMon({
 							...editedMon, fast: move.templateId
 						})}
-						isDisabled={Object.keys(editedMon ?? {}).length <= 0}
+						isDisabled={!monPopulated}
 						defaultValue={
 							moveList.find(({ templateId }) => templateId === editedMon?.fast)
 						}
+						classNames={{
+							control: (state) => invalidFields.includes('fast') ? 'invalidField' : ''
+						}}
 					/>
 				</div>
 				<div className="grid2">
@@ -167,10 +230,13 @@ export default function PokemonEditor({
 						onChange={(move) => setEditedMon({
 							...editedMon, charge1: move.templateId
 						})}
-						isDisabled={Object.keys(editedMon ?? {}).length <= 0}
+						isDisabled={!monPopulated}
 						defaultValue={
 							moveList.find(({ templateId }) => templateId === editedMon?.charge1)
 						}
+						classNames={{
+							control: (state) => invalidFields.includes('charge1') ? 'invalidField' : ''
+						}}
 					/>
 				</div>
 				<div className="grid3">
@@ -187,7 +253,7 @@ export default function PokemonEditor({
 						onChange={(move) => setEditedMon({
 							...editedMon, charge2: move.templateId
 						})}
-						isDisabled={Object.keys(editedMon ?? {}).length <= 0}
+						isDisabled={!monPopulated}
 						defaultValue={
 							moveList.find(({ templateId }) => templateId === editedMon?.charge2)
 						}
@@ -205,6 +271,7 @@ export default function PokemonEditor({
 								cp: ev.target.value
 							})}
 							defaultValue={editedMon?.cp}
+							disabled={!monPopulated}
 						/>
 					</div>
 					<div className="grid2 flex-row">
@@ -219,6 +286,7 @@ export default function PokemonEditor({
 										atk: ev.target.value
 									}
 								})}
+								disabled={!monPopulated}
 							>
 								<option key="atk_none">-</option>
 								{
@@ -238,6 +306,7 @@ export default function PokemonEditor({
 										def: ev.target.value
 									}
 								})}
+								disabled={!monPopulated}
 							>
 								<option key="def_none">-</option>
 								{
@@ -257,6 +326,7 @@ export default function PokemonEditor({
 										sta: ev.target.value
 									}
 								})}
+								disabled={!monPopulated}
 							>
 								<option key="sta_none">-</option>
 								{
@@ -268,11 +338,18 @@ export default function PokemonEditor({
 					</div>
 
 					<div className="grid3">
-						<label className="checkbox">
+						<label className={
+							'checkbox' + (
+								!monPopulated ? ' disabled' : ''
+							)
+						}>
 							<input
 								defaultChecked={editedMon?.shadow || false}
 								type="checkbox"
-								disabled={!pokemonData.shadowAvailable}
+								disabled={
+									!monPopulated ||
+									!pokemonData.shadowAvailable
+								}
 								onClick={() => {
 									setEditedMon({
 										...editedMon,
@@ -284,11 +361,18 @@ export default function PokemonEditor({
 						</label>
 					</div>
 					<div className="grid4">
-						<label className="checkbox">
+						<label className={
+							'checkbox' + (
+								!monPopulated ? ' disabled' : ''
+							)
+						}>
 							<input
 								defaultChecked={editedMon?.purified || false}
 								type="checkbox"
-								disabled={!pokemonData.shadowAvailable}
+								disabled={
+									!monPopulated ||
+									!pokemonData.shadowAvailable
+								}
 								onClick={() => {
 									setEditedMon({
 										...editedMon,
@@ -300,7 +384,11 @@ export default function PokemonEditor({
 						</label>
 					</div>
 					<div className="grid5">
-						<label className="checkbox">
+						<label className={
+							'checkbox' + (
+								!monPopulated ? ' disabled' : ''
+							)
+						}>
 							<input
 								defaultChecked={editedMon?.shiny || false}
 								type="checkbox"
@@ -310,6 +398,7 @@ export default function PokemonEditor({
 										shiny: true
 									})
 								}}
+								disabled={!monPopulated}
 							/> Shiny
 						</label>
 					</div>

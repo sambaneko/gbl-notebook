@@ -17,7 +17,13 @@ export default function PokemonView({
 	const appData = useSelector((state) => state.appData)
 
 	if (pokemon === null) {
-		return <div className="pokemon-type-box team-placeholder"
+		if (onEdit === null) {
+			return <div className="team-placeholder">
+			
+			</div>
+		}
+
+		return <div className="team-placeholder editable"
 			onClick={onEdit}>
 			<PokemonSprite size="100" />
 		</div>

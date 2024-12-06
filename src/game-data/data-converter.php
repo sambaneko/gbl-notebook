@@ -1,6 +1,7 @@
 <?php
 
-/** convert older data format to new version; should not be needed
+/** 
+ * convert older data format to new version; should not be needed
  * by anyone besides me, but retaining it
  */
 
@@ -74,14 +75,22 @@ foreach ($oldJson->seasons as $seasonId => $vals) {
 			foreach ($team->mons as &$mon) {
 				if (!isset($mon->fast->templateId)) {
 					$mon->fast = getMoveFromRef($mon->fast->value);
-				} else if (!isset($mon->charge1->templateId)) {
-					$mon->charge1 = getMoveFromRef($mon->charge1->value);
-				} else if (!isset($mon->charge2->templateId)) {
-					$mon->charge2 = getMoveFromRef($mon->charge2->value);
 				} else {
 					$mon->fast = $mon->fast->templateId;
+				}
+				
+				if (!isset($mon->charge1->templateId)) {
+					$mon->charge1 = getMoveFromRef($mon->charge1->value);
+				} else {
 					$mon->charge1 = $mon->charge1->templateId;
-					$mon->charge2 = $mon->charge2->templateId;
+				}
+				
+				if (isset($mon->charge2)) {
+					if (!isset($mon->charge2->templateId)) {
+						$mon->charge2 = getMoveFromRef($mon->charge2->value);
+					} else {
+						$mon->charge2 = $mon->charge2->templateId;
+					}
 				}
 
 				$mon->templateId = remapTemplateId($mon->templateId);
