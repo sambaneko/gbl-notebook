@@ -205,11 +205,11 @@ export default function PokemonEditor({
 							}
 						}}
 						onChange={(move) => setEditedMon({
-							...editedMon, fast: move.templateId
+							...editedMon, fast: move.value
 						})}
 						isDisabled={!monPopulated}
 						defaultValue={
-							moveList.find(({ templateId }) => templateId === editedMon?.fast)
+							moveList.find(({ value }) => value === editedMon?.fast)
 						}
 						classNames={{
 							control: (state) => invalidFields.includes('fast') ? 'invalidField' : ''
@@ -220,7 +220,7 @@ export default function PokemonEditor({
 					<label>Charge Move</label>
 					<Select
 						options={
-							moveList.filter(({ value, templateId }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge2 !== templateId)
+							moveList.filter(({ value }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge2 !== value)
 						}
 						styles={{
 							option: (styles, { data, isDisabled, isFocused, isSelected }) => {
@@ -228,11 +228,11 @@ export default function PokemonEditor({
 							}
 						}}
 						onChange={(move) => setEditedMon({
-							...editedMon, charge1: move.templateId
+							...editedMon, charge1: move.value
 						})}
 						isDisabled={!monPopulated}
 						defaultValue={
-							moveList.find(({ templateId }) => templateId === editedMon?.charge1)
+							moveList.find(({ value }) => value === editedMon?.charge1)
 						}
 						classNames={{
 							control: (state) => invalidFields.includes('charge1') ? 'invalidField' : ''
@@ -243,7 +243,7 @@ export default function PokemonEditor({
 					<label>Charge Move</label>
 					<Select
 						options={
-							moveList.filter(({ value, templateId }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge1 !== templateId)
+							moveList.filter(({ value }) => pokemonData.chargeMoves.includes(value) && editedMon?.charge1 !== value)
 						}
 						styles={{
 							option: (styles, { data, isDisabled, isFocused, isSelected }) => {
@@ -251,11 +251,11 @@ export default function PokemonEditor({
 							}
 						}}
 						onChange={(move) => setEditedMon({
-							...editedMon, charge2: move.templateId
+							...editedMon, charge2: move.value
 						})}
 						isDisabled={!monPopulated}
 						defaultValue={
-							moveList.find(({ templateId }) => templateId === editedMon?.charge2)
+							moveList.find(({ value }) => value === editedMon?.charge2)
 						}
 					/>
 				</div>

@@ -19,7 +19,7 @@ export default function PokemonView({
 	if (pokemon === null) {
 		if (onEdit === null) {
 			return <div className="team-placeholder">
-			
+
 			</div>
 		}
 
@@ -34,11 +34,44 @@ export default function PokemonView({
 	}
 
 	const myPokemon = pokemonList.find(({ value }) => value == pokemon.templateId)
-	const myFastMove = moveList.find(({ templateId }) => templateId == pokemon.fast)
-	const myChargeMove1 = moveList.find(({ templateId }) => templateId == pokemon.charge1)
+	const myFastMove = moveList.find(({ value }) => value == pokemon.fast)
+	const myChargeMove1 = moveList.find(({ value }) => value == pokemon.charge1)
 	const myChargeMove2 = pokemon['charge2']
-		? moveList.find(({ templateId }) => templateId == pokemon.charge2)
+		? moveList.find(({ value }) => value == pokemon.charge2)
 		: null
+
+	const getChargeMoveCount = (fastDelta, chargeDelta, format) => {
+		const result = []
+		let chargeBuffer = 0
+		chargeDelta = Math.abs(chargeDelta)
+
+		for (let i = 0; i < 4; i++) {
+			const moveCount = Math.ceil(
+				(chargeDelta - chargeBuffer) / fastDelta
+			)
+			result.push(moveCount)
+			chargeBuffer = (moveCount * fastDelta) - chargeDelta + chargeBuffer
+		}
+
+		const formatters = {
+			single: (counts) => {
+				if (counts.every(value => value === counts[0])) {
+					return counts[0]
+				} else if (
+					counts[0] === counts[1] &&
+					counts[1] !== counts[2]
+				) {
+					return counts[0] + '.'
+				} else {
+					return counts[0] + '-'
+				}
+
+			},
+			full: (counts) => counts.join(' - ')
+		}
+
+		return formatters[format](result)
+	}
 
 	return <div draggable onDragEnter={onDragEnter} onDragStart={onDragStart} onDragEnd={onDragEnd} className={'pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >
 		<div className={'flex-row pokemon-type-box-heading ' + myPokemon.types[0].toLowerCase()}>
@@ -76,13 +109,30 @@ export default function PokemonView({
 			</div>}
 			<div>
 				<p className="move_label">Fast Move</p>
-				<span className={'move_type move_name ' + myFastMove.type.toLowerCase()}>{myFastMove.label}</span>
+				<p style={{ display: 'flex', marginBottom: '1rem' }}>
+					<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myFastMove.type.toLowerCase()}>{myFastMove.label}</span>
+					<span className="move_count">{myFastMove.durationTurns}</span>
+				</p>
 
 				<p className="move_label">Charge Moves</p>
 				<div className="flex-col">
-					<span className={'move_type move_name ' + myChargeMove1.type.toLowerCase()}>{myChargeMove1.label}</span>
+					<p style={{ display: 'flex', marginBottom: '1rem' }}>
+						<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove1.type.toLowerCase()}>{myChargeMove1.label}</span>
+						<span className="move_count charge">{getChargeMoveCount(
+							myFastMove.energyDelta,
+							myChargeMove1.energyDelta,
+							'single'
+						)}</span>
+					</p>
 					{myChargeMove2 &&
-						<span className={'move_type move_name ' + myChargeMove2.type.toLowerCase()}>{myChargeMove2.label}</span>
+						<p style={{ display: 'flex', marginBottom: '1rem' }}>
+							<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove2.type.toLowerCase()}>{myChargeMove2.label}</span>
+							<span className="move_count charge">{getChargeMoveCount(
+								myFastMove.energyDelta,
+								myChargeMove2.energyDelta,
+								'single'
+							)}</span>
+						</p>
 					}
 				</div>
 			</div>

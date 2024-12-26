@@ -416,7 +416,18 @@ label.checkbox input {
 	padding-left: 3rem;
 	line-height: 2.6rem;
 	background-color: transparent;
-	margin-bottom: 1rem;
+}
+
+.move_count {
+	background-color: #00000010;
+	padding: .2rem .5rem;
+	font-size: 1.3rem;
+	width: 2rem;
+	text-align: center;
+}
+
+.move_count.charge {
+	border-radius: 3rem;
 }
 
 .white-btn {

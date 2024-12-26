@@ -65,8 +65,9 @@ foreach ($latestJson as $jsonObj) {
 		}
 	}
 
-	if (isset($jsonObj->data->moveSettings)) {
-		$output['moves'][] = parseMoveData($jsonObj, $langLines);
+	if (isset($jsonObj->data->combatMove)) {
+		$move = parseMoveData($jsonObj, $langLines);
+		if (!is_null($move)) $output['moves'][] = $move;
 	}	
 }
 
