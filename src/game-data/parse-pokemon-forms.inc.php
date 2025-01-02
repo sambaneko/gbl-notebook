@@ -1,4 +1,27 @@
 <?php
+function collectForms($forms, $formSettings) {
+	if (
+		isset($formSettings->pokemon) &&
+		isset($formSettings->forms)
+	) {
+		$monForms = [];
+
+		foreach ($formSettings->forms as $form) {
+			if (isset($form->form)) {
+				$monForms[$form->form] = 
+					isset($form->isCostume) && 
+					$form->isCostume == true;
+			}
+		}
+
+		if (!empty($monForms)) {
+			$forms[$formSettings->pokemon] = $monForms;
+		}
+	}
+
+	return $forms;
+} 
+
 function parsePokemonForms($forms, $pokemonData, $langLines) {
 	// here we'll try to wrangle various forms, including inaccessible
 	// ones, costumes, and some unique variations (particularly Pikachus)
@@ -16,11 +39,14 @@ function parsePokemonForms($forms, $pokemonData, $langLines) {
 		]
 	];
 
-	foreach ($forms as $pokemon => $formNames) {
-		if (count($formNames) == 1) continue;
+	foreach ($forms as $pokemon => $formData) {
+		if (count($formData) <= 1) continue;
+		
+		// $forms holds all of the possible forms,
+		// keyed by the pokemon name, then by form name
+		// eg. 'PIKACHU' => [ 'PIKACHU_NORMAL' => isCostume ].
 
-		// $forms holds all of the possible form names,
-		// keyed by the pokemon name, eg. 'PIKACHU' => [ forms ].
+		$formNames = array_keys($formData);
 
 		// get all instances of the mon whose forms we're looking at
 		$instances = array_filter(
@@ -56,16 +82,13 @@ function parsePokemonForms($forms, $pokemonData, $langLines) {
 		}
 
 		$defaultIndex = $defaultIndex[0];
-		
+
 		// check each index; an accessible mon has a 'form' key
 		// (even if form is 'normal')
 		foreach ($indices as $i) {
 			if (
 				!isset($pokemonData[$i]['form']) ||
-				!in_array(
-					$pokemonData[$i]['form'],
-					$formNames
-				)
+				!in_array($pokemonData[$i]['form'], $formNames)
 			) {
 				// this prunes out forms that are not actually accessible,
 				// like Shellos w/o an east/west designation				
@@ -88,7 +111,10 @@ function parsePokemonForms($forms, $pokemonData, $langLines) {
 					   $pokemonData[$i]['label']
 				   );
 			   }
-			} else if ($defaultIndex !== $i) {
+			} else if (
+				$defaultIndex !== $i && 
+				$formData[$pokemonData[$i]['form']]
+			) {
 				// this sets costume mons into a sub-array of the
 				// default mon
 				if (!isset($pokemonData[$defaultIndex]['costumes'])) {	

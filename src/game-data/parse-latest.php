@@ -39,24 +39,7 @@ foreach ($latestJson as $jsonObj) {
 	}
 
 	if (isset($jsonObj->data->formSettings)) {
-		if (
-			isset($jsonObj->data->formSettings->pokemon) &&
-			isset($jsonObj->data->formSettings->forms)
-		) {
-			$monForms = [];
-
-			foreach (
-				$jsonObj->data->formSettings->forms as $form
-			) {
-				if (isset($form->form)) {
-					$monForms[] = $form->form;
-				}
-			}
-
-			if (!empty($monForms)) {
-				$forms[$jsonObj->data->formSettings->pokemon] = $monForms;
-			}
-		}
+		$forms = collectForms($forms, $jsonObj->data->formSettings);
 	}	
 
 	if (isset($jsonObj->data->combatLeague)) {
