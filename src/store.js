@@ -81,6 +81,7 @@ const setCurrent = (current, pick) => {
 }
 
 const initialState = {
+	version: 1.0,
 	teams: [],
 	templates: [],
 	opponents: [],

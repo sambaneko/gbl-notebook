@@ -2,6 +2,7 @@
 
 require('parse-language.inc.php');
 require('parse-pokemon-data.inc.php');
+require('parse-pokemon-forms.inc.php');
 require('parse-league-data.inc.php');
 require('parse-move-data.inc.php');
 
@@ -71,33 +72,7 @@ foreach ($latestJson as $jsonObj) {
 	}	
 }
 
-// this prunes out forms that are not actually accessible,
-// like Shellos w/o an east/west designation
-foreach ($forms as $pokemon => $formNames) {
-	$indices = array_keys(
-			array_filter(
-				$output['pokemon'], 
-				function($subArray) use ($pokemon) {
-					return $subArray['pokemonId'] === $pokemon;
-				}
-		)
-	);
-
-	foreach ($indices as $i) {
-		if (
-			!isset($output['pokemon'][$i]['form']) ||
-			!in_array(
-				$output['pokemon'][$i]['form'],
-				$formNames
-			)
-		) {
-			unset($output['pokemon'][$i]);
-		}
-	}
-}
-
-// the form filtering causes explicit indices; get rid of them
-$output['pokemon'] = array_values($output['pokemon']);
+$output['pokemon'] = parsePokemonForms($forms, $output['pokemon'], []);
 
 foreach ($output as $name => $data) {
 	file_put_contents("parsed/{$name}.json", json_encode($data, JSON_PRETTY_PRINT));

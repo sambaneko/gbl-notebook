@@ -1,11 +1,11 @@
 import Select, { components } from 'react-select'
 
-export default function PokemonSelect({ 
-	pokemon, 
-	onSelected, 
-	exclude, 
+export default function PokemonSelect({
+	pokemon,
+	onSelected,
+	exclude,
 	defaultValue,
-	isInvalid 
+	isInvalid
 }) {
 	const Option = (props) => {
 		return <div className={'pokemon_option pokemon_type ' + props.data.types[0].toLowerCase()}>
@@ -23,13 +23,19 @@ export default function PokemonSelect({
 		</div>
 	}
 
-	const MenuList = ({ children, ...props }) => {
-		return <components.MenuList {...props}>
-			{Array.isArray(children)
-				? children.slice(0, 5)
-				: children
-			}
-		</components.MenuList>
+	const MenuList = ({ children, selectProps, ...props }) => {
+		const { inputValue } = selectProps
+
+		return (
+			<components.MenuList {...props}>
+				{Array.isArray(children)
+					? inputValue.length >= 3
+						? children
+						: children.slice(0, 5)
+					: children
+				}
+			</components.MenuList>
+		)
 	}
 
 	const filterPokemon = () => {

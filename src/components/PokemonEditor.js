@@ -56,7 +56,13 @@ export default function PokemonEditor({
 			return
 		}
 
-		onSave && onSave(editedMon, saveTemplate, usingTemplate)
+		onSave && onSave(
+			editedMon,
+			createTemplate || updateTemplate,
+			updateTemplate && usingTemplate !== null
+				? usingTemplate.templateIndex
+				: null
+		)
 		setEditedMon(null)
 		resetEditor((prev) => prev + 1)
 	}
@@ -71,7 +77,16 @@ export default function PokemonEditor({
 	}, [templatesItr, selectorItr])
 
 	const [usingTemplate, setUsingTemplate] = useState(null)
-	const [saveTemplate, setSaveTemplate] = useState(pokemon ? false : true)
+	const [createTemplate, setCreateTemplate] = useState(true)
+	const [updateTemplate, setUpdateTemplate] = useState(false)
+
+	useEffect(() => {
+		if (createTemplate) setUpdateTemplate(false)
+	}, [createTemplate])
+
+	useEffect(() => {
+		if (updateTemplate) setCreateTemplate(false)
+	}, [updateTemplate])
 
 	const [availableTemplates, setAvailableTemplates] = useState([])
 
@@ -103,10 +118,10 @@ export default function PokemonEditor({
 								purified: false,
 								shiny: false
 							}
-							
+
 							if (editType == 'team') {
-								eMon.name = mon.label	
-							}		
+								eMon.name = mon.label
+							}
 
 							setEditedMon(eMon)
 
@@ -155,7 +170,9 @@ export default function PokemonEditor({
 								onClick={() => {
 									setPokemonData(mon)
 									setEditedMon(mon.template)
-									setUsingTemplate(mon.templateIndex)
+									setUsingTemplate(mon)
+									setCreateTemplate(false)
+									setUpdateTemplate(false)
 									resetSelector((prev) => prev + 1)
 								}}
 							>{
@@ -177,18 +194,20 @@ export default function PokemonEditor({
 		}
 
 		{editType == 'team' &&
-		<div className="grid-fashion">
-			<label>Name</label>
-			<input type="text" min="0"
-				onBlur={(ev) => setEditedMon({
-					...editedMon,
-					name: ev.target.value
-				})}
-				defaultValue={editedMon?.name}
-				disabled={!monPopulated}
-				className={invalidFields.includes('name') ? 'invalidField' : ''}
-			/>
-		</div>
+			<div className="grid-fashion">
+				<label>Name</label>
+				<input type="text"
+					onBlur={(ev) =>
+						setEditedMon({
+							...editedMon,
+							name: ev.target.value
+						})
+					}
+					defaultValue={editedMon?.name}
+					disabled={!monPopulated}
+					className={invalidFields.includes('name') ? 'invalidField' : ''}
+				/>
+			</div>
 		}
 
 		<div key={'fields-' + fieldsItr}>
@@ -342,7 +361,7 @@ export default function PokemonEditor({
 							'checkbox' + (
 								!monPopulated ? ' disabled' : ''
 							)
-						}>
+						} key={editedMon?.shadow ? 'a' : 'b'}>
 							<input
 								defaultChecked={editedMon?.shadow || false}
 								type="checkbox"
@@ -350,12 +369,13 @@ export default function PokemonEditor({
 									!monPopulated ||
 									!pokemonData.shadowAvailable
 								}
-								onClick={() => {
-									setEditedMon({
-										...editedMon,
-										shadow: true,
-										purified: false
-									})
+								onClick={(ev) => {
+									let mon = { ...editedMon }
+									mon.shadow = ev.target.checked
+									if (ev.target.checked) {
+										mon.purified = false
+									}
+									setEditedMon(mon)
 								}}
 							/> Shadow
 						</label>
@@ -365,7 +385,7 @@ export default function PokemonEditor({
 							'checkbox' + (
 								!monPopulated ? ' disabled' : ''
 							)
-						}>
+						} key={editedMon?.purified ? 'a' : 'b'}>
 							<input
 								defaultChecked={editedMon?.purified || false}
 								type="checkbox"
@@ -373,12 +393,13 @@ export default function PokemonEditor({
 									!monPopulated ||
 									!pokemonData.shadowAvailable
 								}
-								onClick={() => {
-									setEditedMon({
-										...editedMon,
-										shadow: false,
-										purified: true
-									})
+								onClick={(ev) => {
+									let mon = { ...editedMon }
+									mon.purified = ev.target.checked
+									if (ev.target.checked) {
+										mon.shadow = false
+									}
+									setEditedMon(mon)
 								}}
 							/> Purified
 						</label>
@@ -392,10 +413,10 @@ export default function PokemonEditor({
 							<input
 								defaultChecked={editedMon?.shiny || false}
 								type="checkbox"
-								onClick={() => {
+								onClick={(ev) => {
 									setEditedMon({
 										...editedMon,
-										shiny: true
+										shiny: ev.target.checked
 									})
 								}}
 								disabled={!monPopulated}
@@ -409,16 +430,27 @@ export default function PokemonEditor({
 		<div className="flex-row">
 			<div>
 				{!pokemon &&
-					<label className="checkbox" style={{ borderColor: 'transparent' }}>
-						<input
-							defaultChecked={true}
-							type="checkbox"
-							onClick={() => setSaveTemplate(!saveTemplate)}
-						/> {usingTemplate !== null ? 'Update Template' : 'Save to Templates'}
-					</label>
+					<div className="flex-row">
+						<label className="checkbox" style={{ borderColor: 'transparent', flexGrow: 0, whiteSpace: 'nowrap' }} key={createTemplate ? 'a' : 'b'}>
+							<input
+								defaultChecked={createTemplate}
+								type="checkbox"
+								onClick={() => setCreateTemplate(!createTemplate)}
+							/> Create Template
+						</label>
+						{usingTemplate !== null &&
+							<label className="checkbox" style={{ borderColor: 'transparent' }} key={updateTemplate ? 'c' : 'd'}>
+								<input
+									defaultChecked={updateTemplate}
+									type="checkbox"
+									onClick={() => setUpdateTemplate(!updateTemplate)}
+								/> Update Template
+							</label>
+						}
+					</div>
 				}
 			</div>
-			<div className="text-right">
+			<div className="text-right" style={{ flexGrow: 0 }}>
 				<button type="button"
 					className="app-like"
 					onClick={saveEdits}
