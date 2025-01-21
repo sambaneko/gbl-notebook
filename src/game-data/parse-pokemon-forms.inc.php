@@ -40,8 +40,6 @@ function parsePokemonForms($forms, $pokemonData, $langLines) {
 	];
 
 	foreach ($forms as $pokemon => $formData) {
-		if (count($formData) <= 1) continue;
-		
 		// $forms holds all of the possible forms,
 		// keyed by the pokemon name, then by form name
 		// eg. 'PIKACHU' => [ 'PIKACHU_NORMAL' => isCostume ].
@@ -92,6 +90,16 @@ function parsePokemonForms($forms, $pokemonData, $langLines) {
 			) {
 				// this prunes out forms that are not actually accessible,
 				// like Shellos w/o an east/west designation				
+				unset($pokemonData[$i]);
+			} else if (
+				substr($pokemonData[$i]['shortForm'], 0, 5) == 'COPY_'
+			) {
+				// this handles "clone" pokemon that are classed as
+				// unique forms rather than costumes
+				if (!isset($pokemonData[$defaultIndex]['costumes'])) {	
+					$pokemonData[$defaultIndex]['costumes'] = [];
+				}
+				$pokemonData[$defaultIndex]['costumes'][] = $pokemonData[$i]['shortForm'];
 				unset($pokemonData[$i]);
 			} else if (
 				$pokemon == 'PIKACHU' &&
