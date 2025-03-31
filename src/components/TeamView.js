@@ -76,7 +76,11 @@ export default function TeamView({ season, setEditingPokemon, showModal, team, f
 											id: team?.id ?? null,
 											teamIndex,
 											mon: team?.mons[teamIndex] ?? null,
-											exclude: team?.mons.map(({ templateId }) => templateId) ?? []
+											exclude: team?.mons.map(
+												(mon) => {
+													return mon?.templateId || null
+												}
+											) ?? []
 										})
 									},
 								onRemove: () => dispatch(

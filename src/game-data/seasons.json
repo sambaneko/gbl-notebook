@@ -10,6 +10,19 @@
 		]
 	},
 	{
+		"label": "Season 22 - Might and Mastery",
+		"value": 22,
+		"slug": "22-might-and-mastery",
+		"cups": [
+			"COMBAT_LEAGUE_VS_SEEKER_WILLPOWER",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_SCROLL",
+			"COMBAT_LEAGUE_VS_SEEKER_MASTER_PREMIER",
+			"COMBAT_LEAGUE_VS_SEEKER_SPRING_GREAT",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_REMIX",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_RETRO"
+		]		
+	},	
+	{
 		"label": "Season 21 - Dual Destiny",
 		"value": 21,
 		"slug": "21-dual-destiny",

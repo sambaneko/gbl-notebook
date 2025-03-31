@@ -100,7 +100,6 @@ export default function Season() {
 	}, [editingPokemon])
 
 	const saveEditedPokemon = (editedMon, saveTemplate, templateIndex) => {
-		console.log(editedMon)
 		dispatch(
 			updateTeamMember({
 				id: editingPokemon.id,
