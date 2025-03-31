@@ -1,0 +1,13 @@
+An "append" file can be used to manually add data when parsing the latest game master file.  This is useful if a fully up-to-date master has not yet been provided.
+
+For example, to add the fast move Rollout for Blastoise, create append/pokemon.json, and put:
+
+{
+	"V0009_POKEMON_BLASTOISE_NORMAL": {
+		"fastMoves": [
+			"ROLLOUT_FAST"
+		]
+	}
+}
+
+Use the Pokemon's templateId as a key, containing the data that should be appended.

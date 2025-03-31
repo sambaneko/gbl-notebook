@@ -693,6 +693,10 @@ label.checkbox input {
 		flex-direction: column;
 	}
 
+	#cup-select {
+		gap: 2rem;
+	}
+
 	#cup-data {
 		flex-grow: 1;
 	}
@@ -708,6 +712,10 @@ label.checkbox input {
 	.on-narrow-flex-col {
 		flex-direction: column;
 	}
+
+	.on-narrow-flex-row {
+		flex-direction: row;
+	}	
 
 	.teams-wrapper-inner {
 		flex-direction: row;

@@ -1,6 +1,6 @@
 <?php
 
-function parsePokemonData($jsonObj, $langLines) {
+function parsePokemonData($jsonObj, $langLines, $appends) {
 	$dexNumber = substr($jsonObj->templateId, 1, 4); // keep string
 
 	$stg = $jsonObj->data->pokemonSettings;
@@ -63,10 +63,18 @@ function parsePokemonData($jsonObj, $langLines) {
 		$data['image'] = "pm{$dexNumber}.fNORMAL";
 	}
 		*/
-	
-	return array_merge(
+
+	$data = array_merge(
 		$data, compact(
 			'label', 'types', 'fastMoves', 'chargeMoves'
 		)
 	);
+
+	if (isset($appends[$jsonObj->templateId])) {
+		$data = array_merge_recursive(
+			$data, $appends[$jsonObj->templateId]
+		);
+	}
+	
+	return $data;
 }

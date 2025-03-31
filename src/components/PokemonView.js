@@ -90,50 +90,50 @@ export default function PokemonView({
 				)}
 			</div>
 		</div>
-		<div className="flex-col">
+		<div className="flex-col on-narrow-flex-row">
 			<div style={{ flexGrow: 0, display: 'flex', minWidth: '10rem', minHeight: '10rem', marginBottom: '1rem', position: 'relative' }}>
 				{pokemon?.shadow && <img src={process.env.PUBLIC_URL + '/images/ic_shadow.png'} style={{ position: 'absolute', right: 0, bottom: 0 }} width="45" />}
 				{pokemon?.purified && <img src={process.env.PUBLIC_URL + '/images/ic_purified.png'} style={{ position: 'absolute', right: 0, bottom: 0 }} width="45" />}
 				<PokemonSprite
 					size='100' pokemon={myPokemon} style={{ display: 'block', margin: '0 auto 1rem' }} />
 			</div>
-			{showStats && <div className={'flex-row'} style={{ margin: '1rem 0' }}>
-				<div className="stats" style={{ whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>{(pokemon?.cp) || '-'} CP</div>
-				<div className="stats iv-list" style={{ textAlign: 'right', whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>
-					<span>{(pokemon?.ivs?.atk) || '-'}<sup>Atk</sup></span>/
-					<span>{(pokemon?.ivs?.def) || '-'}<sup>Def</sup></span>/
-					<span>{(pokemon?.ivs?.sta) || '-'}<sup>Sta</sup></span>
-				</div>
-
-
-			</div>}
-			<div>
-				<p className="move_label">Fast Move</p>
-				<p style={{ display: 'flex', marginBottom: '1rem' }}>
-					<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myFastMove.type.toLowerCase()}>{myFastMove.label}</span>
-					<span className="move_count">{myFastMove.durationTurns}</span>
-				</p>
-
-				<p className="move_label">Charge Moves</p>
-				<div className="flex-col">
+			<div style={{width: '100%'}}>
+				{showStats && <div className={'flex-row'} style={{ margin: '1rem 0' }}>
+					<div className="stats" style={{ whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>{(pokemon?.cp) || '-'} CP</div>
+					<div className="stats iv-list" style={{ textAlign: 'right', whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>
+						<span>{(pokemon?.ivs?.atk) || '-'}<sup>Atk</sup></span>/
+						<span>{(pokemon?.ivs?.def) || '-'}<sup>Def</sup></span>/
+						<span>{(pokemon?.ivs?.sta) || '-'}<sup>Sta</sup></span>
+					</div>
+				</div>}
+				<div>
+					<p className="move_label">Fast Move</p>
 					<p style={{ display: 'flex', marginBottom: '1rem' }}>
-						<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove1.type.toLowerCase()}>{myChargeMove1.label}</span>
-						<span className="move_count charge">{getChargeMoveCount(
-							myFastMove.energyDelta,
-							myChargeMove1.energyDelta,
-							'single'
-						)}</span>
+						<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myFastMove.type.toLowerCase()}>{myFastMove.label}</span>
+						<span className="move_count">{myFastMove.durationTurns}</span>
 					</p>
-					{myChargeMove2 &&
+
+					<p className="move_label">Charge Moves</p>
+					<div className="flex-col">
 						<p style={{ display: 'flex', marginBottom: '1rem' }}>
-							<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove2.type.toLowerCase()}>{myChargeMove2.label}</span>
+							<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove1.type.toLowerCase()}>{myChargeMove1.label}</span>
 							<span className="move_count charge">{getChargeMoveCount(
 								myFastMove.energyDelta,
-								myChargeMove2.energyDelta,
+								myChargeMove1.energyDelta,
 								'single'
 							)}</span>
 						</p>
-					}
+						{myChargeMove2 &&
+							<p style={{ display: 'flex', marginBottom: '1rem' }}>
+								<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove2.type.toLowerCase()}>{myChargeMove2.label}</span>
+								<span className="move_count charge">{getChargeMoveCount(
+									myFastMove.energyDelta,
+									myChargeMove2.energyDelta,
+									'single'
+								)}</span>
+							</p>
+						}
+					</div>
 				</div>
 			</div>
 		</div>

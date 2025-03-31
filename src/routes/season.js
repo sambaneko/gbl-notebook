@@ -124,7 +124,7 @@ export default function Season() {
 	}
 
 	return <>
-		<div id="cup-select">
+		<div id="cup-select" className="on-narrow-flex-col">
 			<div style={{ minWidth: '26rem', boxSizing: 'border-box', flexGrow: 0 }}>
 				<Select
 					options={seasonList}

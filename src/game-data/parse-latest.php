@@ -22,6 +22,13 @@ $latestJson = json_decode(
 	file_get_contents($latestJsonFile)
 );
 
+$appends = [];
+if (file_exists('append/pokemon.json')) {
+	$appends['pokemon'] = json_decode(
+		file_get_contents('append/pokemon.json'), true
+	);
+}
+
 $output = [
 	'leagues' => [],
 	'pokemon' => [],
@@ -32,7 +39,9 @@ $forms = [];
 
 foreach ($latestJson as $jsonObj) {
 	if (isset($jsonObj->data->pokemonSettings)) {
-		$pokemon = parsePokemonData($jsonObj, $langLines);
+		$pokemon = parsePokemonData(
+			$jsonObj, $langLines, $appends['pokemon']
+		);
 		if ($pokemon !== false) {
 			$output['pokemon'][] = $pokemon;
 		}
