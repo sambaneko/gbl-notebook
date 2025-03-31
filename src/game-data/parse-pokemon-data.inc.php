@@ -28,7 +28,7 @@ function parsePokemonData($jsonObj, $langLines, $appends) {
 		$shortForm = substr($form, strlen($stg->pokemonId) + 1);
 		
 		if ($shortForm != 'NORMAL') {
-			$formLang = 'form_' . strtolower($shortForm);
+			$formLang = 'form_' . strtolower($form);
 			if (isset($langLines[$formLang])) {
 				$label .= " ({$langLines[$formLang]})";
 			} else {
