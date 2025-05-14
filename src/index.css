@@ -42,7 +42,7 @@ body {
 }
 
 #team-holder {
-	min-width: 30rem;
+	min-width: 33rem;
 	box-sizing: border-box;
 }
 
@@ -114,8 +114,8 @@ select {
 	box-sizing: border-box;
 }
 
-input[type="text"][disabled], 
-input[type="number"][disabled], 
+input[type="text"][disabled],
+input[type="number"][disabled],
 select[disabled],
 .disabled {
 	opacity: 50%;
@@ -350,6 +350,7 @@ label.checkbox input {
 	justify-content: space-between;
 	cursor: pointer;
 	border: 1px solid transparent;
+	max-width: 25rem;
 }
 
 .cup-team-box.current {
@@ -370,8 +371,15 @@ label.checkbox input {
 	padding: .5rem 1rem;
 	min-width: 5rem;
 	min-height: 5rem;
+	max-width: 30%;
+  	box-sizing: border-box;
 	display: flex;
 	flex: 1 1 auto;
+	border: 2px solid #fff;
+}
+
+.cup-team-mon.isSelected {
+	border-color: #ff8484;
 }
 
 .pokemon_type {
@@ -715,7 +723,7 @@ label.checkbox input {
 
 	.on-narrow-flex-row {
 		flex-direction: row;
-	}	
+	}
 
 	.teams-wrapper-inner {
 		flex-direction: row;
@@ -739,4 +747,34 @@ label.checkbox input {
 		grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 	}
 
+}
+
+.current-season-cup {
+	background-color: orange;
+}
+
+.team-group {
+	padding: 1rem;
+	border: 0.1rem solid #7dd5aa;
+	border-radius: .5rem;
+	margin: 1rem 0;
+}
+
+.team-group.isClosed {
+	padding: 0;
+}
+
+.team-group.isClosed .teams-wrapper-inner {
+	display: none;
+}
+
+.team-group-season {
+	background: #7dd5aa;
+	padding: .5rem 1rem;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #fff;
+	border-radius: .3rem;
+	cursor: pointer;
 }

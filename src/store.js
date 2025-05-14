@@ -25,27 +25,27 @@ const intlDtFormat = new Intl.DateTimeFormat(undefined, {
 	)
 })
 
-export const defaultCup = {
-	teams: [{ mons: [], notes: '' }],
-	opponents: [],
-	currentTeam: 0
-}
-
 export const pokemonList = require('./game-data/parsed/pokemon.json')
 export const moveList = require('./game-data/parsed/moves.json')
 export const leaguesList = require('./game-data/parsed/leagues.json')
-export const seasonList = require('./game-data/seasons.json')
+
+const seasonList = require('./game-data/seasons.json')
+const allSeasons = seasonList.shift()
+seasonList.map(
+	(season) => season.cups = [
+		...allSeasons.cups,
+		...season.cups
+	]
+)
+export { seasonList }
 
 const getId = (check) => {
 	let newId = uuidv4()
 
 	while (
-		check.find(
-			({ id }) => id == newId
-		) !== undefined
-	) {
-		newId = uuidv4()
-	}
+		// eslint-disable-next-line no-loop-func
+		check.find(({ id }) => id === newId) !== undefined
+	) newId = uuidv4()
 
 	return newId
 }
@@ -57,36 +57,15 @@ const createTeam = (teams) => {
 		created: date,
 		modified: date,
 		mons: [],
-		notes: ''
+		notes: '',
+		fave: false
 	}
-}
-
-const setCurrent = (current, pick) => {
-	let updated = false
-
-	current = current.map((me) => {
-		if (
-			me.cup == pick.cup &&
-			me.season == pick.season
-		) {
-			me = { ...pick }
-			updated = true
-		}
-		return me
-	})
-
-	if (!updated) current.push(pick)
-
-	return current
 }
 
 const initialState = {
 	version: 1.0,
-	teams: [],
-	templates: [],
-	opponents: [],
-	current: [],
-	faves: []
+	cups: {},
+	templates: []
 }
 
 export const slice = createSlice({
@@ -99,199 +78,194 @@ export const slice = createSlice({
 			}
 			return { ...action.payload }
 		},
-		saveTeam: (state, action) => {
-			let team = { ...action.payload }
+		updateTeam: (state, action) => {
+			let pl = action.payload
+			let teams = state.cups[pl.cup].teams
+			let team = { ...pl.team }
 
 			if (team.id === undefined) {
-				state.teams.push({
-					...createTeam(state.teams),
+				state.cups[pl.cup].teams.push({
+					...createTeam(teams),
 					...team
 				})
 			} else {
 				team.modified = intlDtFormat.format(new Date())
-				let i = state.teams.findIndex(({ id }) => id == team.id)
-				state.teams[i] = { ...state.teams[i], ...team }
+				let i = teams.findIndex(({ id }) => id === team.id)
+				state.cups[pl.cup].teams[i] = { ...teams[i], ...team }
 			}
 		},
 		deleteTeam: (state, action) => {
-			state.current.splice(
-				state.current.findIndex(
-					({ id }) => id == action.payload
-				), 1
-			)
-			state.teams.splice(
-				state.teams.findIndex(
-					({ id }) => id == action.payload
-				), 1
-			)
-		},
-		updateFave: (state, action) => {
-			// only one fave is allowed per season/cup
-			let fave = { ...action.payload }
-			let i = state.faves.findIndex(
-				me => me.cup == fave.cup && me.season == fave.season
-			)
+			state.cups[action.payload.cup].current = null
 
-			if (i > -1) {
-				if (state.faves[i].id == fave.id) {
-					state.faves.splice(i, 1)
-				} else {
-					state.faves[i] = fave
-				}
-			} else {
-				state.faves.push(fave)
-			}
+			state.cups[action.payload.cup].teams.splice(
+				state.cups[action.payload.cup].teams.findIndex(
+					({ id }) => id === action.payload.id
+				), 1
+			)
 		},
 		updateCurrent: (state, action) => {
-			state.current = [
-				...setCurrent(
-					state.current,
-					{ ...action.payload }
-				)
-			]
-		},
-		updateTemplate: (state, action) => {
-			if (action.payload.templateIndex === null) {
-				state.templates.push({
-					...action.payload.pokemon
-				})
-			} else {
-				state.templates[action.payload.templateIndex] = {
-					...state.templates[action.payload.templateIndex],
-					...action.payload.pokemon
-				}
+			let currentId = action.payload.id
+
+			if (currentId === null) {
+				currentId = (
+					state.cups[action.payload.cup].teams[
+					state.cups[action.payload.cup].teams.length - 1
+					]
+				).id
 			}
+
+			state.cups[action.payload.cup].current = currentId
+		},
+		updateTemplates: (state, action) => {
+			let pl = action.payload
+
+			if (!Array.isArray(pl)) pl = [pl]
+
+			pl.map((template) =>
+				template.templateIndex === null
+					? state.templates.push({
+						...template.pokemon
+					})
+					: state.templates[template.templateIndex] = {
+						...state.templates[template.templateIndex],
+						...template.pokemon
+					}
+			)
 		},
 		updateTeamMember: (state, action) => {
-			if (action.payload.id === null) {
-				let team = createTeam(state.teams)
+			let pl = action.payload
+			let teams = state.cups[pl.cup].teams
+
+			if (pl.id === null) {
+				let team = createTeam(teams)
 				team = {
 					...team,
-					...action.payload.team
+					season: pl.season
 				}
-				team.mons[action.payload.teamIndex] = {
-					...action.payload.pokemon
+				team.mons[pl.memberIndex] = {
+					...pl.member
 				}
-				state.teams.push(team)
-
-				state.current = [
-					...setCurrent(
-						state.current,
-						{
-							...action.payload.team,
-							id: team.id
-						}
-					)
-				]
+				state.cups[pl.cup].teams.push(team)
+				state.cups[pl.cup].current = team.id
 			} else {
-				let i = state.teams.findIndex(
-					team => team.id == action.payload.id
-				)
-
-				state.teams[i] = {
-					...state.teams[i],
-					...action.payload.team
+				let i = teams.findIndex(({ id }) => id === pl.id)
+				state.cups[pl.cup].teams[i].mons[pl.memberIndex] = {
+					...teams[i].mons[pl.memberIndex],
+					...pl.member
 				}
-
-				state.teams[i].mons[action.payload.teamIndex] = {
-					...state.teams[i].mons[action.payload.teamIndex],
-					...action.payload.pokemon
-				}
-				state.teams[i].modified = intlDtFormat.format(new Date())
+				state.cups[pl.cup].teams[i].modified = intlDtFormat.format(new Date())
 			}
 		},
 		moveTeamMember: (state, action) => {
-			let newPos = action.payload.teamIndex + action.payload.dir
-			let i = state.teams.findIndex(
-				({ id }) => id == action.payload.id
+			let pl = action.payload
+			let newPos = pl.memberIndex + pl.dir
+
+			let i = state.cups[pl.cup].teams.findIndex(
+				({ id }) => id === pl.id
 			)
-			state.teams[i].mons.splice(
+
+			state.cups[pl.cup].teams[i].mons.splice(
 				newPos, 0,
-				state.teams[i].mons.splice(
-					action.payload.teamIndex, 1
+				state.cups[pl.cup].teams[i].mons.splice(
+					pl.memberIndex, 1
 				)[0]
 			)
 		},
 		removeTeamMember: (state, action) => {
-			let i = state.teams.findIndex(
-				({ id }) => id == action.payload.id
+			let pl = action.payload
+			let i = state.cups[pl.cup].teams.findIndex(
+				({ id }) => id === pl.id
 			)
-			state.teams[i].mons.splice(
-				action.payload.teamIndex, 1
+			state.cups[pl.cup].teams[i].mons.splice(
+				pl.memberIndex, 1
 			)
 		},
 		updateOpponent: (state, action) => {
-			if (action.payload.id === null) {
-				state.opponents.push({
-					...action.payload,
-					id: getId(state.opponents)
+			let pl = action.payload
+			let opponents = state.cups[pl.cup].opponents
+
+			if (
+				pl.member.id === null ||
+				pl.member.id === undefined
+			) {
+				state.cups[pl.cup].opponents.push({
+					...pl.member,
+					season: pl.season,
+					id: getId(opponents)
 				})
 			} else {
-				let i = state.opponents.findIndex(
-					({ id }) => id == action.payload.id
-				)
-				state.opponents[i] = {
-					...state.opponents[i],
-					...action.payload
+				let i = opponents.findIndex(({ id }) => id === pl.member.id)
+				state.cups[pl.cup].opponents[i] = {
+					...opponents[i],
+					...pl.member
 				}
 			}
 		},
 		moveOpponent: (state, action) => {
-			let args = { ...action.payload }
+			let pl = action.payload
+			let opponents = state.cups[pl.cup].opponents
 
 			// filter set
-			const cupSet = state.opponents.filter(
-				({ season, cup }) => season == args.season && cup == args.cup
+			const seasonSet = opponents.filter(
+				({ season }) => season === pl.season
 			)
 
 			// get index of id in filtered set
-			const index = cupSet.findIndex(({ id }) => id == args.id)
+			const index = seasonSet.findIndex(({ id }) => id === pl.id)
 
 			// calc new index
-			const newIndex = index + args.dir
+			const newIndex = index + pl.dir
 
 			// proceed if within bounds
-			if (newIndex >= 0 && newIndex < cupSet.length) {
-
+			if (newIndex >= 0 && newIndex < seasonSet.length) {
 				// remove from original index in the full set
-				const [moveOpp] = state.opponents.splice(
-					state.opponents.findIndex(({ id }) => id == args.id), 1
+				const [moveOpp] = state.cups[pl.cup].opponents.splice(
+					opponents.findIndex(({ id }) => id === pl.id), 1
 				)
 
 				// get index of item in the full set that matches
 				// where the moving item should go (before or after it) 
-				const targetIndex = state.opponents.findIndex(
-					({ season, cup, id }) =>
-						season == args.season &&
-						cup == args.cup &&
-						id === cupSet[newIndex].id
+				const targetIndex = opponents.findIndex(
+					({ season, id }) =>
+						season === pl.season &&
+						id === seasonSet[newIndex].id
 				)
 
 				// insert at new position
-				state.opponents.splice(
-					targetIndex + (args.dir < 0 ? 0 : 1), 0, moveOpp
+				state.cups[pl.cup].opponents.splice(
+					targetIndex + (pl.dir < 0 ? 0 : 1), 0, moveOpp
 				)
 			}
 		},
 		removeOpponent: (state, action) => {
-			state.opponents.splice(
-				state.opponents.findIndex(
-					({ id }) => id == action.payload
+			let pl = action.payload
+			state.cups[pl.cup].opponents.splice(
+				state.cups[pl.cup].opponents.findIndex(
+					({ id }) => id === pl.id
 				), 1
 			)
 		},
 		importOpponents: (state, action) => {
-			let toImport = state.opponents.filter(
-				({ season, cup }) =>
-					season == action.payload.previousSeason &&
-					cup == action.payload.cup
-			)
+			let pl = action.payload
+			let opponents = state.cups[pl.cup].opponents
 
+			if (opponents.length <= 0) return
+
+			let previousSeasons = (opponents.map(({ season }) => season))
+				.sort((a, b) => b - a)
+				.filter((n) => n < pl.season)
+
+			if (previousSeasons.length <= 0) return
+
+			let toImport = opponents.filter(
+				({ season }) => parseInt(season) ===
+					parseInt(previousSeasons[0])
+			)
 			toImport.map((opponent) =>
-				state.opponents.push({
+				state.cups[pl.cup].opponents.push({
 					...opponent,
-					season: action.payload.season,
-					id: getId(state.opponents)
+					season: pl.season,
+					id: getId(state.cups[pl.cup].opponents)
 				})
 			)
 		}
@@ -300,11 +274,10 @@ export const slice = createSlice({
 
 export const {
 	importAppData,
-	saveTeam,
+	updateTeam,
 	deleteTeam,
-	updateFave,
 	updateCurrent,
-	updateTemplate,
+	updateTemplates,
 	updateTeamMember,
 	moveTeamMember,
 	removeTeamMember,

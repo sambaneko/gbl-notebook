@@ -6,26 +6,49 @@ import { pokemonList, moveList } from '../store'
 
 export default function PokemonEditor({
 	editType,
-	pokemon,
-	selectedCup,
-	excludeList,
-	onSave
+	editData,
+	withCup,
+	withExclude,
+	onSave,
+	onEdit
 }) {
+	editData = { mon: null, template: null, ...editData }
 	const appData = useSelector((state) => state.appData)
 
 	const [pokemonData, setPokemonData] = useState(
-		pokemon !== null
-			? pokemonList.find(({ value }) => value == pokemon.templateId)
+		editData.mon !== null
+			? pokemonList.find(({ value }) => value == editData.mon.templateId)
 			: { fastMoves: [], chargeMoves: [] }
 	)
-	const [editedMon, setEditedMon] = useState(pokemon)
+
+	const [editedMon, setEditedMon] = useState(editData.mon)
 	const [invalidFields, setInvalidFields] = useState([])
 	const [monPopulated, setMonPopulated] = useState(false)
+
+	const getReturnableMon = () => {
+		let mon = {
+			editType,
+			mon: editedMon,
+			template: {
+				using: usingTemplate,
+				create: createTemplate,
+				update: updateTemplate
+			}
+		}
+
+		if (editData.teamId !== undefined)
+			mon.teamId = editData.teamId
+		if (editData.teamIndex !== undefined)
+			mon.teamIndex = editData.teamIndex
+
+		return mon
+	}
 
 	useEffect(() => {
 		setMonPopulated(
 			Object.keys(editedMon ?? {}).length > 0
 		)
+		onEdit && onEdit(getReturnableMon())
 	}, [editedMon])
 
 	const saveEdits = () => {
@@ -56,15 +79,12 @@ export default function PokemonEditor({
 			return
 		}
 
-		onSave && onSave(
-			editedMon,
-			createTemplate || updateTemplate,
-			updateTemplate && usingTemplate !== null
-				? usingTemplate.templateIndex
-				: null
-		)
-		setEditedMon(null)
-		resetEditor((prev) => prev + 1)
+		onSave && onSave(getReturnableMon())
+
+		if (editType !== 'teamMember') {
+			setEditedMon(null)
+			resetEditor((prev) => prev + 1)
+		}
 	}
 
 	const [editorItr, resetEditor] = useState(0)
@@ -76,22 +96,51 @@ export default function PokemonEditor({
 		resetFields((prev) => prev + 1)
 	}, [templatesItr, selectorItr])
 
-	const [usingTemplate, setUsingTemplate] = useState(null)
-	const [createTemplate, setCreateTemplate] = useState(true)
-	const [updateTemplate, setUpdateTemplate] = useState(false)
+	const [usingTemplate, setUsingTemplate] = useState(
+		editData.template?.using || null
+	)
+	const [createTemplate, setCreateTemplate] = useState(
+		editData.template?.create || false
+	)
+	const [updateTemplate, setUpdateTemplate] = useState(
+		editData.template?.update || false
+	)
 
 	useEffect(() => {
 		if (createTemplate) setUpdateTemplate(false)
+		onEdit && onEdit(getReturnableMon())
 	}, [createTemplate])
 
 	useEffect(() => {
 		if (updateTemplate) setCreateTemplate(false)
+		onEdit && onEdit(getReturnableMon())
 	}, [updateTemplate])
 
-	const [availableTemplates, setAvailableTemplates] = useState([])
+	const getAvailableTemplates = (mon) => {
+		return appData.templates.map((template, templateIndex) =>
+			(
+				template.templateId == mon.templateId &&
+				(
+					editType == 'team'
+						? template.name !== undefined
+						: template.name === undefined
+				)
+			)
+				? {
+					template,
+					templateIndex,
+					...pokemonList.find(({ templateId }) => templateId == template.templateId)
+				}
+				: null
+		).filter(n => n)
+	}
+
+	const [availableTemplates, setAvailableTemplates] = useState(
+		editData.mon !== null ? getAvailableTemplates(editData.mon) : []
+	)
 
 	return <div key={'pokemon-editor-' + editorItr}>
-		{pokemon
+		{editData.mon !== null && editType !== 'team'
 			? <div className={'flex-row pokemon-type-box-heading edit-heading ' + pokemonData.types[0].toLowerCase()}>
 				<h3>{pokemonData.label}</h3>
 				<div className="type-list">
@@ -107,8 +156,8 @@ export default function PokemonEditor({
 				<div className="grid-fashion" key={'selector-' + selectorItr}>
 					<PokemonSelectFromCup
 						pokemon={pokemonList}
-						{...{ selectedCup }}
-						exclude={excludeList}
+						selectedCup={withCup}
+						exclude={withExclude}
 						onSelected={(mon) => {
 							setPokemonData(mon)
 
@@ -129,22 +178,7 @@ export default function PokemonEditor({
 							resetTemplates((prev) => prev + 1)
 
 							setAvailableTemplates(
-								appData.templates.map((template, templateIndex) =>
-									(
-										template.templateId == mon.templateId &&
-										(
-											editType == 'team'
-												? template.name !== undefined
-												: template.name === undefined
-										)
-									)
-										? {
-											template,
-											templateIndex,
-											...pokemonList.find(({ templateId }) => templateId == template.templateId)
-										}
-										: null
-								).filter(n => n)
+								getAvailableTemplates(mon)
 							)
 						}}
 						defaultValue={pokemonData}
@@ -170,7 +204,7 @@ export default function PokemonEditor({
 								onClick={() => {
 									setPokemonData(mon)
 									setEditedMon(mon.template)
-									setUsingTemplate(mon)
+									setUsingTemplate(mon.templateIndex)
 									setCreateTemplate(false)
 									setUpdateTemplate(false)
 									resetSelector((prev) => prev + 1)
@@ -193,24 +227,23 @@ export default function PokemonEditor({
 			</>
 		}
 
-		{editType == 'team' &&
-			<div className="grid-fashion">
-				<label>Name</label>
-				<input type="text"
-					onBlur={(ev) =>
-						setEditedMon({
-							...editedMon,
-							name: ev.target.value
-						})
-					}
-					defaultValue={editedMon?.name}
-					disabled={!monPopulated}
-					className={invalidFields.includes('name') ? 'invalidField' : ''}
-				/>
-			</div>
-		}
-
 		<div key={'fields-' + fieldsItr}>
+			{editType == 'team' &&
+				<div className="grid-fashion">
+					<label>Name</label>
+					<input type="text"
+						onBlur={(ev) =>
+							setEditedMon({
+								...editedMon,
+								name: ev.target.value
+							})
+						}
+						defaultValue={editedMon?.name}
+						disabled={!monPopulated}
+						className={invalidFields.includes('name') ? 'invalidField' : ''}
+					/>
+				</div>
+			}
 			<div className="grid grid-fashion grid-moves">
 				<div className="grid1">
 					<label>Fast Move</label>
@@ -280,7 +313,7 @@ export default function PokemonEditor({
 				</div>
 			</div>
 
-			{editType == 'team' && <>
+			{editType === 'team' && <>
 				<div className="grid grid-fashion grid-stats">
 					<div className="grid1">
 						<label>CP</label>
@@ -428,29 +461,27 @@ export default function PokemonEditor({
 		</div>
 
 		<div className="flex-row">
-			<div>
-				{!pokemon &&
-					<div className="flex-row">
-						<label className="checkbox" style={{ borderColor: 'transparent', flexGrow: 0, whiteSpace: 'nowrap' }} key={createTemplate ? 'a' : 'b'}>
+			{(editData.mon === null || editType === 'team') &&
+				<div className="flex-row">
+					<label className="checkbox" style={{ borderColor: 'transparent', flexGrow: 0, whiteSpace: 'nowrap' }} key={createTemplate ? 'a' : 'b'}>
+						<input
+							defaultChecked={createTemplate}
+							type="checkbox"
+							onClick={() => setCreateTemplate(!createTemplate)}
+						/> Create Template
+					</label>
+					{usingTemplate !== null &&
+						<label className="checkbox" style={{ borderColor: 'transparent' }} key={updateTemplate ? 'c' : 'd'}>
 							<input
-								defaultChecked={createTemplate}
+								defaultChecked={updateTemplate}
 								type="checkbox"
-								onClick={() => setCreateTemplate(!createTemplate)}
-							/> Create Template
+								onClick={() => setUpdateTemplate(!updateTemplate)}
+							/> Update Template
 						</label>
-						{usingTemplate !== null &&
-							<label className="checkbox" style={{ borderColor: 'transparent' }} key={updateTemplate ? 'c' : 'd'}>
-								<input
-									defaultChecked={updateTemplate}
-									type="checkbox"
-									onClick={() => setUpdateTemplate(!updateTemplate)}
-								/> Update Template
-							</label>
-						}
-					</div>
-				}
-			</div>
-			<div className="text-right" style={{ flexGrow: 0 }}>
+					}
+				</div>
+			}
+			<div className="text-right" style={{ flexGrow: 0, marginLeft: 'auto' }}>
 				<button type="button"
 					className="app-like"
 					onClick={saveEdits}

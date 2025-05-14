@@ -1,76 +1,98 @@
 import { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import {
-	pokemonList,
-	saveTeam,
-	updateCurrent
-} from '../store'
+import { seasonList, pokemonList } from '../store'
 import PokemonSprite from './PokemonSprite'
 import { RoundedSquarePlus } from '../images'
 
-export default function TeamHolder({ teams, current, faves, season, cup }) {
-	const dispatch = useDispatch()
-	const appData = useSelector((state) => state.appData)
+export default function TeamHolder({
+	cupData,
+	teamActions,
+	showEditor
+}) {
 	const [openOnNarrow, setOpenOnNarrow] = useState(false)
+	const [openGroups, setOpenGroups] = useState([0])
 
-	const addEmptyTeam = () => {
-		dispatch(saveTeam({ season, cup }))
+	const toggleOpen = (groupIndex) => {
+		let currentOpen = [...openGroups]
+		const i = currentOpen.indexOf(groupIndex)
+
+		if (i !== -1) currentOpen.splice(i, 1)
+		else currentOpen.push(groupIndex)
+
+		return currentOpen
 	}
 
-	const switchTeam = (id) => {
-		dispatch(updateCurrent({
-			season, cup, id
-		}))
-	}
+	const groupedTeams = cupData
+		? Object.values(
+			cupData.teams.reduce((acc, team) => {
+				let season = team.season
+				if (!acc[season]) {
+					acc[season] = { season, teams: [] }
+				}
+				acc[season].teams.push(team);
+				return acc
+			}, {})
+		).sort((a, b) => b.season - a.season)
+		: []
 
 	return <div id="team-holder">
-		<h3 className="on-narrow-hide">Teams</h3>
 		<div className="teams-wrapper">
-
 			<button
 				className="app-like"
-				onClick={() => addEmptyTeam()}
+				onClick={() => showEditor({ editType: 'team' })}
 				style={{ width: '100%' }}
-				disabled={!season || !cup}
 			>
-				{!season || !cup
-					? <span style={{ fontSize: '1.1rem' }}>
-						Select a season to add teams
-					</span>
-					: <><RoundedSquarePlus /> New Team</>
-				}
+				<RoundedSquarePlus /> New Team
 			</button>
 
-			{teams.length > 0 &&
-				<div className={'teams-wrapper-inner' + (openOnNarrow ? ' isOpen' : ' isClosed')}>
-					{teams.map((team, teamIndex) =>
-						<div
-							key={'team_' + teamIndex}
-							className={
-								'cup-team-box' +
-								(team.id == current ? ' current' : '') +
-								(faves.find(({ id }) => id == team.id) ? ' fave-team' : '')
-							}
-							onClick={() => switchTeam(team.id)}
-						>
-							{Array.from({ length: 3 }).map(
-								(m, i) => <div key={'team_' + teamIndex + '_mon_' + i} className="cup-team-mon">
-									<PokemonSprite
-										size="40"
-										pokemon={
-											team.mons[i]
-												? pokemonList.find(({ value }) => value == team.mons[i].templateId)
-												: null
-										}
-									/>
-								</div>
-							)}
-						</div>
+			{groupedTeams.map(
+				(teamGroup, groupIndex) => <div
+					key={groupIndex}
+					className={'team-group' + (
+						!openGroups.includes(groupIndex)
+							? ' isClosed'
+							: ''
 					)}
+				>
+					<div
+						className="team-group-season"
+						onClick={() => setOpenGroups(
+							toggleOpen(groupIndex)
+						)}
+					>
+						{seasonList.find(
+							({ value }) => value == teamGroup.season
+						).label}
+					</div>
+					<div className={'teams-wrapper-inner' + (openOnNarrow ? ' isOpen' : ' isClosed')}>
+						{teamGroup.teams.map((team, teamIndex) =>
+							<div
+								key={teamIndex}
+								className={
+									'cup-team-box' +
+									(team.id == cupData.current ? ' current' : '') +
+									(team.fave ? ' fave-team' : '')
+								}
+								onClick={() => teamActions.switch(team.id)}
+							>
+								{Array.from({ length: 3 }).map(
+									(m, i) => <div key={'team_' + teamIndex + '_mon_' + i} className="cup-team-mon">
+										<PokemonSprite
+											size="40"
+											pokemon={
+												team.mons[i]
+													? pokemonList.find(({ value }) => value == team.mons[i].templateId)
+													: null
+											}
+										/>
+									</div>
+								)}
+							</div>
+						)}
+					</div>
 				</div>
-			}
+			)}
 
 			<button id="switch-team" className="small-upper text-center" style={{ border: '1px solid #ececec', color: '#000', padding: '1rem', borderRadius: '.8rem', marginTop: '1rem', background: 'none' }} onClick={() => setOpenOnNarrow(!openOnNarrow)}>{openOnNarrow ? 'Close' : 'Switch Team'}</button>
 		</div>
-	</div>
+	</div >
 }

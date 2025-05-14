@@ -14,7 +14,7 @@ import './index.css'
 
 import Root from './routes/root'
 import Index from './routes/index'
-import Season, { loader as seasonLoader } from './routes/season'
+import Cup, { loader as cupLoader } from './routes/cup'
 import Error from './routes/error'
 
 const router = createBrowserRouter([
@@ -24,9 +24,9 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <Index /> },
 			{
-				path: "season/:seasonId?/:cupId?",
-				element: <Season />,
-				loader: seasonLoader,
+				path: "cup/:cupId",
+				element: <Cup />,
+				loader: cupLoader,
 			}
 		],
 		errorElement: <Error />

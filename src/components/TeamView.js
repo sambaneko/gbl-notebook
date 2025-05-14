@@ -1,25 +1,38 @@
 
 import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { saveTeam, deleteTeam, updateFave, seasonList, moveTeamMember, removeTeamMember } from '../store'
 import PokemonView from './PokemonView'
 import Star from '../images/Star'
 import StarFilled from '../images/StarFilled'
 import Trash from '../images/Trash'
 import styled from 'styled-components'
 
-export default function TeamView({ season, setEditingPokemon, showModal, team, fave }) {
-	const dispatch = useDispatch()
-
-	const [teamNotes, setTeamNotes] = useState('')
+export default function TeamView({
+	team,
+	teamActions,
+	showEditor
+}) {
+	const [notes, setNotes] = useState('')
 	const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
-	const saveTeamNotes = () => {
-		dispatch(
-			saveTeam({
-				id: team.id,
-				notes: teamNotes
-			})
+	const updateTeam = (data) =>
+		teamActions.update({
+			team: { id: team.id, ...data }
+		})
+
+	const deleteTeam = () => {
+		teamActions.delete(team.id)
+		setShowDeleteConfirm(false)
+	}
+
+	const moveTeamMember = (memberIndex, dir) => {
+		teamActions.moveMember(
+			team.id, memberIndex, dir
+		)
+	}
+
+	const removeTeamMember = (memberIndex) => {
+		teamActions.removeMember(
+			team.id, memberIndex
 		)
 	}
 
@@ -35,24 +48,18 @@ export default function TeamView({ season, setEditingPokemon, showModal, team, f
 	`
 
 	useEffect(() => {
-		setTeamNotes(team?.notes || '')
+		setNotes(team?.notes || '')
 	}, [team])
 
-	return <section className={'cup-section' + (fave ? ' fave-team' : '')}>
+	return <section className={'cup-section' + (team.fave ? ' fave-team' : '')}>
 		<div className="cup-section-head">
 			<h2 className="flex-v-center" style={{ flexGrow: 1 }}>Team</h2>
 			<div style={{ display: 'flex', marginLeft: '1rem' }}>
 				<button
-					onClick={() => dispatch(
-						updateFave({
-							cup: team.cup,
-							season: team.season,
-							id: team.id
-						})
-					)}
+					onClick={() => updateTeam({ fave: !team.fave })}
 					style={{ margin: 'auto' }}
 					className="plain"
-				>{fave
+				>{team.fave
 					? <StarFilled />
 					: <Star />
 					}
@@ -68,41 +75,20 @@ export default function TeamView({ season, setEditingPokemon, showModal, team, f
 								key: `tm${teamIndex}`,
 								pokemon: team?.mons[teamIndex] ?? null,
 								showStats: true,
-								onEdit: season === null
-									? null
-									: () => {
-										setEditingPokemon({
-											editType: 'team',
-											id: team?.id ?? null,
-											teamIndex,
-											mon: team?.mons[teamIndex] ?? null,
-											exclude: team?.mons.map(
-												(mon) => {
-													return mon?.templateId || null
-												}
-											) ?? []
-										})
+								onEdit: () => showEditor({
+									editType: 'teamMember',
+									editData: {
+										teamId: team?.id ?? null,
+										teamIndex,
+										mon: team?.mons[teamIndex] ?? null
 									},
-								onRemove: () => dispatch(
-									removeTeamMember({
-										id: team?.id ?? null,
-										teamIndex
-									})
-								),
-								onMoveUp: () => teamIndex > 0 && dispatch(
-									moveTeamMember({
-										id: team?.id ?? null,
-										teamIndex,
-										dir: -1
-									})
-								),
-								onMoveDown: () => teamIndex < 2 && dispatch(
-									moveTeamMember({
-										id: team?.id ?? null,
-										teamIndex,
-										dir: 1
-									})
-								)
+									withExclude: team?.mons.map((m) => m?.templateId || null) ?? []
+								}),
+								onRemove: () => removeTeamMember(teamIndex),
+								onMoveUp: () => teamIndex > 0 &&
+									moveTeamMember(teamIndex, -1),
+								onMoveDown: () => teamIndex < 2 &&
+									moveTeamMember(teamIndex, 1)
 							}}
 						/>
 					)}
@@ -110,34 +96,16 @@ export default function TeamView({ season, setEditingPokemon, showModal, team, f
 				<div style={{ background: '#ececec', padding: '1rem', borderRadius: '.5rem', flexGrow: '1', display: 'flex', flexDirection: 'column' }}>
 					<label>Notes</label>
 					<textarea
-						onBlur={() => saveTeamNotes()}
-						onChange={(ev) => setTeamNotes(ev.target.value)}
-						value={teamNotes}
+						onBlur={() => updateTeam({ notes })}
+						onChange={(ev) => setNotes(ev.target.value)}
+						value={notes}
 						style={{ resize: 'none', flexGrow: '1', borderRadius: '.5rem', border: 'none' }}
-						disabled={season === null}
 					></textarea>
 				</div>
 			</div>
 
 			<div style={{ display: 'flex', color: '#999', marginTop: '.5rem', marginBottom: '-.5rem', padding: '0 1rem' }}>
 				<div style={{ flexGrow: 1, lineHeight: '4rem', fontSize: '1.4rem' }}>
-					{!season &&
-						<span style={{ marginRight: '.5rem' }}>
-							<button
-								className="plain"
-								style={{ fontWeight: 600, marginRight: '1rem' }}
-								onClick={() => {/*showModal(
-									<TeamDataEditor
-										cupId={selectedCup.templateId}
-										id={cupData.currentTeam}
-										selectedSeason={selectedSeason}
-									/>
-								)*/}}
-							>{
-									(seasonList.find(({ value }) => value == team?.season)).label
-								}</button>
-						</span>
-					}
 					<span>Created: {team?.created || '???'}</span>
 					<span style={{ marginLeft: '.5rem' }}>Modified: {team?.modified || '???'}</span>
 				</div>
@@ -154,10 +122,7 @@ export default function TeamView({ season, setEditingPokemon, showModal, team, f
 									style={{ marginRight: '1rem' }}
 								>Cancel</button>
 								<button
-									onClick={() => {
-										dispatch(deleteTeam(team.id))
-										setShowDeleteConfirm(false)
-									}}
+									onClick={() => deleteTeam()}
 									className="filled warning"
 								>Delete Team</button>
 							</div>
