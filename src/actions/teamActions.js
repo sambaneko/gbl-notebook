@@ -23,7 +23,7 @@ export const teamActions = {
 			)
 
 		if (args.data.team.id === undefined)
-			teamActions.switch(null)
+			teamActions.switch(args)
 	},
 
 	delete: (args) => args.dispatch(
@@ -37,7 +37,7 @@ export const teamActions = {
 		args.dispatch(
 			updateCurrent({
 				cup: args.cup,
-				id: args.id
+				id: args?.id || null
 			})
 		)
 	},

@@ -36,8 +36,10 @@ export default function TeamEditor(withData) {
 
 		withData.onSave({
 			editType: withData.editType,
-			team: { mons, season: season.value },
-			templates
+			data: {
+				team: { mons, season: season.value },
+				templates
+			}
 		})
 	}
 
