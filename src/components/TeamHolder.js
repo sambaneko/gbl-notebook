@@ -3,11 +3,7 @@ import { seasonList, pokemonList } from '../store'
 import PokemonSprite from './PokemonSprite'
 import { RoundedSquarePlus } from '../images'
 
-export default function TeamHolder({
-	cupData,
-	teamActions,
-	showEditor
-}) {
+export default function TeamHolder({ cupData, doAction, showEditor }) {
 	const [openOnNarrow, setOpenOnNarrow] = useState(false)
 	const [openGroups, setOpenGroups] = useState([0])
 
@@ -72,7 +68,7 @@ export default function TeamHolder({
 									(team.id == cupData.current ? ' current' : '') +
 									(team.fave ? ' fave-team' : '')
 								}
-								onClick={() => teamActions.switch(team.id)}
+								onClick={() => doAction('switch', { id: team.id })}
 							>
 								{Array.from({ length: 3 }).map(
 									(m, i) => <div key={'team_' + teamIndex + '_mon_' + i} className="cup-team-mon">

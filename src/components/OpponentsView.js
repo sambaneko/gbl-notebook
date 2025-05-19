@@ -3,7 +3,7 @@ import PokemonView from './PokemonView'
 
 export default function OpponentsView({
 	opponents,
-	opponentActions,
+	doAction,
 	showEditor,
 	season
 }) {
@@ -21,10 +21,10 @@ export default function OpponentsView({
 	}
 
 	const dragEnd = () => {
-		opponentActions.move(
-			draggingId,
-			draggingOver.current - dragging.current
-		)
+		doAction('move', {
+			id: draggingId,
+			dir: draggingOver.current - dragging.current
+		})
 		draggingId = null
 	}
 
@@ -35,7 +35,7 @@ export default function OpponentsView({
 			</div>
 			<button type="button"
 				className="app-like"
-				onClick={() => opponentActions.import()}
+				onClick={() => doAction('import')}
 				style={{ marginRight: '1rem' }}
 			> Import Previous
 			</button>
@@ -57,12 +57,12 @@ export default function OpponentsView({
 							editType: 'opponent',
 							editData: { mon }
 						})}
-						onRemove={() => opponentActions.remove(mon.id)}
+						onRemove={() => doAction('remove', { id: mon.id })}
 						onMoveUp={() => monIndex > 0 &&
-							opponentActions.move(mon.id, -1)
+							doAction('move', { id: mon.id, dir: -1 })
 						}
 						onMoveDown={() => monIndex < opponents.length - 1 &&
-							opponentActions.move(mon.id, 1)
+							doAction('move', { id: mon.id, dir: 1 })
 						}
 						onDragStart={e => dragStart(mon.id, monIndex)}
 						onDragEnter={e => dragEnter(monIndex)}

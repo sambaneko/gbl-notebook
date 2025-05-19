@@ -228,7 +228,7 @@ export default function PokemonEditor({
 		}
 
 		<div key={'fields-' + fieldsItr}>
-			{editType == 'team' &&
+			{['team', 'teamMember'].includes(editType) &&
 				<div className="grid-fashion">
 					<label>Name</label>
 					<input type="text"
@@ -313,7 +313,7 @@ export default function PokemonEditor({
 				</div>
 			</div>
 
-			{editType === 'team' && <>
+			{['team', 'teamMember'].includes(editType) && <>
 				<div className="grid grid-fashion grid-stats">
 					<div className="grid1">
 						<label>CP</label>

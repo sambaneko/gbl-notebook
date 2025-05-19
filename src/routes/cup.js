@@ -1,28 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {
-	seasonList,
-	leaguesList,
-	updateTeam,
-	deleteTeam,
-	updateTeamMember,
-	moveTeamMember,
-	removeTeamMember,
-	updateTemplates,
-	updateCurrent,
-	updateOpponent,
-	moveOpponent,
-	removeOpponent,
-	importOpponents
-} from '../store'
 import { useLoaderData, useOutletContext, useNavigate } from "react-router-dom"
 import Select, { components } from 'react-select'
-
+import { seasonList, leaguesList } from '../store'
+import actions from '../actions/actions'
 import TeamHolder from '../components/TeamHolder'
 import TeamEditor from '../components/TeamEditor'
 import TeamView from '../components/TeamView'
 import OpponentsView from '../components/OpponentsView'
 import PokemonEditor from '../components/PokemonEditor'
+
+const actionHandler = new actions()
 
 export function loader({ params }) {
 	return leaguesList.find(
@@ -36,6 +24,7 @@ export default function Cup() {
 
 	const appData = useSelector((state) => state.appData)
 	const dispatch = useDispatch()
+	actionHandler.provideDispatch(dispatch)
 
 	const [showModal] = useOutletContext()
 
@@ -62,13 +51,19 @@ export default function Cup() {
 				: null
 			setCurrentTeam(team)
 
-			setCurrentSeason(
-				team !== null
-					? seasonList.find(({ value }) => value == team.season)
-					: latestSeason
-			)
+			let season = team !== null
+				? seasonList.find(
+					({ value }) => value === parseInt(team.season)
+				)
+				: latestSeason
+			setCurrentSeason(season)
+
+			actionHandler.updateContext({
+				cup: selectedCup.templateId,
+				season: season.value
+			})
 		}
-	}, [cupData, latestSeason])
+	}, [cupData, latestSeason, selectedCup])
 
 	const sortedLeagues = leaguesList.sort((a, b) => {
 		if (
@@ -88,99 +83,6 @@ export default function Cup() {
 		}
 	})
 
-	const teamActions = {
-		update: (data) => {
-			dispatch(
-				updateTeam({
-					cup: selectedCup.templateId,
-					team: data.team
-				})
-			)
-
-			if (data.templates !== undefined)
-				dispatch(
-					updateTemplates(data.templates)
-				)
-
-			if (data.team.id === undefined)
-				teamActions.switch(null)
-		},
-		delete: (id) => dispatch(
-			deleteTeam({
-				cup: selectedCup.templateId, id
-			})
-		),
-		switch: (id) => {
-			dispatch(
-				updateCurrent({
-					cup: selectedCup.templateId, id
-				})
-			)
-		},
-		updateMember: (id, memberIndex, data) => {
-			dispatch(
-				updateTeamMember({
-					id, memberIndex,
-					member: data.member,
-					cup: selectedCup.templateId,
-					season: currentSeason.value
-				})
-			)
-
-			if (data.templates.length)
-				dispatch(
-					updateTemplates(data.templates)
-				)
-		},
-		moveMember: (id, memberIndex, dir) => dispatch(
-			moveTeamMember({
-				cup: selectedCup.templateId,
-				id, memberIndex, dir
-			})
-		),
-		removeMember: (id, memberIndex) => dispatch(
-			removeTeamMember({
-				cup: selectedCup.templateId,
-				id, memberIndex
-			})
-		)
-	}
-
-	const opponentActions = {
-		update: (data) => {
-			dispatch(
-				updateOpponent({
-					member: data.member,
-					cup: selectedCup.templateId,
-					season: currentSeason.value
-				})
-			)
-
-			if (data.templates !== undefined)
-				dispatch(
-					updateTemplates(data.templates)
-				)
-		},
-		move: (id, dir) => dispatch(
-			moveOpponent({
-				cup: selectedCup.templateId,
-				season: currentSeason.value,
-				id, dir
-			})
-		),
-		remove: (id) => dispatch(
-			removeOpponent({
-				cup: selectedCup.templateId, id
-			})
-		),
-		import: () => dispatch(
-			importOpponents({
-				cup: selectedCup.templateId,
-				season: currentSeason.value
-			})
-		)
-	}
-
 	const showEditor = (withData) => {
 		withData = {
 			...withData,
@@ -196,7 +98,9 @@ export default function Cup() {
 
 	const saveEditedPokemon = (editedMon) => {
 		if (editedMon.editType === 'team') {
-			teamActions.update(editedMon)
+			actionHandler.doTeamAction(
+				'update', editedMon
+			)
 			showModal(null)
 		} else {
 			let update = { member: editedMon.mon }
@@ -215,12 +119,17 @@ export default function Cup() {
 				}
 
 			if (editedMon.editType === 'opponent') {
-				opponentActions.update(update)
+				actionHandler.doOpponentAction(
+					'update', { data: update }
+				)
 			} else {
-				teamActions.updateMember(
-					editedMon.teamId,
-					editedMon.teamIndex,
-					update
+				actionHandler.doTeamAction(
+					'updateMember',
+					{
+						id: editedMon.teamId,
+						memberIndex: editedMon.teamIndex,
+						data: update
+					}
 				)
 				showModal(null)
 			}
@@ -258,31 +167,24 @@ export default function Cup() {
 				/>
 			</div>
 			<TeamHolder
-				{...{
-					cupData,
-					teamActions,
-					showEditor
-				}}
+				{...{ cupData, showEditor }}
+				doAction={actionHandler.doTeamAction}
 			/>
 		</div>
 		<div id="cup-data">
 			{currentTeam !== null && <>
 				<TeamView
-					{...{
-						showEditor,
-						teamActions
-					}}
+					{...{ showEditor }}
 					team={currentTeam}
+					doAction={actionHandler.doTeamAction}
 				/>
 				<OpponentsView
-					{...{
-						showEditor,
-						opponentActions
-					}}
+					{...{ showEditor }}
+					doAction={actionHandler.doOpponentAction}
 					opponents={
 						currentSeason
 							? cupData.opponents.filter(
-								({ season }) => season == currentSeason.value
+								({ season }) => season === currentSeason.value
 							)
 							: []
 					}

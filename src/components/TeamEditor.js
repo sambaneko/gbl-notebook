@@ -17,7 +17,7 @@ export default function TeamEditor(withData) {
 		const mons = []
 		const templates = []
 
-		teamMons.map((teamMon) => {
+		teamMons.forEach((teamMon) => {
 			mons.push(teamMon.mon)
 			if (
 				teamMon.template.create ||

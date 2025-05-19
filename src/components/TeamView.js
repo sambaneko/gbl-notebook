@@ -6,35 +6,31 @@ import StarFilled from '../images/StarFilled'
 import Trash from '../images/Trash'
 import styled from 'styled-components'
 
-export default function TeamView({
-	team,
-	teamActions,
-	showEditor
-}) {
+export default function TeamView({ team, doAction, showEditor }) {
 	const [notes, setNotes] = useState('')
 	const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
 	const updateTeam = (data) =>
-		teamActions.update({
-			team: { id: team.id, ...data }
+		doAction('update', {
+			data: {
+				team: { id: team.id, ...data }
+			}
 		})
 
 	const deleteTeam = () => {
-		teamActions.delete(team.id)
+		doAction('delete', { id: team.id })
 		setShowDeleteConfirm(false)
 	}
 
-	const moveTeamMember = (memberIndex, dir) => {
-		teamActions.moveMember(
-			team.id, memberIndex, dir
-		)
-	}
+	const moveTeamMember = (memberIndex, dir) =>
+		doAction('moveMember', {
+			id: team.id, memberIndex, dir
+		})
 
-	const removeTeamMember = (memberIndex) => {
-		teamActions.removeMember(
-			team.id, memberIndex
-		)
-	}
+	const removeTeamMember = (memberIndex) =>
+		doAction('removeMember', {
+			id: team.id, memberIndex
+		})
 
 	const ConfirmationBox = styled.div`
 		display: flex;
