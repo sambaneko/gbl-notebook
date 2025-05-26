@@ -116,12 +116,12 @@ export default function PokemonEditor({
 		onEdit && onEdit(getReturnableMon())
 	}, [updateTemplate])
 
-	const getAvailableTemplates = (mon) => {
-		return appData.templates.map((template, templateIndex) =>
+	const getAvailableTemplates = (mon) => appData.templates.map(
+		(template, templateIndex) =>
 			(
 				template.templateId == mon.templateId &&
 				(
-					editType == 'team'
+					['team', 'teamMember'].includes(editType)
 						? template.name !== undefined
 						: template.name === undefined
 				)
@@ -132,8 +132,7 @@ export default function PokemonEditor({
 					...pokemonList.find(({ templateId }) => templateId == template.templateId)
 				}
 				: null
-		).filter(n => n)
-	}
+	).filter(n => n)
 
 	const [availableTemplates, setAvailableTemplates] = useState(
 		editData.mon !== null ? getAvailableTemplates(editData.mon) : []
