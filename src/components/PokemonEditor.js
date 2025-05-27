@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import PokemonSelectFromCup from './PokemonSelectFromCup'
+import PokemonSelect from './PokemonSelect'
 import Select from 'react-select'
 import { pokemonList, moveList } from '../store'
 
@@ -117,21 +118,26 @@ export default function PokemonEditor({
 	}, [updateTemplate])
 
 	const getAvailableTemplates = (mon) => appData.templates.map(
-		(template, templateIndex) =>
-			(
+		(template, templateIndex) => {
+			if (
 				template.templateId == mon.templateId &&
 				(
 					['team', 'teamMember'].includes(editType)
 						? template.name !== undefined
 						: template.name === undefined
 				)
-			)
-				? {
+			) {
+				let pokeData = pokemonList.find(({ templateId }) => templateId == template.templateId)
+				return {
 					template,
 					templateIndex,
-					...pokemonList.find(({ templateId }) => templateId == template.templateId)
+					...pokeData,
+					label: template.name
 				}
-				: null
+			}
+
+			return null
+		}
 	).filter(n => n)
 
 	const [availableTemplates, setAvailableTemplates] = useState(
@@ -157,7 +163,7 @@ export default function PokemonEditor({
 						pokemon={pokemonList}
 						selectedCup={withCup}
 						exclude={withExclude}
-						onSelected={(mon) => {
+						onChange={(mon) => {
 							setPokemonData(mon)
 
 							let eMon = {
@@ -182,45 +188,37 @@ export default function PokemonEditor({
 						}}
 						defaultValue={pokemonData}
 						isInvalid={invalidFields.includes('pokemon')}
+						autoFocus
 					/>
 				</div>
 
-				{availableTemplates.length > 0 && <div className="grid-fashion template-box">
+				<div className="grid-fashion template-box">
 					<label>Templates</label>
-					{availableTemplates.map((mon, i) =>
-						<div className={'pointer pokemon_option pokemon_type ' + mon.types[0].toLowerCase()} key={i}>
-							<div className="type-list">
-								{
-									mon.types.map((type) =>
-										<span
-											key={type.toLowerCase()}
-											className={'type_icon ' + type.toLowerCase()}>
-										</span>
-									)
-								}
-							</div>
-							<div style={{ padding: '8px 12px' }}
-								onClick={() => {
-									setPokemonData(mon)
-									setEditedMon(mon.template)
-									setUsingTemplate(mon.templateIndex)
-									setCreateTemplate(false)
-									setUpdateTemplate(false)
-									resetSelector((prev) => prev + 1)
-								}}
-							>{
-									mon.template.name === undefined
-										? mon.label
-										: (
-											mon.template.name == ''
-												? mon.label
-												: mon.template.name
-										)
-
-								}</div>
-						</div>
-					)}
-				</div>}
+					<PokemonSelect
+						pokemon={availableTemplates}
+						defaultValue={
+							usingTemplate !== null
+								? availableTemplates.find(
+									({ templateIndex }) => templateIndex === usingTemplate
+								)
+								: null
+						}
+						isDisabled={availableTemplates.length <= 0}
+						onChange={(mon) => {
+							if (mon !== null) {
+								setPokemonData(mon)
+								setEditedMon(mon.template)
+								setUsingTemplate(mon.templateIndex)
+							} else {
+								setUsingTemplate(null)
+							}
+							setCreateTemplate(false)
+							setUpdateTemplate(false)
+							resetSelector((prev) => prev + 1)
+						}}
+						isClearable={true}
+					/>
+				</div>
 
 				<hr />
 			</>

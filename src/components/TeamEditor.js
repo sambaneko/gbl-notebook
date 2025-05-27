@@ -43,7 +43,7 @@ export default function TeamEditor(withData) {
 		})
 	}
 
-	return <div>
+	return <div id="team-editor">
 		<div>
 			<Select
 				options={filterSeasons}
@@ -62,7 +62,7 @@ export default function TeamEditor(withData) {
 					onClick={() => setCurrentIndex(i)}
 				>
 					<PokemonSprite
-						size="40"
+						size="80"
 						pokemon={
 							teamMons?.[i]?.mon
 								? pokemonList.find(({ value }) => value == teamMons[i].mon.templateId)

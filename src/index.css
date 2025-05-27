@@ -363,6 +363,20 @@ label.checkbox input {
 	border-color: #dfa812;
 }
 
+#team-editor .cup-team-box {
+	max-width: 100%;
+	padding: 1.4rem;
+}
+
+#team-editor .cup-team-mon {
+	min-height: 8rem;
+	min-width: 8rem;
+}
+
+#team-editor .cup-team-mon .pokemon-sprite {
+	max-height: 8rem;
+}
+
 .cup-team-mon {
 	display: inline-block;
 	background-color: #fff;
@@ -372,7 +386,7 @@ label.checkbox input {
 	min-width: 5rem;
 	min-height: 5rem;
 	max-width: 30%;
-  	box-sizing: border-box;
+	box-sizing: border-box;
 	display: flex;
 	flex: 1 1 auto;
 	border: 2px solid #fff;
@@ -432,6 +446,7 @@ label.checkbox input {
 	font-size: 1.3rem;
 	width: 2rem;
 	text-align: center;
+	line-height: 1.8rem;
 }
 
 .move_count.charge {
@@ -467,6 +482,8 @@ label.checkbox input {
 	border-radius: .5rem;
 	background: none;
 	padding: 1rem 1rem 0 1rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .pokemon-type-box-heading {
@@ -479,6 +496,10 @@ label.checkbox input {
 .pokemon-type-box-heading.edit-heading {
 	margin: 0 0 2rem 0;
 	border-radius: .5rem;
+}
+
+.pokemon-type-box-body {
+	flex-grow: 1;
 }
 
 .notice-box {
