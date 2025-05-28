@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { importAppData } from '../store'
+import { importAppData, updateSettings, seasonList } from '../store'
+import Select from 'react-select'
 import styled from 'styled-components'
 
 export default function Settings() {
@@ -39,6 +40,7 @@ export default function Settings() {
 		& > *:first-child {
 			width: 13rem;
 			flex-shrink: 0;
+			text-align: center;
 		}
 		& > *:last-child {
 			padding-left: 2rem;
@@ -58,6 +60,20 @@ export default function Settings() {
 	return <>
 		<h3 style={{ textAlign: 'center', marginBottom: '3rem' }}>Settings</h3>
 
+		<SettingRow>
+			<div>Current Season</div>
+			<div>
+				<Select
+					options={seasonList}
+					defaultValue={
+						appData.settings.season !== undefined
+							? seasonList.find(({ value }) => value === appData.settings.season)
+							: seasonList[0]
+					}
+				/>
+				<p style={{ marginTop: '1rem' }}>Newly-added teams will be assigned to this season, and it will be the default season displayed in the teams list.</p>
+			</div>
+		</SettingRow>
 		<SettingRow>
 			<div>
 				<a href={"data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData))}
@@ -94,14 +110,14 @@ export default function Settings() {
 		</SettingRow>
 		{showDeleteConfirm &&
 			<ConfirmationBox>
-				<div style={{margin: 'auto 0'}}>
+				<div style={{ margin: 'auto 0' }}>
 					<p>Are you sure?</p>
 				</div>
-				<div style={{marginLeft: 'auto'}}>
+				<div style={{ marginLeft: 'auto' }}>
 					<button
 						onClick={() => setShowDeleteConfirm(false)}
 						className="outlined"
-						style={{marginRight: '1rem'}}
+						style={{ marginRight: '1rem' }}
 					>Cancel</button>
 					<button
 						onClick={() => deleteAppData()}

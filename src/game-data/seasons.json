@@ -6,7 +6,19 @@
 		"cups": [
 			"COMBAT_LEAGUE_DEFAULT_GREAT",
 			"COMBAT_LEAGUE_DEFAULT_ULTRA",
-			"COMBAT_LEAGUE_DEFAULT_MASTER"			
+			"COMBAT_LEAGUE_DEFAULT_MASTER"
+		]
+	},
+	{
+		"label": "Season 23: Delightful Days",
+		"value": 23,
+		"slug": "23-delightful-days",
+		"cups": [
+			"COMBAT_LEAGUE_VS_SEEKER_SUNSHINE_GREAT",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_FOSSIL",
+			"COMBAT_LEAGUE_VS_SEEKER_ULTRA_SUMMER",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_ELEMENT",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_HISUI"
 		]
 	},
 	{
@@ -20,8 +32,8 @@
 			"COMBAT_LEAGUE_VS_SEEKER_SPRING_GREAT",
 			"COMBAT_LEAGUE_VS_SEEKER_GREAT_REMIX",
 			"COMBAT_LEAGUE_VS_SEEKER_GREAT_RETRO"
-		]		
-	},	
+		]
+	},
 	{
 		"label": "Season 21: Dual Destiny",
 		"value": 21,
@@ -33,7 +45,7 @@
 			"COMBAT_LEAGUE_VS_SEEKER_LITTLE_JUNGLE",
 			"COMBAT_LEAGUE_VS_SEEKER_GREAT_LOVE",
 			"COMBAT_LEAGUE_VS_SEEKER_MASTER_MEGAS"
-		]		
+		]
 	},
 	{
 		"label": "Season 20: Max Out",

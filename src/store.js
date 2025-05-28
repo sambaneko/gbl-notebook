@@ -65,7 +65,10 @@ const createTeam = (teams) => {
 const initialState = {
 	version: 1.0,
 	cups: {},
-	templates: []
+	templates: [],
+	settings: {
+		season: seasonList[0].value
+	}
 }
 
 export const slice = createSlice({
@@ -76,7 +79,16 @@ export const slice = createSlice({
 			if (action.payload === null) {
 				return initialState
 			}
-			return { ...action.payload }
+			return {
+				...initialState,
+				...action.payload
+			}
+		},
+		updateSettings: (state, action) => {
+			state.settings = {
+				...state.settings,
+				...action.payload
+			}
 		},
 		updateTeam: (state, action) => {
 			let pl = action.payload
@@ -84,6 +96,7 @@ export const slice = createSlice({
 			let team = { ...pl.team }
 
 			if (team.id === undefined) {
+				team.season = state.settings.season
 				state.cups[pl.cup].teams.push({
 					...createTeam(teams),
 					...team
@@ -274,6 +287,7 @@ export const slice = createSlice({
 
 export const {
 	importAppData,
+	updateSettings,
 	updateTeam,
 	deleteTeam,
 	updateCurrent,

@@ -799,3 +799,11 @@ label.checkbox input {
 	border-radius: .3rem;
 	cursor: pointer;
 }
+
+.team-group.current-season {
+	border-color: #104c55;
+}
+
+.team-group.current-season .team-group-season {
+	background: #104c55;
+}

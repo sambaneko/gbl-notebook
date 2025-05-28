@@ -169,6 +169,7 @@ export default function Cup() {
 			<TeamHolder
 				{...{ cupData, showEditor }}
 				doAction={actionHandler.doTeamAction}
+				currentSeason={appData.settings.season}
 			/>
 		</div>
 		<div id="cup-data">

@@ -3,7 +3,7 @@ import { seasonList, pokemonList } from '../store'
 import PokemonSprite from './PokemonSprite'
 import { RoundedSquarePlus } from '../images'
 
-export default function TeamHolder({ cupData, doAction, showEditor }) {
+export default function TeamHolder({ cupData, doAction, showEditor, currentSeason }) {
 	const [openOnNarrow, setOpenOnNarrow] = useState(false)
 	const [openGroups, setOpenGroups] = useState([0])
 
@@ -43,11 +43,14 @@ export default function TeamHolder({ cupData, doAction, showEditor }) {
 			{groupedTeams.map(
 				(teamGroup, groupIndex) => <div
 					key={groupIndex}
-					className={'team-group' + (
-						!openGroups.includes(groupIndex)
-							? ' isClosed'
-							: ''
-					)}
+					className={'team-group' +
+						(!openGroups.includes(groupIndex)
+							? ' isClosed' : ''
+						) +
+						(teamGroup.season === currentSeason
+							? ' current-season' : ''
+						)
+					}
 				>
 					<div
 						className="team-group-season"
