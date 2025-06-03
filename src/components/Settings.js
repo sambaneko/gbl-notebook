@@ -34,6 +34,10 @@ export default function Settings() {
 		}
 	}, [appData])
 
+	const updateSeason = (season) => dispatch(
+		updateSettings({ season })
+	)
+
 	const SettingRow = styled.div`
 		display: flex;
 		margin-bottom: 3rem;
@@ -70,6 +74,7 @@ export default function Settings() {
 							? seasonList.find(({ value }) => value === appData.settings.season)
 							: seasonList[0]
 					}
+					onChange={(season) => updateSeason(season.value)}
 				/>
 				<p style={{ marginTop: '1rem' }}>Newly-added teams will be assigned to this season, and it will be the default season displayed in the teams list.</p>
 			</div>

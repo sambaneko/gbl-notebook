@@ -5,7 +5,27 @@ import { RoundedSquarePlus } from '../images'
 
 export default function TeamHolder({ cupData, doAction, showEditor, currentSeason }) {
 	const [openOnNarrow, setOpenOnNarrow] = useState(false)
-	const [openGroups, setOpenGroups] = useState([0])
+
+	const groupedTeams = cupData
+		? Object.values(
+			cupData.teams.reduce((acc, team) => {
+				let season = team.season
+				if (!acc[season]) {
+					acc[season] = { season, teams: [] }
+				}
+				acc[season].teams.push(team)
+				return acc
+			}, {})
+		).sort((a, b) => b.season - a.season)
+		: []
+
+	const currentGroup = groupedTeams.findIndex(obj =>
+		obj.teams.some(team => team.id === cupData.current)
+	)
+
+	const [openGroups, setOpenGroups] = useState(
+		currentGroup > -1 ? [currentGroup] : [0]
+	)
 
 	const toggleOpen = (groupIndex) => {
 		let currentOpen = [...openGroups]
@@ -16,19 +36,6 @@ export default function TeamHolder({ cupData, doAction, showEditor, currentSeaso
 
 		return currentOpen
 	}
-
-	const groupedTeams = cupData
-		? Object.values(
-			cupData.teams.reduce((acc, team) => {
-				let season = team.season
-				if (!acc[season]) {
-					acc[season] = { season, teams: [] }
-				}
-				acc[season].teams.push(team);
-				return acc
-			}, {})
-		).sort((a, b) => b.season - a.season)
-		: []
 
 	return <div id="team-holder">
 		<div className="teams-wrapper">
