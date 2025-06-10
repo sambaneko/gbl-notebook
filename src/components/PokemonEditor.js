@@ -132,7 +132,7 @@ export default function PokemonEditor({
 					template,
 					templateIndex,
 					...pokeData,
-					label: template.name
+					label: template?.name || pokeData.label
 				}
 			}
 
@@ -173,7 +173,7 @@ export default function PokemonEditor({
 								shiny: false
 							}
 
-							if (editType == 'team') {
+							if (['team', 'teamMember'].includes(editType)) {
 								eMon.name = mon.label
 							}
 
