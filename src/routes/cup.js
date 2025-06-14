@@ -185,7 +185,7 @@ export default function Cup() {
 					opponents={
 						currentSeason
 							? cupData.opponents.filter(
-								({ season }) => season === currentSeason.value
+								({ season }) => season == currentSeason.value
 							)
 							: []
 					}
