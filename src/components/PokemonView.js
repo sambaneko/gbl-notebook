@@ -90,7 +90,7 @@ export default function PokemonView({
 				)}
 			</div>
 		</div>
-		<div className="pokemon-type-box-body flex-col on-narrow-flex-row">
+		<div className="pokemon-type-box-body flex-col">
 			<div style={{ flexGrow: 0, display: 'flex', minWidth: '10rem', minHeight: '10rem', marginBottom: '1rem', position: 'relative' }}>
 				{pokemon?.shadow && <img src={process.env.PUBLIC_URL + '/images/ic_shadow.png'} style={{ position: 'absolute', right: 0, bottom: 0 }} width="45" />}
 				{pokemon?.purified && <img src={process.env.PUBLIC_URL + '/images/ic_purified.png'} style={{ position: 'absolute', right: 0, bottom: 0 }} width="45" />}

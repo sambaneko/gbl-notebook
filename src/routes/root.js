@@ -12,6 +12,12 @@ export default function Root() {
 		font-size: 1.2rem;
 		padding: 0 2rem;
 		display: flex;
+		position: fixed;
+		top: 0;
+		z-index: 5;
+		width: 100%;
+		box-sizing: border-box;
+
 		& ul {
 			flex: 1 1 auto;
 			display: flex;

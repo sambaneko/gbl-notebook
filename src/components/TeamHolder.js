@@ -4,8 +4,6 @@ import PokemonSprite from './PokemonSprite'
 import { RoundedSquarePlus } from '../images'
 
 export default function TeamHolder({ cupData, doAction, showEditor, currentSeason }) {
-	const [openOnNarrow, setOpenOnNarrow] = useState(false)
-
 	const groupedTeams = cupData
 		? Object.values(
 			cupData.teams.reduce((acc, team) => {
@@ -69,7 +67,7 @@ export default function TeamHolder({ cupData, doAction, showEditor, currentSeaso
 							({ value }) => value == teamGroup.season
 						).label}
 					</div>
-					<div className={'teams-wrapper-inner' + (openOnNarrow ? ' isOpen' : ' isClosed')}>
+					<div className="teams-wrapper-inner">
 						{teamGroup.teams.map((team, teamIndex) =>
 							<div
 								key={teamIndex}
@@ -97,8 +95,6 @@ export default function TeamHolder({ cupData, doAction, showEditor, currentSeaso
 					</div>
 				</div>
 			)}
-
-			<button id="switch-team" className="small-upper text-center" style={{ border: '1px solid #ececec', color: '#000', padding: '1rem', borderRadius: '.8rem', marginTop: '1rem', background: 'none' }} onClick={() => setOpenOnNarrow(!openOnNarrow)}>{openOnNarrow ? 'Close' : 'Switch Team'}</button>
 		</div>
 	</div >
 }

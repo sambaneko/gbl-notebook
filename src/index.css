@@ -39,6 +39,14 @@ body {
 #cup-wrapper {
 	display: flex;
 	flex-grow: 1;
+	margin-top: 3.6rem;
+	height: calc(100vh - 3.6rem);
+}
+
+#teams-wrapper {
+	flex-grow: 0;
+	flex-shrink: 0;
+	overflow: auto;
 }
 
 #team-holder {
@@ -72,6 +80,7 @@ body {
 	background: #fff;
 	box-shadow: -5px 0px 13px -7px #1c8696, 5px 0px 13px -7px #1c8696, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 	box-sizing: border-box;
+	overflow-y: scroll;
 }
 
 /**/
@@ -748,6 +757,8 @@ label.checkbox input {
 
 	.teams-wrapper-inner {
 		flex-direction: row;
+		flex-wrap: wrap;
+		gap: .6rem;
 	}
 
 	.teams-wrapper-inner.isClosed {
@@ -755,7 +766,7 @@ label.checkbox input {
 	}
 
 	.cup-team-box {
-		gap: 1.6rem;
+		width: 30%;
 	}
 
 	.pokemon-sprite {
@@ -771,7 +782,7 @@ label.checkbox input {
 }
 
 .current-season-cup {
-	background-color: orange;
+	font-weight: 700;
 }
 
 .team-group {
