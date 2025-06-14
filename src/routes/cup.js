@@ -146,7 +146,7 @@ export default function Cup() {
 	}
 
 	return <div id="cup-wrapper">
-		<div>
+		<div id="teams-wrapper">
 			<div style={{ backgroundColor: '#7dd5aa', padding: '1rem' }}>
 				<Select
 					components={{ Option }}
