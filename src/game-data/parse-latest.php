@@ -22,7 +22,9 @@ $latestJson = json_decode(
 	file_get_contents($latestJsonFile)
 );
 
-$appends = [];
+$appends = [
+	'pokemon' => []
+];
 if (file_exists('append/pokemon.json')) {
 	$appends['pokemon'] = json_decode(
 		file_get_contents('append/pokemon.json'), true
