@@ -33,3 +33,6 @@ TEXT: Psywave
 
 RESOURCE ID: move_name_0464
 TEXT: Rage Fist
+
+RESOURCE ID: move_name_0468
+TEXT: Torch Song

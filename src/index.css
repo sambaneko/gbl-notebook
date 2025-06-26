@@ -330,6 +330,11 @@ label.checkbox input {
 	margin-right: .5rem;
 }
 
+label.checkbox span {
+	position: relative;
+	top: -0.2rem;
+}
+
 .team-placeholder {
 	color: #ececec;
 	background-color: #f0f8ff;
@@ -660,8 +665,8 @@ label.checkbox input {
 
 .grid-stats {
 	grid-template-areas:
-		"grid1 grid2 grid2"
-		"grid3 grid4 grid5";
+		"grid1 grid2 grid2 grid2"
+		"grid6 grid3 grid4 grid5";
 }
 
 .grid1 {
@@ -682,6 +687,10 @@ label.checkbox input {
 
 .grid5 {
 	grid-area: grid5;
+}
+
+.grid6 {
+	grid-area: grid6;
 }
 
 .pointer {

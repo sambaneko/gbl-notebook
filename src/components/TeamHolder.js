@@ -39,7 +39,10 @@ export default function TeamHolder({ cupData, doAction, showEditor, currentSeaso
 		<div className="teams-wrapper">
 			<button
 				className="app-like"
-				onClick={() => showEditor({ editType: 'team' })}
+				onClick={() => showEditor({
+					editType: 'team',
+					editAction: 'add'
+				})}
 				style={{ width: '100%' }}
 			>
 				<RoundedSquarePlus /> New Team
