@@ -24,6 +24,16 @@ body {
 	flex-direction: column;
 }
 
+a, a:link, a:visited {
+	color: #1e89e8;
+	text-decoration: none;
+  	font-weight: 600;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
 #cup-select {
 	padding: 2rem;
 	border-bottom: 1px solid black;
