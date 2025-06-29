@@ -131,5 +131,10 @@ export default function Settings() {
 				</div>
 			</ConfirmationBox>
 		}
+
+		<h3 style={{ textAlign: 'center', marginBottom: '3rem' }}>About</h3>
+		<div style={{padding: '1rem 2rem', marginTop: '-3rem', fontSize: '1.4rem'}}>
+			<p><a href="https://github.com/sambaneko/gbl-notebook" target="_blank">GBL Notebook</a> is an open source fan project by <a href="https://spacecatsamba.com/" target="_blank">sambaneko</a>.  It is intended for non-commercial, personal use and educational purposes.  Pokémon Go is the property of The Pokemon Company and Niantic.  Game data and graphic assets were obtained from the <a href="https://github.com/PokeMiners" target="_blank">PokeMiners</a>.</p>
+		</div>
 	</>
 }
