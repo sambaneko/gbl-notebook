@@ -170,6 +170,7 @@ export default function Cup() {
 				{...{ cupData, showEditor }}
 				doAction={actionHandler.doTeamAction}
 				currentSeason={appData.settings.season}
+				useImages={appData.settings.images}
 			/>
 		</div>
 		<div id="cup-data">
@@ -178,6 +179,7 @@ export default function Cup() {
 					{...{ showEditor }}
 					team={currentTeam}
 					doAction={actionHandler.doTeamAction}
+					useImages={appData.settings.images}
 				/>
 				<OpponentsView
 					{...{ showEditor }}
@@ -190,6 +192,7 @@ export default function Cup() {
 							: []
 					}
 					season={currentSeason?.value || null}
+					useImages={appData.settings.images}
 				/>
 			</>}
 		</div>

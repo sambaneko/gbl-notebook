@@ -38,6 +38,10 @@ export default function Settings() {
 		updateSettings({ season })
 	)
 
+	const updateImages = (images) => dispatch(
+		updateSettings({ images })
+	)
+
 	const SettingRow = styled.div`
 		display: flex;
 		margin-bottom: 3rem;
@@ -62,8 +66,7 @@ export default function Settings() {
 	`
 
 	return <>
-		<h3 style={{ textAlign: 'center', marginBottom: '3rem' }}>Settings</h3>
-
+		<h3 style={{ textAlign: 'center', marginBottom: '3rem' }} tabIndex="1">Settings</h3>
 		<SettingRow>
 			<div>Current Season</div>
 			<div>
@@ -77,6 +80,19 @@ export default function Settings() {
 					onChange={(season) => updateSeason(season.value)}
 				/>
 				<p style={{ marginTop: '1rem' }}>Newly-added teams will be assigned to this season, and it will be the default season displayed in the teams list.</p>
+			</div>
+		</SettingRow>
+		<SettingRow>
+			<div>
+				<input
+					type="checkbox"
+					role="switch"
+					onChange={(ev) => updateImages(ev.target.checked)}
+					defaultChecked={appData.settings.images}
+				/>
+			</div>
+			<div>
+				<p>If images are enabled, they will be sourced from the <em>public/images/pokemon</em> path by default.  Alternatively, a custom path can be configured in the app's <em>.env.local</em> file.</p>
 			</div>
 		</SettingRow>
 		<SettingRow>
@@ -133,7 +149,7 @@ export default function Settings() {
 		}
 
 		<h3 style={{ textAlign: 'center', marginBottom: '3rem' }}>About</h3>
-		<div style={{padding: '1rem 2rem', marginTop: '-3rem', fontSize: '1.4rem'}}>
+		<div style={{ padding: '1rem 2rem', marginTop: '-3rem', fontSize: '1.4rem' }}>
 			<p><a href="https://github.com/sambaneko/gbl-notebook" target="_blank">GBL Notebook</a> is an open source fan project by <a href="https://spacecatsamba.com/" target="_blank">sambaneko</a>.  It is intended for non-commercial, personal use and educational purposes.  Pokémon Go is the property of The Pokemon Company and Niantic.  Game data and graphic assets were obtained from the <a href="https://github.com/PokeMiners" target="_blank">PokeMiners</a>.</p>
 		</div>
 	</>

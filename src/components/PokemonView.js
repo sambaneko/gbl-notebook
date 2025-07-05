@@ -12,15 +12,14 @@ export default function PokemonView({
 	showStats,
 	onDragEnter,
 	onDragStart,
-	onDragEnd
+	onDragEnd,
+	useImages = false
 }) {
 	const appData = useSelector((state) => state.appData)
 
 	if (pokemon === null) {
 		if (onEdit === null) {
-			return <div className="team-placeholder">
-
-			</div>
+			return <div className="team-placeholder"></div>
 		}
 
 		return <div className="team-placeholder editable"
@@ -73,6 +72,89 @@ export default function PokemonView({
 		return formatters[format](result)
 	}
 
+	if (!useImages) {
+		return <div className="pokemon-view">
+			<div draggable onDragEnter={onDragEnter} onDragStart={onDragStart} onDragEnd={onDragEnd} className={'pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >
+				<div className={'pokemon-type-box-heading ' + myPokemon.types[0].toLowerCase()}>
+					<h3>{
+						typeof pokemon['name'] !== 'undefined' &&
+							pokemon['name'] !== ''
+							? pokemon.name
+							: myPokemon.label
+					}</h3>
+					{showStats && <>
+						<div className="stats">{(pokemon?.cp) || '-'} CP</div>
+						<div className="stats iv-list">
+							<div>
+								<span>Atk</span>
+								{(pokemon?.ivs?.atk) || '-'}
+							</div>/
+							<div>
+								<span>Def</span>
+								{(pokemon?.ivs?.def) || '-'}
+							</div>/
+							<div>
+								<span>Sta</span>
+								{(pokemon?.ivs?.sta) || '-'}
+							</div>
+						</div>
+					</>}
+
+					<div className="flex">
+						<div className="type-list">
+							{myPokemon.types.map((type) =>
+								<span
+									key={type.toLowerCase()}
+									className={'type_icon ' + type.toLowerCase()}>
+								</span>
+							)}
+						</div>
+					</div>
+				</div>
+				<div className="moves">
+					<div>
+						<div className="move_label">Fast Move</div>
+						<div className="flex">
+							<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myFastMove.type.toLowerCase()}>{myFastMove.label}</span>
+							<span className="move_count">{myFastMove.durationTurns}</span>
+						</div>
+					</div>
+					<div>
+						<div className="move_label">Charge Moves</div>
+						<div className="charge-moves">
+							<div className="flex">
+								<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove1.type.toLowerCase()}>{myChargeMove1.label}</span>
+								<span className="move_count charge">{getChargeMoveCount(
+									myFastMove.energyDelta,
+									myChargeMove1.energyDelta,
+									'single'
+								)}</span>
+							</div>
+							{myChargeMove2 &&
+								<div className="flex">
+									<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove2.type.toLowerCase()}>{myChargeMove2.label}</span>
+									<span className="move_count charge">{getChargeMoveCount(
+										myFastMove.energyDelta,
+										myChargeMove2.energyDelta,
+										'single'
+									)}</span>
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style={{ background: '#ececec', display: 'grid', gap: '1rem', padding: '1rem', gridTemplateColumns: 'repeat(2, minmax(1rem, 1fr))', borderRadius: '.5rem' }}>
+				<button type="button" className="white-btn" onClick={onEdit}><Edit /></button>
+				<button type="button" className="white-btn" onClick={onRemove}><X /></button>
+				<button type="button" className="white-btn" onClick={onMoveUp}><ArrowUp /></button>
+				<button type="button" className="white-btn" onClick={onMoveDown}><ArrowDown /></button>
+
+			</div>
+		</div>
+	}
+
 	return <div draggable onDragEnter={onDragEnter} onDragStart={onDragStart} onDragEnd={onDragEnd} className={'pokemon-type-box ' + myPokemon.types[0].toLowerCase()} >
 		<div className={'flex-row pokemon-type-box-heading ' + myPokemon.types[0].toLowerCase()}>
 			<h3>{
@@ -98,7 +180,7 @@ export default function PokemonView({
 				<PokemonSprite
 					size='100' pokemon={myPokemon} style={{ display: 'block', margin: '0 auto 1rem' }} />
 			</div>
-			<div style={{width: '100%'}}>
+			<div style={{ width: '100%' }}>
 				{showStats && <div className={'flex-row'} style={{ margin: '1rem 0' }}>
 					<div className="stats" style={{ whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>{(pokemon?.cp) || '-'} CP</div>
 					<div className="stats iv-list" style={{ textAlign: 'right', whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>
@@ -108,31 +190,31 @@ export default function PokemonView({
 					</div>
 				</div>}
 				<div>
-					<p className="move_label">Fast Move</p>
-					<p style={{ display: 'flex', marginBottom: '1rem' }}>
+					<div className="move_label">Fast Move</div>
+					<div style={{ display: 'flex', marginBottom: '1rem' }}>
 						<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myFastMove.type.toLowerCase()}>{myFastMove.label}</span>
 						<span className="move_count">{myFastMove.durationTurns}</span>
-					</p>
+					</div>
 
-					<p className="move_label">Charge Moves</p>
+					<div className="move_label">Charge Moves</div>
 					<div className="flex-col">
-						<p style={{ display: 'flex', marginBottom: '1rem' }}>
+						<div style={{ display: 'flex', marginBottom: '1rem' }}>
 							<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove1.type.toLowerCase()}>{myChargeMove1.label}</span>
 							<span className="move_count charge">{getChargeMoveCount(
 								myFastMove.energyDelta,
 								myChargeMove1.energyDelta,
 								'single'
 							)}</span>
-						</p>
+						</div>
 						{myChargeMove2 &&
-							<p style={{ display: 'flex', marginBottom: '1rem' }}>
+							<div style={{ display: 'flex', marginBottom: '1rem' }}>
 								<span style={{ flexGrow: 1 }} className={'move_type move_name ' + myChargeMove2.type.toLowerCase()}>{myChargeMove2.label}</span>
 								<span className="move_count charge">{getChargeMoveCount(
 									myFastMove.energyDelta,
 									myChargeMove2.energyDelta,
 									'single'
 								)}</span>
-							</p>
+							</div>
 						}
 					</div>
 				</div>

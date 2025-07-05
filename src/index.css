@@ -24,13 +24,16 @@ body {
 	flex-direction: column;
 }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
 	color: #1e89e8;
 	text-decoration: none;
-  	font-weight: 600;
+	font-weight: 600;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	text-decoration: underline;
 }
 
@@ -70,18 +73,6 @@ a:hover, a:active {
 	padding: 1.5rem 1rem;
 	margin: 1rem;
 	box-shadow: 0 0 3px 2px rgba(51, 51, 51, 0.3);
-}
-
-#team-holder h3 {
-	background-color: #7dd5aa;
-	color: #fff;
-	font-size: 1.4rem;
-	font-weight: 700;
-	line-height: 4rem;
-	letter-spacing: .1rem;
-	padding: 0 2rem;
-	text-align: center;
-	text-transform: uppercase;
 }
 
 #cup-data {
@@ -152,6 +143,47 @@ option {
 
 button {
 	cursor: pointer;
+}
+
+input:where([type="checkbox"][role="switch"]) {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: relative;
+	color: inherit;
+	font-size: inherit;
+	width: 6rem;
+	height: 3rem;
+	box-sizing: content-box;
+	border-radius: 1em;
+	vertical-align: text-bottom;
+	margin: auto;
+	background: #e5e5e5;
+	box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+}
+
+input:where([type="checkbox"][role="switch"])::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	transition: all 200ms ease-out;
+	box-sizing: border-box;
+	width: 2.4rem;
+	height: 2.4rem;
+	margin: 0 0.15em;
+	border-radius: 50%;
+	background: linear-gradient(white, #f2f2f2);
+}
+
+input:where([type="checkbox"][role="switch"]):checked::before {
+	left: 3.2rem;
+}
+
+input:where([type="checkbox"][role="switch"]):checked {
+	background: #7dd5aa;
 }
 
 a.app-like,
@@ -456,6 +488,7 @@ label.checkbox span {
 	padding: .4rem 1rem;
 	text-transform: uppercase;
 	border-radius: .4rem;
+	margin-bottom: 1rem;
 }
 
 .move_name {
@@ -542,8 +575,80 @@ label.checkbox span {
 	gap: 1rem;
 }
 
-.team-grid {
+.team-mons.with-images {
 	grid-template-columns: repeat(3, minmax(22rem, 1fr));
+}
+
+.without-images {
+	grid-template-columns: none;
+}
+
+.without-images .moves {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr 2fr;
+	margin-bottom: 1rem;
+}
+
+.without-images .charge-moves {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(2, minmax(22rem, 1fr));
+}
+
+.without-images .pokemon-view {
+	display: flex;
+	gap: 1rem;
+}
+
+.opponent-mons.without-images .pokemon-view > div:first-child {
+	flex-grow: 1;
+}
+
+.without-images .pokemon-type-box-heading {
+	display: grid;
+	grid-template-columns: 1fr 10rem 12rem 6.5rem;
+}
+
+.cup-team-box.without-images .pokemon-type-box-heading {
+	grid-template-columns: 1fr 6.5rem;
+	padding: .5rem 1rem;
+	margin: 0;
+}
+
+.cup-team-box.without-images .pokemon-type-box-heading:first-child {
+	border-radius: .5rem .5rem 0 0;
+}
+
+.cup-team-box.without-images .pokemon-type-box-heading:last-child {
+	border-radius: 0 0 .5rem .5rem;
+}
+
+.cup-team-box.without-images .pokemon-type-box-heading h3 {
+	font-size: 1.4rem;
+}
+
+.cup-team-box.without-images {
+	flex-direction: column;
+	gap: .2rem;
+}
+
+.opponent-mons.without-images .pokemon-type-box-heading {
+	grid-template-columns: 1fr 6.5rem;
+}
+
+.without-images .pokemon-type-box-heading h3 {
+	margin: auto auto auto 0;
+}
+
+.without-images .stats {
+	background: rgba(255, 255, 255, .75);
+	border-radius: .5rem;
+	padding: .3rem .5rem;
+	flex-grow: 0;
+	white-space: nowrap;
+	margin: auto 1rem auto auto;
+	font-weight: normal;
 }
 
 .remove-opponent {
@@ -569,18 +674,24 @@ label.checkbox span {
 	background: rgba(255, 255, 255, .75);
 	padding: .2rem .3rem;
 	border-radius: 2rem;
+	margin: auto 0 auto auto;
 }
 
+.iv-list div,
 .iv-list span {
 	position: relative;
 	padding: 0 .6rem;
+	width: 2rem;
+	text-align: center;
+	display: inline-block;
 }
 
-.iv-list sup {
+.iv-list span {
 	position: absolute;
 	top: -1.5rem;
-	left: -.2rem;
+	left: 0rem;
 	font-size: 1rem;
+	text-transform: uppercase;
 }
 
 .type-list {

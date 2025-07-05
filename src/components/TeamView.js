@@ -6,7 +6,7 @@ import StarFilled from '../images/StarFilled'
 import Trash from '../images/Trash'
 import styled from 'styled-components'
 
-export default function TeamView({ team, doAction, showEditor }) {
+export default function TeamView({ team, doAction, showEditor, useImages }) {
 	const [notes, setNotes] = useState('')
 	const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
@@ -63,8 +63,8 @@ export default function TeamView({ team, doAction, showEditor }) {
 			</div>
 		</div>
 		<div className="cup-section-body">
-			<div className="flex-container on-narrow-flex-col" style={{ flexGrow: '1' }}>
-				<div className="team-grid grid-list">
+			<div className="flex-container on-narrow-flex-col">
+				<div className={`grid-list team-mons ${useImages ? 'with-images' : 'without-images'}`}>
 					{Array.from({ length: 3 }).map(
 						(m, teamIndex) => <PokemonView
 							{...{
@@ -84,7 +84,8 @@ export default function TeamView({ team, doAction, showEditor }) {
 								onMoveUp: () => teamIndex > 0 &&
 									moveTeamMember(teamIndex, -1),
 								onMoveDown: () => teamIndex < 2 &&
-									moveTeamMember(teamIndex, 1)
+									moveTeamMember(teamIndex, 1),
+								useImages
 							}}
 						/>
 					)}
