@@ -184,9 +184,18 @@ export default function PokemonView({
 				{showStats && <div className={'flex-row'} style={{ margin: '1rem 0' }}>
 					<div className="stats" style={{ whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>{(pokemon?.cp) || '-'} CP</div>
 					<div className="stats iv-list" style={{ textAlign: 'right', whiteSpace: 'nowrap', lineHeight: '2.5rem' }}>
-						<span>{(pokemon?.ivs?.atk) || '-'}<sup>Atk</sup></span>/
-						<span>{(pokemon?.ivs?.def) || '-'}<sup>Def</sup></span>/
-						<span>{(pokemon?.ivs?.sta) || '-'}<sup>Sta</sup></span>
+						<div>
+							<span>Atk</span>
+							{(pokemon?.ivs?.atk) || '-'}
+						</div>/
+						<div>
+							<span>Def</span>
+							{(pokemon?.ivs?.def) || '-'}
+						</div>/
+						<div>
+							<span>Sta</span>
+							{(pokemon?.ivs?.sta) || '-'}
+						</div>
 					</div>
 				</div>}
 				<div>
