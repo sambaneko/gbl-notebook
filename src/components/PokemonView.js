@@ -178,7 +178,13 @@ export default function PokemonView({
 				{pokemon?.shadow && <img src={process.env.PUBLIC_URL + '/images/ic_shadow.png'} style={{ position: 'absolute', right: 0, bottom: 0 }} width="45" />}
 				{pokemon?.purified && <img src={process.env.PUBLIC_URL + '/images/ic_purified.png'} style={{ position: 'absolute', right: 0, bottom: 0 }} width="45" />}
 				<PokemonSprite
-					size='100' pokemon={myPokemon} style={{ display: 'block', margin: '0 auto 1rem' }} />
+					size='100'
+					pokemon={{
+						...myPokemon,
+						...pokemon
+					}}
+					style={{ display: 'block', margin: '0 auto 1rem' }}
+				/>
 			</div>
 			<div style={{ width: '100%' }}>
 				{showStats && <div className={'flex-row'} style={{ margin: '1rem 0' }}>
