@@ -1,5 +1,7 @@
 import { configureStore, createSlice, combineReducers } from '@reduxjs/toolkit'
 import storage from 'redux-persist/lib/storage'
+import { createTransform } from 'redux-persist'
+
 import {
 	persistStore,
 	persistReducer,
@@ -11,19 +13,6 @@ import {
 	REGISTER,
 } from 'redux-persist'
 import { v4 as uuidv4 } from 'uuid'
-
-const persistConfig = { key: 'root', storage }
-const intlDtFormat = new Intl.DateTimeFormat(undefined, {
-	...{
-		dateStyle: 'short',
-		timeStyle: 'short',
-		hourCycle: 'h12'
-	},
-	...(process.env.REACT_APP_USE_TZ !== ''
-		? { timeZone: process.env.REACT_APP_USE_TZ }
-		: {}
-	)
-})
 
 export const pokemonList = require('./game-data/parsed/pokemon.json')
 export const moveList = require('./game-data/parsed/moves.json')
@@ -38,6 +27,48 @@ seasonList.map(
 	]
 )
 export { seasonList }
+
+const initialState = {
+	version: 1.0,
+	cups: {},
+	templates: [],
+	settings: {
+		season: seasonList[0].value,
+		images: false
+	}
+}
+
+const addImagesSettingTransform = createTransform(
+	(inboundState, key) => inboundState,
+	(outboundState, key) => {
+		if (!outboundState) return outboundState
+		return {
+			...outboundState,
+			settings: {
+				...outboundState.settings,
+				images: outboundState.settings?.images ?? false
+			}
+		}
+	}
+)
+
+const persistConfig = {
+	key: 'root',
+	storage,
+	transforms: [addImagesSettingTransform]
+}
+
+const intlDtFormat = new Intl.DateTimeFormat(undefined, {
+	...{
+		dateStyle: 'short',
+		timeStyle: 'short',
+		hourCycle: 'h12'
+	},
+	...(process.env.REACT_APP_USE_TZ !== ''
+		? { timeZone: process.env.REACT_APP_USE_TZ }
+		: {}
+	)
+})
 
 const getId = (check) => {
 	let newId = uuidv4()
@@ -59,15 +90,6 @@ const createTeam = (teams) => {
 		mons: [],
 		notes: '',
 		fave: false
-	}
-}
-
-const initialState = {
-	version: 1.0,
-	cups: {},
-	templates: [],
-	settings: {
-		season: seasonList[0].value
 	}
 }
 

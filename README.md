@@ -1,17 +1,14 @@
 # GBL Notebook
 
-A small app I made to keep track of my Pokemon Go GBL teams, and notable opponent data.  Keeping track of teams within the game itself is not convenient:
-
-* Storing many teams results in cluttered UI, and you can't rearrange them.
-* Unforseen bugs may occassionally delete your stored teams entirely.
-* Using tags don't preserve information like team order or move sets, and again becomes cluttered if you have a lot of them.
-* There's nowhere to add any contextual notes for gameplay strategies.
+An app to keep track of Pokemon Go GBL teams over the seasons.  It's inconvenient to store a lot of teams in the game itself, and there's nowhere to store your own meta data like contextual notes or strategies.
 
 I also wanted to keep track of the opponents I would regularly encounter in each cup.  There are plenty of resources where you can look up the top ranked contenders in a given format, but this often doesn't match what I'm seeing in practice, so I wanted to document what I actually ran into.
 
-## Updates and Notes
+## Development
 
-Continuing initial dev; I'm not expecting anyone to be seeing or using this yet... I'm sure there are many bugs.  I'm mostly using this on desktop, but added some small-screen styling.
+I'm building this app for personal use in my free time; updates will be sporadic and follow my whims and wants for the app.  I don't expect others to contribute, but made it open source if anyone wants to use or fork it.  There will certainly be bugs.  Optimization isn't a particular goal at the moment, so the code may be a ridiculous mess in some spots.
+
+I'm mostly using this on desktop, so while there's some styling available, I'm not typically focused on the layout for small screens; it may be wonky there.
 
 ## Preview
 
@@ -29,19 +26,23 @@ To run a local copy of the app, you'll need git, NodeJS and PHP.  The app is mad
 
 * Now you can run (`npm start`) or build (`npm build`) the app.
 
-* The app includes some default images; to add Pokemon images, run the following in the `public/images/pokemon` directory:
+## Pokemon Images
+
+It's a bit troublesome to manage so many Pokemon images, so by default, the app is set in a "No Images" mode, which renders Pokemon views with just text and type icons.  If you want to add images, the app's default path for them is in `public/images/pokemon`, but you can also set a custom path in the app's `.env.local` file.
+
+Image names should match those in the [PokeMiners' pogo_assets](https://github.com/PokeMiners/pogo_assets) repo, in the `Images/Pokemon/Addressable Assets` path; you can use these commands to pull just that path:
 
 ```
 > git clone --filter=blob:none --no-checkout --depth 1 --sparse https://github.com/PokeMiners/pogo_assets.git .
 > git sparse-checkout set --no-cone "Images/Pokemon/Addressable Assets"
 > git checkout
-> mv "Images/Pokemon/Addressable Assets/*" .
-> rmdir -R ./Images
 ```
+
+If you enable "Images" mode without having populated the images, you'll get some default images instead; defaults are also used if the Pokeminers repo is missing an image (such as, at time of writing, Dachsbun or G-Corsola).
 
 ## Data Storage
 
-Data is saved in local storage, so it's only accessible to your browser.  There is an export function in the Settings, which allows data to be backed up, or ported to another browser.
+Data is saved in local storage, so it's only accessible to your browser.  There is an export function in the Settings, which allows data to be backed up, or ported to another browser.  I'd recommend making regular backups.
 
 ## Languages and Text
 During installation, you could select a different language file from the assets repo.  If you do, modify this line in `src/game-data/parse-latest.php` to match your chosen language:
@@ -56,4 +57,4 @@ In the `src/game-data/languages` directory, there is also an example file named 
 
 ## Acknowledgements
 
-This is a fan-made project intended for personal use and educational purposes, which the author believes is covered by fair use.  Pokémon Go is the property of The Pokemon Company and Niantic.  Thanks to the [PokeMiners](https://github.com/PokeMiners) for providing the game master file and other assets.
+This is a fan-made project intended for personal use and educational purposes, which the author believes is covered by fair use.  Pokémon Go is the property of The Pokemon Company and Niantic.  The game master file and other assets are from the [PokeMiners](https://github.com/PokeMiners) repo.

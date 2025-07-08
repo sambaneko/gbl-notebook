@@ -5,7 +5,8 @@ export default function OpponentsView({
 	opponents,
 	doAction,
 	showEditor,
-	season
+	season,
+	useImages
 }) {
 	let dragging = useRef()
 	let draggingOver = useRef()
@@ -47,7 +48,7 @@ export default function OpponentsView({
 		</div>
 		{
 			opponents.length > 0 &&
-			<div className="cup-section-body grid-list">
+			<div className={`cup-section-body grid-list opponent-mons ${useImages ? 'with-images' : 'without-images'}`}>
 				{opponents.map((mon, monIndex) =>
 					<PokemonView
 						key={'opponent_' + monIndex}
@@ -67,6 +68,7 @@ export default function OpponentsView({
 						onDragStart={e => dragStart(mon.id, monIndex)}
 						onDragEnter={e => dragEnter(monIndex)}
 						onDragEnd={e => dragEnd()}
+						{...{ useImages }}
 					/>
 				)}
 			</div>
