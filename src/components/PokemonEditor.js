@@ -298,169 +298,218 @@ export default function PokemonEditor({
 				</div>
 			</div>
 
-			{isNamed && <>
-				<div className="grid grid-fashion grid-stats">
-					<div className="grid1">
-						<label>CP</label>
-						<input type="number" min="0"
-							onBlur={(ev) => setEditedMon({
+			{isNamed && <div className="grid grid-fashion grid-stats">
+				<div className="grid1">
+					<label>CP</label>
+					<input type="number" min="0"
+						onBlur={(ev) => setEditedMon({
+							...editedMon,
+							cp: ev.target.value
+						})}
+						defaultValue={editedMon?.cp}
+						disabled={!monPopulated}
+					/>
+				</div>
+				<div className="grid2 flex-row">
+					<div>
+						<label>Attack IV</label>
+						<select
+							defaultValue={editedMon?.ivs?.atk}
+							onChange={(ev) => setEditedMon({
 								...editedMon,
-								cp: ev.target.value
+								ivs: {
+									...(editedMon['ivs'] ? editedMon.ivs : {}),
+									atk: ev.target.value
+								}
 							})}
-							defaultValue={editedMon?.cp}
 							disabled={!monPopulated}
-						/>
+						>
+							<option key="atk_none">-</option>
+							{
+								[...Array(16).keys()].map((o) =>
+									<option key={'atk' + o} value={o}>{o}</option>)
+							}
+						</select>
 					</div>
-					<div className="grid2 flex-row">
-						<div>
-							<label>Attack IV</label>
-							<select
-								defaultValue={editedMon?.ivs?.atk}
-								onChange={(ev) => setEditedMon({
-									...editedMon,
-									ivs: {
-										...(editedMon['ivs'] ? editedMon.ivs : {}),
-										atk: ev.target.value
-									}
-								})}
-								disabled={!monPopulated}
-							>
-								<option key="atk_none">-</option>
-								{
-									[...Array(16).keys()].map((o) =>
-										<option key={'atk' + o} value={o}>{o}</option>)
+					<div>
+						<label>Defense IV</label>
+						<select
+							defaultValue={editedMon?.ivs?.def}
+							onChange={(ev) => setEditedMon({
+								...editedMon,
+								ivs: {
+									...(editedMon['ivs'] ? editedMon.ivs : {}),
+									def: ev.target.value
 								}
-							</select>
-						</div>
-						<div>
-							<label>Defense IV</label>
-							<select
-								defaultValue={editedMon?.ivs?.def}
-								onChange={(ev) => setEditedMon({
-									...editedMon,
-									ivs: {
-										...(editedMon['ivs'] ? editedMon.ivs : {}),
-										def: ev.target.value
-									}
-								})}
-								disabled={!monPopulated}
-							>
-								<option key="def_none">-</option>
-								{
-									[...Array(16).keys()].map((o) =>
-										<option key={'def' + o} value={o}>{o}</option>)
-								}
-							</select>
-						</div>
-						<div>
-							<label>Stamina IV</label>
-							<select
-								defaultValue={editedMon?.ivs?.sta}
-								onChange={(ev) => setEditedMon({
-									...editedMon,
-									ivs: {
-										...(editedMon['ivs'] ? editedMon.ivs : {}),
-										sta: ev.target.value
-									}
-								})}
-								disabled={!monPopulated}
-							>
-								<option key="sta_none">-</option>
-								{
-									[...Array(16).keys()].map((o) =>
-										<option key={'sta' + o} value={o}>{o}</option>)
-								}
-							</select>
-						</div>
+							})}
+							disabled={!monPopulated}
+						>
+							<option key="def_none">-</option>
+							{
+								[...Array(16).keys()].map((o) =>
+									<option key={'def' + o} value={o}>{o}</option>)
+							}
+						</select>
 					</div>
-
-					<div className="grid6">
-						<label className={
-							'checkbox' + (
-								!monPopulated ? ' disabled' : ''
-							)
-						} key={editedMon?.bestBuddy ? 'a' : 'b'}>
-							<input
-								defaultChecked={editedMon?.bestBuddy || false}
-								type="checkbox"
-								disabled={!monPopulated}
-								onClick={(ev) => {
-									let mon = { ...editedMon }
-									mon.bestBuddy = ev.target.checked
-									setEditedMon(mon)
-								}}
-							/> <span>Best Buddy</span>
-						</label>
-					</div>
-					<div className="grid3">
-						<label className={
-							'checkbox' + (
-								!monPopulated ? ' disabled' : ''
-							)
-						} key={editedMon?.shadow ? 'a' : 'b'}>
-							<input
-								defaultChecked={editedMon?.shadow || false}
-								type="checkbox"
-								disabled={
-									!monPopulated ||
-									!pokemonData.shadowAvailable
+					<div>
+						<label>Stamina IV</label>
+						<select
+							defaultValue={editedMon?.ivs?.sta}
+							onChange={(ev) => setEditedMon({
+								...editedMon,
+								ivs: {
+									...(editedMon['ivs'] ? editedMon.ivs : {}),
+									sta: ev.target.value
 								}
-								onClick={(ev) => {
-									let mon = { ...editedMon }
-									mon.shadow = ev.target.checked
-									if (ev.target.checked) {
-										mon.purified = false
-									}
-									setEditedMon(mon)
-								}}
-							/> <span>Shadow</span>
-						</label>
-					</div>
-					<div className="grid4">
-						<label className={
-							'checkbox' + (
-								!monPopulated ? ' disabled' : ''
-							)
-						} key={editedMon?.purified ? 'a' : 'b'}>
-							<input
-								defaultChecked={editedMon?.purified || false}
-								type="checkbox"
-								disabled={
-									!monPopulated ||
-									!pokemonData.shadowAvailable
-								}
-								onClick={(ev) => {
-									let mon = { ...editedMon }
-									mon.purified = ev.target.checked
-									if (ev.target.checked) {
-										mon.shadow = false
-									}
-									setEditedMon(mon)
-								}}
-							/> <span>Purified</span>
-						</label>
-					</div>
-					<div className="grid5">
-						<label className={
-							'checkbox' + (
-								!monPopulated ? ' disabled' : ''
-							)
-						}>
-							<input
-								defaultChecked={editedMon?.shiny || false}
-								type="checkbox"
-								onClick={(ev) => {
-									setEditedMon({
-										...editedMon,
-										shiny: ev.target.checked
-									})
-								}}
-								disabled={!monPopulated}
-							/> <span>Shiny</span>
-						</label>
+							})}
+							disabled={!monPopulated}
+						>
+							<option key="sta_none">-</option>
+							{
+								[...Array(16).keys()].map((o) =>
+									<option key={'sta' + o} value={o}>{o}</option>)
+							}
+						</select>
 					</div>
 				</div>
-			</>}
+
+				<div className="grid6">
+					<label className={
+						'checkbox' + (
+							!monPopulated ? ' disabled' : ''
+						)
+					} key={editedMon?.bestBuddy ? 'a' : 'b'}>
+						<input
+							defaultChecked={editedMon?.bestBuddy || false}
+							type="checkbox"
+							disabled={!monPopulated}
+							onClick={(ev) => {
+								let mon = { ...editedMon }
+								mon.bestBuddy = ev.target.checked
+								setEditedMon(mon)
+							}}
+						/> <span>Best Buddy</span>
+					</label>
+				</div>
+				<div className="grid3">
+					<label className={
+						'checkbox' + (
+							!monPopulated ? ' disabled' : ''
+						)
+					} key={editedMon?.shadow ? 'a' : 'b'}>
+						<input
+							defaultChecked={editedMon?.shadow || false}
+							type="checkbox"
+							disabled={
+								!monPopulated ||
+								!pokemonData.shadowAvailable
+							}
+							onClick={(ev) => {
+								let mon = { ...editedMon }
+								mon.shadow = ev.target.checked
+								if (ev.target.checked) {
+									mon.purified = false
+								}
+								setEditedMon(mon)
+							}}
+						/> <span>Shadow</span>
+					</label>
+				</div>
+				<div className="grid4">
+					<label className={
+						'checkbox' + (
+							!monPopulated ? ' disabled' : ''
+						)
+					} key={editedMon?.purified ? 'a' : 'b'}>
+						<input
+							defaultChecked={editedMon?.purified || false}
+							type="checkbox"
+							disabled={
+								!monPopulated ||
+								!pokemonData.shadowAvailable
+							}
+							onClick={(ev) => {
+								let mon = { ...editedMon }
+								mon.purified = ev.target.checked
+								if (ev.target.checked) {
+									mon.shadow = false
+								}
+								setEditedMon(mon)
+							}}
+						/> <span>Purified</span>
+					</label>
+				</div>
+				<div className="grid5">
+					<label className={
+						'checkbox' + (
+							!monPopulated ? ' disabled' : ''
+						)
+					}>
+						<input
+							defaultChecked={editedMon?.shiny || false}
+							type="checkbox"
+							onClick={(ev) => {
+								setEditedMon({
+									...editedMon,
+									shiny: ev.target.checked
+								})
+							}}
+							disabled={!monPopulated}
+						/> <span>Shiny</span>
+					</label>
+				</div>
+			</div>}
+
+			{(!isNamed && pokemonData.shadowAvailable) && <div className="grid grid-fashion grid-stats no-name">
+				<div className="grid3">
+					<label className={
+						'checkbox' + (
+							!monPopulated ? ' disabled' : ''
+						)
+					} key={editedMon?.shadow ? 'a' : 'b'}>
+						<input
+							defaultChecked={editedMon?.shadow || false}
+							type="checkbox"
+							disabled={
+								!monPopulated ||
+								!pokemonData.shadowAvailable
+							}
+							onClick={(ev) => {
+								let mon = { ...editedMon }
+								mon.shadow = ev.target.checked
+								if (ev.target.checked) {
+									mon.purified = false
+								}
+								setEditedMon(mon)
+							}}
+						/> <span>Shadow</span>
+					</label>
+				</div>
+				<div className="grid4">
+					<label className={
+						'checkbox' + (
+							!monPopulated ? ' disabled' : ''
+						)
+					} key={editedMon?.purified ? 'a' : 'b'}>
+						<input
+							defaultChecked={editedMon?.purified || false}
+							type="checkbox"
+							disabled={
+								!monPopulated ||
+								!pokemonData.shadowAvailable
+							}
+							onClick={(ev) => {
+								let mon = { ...editedMon }
+								mon.purified = ev.target.checked
+								if (ev.target.checked) {
+									mon.shadow = false
+								}
+								setEditedMon(mon)
+							}}
+						/> <span>Purified</span>
+					</label>
+				</div>
+			</div>}
 		</div>
 
 		<div className="flex-row">

@@ -366,6 +366,7 @@ label.checkbox {
 	border-color: hsl(0, 0%, 80%);
 	border-width: 1px;
 	border-style: solid;
+	margin-bottom: 0;
 }
 
 label.checkbox input {
@@ -375,6 +376,10 @@ label.checkbox input {
 label.checkbox span {
 	position: relative;
 	top: -0.2rem;
+}
+
+label:has(input[type="checkbox"]:disabled) {
+	opacity: .5;
 }
 
 .team-placeholder {
@@ -601,7 +606,7 @@ label.checkbox span {
 	gap: 1rem;
 }
 
-.opponent-mons.without-images .pokemon-view > div:first-child {
+.opponent-mons.without-images .pokemon-view>div:first-child {
 	flex-grow: 1;
 }
 
@@ -788,6 +793,11 @@ label.checkbox span {
 	grid-template-areas:
 		"grid1 grid2 grid2 grid2"
 		"grid6 grid3 grid4 grid5";
+}
+
+.grid-stats.no-name {
+	grid-template-areas:
+		"grid3 grid4";
 }
 
 .grid1 {
