@@ -203,6 +203,7 @@ export default function PokemonEditor({
 								create: false,
 								update: false
 							}))
+							resetFields(prev => prev + 1)
 						}}
 						isClearable={true}
 					/>
