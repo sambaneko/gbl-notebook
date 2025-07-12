@@ -18,10 +18,20 @@ export default function PokemonSelectFromCup({
 
 		if (selectedCup?.whiteList) {
 			filteredOpts = filteredOpts.filter((mon) => {
-				return selectedCup.whiteList.includes(mon.pokemonId) ||
+				let whiteList = selectedCup.whiteList
+				let banList = selectedCup?.banList || []
+
+				return whiteList.includes(mon.pokemonId) ||
 					(
 						mon.shortForm
-							? selectedCup.banList.includes(mon.pokemonId + ', ' + mon.shortForm)
+							? (
+								whiteList.includes(
+									mon.pokemonId + ', ' + mon.shortForm
+								) &&
+								!banList.includes(
+									mon.pokemonId + ', ' + mon.shortForm
+								)
+							)
 							: false
 					)
 			})
