@@ -26,7 +26,5 @@ yarn-error.log*
 !/public/images/pokemon/.gitkeep 
 
 /src/game-data/latest.json
-/src/game-data/parsed/*
-!/src/game-data/parsed/.gitkeep
 /src/game-data/languages/*
 !/src/game-data/languages/English_patch.txt

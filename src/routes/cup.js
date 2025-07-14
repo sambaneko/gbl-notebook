@@ -145,11 +145,17 @@ export default function Cup() {
 		</div>
 	}
 
+	const SingleValue = ({ children, ...props }) => (
+		<components.SingleValue {...props}>
+			<div className="option-cup-name">{children}</div>
+		</components.SingleValue>
+	)
+
 	return <div id="cup-wrapper">
 		<div id="teams-wrapper">
 			<div style={{ backgroundColor: '#7dd5aa', padding: '1rem' }}>
 				<Select
-					components={{ Option }}
+					components={{ Option, SingleValue }}
 					options={sortedLeagues}
 					styles={{
 						control: (styles) => ({
@@ -185,7 +191,7 @@ export default function Cup() {
 					{...{ showEditor }}
 					doAction={actionHandler.doOpponentAction}
 					opponents={
-						currentSeason
+						currentSeason && cupData
 							? cupData.opponents.filter(
 								({ season }) => season == currentSeason.value
 							)

@@ -925,6 +925,13 @@ label:has(input[type="checkbox"]:disabled) {
 	font-weight: 700;
 }
 
+.option-cup-name {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 23rem;
+}
+
 .team-group {
 	padding: 1rem;
 	border: 0.1rem solid #7dd5aa;
