@@ -15,6 +15,7 @@ import './index.css'
 import Root from './routes/root'
 import Index from './routes/index'
 import Cup, { loader as cupLoader } from './routes/cup'
+import Settings from './routes/settings'
 import Error from './routes/error'
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
 				path: "cup/:cupId",
 				element: <Cup />,
 				loader: cupLoader,
+			},
+			{
+				path: "/settings",
+				element: <Settings />
 			}
 		],
 		errorElement: <Error />

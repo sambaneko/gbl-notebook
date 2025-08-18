@@ -1,8 +1,11 @@
 import { Plus } from '../images'
+import { useSelector } from 'react-redux'
 
 export default function PokemonSprite({ pokemon, size, style }) {
+	const appData = useSelector((state) => state.appData)
+
 	let myStyle = style ? { ...style } : {}
-	let imgPath = process.env.REACT_APP_POKEMON_IMAGES_PATH 
+	let imgPath = appData.settings.imagesPath 
 		?? process.env.PUBLIC_URL + '/images/pokemon'
 
 	if (pokemon) {

@@ -34,8 +34,11 @@ const initialState = {
 	templates: [],
 	settings: {
 		season: seasonList[0].value,
-		images: false
-	}
+		images: false,
+		imagesPath: null,
+		timezone: null,
+	},
+	lastViewed: null
 }
 
 const addImagesSettingTransform = createTransform(
@@ -52,23 +55,50 @@ const addImagesSettingTransform = createTransform(
 	}
 )
 
+const addEnvSettingsTransform = createTransform(
+	(inboundState, key) => inboundState,
+	(outboundState, key) => {
+		if (!outboundState) return outboundState
+		return {
+			...outboundState,
+			settings: {
+				...outboundState.settings,
+				imagesPath: outboundState.settings?.imagesPath ?? null,
+				timezone: outboundState.settings?.timezone ?? null
+			}
+		}
+	}
+)
+
+const addLastViewedTransform = createTransform(
+	(inboundState, key) => inboundState,
+	(outboundState, key) => {
+		if (!outboundState) return outboundState
+		return {
+			...outboundState,
+			lastViewed: outboundState.lastViewed ?? null,
+		}
+	}
+)
+
 const persistConfig = {
 	key: 'root',
 	storage,
-	transforms: [addImagesSettingTransform]
+	transforms: [addImagesSettingTransform, addEnvSettingsTransform, addLastViewedTransform]
 }
 
-const intlDtFormat = new Intl.DateTimeFormat(undefined, {
-	...{
-		dateStyle: 'short',
-		timeStyle: 'short',
-		hourCycle: 'h12'
-	},
-	...(process.env.REACT_APP_USE_TZ !== ''
-		? { timeZone: process.env.REACT_APP_USE_TZ }
-		: {}
-	)
-})
+const getFormattedDate = (tz) => {
+	return (
+		new Intl.DateTimeFormat(undefined, {
+			...{
+				dateStyle: 'short',
+				timeStyle: 'short',
+				hourCycle: 'h12'
+			},
+			...(tz !== null ? { timeZone: tz } : {})
+		})
+	).format(new Date())
+}
 
 const getId = (check) => {
 	let newId = uuidv4()
@@ -81,8 +111,13 @@ const getId = (check) => {
 	return newId
 }
 
-const createTeam = (teams) => {
-	let date = intlDtFormat.format(new Date())
+const initCup = {
+	teams: [],
+	opponents: []
+}
+
+const createTeam = (teams, tz) => {
+	let date = getFormattedDate(tz)
 	return {
 		id: getId(teams),
 		created: date,
@@ -106,6 +141,9 @@ export const slice = createSlice({
 				...action.payload
 			}
 		},
+		updateLastViewed: (state, action) => {
+			state.lastViewed = action.payload
+		},
 		updateSettings: (state, action) => {
 			state.settings = {
 				...state.settings,
@@ -114,17 +152,21 @@ export const slice = createSlice({
 		},
 		updateTeam: (state, action) => {
 			let pl = action.payload
+
+			if (state.cups[pl.cup] === undefined)
+				state.cups[pl.cup] = { ...initCup }
+
 			let teams = state.cups[pl.cup].teams
 			let team = { ...pl.team }
 
 			if (team.id === undefined) {
 				team.season = state.settings.season
 				state.cups[pl.cup].teams.push({
-					...createTeam(teams),
+					...createTeam(teams, state.settings.timezone),
 					...team
 				})
 			} else {
-				team.modified = intlDtFormat.format(new Date())
+				team.modified = getFormattedDate(state.settings.timezone)
 				let i = teams.findIndex(({ id }) => id === team.id)
 				state.cups[pl.cup].teams[i] = { ...teams[i], ...team }
 			}
@@ -172,7 +214,7 @@ export const slice = createSlice({
 			let teams = state.cups[pl.cup].teams
 
 			if (pl.id === null) {
-				let team = createTeam(teams)
+				let team = createTeam(teams, state.settings.timezone)
 				team = {
 					...team,
 					season: pl.season
@@ -188,7 +230,7 @@ export const slice = createSlice({
 					...teams[i].mons[pl.memberIndex],
 					...pl.member
 				}
-				state.cups[pl.cup].teams[i].modified = intlDtFormat.format(new Date())
+				state.cups[pl.cup].teams[i].modified = getFormattedDate(state.settings.timezone)
 			}
 		},
 		moveTeamMember: (state, action) => {
@@ -217,6 +259,10 @@ export const slice = createSlice({
 		},
 		updateOpponent: (state, action) => {
 			let pl = action.payload
+
+			if (state.cups[pl.cup] === undefined)
+				state.cups[pl.cup] = { ...initCup }
+			
 			let opponents = state.cups[pl.cup].opponents
 
 			if (
@@ -310,6 +356,7 @@ export const slice = createSlice({
 export const {
 	importAppData,
 	updateSettings,
+	updateLastViewed,
 	updateTeam,
 	deleteTeam,
 	updateCurrent,

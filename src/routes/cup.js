@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLoaderData, useOutletContext, useNavigate } from "react-router-dom"
 import Select, { components } from 'react-select'
-import { seasonList, leaguesList } from '../store'
+import { seasonList, leaguesList, updateLastViewed } from '../store'
 import actions from '../actions/actions'
 import TeamHolder from '../components/TeamHolder'
 import TeamEditor from '../components/TeamEditor'
@@ -45,24 +45,22 @@ export default function Cup() {
 	const [currentSeason, setCurrentSeason] = useState(null)
 
 	useEffect(() => {
-		if (cupData !== null) {
-			let team = cupData.current !== null
-				? cupData.teams.find(({ id }) => id === cupData.current)
-				: null
-			setCurrentTeam(team)
+		let team = cupData && cupData.current !== null
+			? cupData.teams.find(({ id }) => id === cupData.current)
+			: null
+		setCurrentTeam(team)
 
-			let season = team !== null
-				? seasonList.find(
-					({ value }) => value === parseInt(team.season)
-				)
-				: latestSeason
-			setCurrentSeason(season)
+		let season = team !== null
+			? seasonList.find(
+				({ value }) => value === parseInt(team.season)
+			)
+			: latestSeason
+		setCurrentSeason(season)
 
-			actionHandler.updateContext({
-				cup: selectedCup.templateId,
-				season: season.value
-			})
-		}
+		actionHandler.updateContext({
+			cup: selectedCup.templateId,
+			season: season.value
+		})
 	}, [cupData, latestSeason, selectedCup])
 
 	const sortedLeagues = leaguesList.sort((a, b) => {
@@ -160,9 +158,10 @@ export default function Cup() {
 						option: (styles) => ({ ...styles, padding: '2rem' })
 					}}
 					placeholder="Select Cup"
-					onChange={(selectedOpt) => navigate(
-						'/cup/' + selectedOpt.slug
-					)}
+					onChange={(selectedOpt) => {
+						dispatch(updateLastViewed(selectedOpt.slug))
+						navigate('/cup/' + selectedOpt.slug)
+					}}
 					defaultValue={selectedCup}
 				/>
 			</div>
@@ -174,13 +173,15 @@ export default function Cup() {
 			/>
 		</div>
 		<div id="cup-data">
-			{currentTeam !== null && <>
+			{currentTeam !== null &&
 				<TeamView
 					{...{ showEditor }}
 					team={currentTeam}
 					doAction={actionHandler.doTeamAction}
 					useImages={appData.settings.images}
 				/>
+			}
+			{(cupData && cupData.opponents !== null) &&
 				<OpponentsView
 					{...{ showEditor }}
 					doAction={actionHandler.doOpponentAction}
@@ -194,7 +195,7 @@ export default function Cup() {
 					season={currentSeason?.value || null}
 					useImages={appData.settings.images}
 				/>
-			</>}
+			}
 		</div>
 	</div>
 }
