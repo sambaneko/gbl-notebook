@@ -4,6 +4,7 @@ import PokemonView from './PokemonView'
 import Star from '../images/Star'
 import StarFilled from '../images/StarFilled'
 import Trash from '../images/Trash'
+import Duplicate from '../images/Duplicate'
 import styled from 'styled-components'
 
 export default function TeamView({ team, doAction, showEditor, useImages }) {
@@ -16,6 +17,9 @@ export default function TeamView({ team, doAction, showEditor, useImages }) {
 				team: { id: team.id, ...data }
 			}
 		})
+	
+	const duplicateTeam = () =>
+		doAction('duplicate', { id: team.id })	
 
 	const deleteTeam = () => {
 		doAction('delete', { id: team.id })
@@ -107,6 +111,12 @@ export default function TeamView({ team, doAction, showEditor, useImages }) {
 					<span style={{ marginLeft: '.5rem' }}>Modified: {team?.modified || '???'}</span>
 				</div>
 				<div style={{ display: 'flex', minWidth: '30rem' }}>
+					<button type="button"
+						className="plain"
+						style={{ margin: 'auto 0 auto auto' }}
+						onClick={() => duplicateTeam()}
+					> <Duplicate />
+					</button>
 					{showDeleteConfirm
 						? <ConfirmationBox>
 							<div style={{ margin: 'auto 0' }}>
@@ -126,7 +136,7 @@ export default function TeamView({ team, doAction, showEditor, useImages }) {
 						</ConfirmationBox>
 						: <button type="button"
 							className="plain"
-							style={{ margin: 'auto 0 auto auto' }}
+							style={{ margin: 'auto 0 auto 1.4rem' }}
 							onClick={() => setShowDeleteConfirm(true)}
 						> <Trash />
 						</button>

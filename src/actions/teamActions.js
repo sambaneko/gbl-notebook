@@ -1,5 +1,6 @@
 import {
 	updateTeam,
+	duplicateTeam,
 	deleteTeam,
 	updateTeamMember,
 	moveTeamMember,
@@ -25,6 +26,13 @@ export const teamActions = {
 		if (args.data.team.id === undefined)
 			teamActions.switch(args)
 	},
+
+	duplicate: (args) => args.dispatch(
+		duplicateTeam({
+			cup: args.cup,
+			id: args.id
+		})
+	),
 
 	delete: (args) => args.dispatch(
 		deleteTeam({

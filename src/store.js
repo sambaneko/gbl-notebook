@@ -129,6 +129,21 @@ export const slice = createSlice({
 				state.cups[pl.cup].teams[i] = { ...teams[i], ...team }
 			}
 		},
+		duplicateTeam: (state, action) => {
+			let teams = state.cups[action.payload.cup].teams
+			let team = teams.find(
+				({ id }) => id === action.payload.id
+			)
+			let date = intlDtFormat.format(new Date())
+			let duplicate = {
+				...team,
+				id: getId(teams),
+				created: date,
+				modified: date,
+				fave: false
+			}
+			state.cups[action.payload.cup].teams.push(duplicate)
+		},
 		deleteTeam: (state, action) => {
 			state.cups[action.payload.cup].current = null
 
@@ -311,6 +326,7 @@ export const {
 	importAppData,
 	updateSettings,
 	updateTeam,
+	duplicateTeam,
 	deleteTeam,
 	updateCurrent,
 	updateTemplates,
