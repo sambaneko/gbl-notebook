@@ -10,6 +10,22 @@
 		]
 	},
 	{
+		"label": "Season 24: Tales of Transformation",
+		"value": 24,
+		"slug": "24-tales-of-transformation",
+		"cups": [
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_RETRO",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_SUMMER",
+			"COMBAT_LEAGUE_VS_SEEKER_WILLPOWER",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_FANTASY",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_JUNGLE",
+			"COMBAT_LEAGUE_VS_SEEKER_MASTER_PREMIER",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_REMIX",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_HALLOWEEN",
+			"COMBAT_LEAGUE_VS_SEEKER_MASTER_MEGAS"
+		]
+	},	
+	{
 		"label": "Season 23: Delightful Days",
 		"value": 23,
 		"slug": "23-delightful-days",
