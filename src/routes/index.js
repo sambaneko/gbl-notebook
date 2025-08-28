@@ -1,14 +1,15 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function Index() {
-	/**
-	 * The root path exists, but is not currently in use;
-	 * redirect to /cup for now
-	 */
+	const appData = useSelector((state) => state.appData)
 	const navigate = useNavigate()
-// temp
+
 	useEffect(() => {
-		navigate('/cup/spring-cup-great-league-edition', {replace: true})
+		if (appData.lastViewed !== null)
+			navigate(`/cup/${appData.lastViewed}`, {replace: true})
+		else // temp
+			navigate(`/cup/spring-cup-great-league-edition`, {replace: true})
 	})
 }

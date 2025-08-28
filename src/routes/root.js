@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, NavLink, useLocation } from 'react-router-dom'
 import Modal from '../components/Modal'
-import Settings from '../components/Settings'
 import styled from 'styled-components'
 
 export default function Root() {
@@ -27,35 +26,52 @@ export default function Root() {
 			justify-content: right;
 		}
 		& a, a:link, a:visited, button {
-			margin: .4rem;
-			padding: .6rem 2rem;
+			line-height: 4rem;
+			padding: 0 2rem;
 			display: inline-block;		
 			color: inherit;
 			text-transform: uppercase;
-			border-radius: 3rem;
 			text-decoration: none;
 			transition: all 0.1s ease-out;
 			border: none;
   			background: transparent;
+			font-size: 1.4rem;
+			font-weight: 400;
 		}
 		& a:hover, a:active, button:hover {
 			background-color: rgba(0, 0, 0, 0.5);
+		}
+		& a.current, a.current:link, a.current:visited {
+			background-color: #ffffff50;
 		}
 	`
 
 	const [modalContents, setModalContents] = useState(null)
 	const showModal = (modal) => setModalContents(modal)
 
+	const location = useLocation()
+	const notesIsActive = location.pathname === '/' || 
+		location.pathname.startsWith('/cup')
+
 	return <>
 		<Menu>
 			<ul>
-				<li style={{ lineHeight: '3.6rem', fontWeight: 700 }}>
+				<li style={{ lineHeight: '4rem', fontWeight: 700 }}>
 					GBL Notebook
 				</li>
 			</ul>
 			<ul>
 				<li>
-					<button onClick={() => showModal(<Settings />)}>Settings</button>
+					<NavLink
+						to="/"
+						className={() => (notesIsActive ? 'current' : '')}
+					>Notes</NavLink>
+				</li>
+				<li>
+					<NavLink
+						to="/settings"
+						className={({ isActive }) => isActive ? "current" : ""}
+					>Settings</NavLink>
 				</li>
 			</ul>
 		</Menu>
