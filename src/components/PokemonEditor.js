@@ -401,10 +401,7 @@ export default function PokemonEditor({
 						<input
 							defaultChecked={editedMon?.shadow || false}
 							type="checkbox"
-							disabled={
-								!monPopulated ||
-								!pokemonData.shadowAvailable
-							}
+							disabled={!monPopulated}
 							onClick={(ev) => {
 								let mon = { ...editedMon }
 								mon.shadow = ev.target.checked
@@ -425,10 +422,7 @@ export default function PokemonEditor({
 						<input
 							defaultChecked={editedMon?.purified || false}
 							type="checkbox"
-							disabled={
-								!monPopulated ||
-								!pokemonData.shadowAvailable
-							}
+							disabled={!monPopulated}
 							onClick={(ev) => {
 								let mon = { ...editedMon }
 								mon.purified = ev.target.checked
@@ -461,7 +455,7 @@ export default function PokemonEditor({
 				</div>
 			</div>}
 
-			{(!isNamed && pokemonData.shadowAvailable) && <div className="grid grid-fashion grid-stats no-name">
+			{!isNamed && <div className="grid grid-fashion grid-stats no-name">
 				<div className="grid3">
 					<label className={
 						'checkbox' + (
@@ -471,10 +465,7 @@ export default function PokemonEditor({
 						<input
 							defaultChecked={editedMon?.shadow || false}
 							type="checkbox"
-							disabled={
-								!monPopulated ||
-								!pokemonData.shadowAvailable
-							}
+							disabled={!monPopulated}
 							onClick={(ev) => {
 								let mon = { ...editedMon }
 								mon.shadow = ev.target.checked
@@ -495,10 +486,7 @@ export default function PokemonEditor({
 						<input
 							defaultChecked={editedMon?.purified || false}
 							type="checkbox"
-							disabled={
-								!monPopulated ||
-								!pokemonData.shadowAvailable
-							}
+							disabled={!monPopulated}
 							onClick={(ev) => {
 								let mon = { ...editedMon }
 								mon.purified = ev.target.checked
