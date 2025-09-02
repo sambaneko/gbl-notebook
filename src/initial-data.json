@@ -1,0 +1,90 @@
+{
+  "cups": {
+    "COMBAT_LEAGUE_DEFAULT_GREAT": {
+      "teams": [
+        {
+          "id": "5027f39c-e153-49cf-969f-29bbf89bce87",
+          "created": "9/1/25, 9:18 PM",
+          "modified": "9/1/25, 9:33 PM",
+          "mons": [
+            {
+              "templateId": "V0357_POKEMON_TROPIUS",
+              "bestBuddy": false,
+              "shadow": false,
+              "purified": false,
+              "shiny": false,
+              "name": "Tropius",
+              "fast": "AIR_SLASH_FAST",
+              "charge1": "AERIAL_ACE",
+              "charge2": "LEAF_BLADE"
+            },
+            {
+              "templateId": "V0184_POKEMON_AZUMARILL",
+              "bestBuddy": false,
+              "shadow": false,
+              "purified": false,
+              "shiny": false,
+              "name": "Azumarill",
+              "fast": "BUBBLE_FAST",
+              "charge1": "ICE_BEAM",
+              "charge2": "PLAY_ROUGH"
+            },
+            {
+              "templateId": "V0308_POKEMON_MEDICHAM",
+              "bestBuddy": false,
+              "shadow": false,
+              "purified": false,
+              "shiny": false,
+              "name": "Medicham",
+              "fast": "COUNTER_FAST",
+              "charge1": "ICE_PUNCH",
+              "charge2": "DYNAMIC_PUNCH"
+            }
+          ],
+          "notes": "Welcome to GBL Notebook!  Here's my original Great League team; you can edit or remove team members, or remove the team entirely by clicking the trash icon below.  Write any notes you want to add in this text box.\n\nYour data is stored in local storage, so it is only available on the browser you're currently using.  If you want to move it, go to Settings and Export it, then Import it on your new browser.  It's a good idea to occasionally Export your data, so you have a back up.\n\nIf you want to use Pokemon images, you will need to save them locally, or provide a path where they can be loaded from.  Please see Settings and the repo for more details.",
+          "fave": false,
+          "season": 24
+        }
+      ],
+      "opponents": [
+        {
+          "templateId": "V0105_POKEMON_MAROWAK_NORMAL",
+          "bestBuddy": false,
+          "shadow": false,
+          "purified": false,
+          "shiny": false,
+          "fast": "MUD_SLAP_FAST",
+          "charge1": "BONE_CLUB",
+          "charge2": "ROCK_SLIDE",
+          "season": 24,
+          "id": "d881e89f-5dda-4a8f-b3eb-c4e3fbfedb79"
+        },
+        {
+          "templateId": "V0663_POKEMON_TALONFLAME",
+          "bestBuddy": false,
+          "shadow": false,
+          "purified": false,
+          "shiny": false,
+          "fast": "INCINERATE_FAST",
+          "charge1": "FLY",
+          "charge2": "BRAVE_BIRD",
+          "season": 24,
+          "id": "03d1bc93-f4ba-4855-9a6b-63607f67d0d8"
+        },
+        {
+          "templateId": "V0497_POKEMON_SERPERIOR",
+          "bestBuddy": false,
+          "shadow": false,
+          "purified": false,
+          "shiny": false,
+          "fast": "VINE_WHIP_FAST",
+          "charge1": "AERIAL_ACE",
+          "charge2": "FRENZY_PLANT",
+          "season": 24,
+          "id": "da45a537-694a-43d1-b758-7a7e31f29dcd"
+        }
+      ],
+      "current": "5027f39c-e153-49cf-969f-29bbf89bce87"
+    }
+  }
+}

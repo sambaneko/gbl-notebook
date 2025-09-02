@@ -6,10 +6,11 @@ export default function Index() {
 	const appData = useSelector((state) => state.appData)
 	const navigate = useNavigate()
 
-	useEffect(() => {
-		if (appData.lastViewed !== null)
-			navigate(`/cup/${appData.lastViewed}`, {replace: true})
-		else // temp
-			navigate(`/cup/spring-cup-great-league-edition`, {replace: true})
-	})
+	useEffect(() =>
+		navigate(
+			'/cup/' + (
+				appData.lastViewed || 'great-league'
+			), { replace: true }
+		)
+	)
 }

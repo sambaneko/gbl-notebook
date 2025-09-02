@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { importAppData, updateSettings, seasonList } from '../store'
-import Select from 'react-select'
+import StyledSelect from '../ui/StyledSelect'
 import styled from 'styled-components'
 
 export default function Settings() {
@@ -110,7 +110,7 @@ export default function Settings() {
 				<div>
 					<div>Current Season</div>
 					<div>
-						<Select
+						<StyledSelect
 							options={seasonList}
 							defaultValue={
 								appData.settings.season !== undefined
@@ -118,34 +118,6 @@ export default function Settings() {
 									: seasonList[0]
 							}
 							onChange={(season) => updateSeason(season.value)}
-							styles={{
-								control: (styles) => ({
-									...styles,
-									textTransform: 'uppercase',
-									borderRadius: '3rem',
-									borderColor: '#3ABCA0',
-									borderWidth: '2px',
-									textAlign: 'left',
-									padding: '.5rem 1rem',
-									'&:hover': {
-										borderColor: '#44DABA'
-									},
-								}),
-								option: (styles) => ({
-									...styles,
-									textTransform: 'uppercase',
-									textAlign: 'left',
-								}),
-								singleValue: (provided, state) => ({
-									...provided,
-									color: '#3ABCA0'
-								}),
-								dropdownIndicator: (provided) => ({
-									...provided,
-									color: '#3ABCA0',
-									svg: { fill: '#3ABCA0' },
-								}),
-							}}
 						/>
 					</div>
 				</div>
@@ -168,7 +140,7 @@ export default function Settings() {
 					</div>
 				</div>
 				<div className="setting-desc">
-					<p>If Pokemon images are enabled, they will be sourced from the <em>public/images/pokemon</em> path by default.  Alternatively, a custom path can be configured in the app's <em>.env.local</em> file.</p>
+					<p>If Pokemon images are enabled, they will be sourced from the <em>public/images/pokemon</em> path by default.  Alternatively, a custom path can be set below.</p>
 				</div>
 			</SettingRow>
 			<SettingRow>
@@ -195,7 +167,7 @@ export default function Settings() {
 					</div>
 				</div>
 				<div className="setting-desc">
-					<p>Custom URL source for your Pokemon images.  If a custom path is not set, the default images path is <em>public/images/pokemon</em>.</p>
+					<p>Custom URL source for your Pokemon images.  Please ensure that CORS is configured adequately on your image host.</p>
 				</div>
 			</SettingRow>
 		</section>
