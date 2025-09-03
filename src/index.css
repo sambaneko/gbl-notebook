@@ -54,10 +54,11 @@ a:active {
 	display: flex;
 	flex-grow: 1;
 	margin-top: 3.9rem;
-	height: calc(100% - 4rem);
+	height: calc(100vh - 4rem);
 }
 
 .page {
+	height: calc(100% - 4rem);
 	margin: 3.6rem auto;
 	width: 90%;
 	max-width: 70rem;
@@ -943,7 +944,7 @@ label:has(input[type="checkbox"]:disabled) {
 }
 
 .current-season-cup {
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .option-cup-name {
