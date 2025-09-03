@@ -44,13 +44,23 @@ export default function Root() {
 		& a.current, a.current:link, a.current:visited {
 			background-color: #ffffff50;
 		}
+		& .page-links li a {
+			border-radius: 1rem 1rem 0 0;
+		}
+		& .page-links li a.current {
+			color: #104c55;
+			background: #fff;
+		}			
+		& .page-links li:last-child .current {
+			background: rgb(180, 240, 156);
+  		}
 	`
 
 	const [modalContents, setModalContents] = useState(null)
 	const showModal = (modal) => setModalContents(modal)
 
 	const location = useLocation()
-	const notesIsActive = location.pathname === '/' || 
+	const notesIsActive = location.pathname === '/' ||
 		location.pathname.startsWith('/cup')
 
 	return <>
@@ -60,7 +70,7 @@ export default function Root() {
 					GBL Notebook
 				</li>
 			</ul>
-			<ul>
+			<ul className="page-links">
 				<li>
 					<NavLink
 						to="/"

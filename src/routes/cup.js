@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLoaderData, useOutletContext, useNavigate } from "react-router-dom"
-import Select, { components } from 'react-select'
+import { components } from 'react-select'
 import { seasonList, leaguesList, updateLastViewed } from '../store'
 import actions from '../actions/actions'
 import TeamHolder from '../components/TeamHolder'
@@ -9,6 +9,7 @@ import TeamEditor from '../components/TeamEditor'
 import TeamView from '../components/TeamView'
 import OpponentsView from '../components/OpponentsView'
 import PokemonEditor from '../components/PokemonEditor'
+import StyledSelect from '../ui/StyledSelect'
 
 const actionHandler = new actions()
 
@@ -152,17 +153,9 @@ export default function Cup() {
 	return <div id="cup-wrapper">
 		<div id="teams-wrapper">
 			<div style={{ backgroundColor: '#7dd5aa', padding: '1rem' }}>
-				<Select
+				<StyledSelect
 					components={{ Option, SingleValue }}
 					options={sortedLeagues}
-					styles={{
-						control: (styles) => ({
-							...styles,
-							borderRadius: '3rem',
-							padding: '.5rem 1rem'
-						}),
-						option: (styles) => ({ ...styles, padding: '2rem' })
-					}}
 					placeholder="Select Cup"
 					onChange={(selectedOpt) => {
 						dispatch(updateLastViewed(selectedOpt.slug))
@@ -201,6 +194,15 @@ export default function Cup() {
 					season={currentSeason?.value || null}
 					useImages={appData.settings.images}
 				/>
+			}
+			{!cupData &&
+				<>
+					<h1>No Data</h1>
+					<p style={{
+						fontSize: '2rem',
+						fontWeight: 300
+					}}>Looks like there's nothing saved for this Cup yet.</p>
+				</>
 			}
 		</div>
 	</div>

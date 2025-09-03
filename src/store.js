@@ -28,8 +28,7 @@ seasonList.map(
 )
 export { seasonList }
 
-const initialState = {
-	version: 1.0,
+const blankState = {
 	cups: {},
 	templates: [],
 	settings: {
@@ -40,6 +39,8 @@ const initialState = {
 	},
 	lastViewed: null
 }
+const initialData = require('./initial-data.json')
+const initialState = { ...blankState, ...initialData }
 
 const addImagesSettingTransform = createTransform(
 	(inboundState, key) => inboundState,
@@ -133,22 +134,14 @@ export const slice = createSlice({
 	initialState,
 	reducers: {
 		importAppData: (state, action) => {
-			if (action.payload === null) {
-				return initialState
-			}
-			return {
-				...initialState,
-				...action.payload
-			}
+			if (action.payload === null) return blankState
+			return { ...initialState, ...action.payload }
 		},
 		updateLastViewed: (state, action) => {
 			state.lastViewed = action.payload
 		},
 		updateSettings: (state, action) => {
-			state.settings = {
-				...state.settings,
-				...action.payload
-			}
+			state.settings = { ...state.settings, ...action.payload }
 		},
 		updateTeam: (state, action) => {
 			let pl = action.payload
@@ -277,7 +270,7 @@ export const slice = createSlice({
 
 			if (state.cups[pl.cup] === undefined)
 				state.cups[pl.cup] = { ...initCup }
-			
+
 			let opponents = state.cups[pl.cup].opponents
 
 			if (

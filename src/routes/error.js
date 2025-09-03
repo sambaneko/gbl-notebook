@@ -22,11 +22,8 @@ export default function ErrorPage() {
 	const error = useRouteError()
 
 	return <ErrorContainer>
-		<h1>Oops!</h1>
-		<p>Sorry, an unexpected error has occurred.</p>
-		<p>
-			<i>{error.statusText || error.message}</i>
-		</p>
+		<p>An unexpected error has occurred:</p>
+		<p><em>{error.statusText || error.message}</em></p>
 		<p><NavLink className="app-like" to='/cups'>Go Home</NavLink></p>
 	</ErrorContainer>
 }
