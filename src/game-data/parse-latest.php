@@ -23,12 +23,15 @@ $latestJson = json_decode(
 );
 
 $appends = [
-	'pokemon' => []
+	'pokemon' => [],
+	'moves' => []
 ];
-if (file_exists('append/pokemon.json')) {
-	$appends['pokemon'] = json_decode(
-		file_get_contents('append/pokemon.json'), true
-	);
+foreach (array_keys($appends) as $appendName) {
+	if (file_exists("append/{$appendName}.json")) {
+		$appends[$appendName] = json_decode(
+			file_get_contents("append/{$appendName}.json"), true
+		);
+	}
 }
 
 $output = [
@@ -61,7 +64,9 @@ foreach ($latestJson as $jsonObj) {
 	}
 
 	if (isset($jsonObj->data->combatMove)) {
-		$move = parseMoveData($jsonObj, $langLines);
+		$move = parseMoveData(
+			$jsonObj, $langLines, $appends['moves']
+		);
 		if (!is_null($move)) $output['moves'][] = $move;
 	}	
 }

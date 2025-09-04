@@ -1,0 +1,56 @@
+{
+	"DRAGON_PULSE": {
+		"energyDelta": -55
+	},
+	"AERIAL_ACE": {
+		"energyDelta": -45
+	},
+	"EMBER": {
+		"energyDelta": 9
+	},
+	"LEAFAGE": {
+		"energyDelta": 8
+	},
+	"SEED_BOMB": {
+		"energyDelta": -40
+	},
+	"DRAGON_CLAW": {
+		"energyDelta": -50
+	},
+	"AURA_SPHERE": {
+		"energyDelta": -40
+	},
+	"DRAGON_TAIL": {
+		"energyDelta": 12
+	},
+	"WATER_PULSE": {
+		"energyDelta": -50
+	},
+	"CONFUSION": {
+		"energyDelta": 14
+	},
+	"DRAGON_BREATH": {
+		"energyDelta": 4
+	},
+	"STEEL_WING": {
+		"energyDelta": 5
+	},
+	"FLAME_WHEEL": {
+		"energyDelta": -45
+	},
+	"PECK": {
+		"energyDelta": 8
+	},
+	"GYRO_BALL": {
+		"energyDelta": -50
+	},
+	"SKY_ATTACK": {
+		"energyDelta": -50
+	},
+	"BREAKING_SWIPE": {
+		"energyDelta": -50
+	},
+	"CHARM": {
+		"energyDelta": 8
+	}
+}

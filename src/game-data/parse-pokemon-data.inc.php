@@ -52,18 +52,6 @@ function parsePokemonData($jsonObj, $langLines, $appends) {
 		$data['shortForm'] = $shortForm;
 	}
 
-	// this is only applicable in two cases
-	// todo: welp
-	/*
-	if (
-		$form == 'NORMAL' && (
-			$dexNumber == 646 || $dexNumber == 649
-		)
-	) {
-		$data['image'] = "pm{$dexNumber}.fNORMAL";
-	}
-		*/
-
 	$data = array_merge(
 		$data, compact(
 			'label', 'types', 'fastMoves', 'chargeMoves'
