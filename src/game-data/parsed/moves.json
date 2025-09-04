@@ -33,7 +33,7 @@
         "value": "FLAME_WHEEL",
         "type": "POKEMON_TYPE_FIRE",
         "label": "Flame Wheel",
-        "energyDelta": -55
+        "energyDelta": -45
     },
     {
         "value": "MEGAHORN",
@@ -129,7 +129,7 @@
         "value": "AERIAL_ACE",
         "type": "POKEMON_TYPE_FLYING",
         "label": "Aerial Ace",
-        "energyDelta": -40
+        "energyDelta": -45
     },
     {
         "value": "DRILL_RUN",
@@ -201,7 +201,7 @@
         "value": "SEED_BOMB",
         "type": "POKEMON_TYPE_GRASS",
         "label": "Seed Bomb",
-        "energyDelta": -45
+        "energyDelta": -40
     },
     {
         "value": "PSYSHOCK",
@@ -303,13 +303,13 @@
         "value": "DRAGON_PULSE",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "Dragon Pulse",
-        "energyDelta": -60
+        "energyDelta": -55
     },
     {
         "value": "DRAGON_CLAW",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "Dragon Claw",
-        "energyDelta": -35
+        "energyDelta": -50
     },
     {
         "value": "DISARMING_VOICE",
@@ -423,7 +423,7 @@
         "value": "WATER_PULSE",
         "type": "POKEMON_TYPE_WATER",
         "label": "Water Pulse",
-        "energyDelta": -55
+        "energyDelta": -50
     },
     {
         "value": "SCALD",
@@ -957,7 +957,7 @@
         "value": "SKY_ATTACK",
         "type": "POKEMON_TYPE_FLYING",
         "label": "Sky Attack",
-        "energyDelta": -55
+        "energyDelta": -50
     },
     {
         "value": "SAND_TOMB",
@@ -1022,7 +1022,7 @@
         "value": "GYRO_BALL",
         "type": "POKEMON_TYPE_STEEL",
         "label": "Gyro Ball",
-        "energyDelta": -60
+        "energyDelta": -50
     },
     {
         "value": "HEAVY_SLAM",
@@ -1402,7 +1402,7 @@
         "value": "AURA_SPHERE",
         "type": "POKEMON_TYPE_FIGHTING",
         "label": "Aura Sphere",
-        "energyDelta": -55
+        "energyDelta": -40
     },
     {
         "value": "PAYBACK",
@@ -1661,7 +1661,7 @@
         "value": "BREAKING_SWIPE",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "Breaking Swipe",
-        "energyDelta": -35
+        "energyDelta": -50
     },
     {
         "value": "BOOMBURST",

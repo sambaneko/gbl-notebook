@@ -1,6 +1,6 @@
 <?php
 
-function parseMoveData($jsonObj, $langLines) {
+function parseMoveData($jsonObj, $langLines, $appends) {
 	$move = $jsonObj->data->combatMove;
 
 	// moves w/o energyDelta appear to be max moves,
@@ -24,7 +24,7 @@ function parseMoveData($jsonObj, $langLines) {
 		);
 	}
 
-	$moveData = [
+	$data = [
 		'value' => $value,
 		'type' => $move->type,
 		'label' => $name,
@@ -35,12 +35,18 @@ function parseMoveData($jsonObj, $langLines) {
 	// add 1 for our values
 
 	if (isset($move->durationTurns)) {
-		$moveData['durationTurns'] = $move->durationTurns + 1;
+		$data['durationTurns'] = $move->durationTurns + 1;
 	} else if ($move->energyDelta > 0) {
 		// or if durationTurns is not set on a fast move, 
 		// it's a 1 turn move
-		$moveData['durationTurns'] = 1;
+		$data['durationTurns'] = 1;
 	}
 
-	return $moveData;
+	if (isset($appends[$value])) {
+		$data = array_merge(
+			$data, $appends[$value]
+		);
+	}	
+
+	return $data;
 }

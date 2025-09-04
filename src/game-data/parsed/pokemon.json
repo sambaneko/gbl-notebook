@@ -69,7 +69,8 @@
             "SLUDGE_BOMB",
             "PETAL_BLIZZARD",
             "SOLAR_BEAM",
-            "FRENZY_PLANT"
+            "FRENZY_PLANT",
+            "SLUDGE"
         ],
         "costumes": [
             "COPY_2019"
@@ -148,7 +149,8 @@
             "DRAGON_CLAW",
             "OVERHEAT",
             "BLAST_BURN",
-            "FLAMETHROWER"
+            "FLAMETHROWER",
+            "AIR_CUTTER"
         ],
         "costumes": [
             "COPY_2019"
@@ -554,7 +556,8 @@
             "DRILL_RUN",
             "SKY_ATTACK",
             "FLY",
-            "TWISTER"
+            "TWISTER",
+            "DRILL_PECK"
         ]
     },
     {
@@ -792,7 +795,8 @@
             "THUNDER_PUNCH",
             "WILD_CHARGE",
             "GRASS_KNOT",
-            "TRAILBLAZE"
+            "TRAILBLAZE",
+            "PSYSHOCK"
         ]
     },
     {
@@ -981,7 +985,8 @@
         ],
         "fastMoves": [
             "POISON_JAB_FAST",
-            "BITE_FAST"
+            "BITE_FAST",
+            "MUD_SLAP_FAST"
         ],
         "chargeMoves": [
             "EARTHQUAKE",
@@ -2519,7 +2524,9 @@
             "SLUDGE_BOMB",
             "SCALD",
             "BRUTAL_SWING",
-            "SURF"
+            "SURF",
+            "DRAIN_PUNCH",
+            "DRAIN_PUNCH"
         ]
     },
     {
@@ -2683,13 +2690,15 @@
         ],
         "fastMoves": [
             "FEINT_ATTACK_FAST",
-            "STEEL_WING_FAST"
+            "STEEL_WING_FAST",
+            "PECK_FAST"
         ],
         "chargeMoves": [
             "DRILL_PECK",
             "AERIAL_ACE",
             "BRAVE_BIRD",
-            "AIR_CUTTER"
+            "AIR_CUTTER",
+            "TRAILBLAZE"
         ]
     },
     {
@@ -2958,7 +2967,8 @@
             "SLUDGE_WAVE",
             "DARK_PULSE",
             "PSYCHIC",
-            "SHADOW_PUNCH"
+            "SHADOW_PUNCH",
+            "DRAIN_PUNCH"
         ],
         "costumes": [
             "COSTUME_2020"
@@ -4572,7 +4582,8 @@
             "DRAGON_CLAW",
             "SUPER_POWER",
             "DRACO_METEOR",
-            "DRAGON_PULSE"
+            "DRAGON_PULSE",
+            "THUNDER_PUNCH"
         ]
     },
     {
@@ -5281,12 +5292,14 @@
         ],
         "fastMoves": [
             "AIR_SLASH_FAST",
-            "FEINT_ATTACK_FAST"
+            "FEINT_ATTACK_FAST",
+            "PECK_FAST"
         ],
         "chargeMoves": [
             "OMINOUS_WIND",
             "FUTURESIGHT",
-            "AERIAL_ACE"
+            "AERIAL_ACE",
+            "PSYSHOCK"
         ]
     },
     {
@@ -5702,7 +5715,8 @@
             "STONE_EDGE",
             "ACID_SPRAY",
             "MUD_BOMB",
-            "AQUA_TAIL"
+            "AQUA_TAIL",
+            "DRAIN_PUNCH"
         ]
     },
     {
@@ -5805,7 +5819,8 @@
             "SHADOW_BALL",
             "SLUDGE_WAVE",
             "SCALD",
-            "SURF"
+            "SURF",
+            "PSYSHOCK"
         ]
     },
     {
@@ -7137,7 +7152,8 @@
             "HYDRO_PUMP",
             "BLIZZARD",
             "OUTRAGE",
-            "OCTAZOOKA"
+            "OCTAZOOKA",
+            "SWIFT"
         ]
     },
     {
@@ -7413,7 +7429,8 @@
             "THUNDER",
             "THUNDERBOLT",
             "WILD_CHARGE",
-            "SHADOW_BALL"
+            "SHADOW_BALL",
+            "AURA_SPHERE"
         ]
     },
     {
@@ -7735,7 +7752,8 @@
             "PSYCHIC",
             "DAZZLING_GLEAM",
             "SEED_BOMB",
-            "LEAF_STORM"
+            "LEAF_STORM",
+            "AURA_SPHERE"
         ]
     },
     {
@@ -8908,7 +8926,8 @@
             "POWER_GEM",
             "FOUL_PLAY",
             "SHADOW_SNEAK",
-            "DAZZLING_GLEAM"
+            "DAZZLING_GLEAM",
+            "DRAIN_PUNCH"
         ],
         "costumes": [
             "COSTUME_2020"
@@ -9402,7 +9421,8 @@
         "chargeMoves": [
             "OVERHEAT",
             "SOLAR_BEAM",
-            "EARTHQUAKE"
+            "EARTHQUAKE",
+            "FLAME_WHEEL"
         ]
     },
     {
@@ -9960,7 +9980,8 @@
             "STONE_EDGE",
             "BOOMBURST",
             "SCORCHING_SANDS",
-            "EARTH_POWER"
+            "EARTH_POWER",
+            "SAND_TOMB"
         ]
     },
     {
@@ -10054,7 +10075,8 @@
             "SKY_ATTACK",
             "DAZZLING_GLEAM",
             "DRAGON_PULSE",
-            "MOONBLAST"
+            "MOONBLAST",
+            "FLAMETHROWER"
         ]
     },
     {
@@ -10953,7 +10975,8 @@
         "chargeMoves": [
             "FLAMETHROWER",
             "DRAGON_PULSE",
-            "TWISTER"
+            "TWISTER",
+            "CRUNCH"
         ]
     },
     {
@@ -10979,7 +11002,9 @@
             "HYDRO_PUMP",
             "DRACO_METEOR",
             "FLY",
-            "OUTRAGE"
+            "OUTRAGE",
+            "BRUTAL_SWING",
+            "CRUNCH"
         ]
     },
     {
@@ -11137,7 +11162,8 @@
             "PSYCHIC",
             "OUTRAGE",
             "THUNDER",
-            "MIST_BALL"
+            "MIST_BALL",
+            "AURA_SPHERE"
         ]
     },
     {
@@ -11186,7 +11212,8 @@
             "PSYCHIC",
             "DRAGON_CLAW",
             "SOLAR_BEAM",
-            "LUSTER_PURGE"
+            "LUSTER_PURGE",
+            "AURA_SPHERE"
         ]
     },
     {
@@ -11297,7 +11324,8 @@
         "chargeMoves": [
             "DAZZLING_GLEAM",
             "PSYCHIC",
-            "DOOM_DESIRE"
+            "DOOM_DESIRE",
+            "AURA_SPHERE"
         ]
     },
     {
@@ -11447,7 +11475,8 @@
         ],
         "fastMoves": [
             "BITE_FAST",
-            "RAZOR_LEAF_FAST"
+            "RAZOR_LEAF_FAST",
+            "MUD_SLAP_FAST"
         ],
         "chargeMoves": [
             "STONE_EDGE",
@@ -11580,7 +11609,8 @@
         "fastMoves": [
             "WATERFALL_FAST",
             "METAL_CLAW_FAST",
-            "STEEL_WING_FAST"
+            "STEEL_WING_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "HYDRO_PUMP",
@@ -12155,7 +12185,8 @@
         "chargeMoves": [
             "THUNDER",
             "THUNDERBOLT",
-            "THUNDER_PUNCH"
+            "THUNDER_PUNCH",
+            "HYPER_FANG"
         ]
     },
     {
@@ -12835,7 +12866,8 @@
             "EARTHQUAKE",
             "FIRE_BLAST",
             "SAND_TOMB",
-            "EARTH_POWER"
+            "EARTH_POWER",
+            "BREAKING_SWIPE"
         ]
     },
     {
@@ -13048,7 +13080,8 @@
             "DYNAMIC_PUNCH",
             "MUD_BOMB",
             "SLUDGE_BOMB",
-            "SHADOW_BALL"
+            "SHADOW_BALL",
+            "DRAIN_PUNCH"
         ]
     },
     {
@@ -13370,7 +13403,8 @@
         "fastMoves": [
             "AIR_SLASH_FAST",
             "HIDDEN_POWER_FAST",
-            "CHARM_FAST"
+            "CHARM_FAST",
+            "PECK_FAST"
         ],
         "chargeMoves": [
             "ANCIENT_POWER",
@@ -14549,7 +14583,8 @@
             "OVERHEAT",
             "FOCUS_BLAST",
             "PSYCHIC",
-            "V_CREATE"
+            "V_CREATE",
+            "PSYSHOCK"
         ]
     },
     {
@@ -15851,7 +15886,8 @@
             "EARTHQUAKE",
             "CRUNCH",
             "OUTRAGE",
-            "BRICK_BREAK"
+            "BRICK_BREAK",
+            "SAND_TOMB"
         ]
     },
     {
@@ -16051,7 +16087,8 @@
         "chargeMoves": [
             "ROCK_BLAST",
             "X_SCISSOR",
-            "ROCK_SLIDE"
+            "ROCK_SLIDE",
+            "ROCK_WRECKER"
         ]
     },
     {
@@ -17601,7 +17638,8 @@
             "BRICK_BREAK",
             "LOW_SWEEP",
             "FOCUS_BLAST",
-            "HIGH_JUMP_KICK"
+            "HIGH_JUMP_KICK",
+            "DRAIN_PUNCH"
         ]
     },
     {
@@ -17624,7 +17662,8 @@
             "GRASS_KNOT",
             "STONE_EDGE",
             "BLAZE_KICK",
-            "BRUTAL_SWING"
+            "BRUTAL_SWING",
+            "DRAIN_PUNCH"
         ]
     },
     {
@@ -17644,7 +17683,8 @@
         "chargeMoves": [
             "DRAGON_CLAW",
             "NIGHT_SLASH",
-            "HYPER_BEAM"
+            "HYPER_BEAM",
+            "ROCK_TOMB"
         ]
     },
     {
@@ -18697,7 +18737,8 @@
             "FLAME_CHARGE",
             "FIRE_BLAST",
             "MYSTICAL_FIRE",
-            "BLAST_BURN"
+            "BLAST_BURN",
+            "PSYSHOCK"
         ]
     },
     {
@@ -21049,7 +21090,8 @@
             "MOONBLAST",
             "THUNDERBOLT",
             "PSYCHIC",
-            "DRAINING_KISS"
+            "DRAINING_KISS",
+            "PSYSHOCK"
         ]
     },
     {
@@ -21332,7 +21374,8 @@
         "chargeMoves": [
             "STOMP",
             "ANCIENT_POWER",
-            "DRAGON_CLAW"
+            "DRAGON_CLAW",
+            "ROCK_TOMB"
         ]
     },
     {
@@ -21356,7 +21399,8 @@
             "STONE_EDGE",
             "OUTRAGE",
             "EARTHQUAKE",
-            "METEOR_BEAM"
+            "METEOR_BEAM",
+            "ROCK_TOMB"
         ]
     },
     {
@@ -22353,7 +22397,9 @@
             "DARK_PULSE",
             "BLAZE_KICK",
             "DARKEST_LARIAT",
-            "BLAST_BURN"
+            "BLAST_BURN",
+            "BRUTAL_SWING",
+            "DRAIN_PUNCH"
         ]
     },
     {
@@ -23354,7 +23400,8 @@
             "BRICK_BREAK",
             "CLOSE_COMBAT",
             "SUPER_POWER",
-            "BRUTAL_SWING"
+            "BRUTAL_SWING",
+            "DRAIN_PUNCH"
         ]
     },
     {
@@ -24116,7 +24163,9 @@
             "OVERHEAT",
             "FLAMETHROWER",
             "DRAGON_PULSE",
-            "FLASH_CANNON"
+            "FLASH_CANNON",
+            "BRUTAL_SWING",
+            "DRAGON_CLAW"
         ]
     },
     {
@@ -24290,7 +24339,8 @@
         "chargeMoves": [
             "DRAGON_CLAW",
             "BRICK_BREAK",
-            "DRAGON_PULSE"
+            "DRAGON_PULSE",
+            "ROCK_TOMB"
         ]
     },
     {
@@ -24306,14 +24356,16 @@
         ],
         "fastMoves": [
             "POISON_JAB_FAST",
-            "DRAGON_TAIL_FAST"
+            "DRAGON_TAIL_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "DRAGON_CLAW",
             "CLOSE_COMBAT",
             "FLAMETHROWER",
             "BOOMBURST",
-            "BRICK_BREAK"
+            "BRICK_BREAK",
+            "UPPER_HAND"
         ]
     },
     {
