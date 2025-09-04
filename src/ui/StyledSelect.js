@@ -4,7 +4,6 @@ export default function StyledSelect(props) {
 	const themeColor = '#3ABCA0'
 	const textStyle = {
 		color: themeColor,
-		fontWeight: 600,
 		textTransform: 'uppercase'
 	}
 
@@ -30,7 +29,6 @@ export default function StyledSelect(props) {
 				overflow: 'hidden',
 				textOverflow: 'ellipsis',
 				cursor: 'pointer',
-				fontWeight: 400,
 				padding: '1.4rem 2rem',
 				textAlign: 'left',
 				color: state.isSelected
@@ -48,7 +46,8 @@ export default function StyledSelect(props) {
 			}),
 			singleValue: (provided, state) => ({
 				...provided,
-				...textStyle
+				...textStyle,
+				fontWeight: 600,
 			}),
 			dropdownIndicator: (provided) => ({
 				...provided,
@@ -57,7 +56,8 @@ export default function StyledSelect(props) {
 			}),
 			placeholder: (provided) => ({
 				...provided,
-				...textStyle
+				...textStyle,
+				fontWeight: 600,
 			}),
 		}}
 	/>
