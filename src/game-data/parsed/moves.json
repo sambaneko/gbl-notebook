@@ -601,7 +601,7 @@
         "value": "DRAGON_BREATH_FAST",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "Dragon Breath",
-        "energyDelta": 3,
+        "energyDelta": 4,
         "durationTurns": 1
     },
     {
@@ -636,7 +636,7 @@
         "value": "EMBER_FAST",
         "type": "POKEMON_TYPE_FIRE",
         "label": "Ember",
-        "energyDelta": 6,
+        "energyDelta": 9,
         "durationTurns": 2
     },
     {
@@ -650,7 +650,7 @@
         "value": "PECK_FAST",
         "type": "POKEMON_TYPE_FLYING",
         "label": "Peck",
-        "energyDelta": 5,
+        "energyDelta": 8,
         "durationTurns": 2
     },
     {
@@ -818,7 +818,7 @@
         "value": "CONFUSION_FAST",
         "type": "POKEMON_TYPE_PSYCHIC",
         "label": "Confusion",
-        "energyDelta": 12,
+        "energyDelta": 14,
         "durationTurns": 4
     },
     {
@@ -846,7 +846,7 @@
         "value": "STEEL_WING_FAST",
         "type": "POKEMON_TYPE_STEEL",
         "label": "Steel Wing",
-        "energyDelta": 6,
+        "energyDelta": 5,
         "durationTurns": 2
     },
     {
@@ -931,7 +931,7 @@
         "value": "DRAGON_TAIL_FAST",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "Dragon Tail",
-        "energyDelta": 9,
+        "energyDelta": 12,
         "durationTurns": 3
     },
     {
@@ -1338,7 +1338,7 @@
         "value": "CHARM_FAST",
         "type": "POKEMON_TYPE_FAIRY",
         "label": "Charm",
-        "energyDelta": 6,
+        "energyDelta": 8,
         "durationTurns": 3
     },
     {
@@ -1697,7 +1697,7 @@
         "value": "LEAFAGE_FAST",
         "type": "POKEMON_TYPE_GRASS",
         "label": "Leafage",
-        "energyDelta": 7,
+        "energyDelta": 8,
         "durationTurns": 2
     },
     {

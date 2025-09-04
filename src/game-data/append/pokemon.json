@@ -1,240 +1,245 @@
 {
-  "V0373_POKEMON_SALAMENCE_NORMAL": {
-    "chargeMoves": [
-      "BRUTAL_SWING",
-      "CRUNCH"
-    ]
-  },
-  "V0727_POKEMON_INCINEROAR": {
-    "chargeMoves": [
-      "BRUTAL_SWING",
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0776_POKEMON_TURTONATOR": {
-    "chargeMoves": [
-      "BRUTAL_SWING",
-      "DRAGON_CLAW"
-    ]
-  },
-  "V0372_POKEMON_SHELGON_NORMAL": {
-    "chargeMoves": [
-      "CRUNCH"
-    ]
-  },
-  "V0445_POKEMON_GARCHOMP_NORMAL": {
-    "chargeMoves": [
-      "BREAKING_SWIPE"
-    ]
-  },
-  "V0324_POKEMON_TORKOAL": {
-    "chargeMoves": [
-      "FLAME_WHEEL"
-    ]
-  },
-  "V0334_POKEMON_ALTARIA": {
-    "chargeMoves": [
-      "FLAMETHROWER"
-    ]
-  },
-  "V0395_POKEMON_EMPOLEON": {
-    "fastMoves": [
-      "METAL_SOUND_FAST"
-    ]
-  },
-  "V0784_POKEMON_KOMMO_O": {
-    "fastMoves": [
-      "METAL_SOUND_FAST"
-    ],
-    "chargeMoves": [
-      "UPPER_HAND"
-    ]
-  },
-  "V0022_POKEMON_FEAROW": {
-    "chargeMoves": [
-      "DRILL_PECK"
-    ]
-  },
-  "V0085_POKEMON_DODRIO": {
-    "fastMoves": [
-      "PECK_FAST"
-    ],
-    "chargeMoves": [
-      "TRAILBLAZE"
-    ]
-  },
-  "V0178_POKEMON_XATU": {
-    "fastMoves": [
-      "PECK_FAST"
-    ],
-    "chargeMoves": [
-      "PSYSHOCK"
-    ]
-  },
-  "V0468_POKEMON_TOGEKISS": {
-    "fastMoves": [
-      "PECK_FAST"
-    ]
-  },
-  "V0006_POKEMON_CHARIZARD_NORMAL": {
-    "chargeMoves": [
-      "AIR_CUTTER"
-    ]
-  },
-  "V0026_POKEMON_RAICHU_ALOLA": {
-    "chargeMoves": [
-      "PSYSHOCK"
-    ]
-  },
-  "V0199_POKEMON_SLOWKING_GALARIAN": {
-    "chargeMoves": [
-      "PSYSHOCK"
-    ]
-  },
-  "V0494_POKEMON_VICTINI": {
-    "chargeMoves": [
-      "PSYSHOCK"
-    ]
-  },
-  "V0655_POKEMON_DELPHOX": {
-    "chargeMoves": [
-      "PSYSHOCK"
-    ]
-  },
-  "V0683_POKEMON_AROMATISSE": {
-    "chargeMoves": [
-      "PSYSHOCK"
-    ]
-  },
-  "V0621_POKEMON_DRUDDIGON": {
-    "chargeMoves": [
-      "ROCK_TOMB"
-    ]
-  },
-  "V0696_POKEMON_TYRUNT": {
-    "chargeMoves": [
-      "ROCK_TOMB"
-    ]
-  },
-  "V0697_POKEMON_TYRANTRUM": {
-    "chargeMoves": [
-      "ROCK_TOMB"
-    ]
-  },
-  "V0783_POKEMON_HAKAMO_O": {
-    "chargeMoves": [
-      "ROCK_TOMB"
-    ]
-  },
-  "V0558_POKEMON_CRUSTLE": {
-    "chargeMoves": [
-      "ROCK_WRECKER"
-    ]
-  },
-  "V0330_POKEMON_FLYGON_NORMAL": {
-    "chargeMoves": [
-      "SAND_TOMB"
-    ]
-  },
-  "V0553_POKEMON_KROOKODILE": {
-    "chargeMoves": [
-      "SAND_TOMB"
-    ]
-  },
-  "V0031_POKEMON_NIDOQUEEN_NORMAL": {
-    "fastMoves": [
-      "MUD_SLAP_FAST"
-    ]
-  },
-  "V0389_POKEMON_TORTERRA_NORMAL": {
-    "fastMoves": [
-      "MUD_SLAP_FAST"
-    ]
-  },
-  "V0417_POKEMON_PACHIRISU": {
-    "chargeMoves": [
-      "HYPER_FANG"
-    ]
-  },
-  "V0230_POKEMON_KINGDRA_NORMAL": {
-    "chargeMoves": [
-      "SWIFT"
-    ]
-  },
-  "V0243_POKEMON_RAIKOU_NORMAL": {
-    "chargeMoves": [
-      "AURA_SPHERE"
-    ]
-  },
-  "V0251_POKEMON_CELEBI": {
-    "chargeMoves": [
-      "AURA_SPHERE"
-    ]
-  },
-  "V0380_POKEMON_LATIAS_NORMAL": {
-    "chargeMoves": [
-      "AURA_SPHERE"
-    ]
-  },
-  "V0381_POKEMON_LATIOS_NORMAL": {
-    "chargeMoves": [
-      "AURA_SPHERE"
-    ]
-  },
-  "V0385_POKEMON_JIRACHI": {
-    "chargeMoves": [
-      "AURA_SPHERE"
-    ]
-  },
-  "V0080_POKEMON_SLOWBRO_GALARIAN": {
-    "chargeMoves": [
-      "DRAIN_PUNCH",
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0094_POKEMON_GENGAR_NORMAL": {
-    "chargeMoves": [
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0195_POKEMON_QUAGSIRE_NORMAL": {
-    "chargeMoves": [
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0302_POKEMON_SABLEYE_NORMAL": {
-    "chargeMoves": [
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0454_POKEMON_TOXICROAK": {
-    "chargeMoves": [
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0619_POKEMON_MIENFOO": {
-    "chargeMoves": [
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0620_POKEMON_MIENSHAO": {
-    "chargeMoves": [
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0766_POKEMON_PASSIMIAN": {
-    "chargeMoves": [
-      "DRAIN_PUNCH"
-    ]
-  },
-  "V0003_POKEMON_VENUSAUR_NORMAL": {
-    "chargeMoves": [
-      "SLUDGE"
-    ]
-  },
-  "V0149_POKEMON_DRAGONITE_NORMAL": {
-    "chargeMoves": [
-      "THUNDER_PUNCH"
-    ]
-  }
+	"V0373_POKEMON_SALAMENCE_NORMAL": {
+		"chargeMoves": [
+			"BRUTAL_SWING",
+			"CRUNCH"
+		]
+	},
+	"V0727_POKEMON_INCINEROAR": {
+		"chargeMoves": [
+			"BRUTAL_SWING",
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0776_POKEMON_TURTONATOR": {
+		"chargeMoves": [
+			"BRUTAL_SWING",
+			"DRAGON_CLAW"
+		]
+	},
+	"V0372_POKEMON_SHELGON_NORMAL": {
+		"chargeMoves": [
+			"CRUNCH"
+		]
+	},
+	"V0445_POKEMON_GARCHOMP_NORMAL": {
+		"chargeMoves": [
+			"BREAKING_SWIPE"
+		]
+	},
+	"V0324_POKEMON_TORKOAL": {
+		"chargeMoves": [
+			"FLAME_WHEEL"
+		]
+	},
+	"V0334_POKEMON_ALTARIA": {
+		"chargeMoves": [
+			"FLAMETHROWER"
+		]
+	},
+	"V0395_POKEMON_EMPOLEON": {
+		"fastMoves": [
+			"METAL_SOUND_FAST"
+		]
+	},
+	"V0784_POKEMON_KOMMO_O": {
+		"fastMoves": [
+			"METAL_SOUND_FAST"
+		],
+		"chargeMoves": [
+			"UPPER_HAND"
+		]
+	},
+	"V0022_POKEMON_FEAROW": {
+		"chargeMoves": [
+			"DRILL_PECK"
+		]
+	},
+	"V0085_POKEMON_DODRIO": {
+		"fastMoves": [
+			"PECK_FAST"
+		],
+		"chargeMoves": [
+			"TRAILBLAZE"
+		]
+	},
+	"V0178_POKEMON_XATU": {
+		"fastMoves": [
+			"PECK_FAST"
+		],
+		"chargeMoves": [
+			"PSYSHOCK"
+		]
+	},
+	"V0468_POKEMON_TOGEKISS": {
+		"fastMoves": [
+			"PECK_FAST"
+		]
+	},
+	"V0006_POKEMON_CHARIZARD_NORMAL": {
+		"chargeMoves": [
+			"AIR_CUTTER"
+		]
+	},
+	"V0026_POKEMON_RAICHU_ALOLA": {
+		"chargeMoves": [
+			"PSYSHOCK"
+		]
+	},
+	"V0199_POKEMON_SLOWKING_GALARIAN": {
+		"chargeMoves": [
+			"PSYSHOCK"
+		]
+	},
+	"V0494_POKEMON_VICTINI": {
+		"chargeMoves": [
+			"PSYSHOCK"
+		]
+	},
+	"V0655_POKEMON_DELPHOX": {
+		"chargeMoves": [
+			"PSYSHOCK"
+		]
+	},
+	"V0683_POKEMON_AROMATISSE": {
+		"chargeMoves": [
+			"PSYSHOCK"
+		]
+	},
+	"V0621_POKEMON_DRUDDIGON": {
+		"chargeMoves": [
+			"ROCK_TOMB"
+		]
+	},
+	"V0696_POKEMON_TYRUNT": {
+		"chargeMoves": [
+			"ROCK_TOMB"
+		]
+	},
+	"V0697_POKEMON_TYRANTRUM": {
+		"chargeMoves": [
+			"ROCK_TOMB"
+		]
+	},
+	"V0783_POKEMON_HAKAMO_O": {
+		"chargeMoves": [
+			"ROCK_TOMB"
+		]
+	},
+	"V0558_POKEMON_CRUSTLE": {
+		"chargeMoves": [
+			"ROCK_WRECKER"
+		]
+	},
+	"V0330_POKEMON_FLYGON_NORMAL": {
+		"chargeMoves": [
+			"SAND_TOMB"
+		]
+	},
+	"V0553_POKEMON_KROOKODILE": {
+		"chargeMoves": [
+			"SAND_TOMB"
+		]
+	},
+	"V0031_POKEMON_NIDOQUEEN_NORMAL": {
+		"fastMoves": [
+			"MUD_SLAP_FAST"
+		]
+	},
+	"V0389_POKEMON_TORTERRA_NORMAL": {
+		"fastMoves": [
+			"MUD_SLAP_FAST"
+		]
+	},
+	"V0417_POKEMON_PACHIRISU": {
+		"chargeMoves": [
+			"HYPER_FANG"
+		]
+	},
+	"V0230_POKEMON_KINGDRA_NORMAL": {
+		"chargeMoves": [
+			"SWIFT"
+		]
+	},
+	"V0243_POKEMON_RAIKOU_NORMAL": {
+		"chargeMoves": [
+			"AURA_SPHERE"
+		]
+	},
+	"V0251_POKEMON_CELEBI": {
+		"chargeMoves": [
+			"AURA_SPHERE"
+		]
+	},
+	"V0380_POKEMON_LATIAS_NORMAL": {
+		"chargeMoves": [
+			"AURA_SPHERE"
+		]
+	},
+	"V0381_POKEMON_LATIOS_NORMAL": {
+		"chargeMoves": [
+			"AURA_SPHERE"
+		]
+	},
+	"V0385_POKEMON_JIRACHI": {
+		"chargeMoves": [
+			"AURA_SPHERE"
+		]
+	},
+	"V0080_POKEMON_SLOWBRO_GALARIAN": {
+		"chargeMoves": [
+			"DRAIN_PUNCH",
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0094_POKEMON_GENGAR_NORMAL": {
+		"chargeMoves": [
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0195_POKEMON_QUAGSIRE_NORMAL": {
+		"chargeMoves": [
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0302_POKEMON_SABLEYE_NORMAL": {
+		"chargeMoves": [
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0454_POKEMON_TOXICROAK": {
+		"chargeMoves": [
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0619_POKEMON_MIENFOO": {
+		"chargeMoves": [
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0620_POKEMON_MIENSHAO": {
+		"chargeMoves": [
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0766_POKEMON_PASSIMIAN": {
+		"chargeMoves": [
+			"DRAIN_PUNCH"
+		]
+	},
+	"V0003_POKEMON_VENUSAUR_NORMAL": {
+		"chargeMoves": [
+			"SLUDGE"
+		]
+	},
+	"V0149_POKEMON_DRAGONITE_NORMAL": {
+		"chargeMoves": [
+			"THUNDER_PUNCH"
+		]
+	},
+	"V0823_POKEMON_CORVIKNIGHT": {
+		"chargeMoves": [
+			"AIR_CUTTER"
+		]
+	}
 }
