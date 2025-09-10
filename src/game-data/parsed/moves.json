@@ -273,7 +273,7 @@
         "value": "PARABOLIC_CHARGE",
         "type": "POKEMON_TYPE_ELECTRIC",
         "label": "Parabolic Charge",
-        "energyDelta": -50
+        "energyDelta": -45
     },
     {
         "value": "THUNDER_PUNCH",
@@ -748,7 +748,7 @@
         "value": "ACID_FAST",
         "type": "POKEMON_TYPE_POISON",
         "label": "Acid",
-        "energyDelta": 5,
+        "energyDelta": 8,
         "durationTurns": 2
     },
     {
@@ -1900,25 +1900,43 @@
     {
         "value": "UPPER_HAND",
         "type": "POKEMON_TYPE_FIGHTING",
-        "label": "move_name_0471",
+        "label": "Upper Hand",
         "energyDelta": -40
     },
     {
         "value": "THUNDER_CAGE",
         "type": "POKEMON_TYPE_ELECTRIC",
         "label": "move_name_0472",
-        "energyDelta": -1
+        "energyDelta": -40
+    },
+    {
+        "value": "DYNAMAX_CANNON",
+        "type": "POKEMON_TYPE_DRAGON",
+        "label": "move_name_0482",
+        "energyDelta": -45
+    },
+    {
+        "value": "CLANGING_SCALES",
+        "type": "POKEMON_TYPE_DRAGON",
+        "label": "Clanging Scales",
+        "energyDelta": -45
     },
     {
         "value": "CRUSH_GRIP",
         "type": "POKEMON_TYPE_NORMAL",
         "label": "move_name_0485",
-        "energyDelta": -1
+        "energyDelta": -50
     },
     {
         "value": "DRAGON_ENERGY",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "move_name_0486",
-        "energyDelta": -1
+        "energyDelta": -45
+    },
+    {
+        "value": "AQUA_STEP",
+        "type": "POKEMON_TYPE_WATER",
+        "label": "move_name_0487",
+        "energyDelta": -40
     }
 ]

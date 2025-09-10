@@ -1561,7 +1561,10 @@
             "SAMUROTT, HISUIAN",
             "DECIDUEYE, HISUIAN",
             "AVALUGG, HISUIAN",
-            "WYRDEER"
+            "WYRDEER",
+            "LILLIGANT, HISUIAN",
+            "ZORUA, HISUIAN",
+            "ZOROARK, HISUIAN"
         ],
         "label": "Hisui Cup",
         "slug": "hisui-cup"

@@ -347,6 +347,7 @@
         "fastMoves": [
             "INFESTATION_FAST",
             "POISON_JAB_FAST",
+            "POISON_STING_FAST",
             "BUG_BITE_FAST"
         ],
         "chargeMoves": [
@@ -598,7 +599,8 @@
         "fastMoves": [
             "BITE_FAST",
             "ACID_FAST",
-            "DRAGON_TAIL_FAST"
+            "DRAGON_TAIL_FAST",
+            "POISON_STING_FAST"
         ],
         "chargeMoves": [
             "DARK_PULSE",
@@ -796,6 +798,7 @@
             "WILD_CHARGE",
             "GRASS_KNOT",
             "TRAILBLAZE",
+            "SURF",
             "PSYSHOCK"
         ]
     },
@@ -823,6 +826,7 @@
             "WILD_CHARGE",
             "SKULL_BASH",
             "TRAILBLAZE",
+            "SURF",
             "THUNDER"
         ]
     },
@@ -986,6 +990,7 @@
         "fastMoves": [
             "POISON_JAB_FAST",
             "BITE_FAST",
+            "POISON_STING_FAST",
             "MUD_SLAP_FAST"
         ],
         "chargeMoves": [
@@ -1058,6 +1063,7 @@
             "POISON_JAB_FAST",
             "IRON_TAIL_FAST",
             "DOUBLE_KICK_FAST",
+            "POISON_STING_FAST",
             "FURY_CUTTER_FAST"
         ],
         "chargeMoves": [
@@ -1606,7 +1612,8 @@
         ],
         "fastMoves": [
             "SCRATCH_FAST",
-            "METAL_CLAW_FAST"
+            "METAL_CLAW_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "NIGHT_SLASH",
@@ -2201,7 +2208,8 @@
         ],
         "fastMoves": [
             "ACID_FAST",
-            "POISON_JAB_FAST"
+            "POISON_JAB_FAST",
+            "POISON_STING_FAST"
         ],
         "chargeMoves": [
             "HYDRO_PUMP",
@@ -3403,6 +3411,7 @@
             "HYPER_BEAM",
             "STOMP",
             "POWER_WHIP",
+            "WRAP",
             "BODY_SLAM"
         ]
     },
@@ -4388,7 +4397,8 @@
         "chargeMoves": [
             "FUTURESIGHT",
             "ANCIENT_POWER",
-            "BRAVE_BIRD"
+            "BRAVE_BIRD",
+            "FLY"
         ]
     },
     {
@@ -4436,7 +4446,8 @@
         "chargeMoves": [
             "CLOSE_COMBAT",
             "ANCIENT_POWER",
-            "BRAVE_BIRD"
+            "BRAVE_BIRD",
+            "FLY"
         ]
     },
     {
@@ -4484,7 +4495,8 @@
         "chargeMoves": [
             "PAYBACK",
             "ANCIENT_POWER",
-            "BRAVE_BIRD"
+            "BRAVE_BIRD",
+            "FLY"
         ]
     },
     {
@@ -7650,6 +7662,7 @@
             "SKY_ATTACK",
             "HYDRO_PUMP",
             "FUTURESIGHT",
+            "FLY",
             "AEROBLAST"
         ]
     },
@@ -7674,6 +7687,7 @@
             "SKY_ATTACK",
             "HYDRO_PUMP",
             "FUTURESIGHT",
+            "FLY",
             "AEROBLAST"
         ]
     },
@@ -8975,7 +8989,8 @@
         ],
         "fastMoves": [
             "TACKLE_FAST",
-            "METAL_CLAW_FAST"
+            "METAL_CLAW_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "IRON_HEAD",
@@ -8998,7 +9013,8 @@
         ],
         "fastMoves": [
             "METAL_CLAW_FAST",
-            "IRON_TAIL_FAST"
+            "IRON_TAIL_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "BODY_SLAM",
@@ -9023,7 +9039,8 @@
         "fastMoves": [
             "DRAGON_TAIL_FAST",
             "IRON_TAIL_FAST",
-            "SMACK_DOWN_FAST"
+            "SMACK_DOWN_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "THUNDER",
@@ -10433,7 +10450,8 @@
         "chargeMoves": [
             "SURF",
             "BLIZZARD",
-            "HYPER_BEAM"
+            "HYPER_BEAM",
+            "WRAP"
         ]
     },
     {
@@ -10806,7 +10824,8 @@
         "chargeMoves": [
             "AURORA_BEAM",
             "BODY_SLAM",
-            "WATER_PULSE"
+            "WATER_PULSE",
+            "SURF"
         ]
     },
     {
@@ -11042,7 +11061,8 @@
         ],
         "fastMoves": [
             "ZEN_HEADBUTT_FAST",
-            "METAL_CLAW_FAST"
+            "METAL_CLAW_FAST",
+            "FURY_CUTTER_FAST"
         ],
         "chargeMoves": [
             "PSYCHIC",
@@ -11065,7 +11085,8 @@
         ],
         "fastMoves": [
             "BULLET_PUNCH_FAST",
-            "ZEN_HEADBUTT_FAST"
+            "ZEN_HEADBUTT_FAST",
+            "FURY_CUTTER_FAST"
         ],
         "chargeMoves": [
             "PSYCHIC",
@@ -13074,7 +13095,8 @@
         "fastMoves": [
             "POISON_JAB_FAST",
             "COUNTER_FAST",
-            "MUD_SHOT_FAST"
+            "MUD_SHOT_FAST",
+            "POISON_STING_FAST"
         ],
         "chargeMoves": [
             "DYNAMIC_PUNCH",
@@ -13987,7 +14009,8 @@
         "chargeMoves": [
             "GIGA_IMPACT",
             "FOCUS_BLAST",
-            "THUNDER"
+            "THUNDER",
+            "CRUSH_GRIP"
         ]
     },
     {
@@ -15666,7 +15689,8 @@
         ],
         "fastMoves": [
             "BUG_BITE_FAST",
-            "POISON_JAB_FAST"
+            "POISON_JAB_FAST",
+            "POISON_STING_FAST"
         ],
         "chargeMoves": [
             "MEGAHORN",
@@ -15739,11 +15763,37 @@
         ]
     },
     {
-        "value": "V0549_POKEMON_LILLIGANT",
-        "templateId": "V0549_POKEMON_LILLIGANT",
+        "value": "V0549_POKEMON_LILLIGANT_HISUIAN",
+        "templateId": "V0549_POKEMON_LILLIGANT_HISUIAN",
         "pokemonId": "LILLIGANT",
         "dexNumber": 549,
         "shadowAvailable": false,
+        "form": "LILLIGANT_HISUIAN",
+        "shortForm": "HISUIAN",
+        "label": "Lilligant (HISUIAN)",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_FIGHTING"
+        ],
+        "fastMoves": [
+            "MAGICAL_LEAF_FAST",
+            "BULLET_SEED_FAST"
+        ],
+        "chargeMoves": [
+            "PETAL_BLIZZARD",
+            "CLOSE_COMBAT",
+            "SOLAR_BEAM",
+            "UPPER_HAND"
+        ]
+    },
+    {
+        "value": "V0549_POKEMON_LILLIGANT_NORMAL",
+        "templateId": "V0549_POKEMON_LILLIGANT_NORMAL",
+        "pokemonId": "LILLIGANT",
+        "dexNumber": 549,
+        "shadowAvailable": false,
+        "form": "LILLIGANT_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Lilligant",
         "types": [
             "POKEMON_TYPE_GRASS"
@@ -16351,11 +16401,37 @@
         ]
     },
     {
-        "value": "V0570_POKEMON_ZORUA",
-        "templateId": "V0570_POKEMON_ZORUA",
+        "value": "V0570_POKEMON_ZORUA_HISUIAN",
+        "templateId": "V0570_POKEMON_ZORUA_HISUIAN",
         "pokemonId": "ZORUA",
         "dexNumber": 570,
         "shadowAvailable": false,
+        "form": "ZORUA_HISUIAN",
+        "shortForm": "HISUIAN",
+        "label": "Zorua (HISUIAN)",
+        "types": [
+            "POKEMON_TYPE_NORMAL",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "SCRATCH_FAST",
+            "SNARL_FAST"
+        ],
+        "chargeMoves": [
+            "FOUL_PLAY",
+            "SHADOW_BALL",
+            "DARK_PULSE",
+            "NIGHT_SHADE"
+        ]
+    },
+    {
+        "value": "V0570_POKEMON_ZORUA_NORMAL",
+        "templateId": "V0570_POKEMON_ZORUA_NORMAL",
+        "pokemonId": "ZORUA",
+        "dexNumber": 570,
+        "shadowAvailable": false,
+        "form": "ZORUA_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Zorua",
         "types": [
             "POKEMON_TYPE_DARK"
@@ -16372,11 +16448,37 @@
         ]
     },
     {
-        "value": "V0571_POKEMON_ZOROARK",
-        "templateId": "V0571_POKEMON_ZOROARK",
+        "value": "V0571_POKEMON_ZOROARK_HISUIAN",
+        "templateId": "V0571_POKEMON_ZOROARK_HISUIAN",
         "pokemonId": "ZOROARK",
         "dexNumber": 571,
         "shadowAvailable": false,
+        "form": "ZOROARK_HISUIAN",
+        "shortForm": "HISUIAN",
+        "label": "Zoroark (HISUIAN)",
+        "types": [
+            "POKEMON_TYPE_NORMAL",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "SHADOW_CLAW_FAST",
+            "SNARL_FAST"
+        ],
+        "chargeMoves": [
+            "FOUL_PLAY",
+            "SLUDGE_BOMB",
+            "FLAMETHROWER",
+            "SHADOW_BALL"
+        ]
+    },
+    {
+        "value": "V0571_POKEMON_ZOROARK_NORMAL",
+        "templateId": "V0571_POKEMON_ZOROARK_NORMAL",
+        "pokemonId": "ZOROARK",
+        "dexNumber": 571,
+        "shadowAvailable": false,
+        "form": "ZOROARK_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Zoroark",
         "types": [
             "POKEMON_TYPE_DARK"
@@ -21004,8 +21106,8 @@
             "POKEMON_TYPE_GHOST"
         ],
         "fastMoves": [
-            "TACKLE_FAST",
-            "FURY_CUTTER_FAST"
+            "PSYCHO_CUT_FAST",
+            "TACKLE_FAST"
         ],
         "chargeMoves": [
             "IRON_HEAD",
@@ -21025,7 +21127,7 @@
         ],
         "fastMoves": [
             "PSYCHO_CUT_FAST",
-            "FURY_CUTTER_FAST"
+            "TACKLE_FAST"
         ],
         "chargeMoves": [
             "IRON_HEAD",
@@ -21033,19 +21135,44 @@
         ]
     },
     {
-        "value": "V0681_POKEMON_AEGISLASH",
-        "templateId": "V0681_POKEMON_AEGISLASH",
+        "value": "V0681_POKEMON_AEGISLASH_BLADE",
+        "templateId": "V0681_POKEMON_AEGISLASH_BLADE",
         "pokemonId": "AEGISLASH",
         "dexNumber": 681,
         "shadowAvailable": false,
-        "label": "Aegislash",
+        "form": "AEGISLASH_BLADE",
+        "shortForm": "BLADE",
+        "label": "Aegislash (Blade Forme)",
         "types": [
             "POKEMON_TYPE_STEEL",
             "POKEMON_TYPE_GHOST"
         ],
         "fastMoves": [
             "PSYCHO_CUT_FAST",
-            "FURY_CUTTER_FAST"
+            "AIR_SLASH_FAST"
+        ],
+        "chargeMoves": [
+            "FLASH_CANNON",
+            "GYRO_BALL",
+            "SHADOW_BALL"
+        ]
+    },
+    {
+        "value": "V0681_POKEMON_AEGISLASH_SHIELD",
+        "templateId": "V0681_POKEMON_AEGISLASH_SHIELD",
+        "pokemonId": "AEGISLASH",
+        "dexNumber": 681,
+        "shadowAvailable": false,
+        "form": "AEGISLASH_SHIELD",
+        "shortForm": "SHIELD",
+        "label": "Aegislash (Shield Forme)",
+        "types": [
+            "POKEMON_TYPE_STEEL",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "PSYCHO_CUT_FAST",
+            "AIR_SLASH_FAST"
         ],
         "chargeMoves": [
             "FLASH_CANNON",
@@ -24293,12 +24420,14 @@
         ],
         "fastMoves": [
             "ASTONISH_FAST",
-            "SHADOW_CLAW_FAST"
+            "SHADOW_CLAW_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "POWER_WHIP",
             "SHADOW_BALL",
-            "HEAVY_SLAM"
+            "HEAVY_SLAM",
+            "WRAP"
         ]
     },
     {
@@ -24365,6 +24494,7 @@
             "FLAMETHROWER",
             "BOOMBURST",
             "BRICK_BREAK",
+            "CLANGING_SCALES",
             "UPPER_HAND"
         ]
     },
@@ -24530,7 +24660,8 @@
         ],
         "fastMoves": [
             "CONFUSION_FAST",
-            "AIR_SLASH_FAST"
+            "AIR_SLASH_FAST",
+            "SHADOW_CLAW_FAST"
         ],
         "chargeMoves": [
             "SHADOW_BALL",
@@ -26167,7 +26298,8 @@
         ],
         "fastMoves": [
             "METAL_CLAW_FAST",
-            "SHADOW_CLAW_FAST"
+            "SHADOW_CLAW_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "IRON_HEAD",
@@ -26875,7 +27007,7 @@
             "POISON_JAB_FAST"
         ],
         "chargeMoves": [
-            "CROSS_POISON",
+            "SLUDGE_BOMB",
             "DRAGON_PULSE",
             "FLAMETHROWER",
             "HYPER_BEAM"
@@ -26899,7 +27031,7 @@
             "POISON_JAB_FAST"
         ],
         "chargeMoves": [
-            "CROSS_POISON",
+            "SLUDGE_BOMB",
             "DRAGON_PULSE",
             "FLAMETHROWER"
         ]
@@ -27013,7 +27145,8 @@
         "chargeMoves": [
             "HYPER_BEAM",
             "THUNDER",
-            "ZAP_CANNON"
+            "ZAP_CANNON",
+            "THUNDER_CAGE"
         ]
     },
     {
@@ -27027,13 +27160,15 @@
             "POKEMON_TYPE_DRAGON"
         ],
         "fastMoves": [
-            "BITE_FAST"
+            "BITE_FAST",
+            "DRAGON_BREATH_FAST"
         ],
         "chargeMoves": [
             "HYPER_BEAM",
             "OUTRAGE",
             "DRAGON_PULSE",
-            "BREAKING_SWIPE"
+            "BREAKING_SWIPE",
+            "DRAGON_ENERGY"
         ]
     },
     {
@@ -27183,7 +27318,8 @@
         ],
         "fastMoves": [
             "QUICK_ATTACK_FAST",
-            "AIR_SLASH_FAST"
+            "AIR_SLASH_FAST",
+            "FURY_CUTTER_FAST"
         ],
         "chargeMoves": [
             "X_SCISSOR",
@@ -27427,7 +27563,8 @@
         ],
         "fastMoves": [
             "INCINERATE_FAST",
-            "BITE_FAST"
+            "BITE_FAST",
+            "HEX_FAST"
         ],
         "chargeMoves": [
             "FLAMETHROWER",
@@ -27660,7 +27797,8 @@
         ],
         "fastMoves": [
             "SPARK_FAST",
-            "CHARGE_BEAM_FAST"
+            "CHARGE_BEAM_FAST",
+            "THUNDER_SHOCK_FAST"
         ],
         "chargeMoves": [
             "THUNDERBOLT",
@@ -27681,7 +27819,8 @@
         ],
         "fastMoves": [
             "SPARK_FAST",
-            "CHARGE_BEAM_FAST"
+            "CHARGE_BEAM_FAST",
+            "THUNDER_SHOCK_FAST"
         ],
         "chargeMoves": [
             "THUNDERBOLT",
@@ -27704,7 +27843,8 @@
         "fastMoves": [
             "SPARK_FAST",
             "CHARGE_BEAM_FAST",
-            "LOW_KICK_FAST"
+            "LOW_KICK_FAST",
+            "THUNDER_SHOCK_FAST"
         ],
         "chargeMoves": [
             "THUNDERBOLT",
@@ -28709,7 +28849,8 @@
         ],
         "fastMoves": [
             "LICK_FAST",
-            "POISON_JAB_FAST"
+            "POISON_JAB_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "ACID_SPRAY",
@@ -28730,7 +28871,8 @@
         ],
         "fastMoves": [
             "LICK_FAST",
-            "POISON_JAB_FAST"
+            "POISON_JAB_FAST",
+            "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
             "ACID_SPRAY",
@@ -29465,11 +29607,13 @@
         ]
     },
     {
-        "value": "V0999_POKEMON_GIMMIGHOUL",
-        "templateId": "V0999_POKEMON_GIMMIGHOUL",
+        "value": "V0999_POKEMON_GIMMIGHOUL_NORMAL",
+        "templateId": "V0999_POKEMON_GIMMIGHOUL_NORMAL",
         "pokemonId": "GIMMIGHOUL",
         "dexNumber": 999,
         "shadowAvailable": false,
+        "form": "GIMMIGHOUL_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Gimmighoul",
         "types": [
             "POKEMON_TYPE_GHOST"
@@ -29479,6 +29623,9 @@
         ],
         "chargeMoves": [
             "SHADOW_BALL"
+        ],
+        "costumes": [
+            ""
         ]
     },
     {
@@ -29499,7 +29646,8 @@
         "chargeMoves": [
             "SHADOW_BALL",
             "DAZZLING_GLEAM",
-            "FOCUS_BLAST"
+            "FOCUS_BLAST",
+            "POWER_GEM"
         ]
     },
     {

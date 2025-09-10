@@ -36,3 +36,9 @@ TEXT: Rage Fist
 
 RESOURCE ID: move_name_0468
 TEXT: Torch Song
+
+RESOURCE ID: move_name_0471
+TEXT: Upper Hand
+
+RESOURCE ID: move_name_0484
+TEXT: Clanging Scales
