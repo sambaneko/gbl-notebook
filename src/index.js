@@ -39,7 +39,7 @@ const routes = [
 	}
 ]
 
-const isGitHubPages = process.env.REACT_APP_ROUTER === 'hash'
+const isGitHubPages = true //process.env.REACT_APP_ROUTER === 'hash'
 
 const router = isGitHubPages
   ? createHashRouter(routes)
