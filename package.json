@@ -2,7 +2,6 @@
   "name": "gbl-notebook-routes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sambaneko.github.io/gbl-notebook",
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",

@@ -35,8 +35,6 @@ const router = createBrowserRouter([
 			}
 		],
 		errorElement: <Error />
-	}, {
-		basename: "/gbl-notebook"
 	}
 ])
 
