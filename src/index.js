@@ -2,7 +2,8 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
 import {
 	createBrowserRouter,
-	RouterProvider,
+	createHashRouter,
+	RouterProvider
 } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
@@ -18,7 +19,7 @@ import Cup, { loader as cupLoader } from './routes/cup'
 import Settings from './routes/settings'
 import Error from './routes/error'
 
-const router = createBrowserRouter([
+const routes = [
 	{
 		path: '/',
 		element: <Root />,
@@ -30,13 +31,19 @@ const router = createBrowserRouter([
 				loader: cupLoader,
 			},
 			{
-				path: "/settings",
+				path: "settings",
 				element: <Settings />
 			}
 		],
 		errorElement: <Error />
 	}
-])
+]
+
+const isGitHubPages = process.env.REACT_APP_ROUTER === 'hash'
+
+const router = isGitHubPages
+  ? createHashRouter(routes)
+  : createBrowserRouter(routes)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
