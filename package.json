@@ -2,6 +2,7 @@
   "name": "gbl-notebook-routes",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sambaneko.github.io/gbl-notebook",
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
@@ -20,7 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=3003&& react-scripts start",
+    "start": "set PORT=3000&& react-scripts start",
     "build": "react-scripts build",
     "build:prod": "env-cmd -f .env.production.local react-scripts build",
     "test": "react-scripts test",
