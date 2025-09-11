@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/gbl-notebook/static/css/main.4c2f302b.css",
-    "main.js": "/gbl-notebook/static/js/main.b4af4778.js",
+    "main.js": "/gbl-notebook/static/js/main.396884b8.js",
     "index.html": "/gbl-notebook/index.html",
     "main.4c2f302b.css.map": "/gbl-notebook/static/css/main.4c2f302b.css.map",
-    "main.b4af4778.js.map": "/gbl-notebook/static/js/main.b4af4778.js.map"
+    "main.396884b8.js.map": "/gbl-notebook/static/js/main.396884b8.js.map"
   },
   "entrypoints": [
     "static/css/main.4c2f302b.css",
-    "static/js/main.b4af4778.js"
+    "static/js/main.396884b8.js"
   ]
 }

@@ -24,10 +24,10 @@
 		"start": "set PORT=3000 && react-scripts start",
 		"build": "react-scripts build",
 		"build:prod": "env-cmd -f .env.production.local react-scripts build",
+		"build:ghp": "env-cmd -f .env.ghpages react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"build-ghp": "set REACT_APP_ROUTER=hash && react-scripts build",
-		"deploy-ghp": "git subtree push --prefix build origin gh-pages"
+		"deploy:ghp": "git subtree push --prefix build origin gh-pages"
 	},
 	"eslintConfig": {
 		"extends": [
