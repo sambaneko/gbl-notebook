@@ -42,3 +42,9 @@ TEXT: Upper Hand
 
 RESOURCE ID: move_name_0484
 TEXT: Clanging Scales
+
+RESOURCE ID: great_league_championship_series
+TEXT: 2025 Championship Series Cup
+
+RESOURCE ID: move_name_0486
+TEXT: Dragon Energy

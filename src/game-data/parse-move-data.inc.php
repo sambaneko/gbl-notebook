@@ -8,8 +8,7 @@ function parseMoveData($jsonObj, $langLines, $appends) {
 	if (!isset($move->energyDelta)) return null;
 	
 	preg_match('/\d+/', $jsonObj->templateId, $matches);
-	$name = 'move_name_' . $matches[0];
-	$name = isset($langLines[$name]) ? $langLines[$name] : $name;
+	$zeroIndex = $matches[0];
 
 	$value = $move->uniqueId;
 	if (is_numeric($move->uniqueId)) {
@@ -24,11 +23,26 @@ function parseMoveData($jsonObj, $langLines, $appends) {
 		);
 	}
 
+	$label = "move_name_{$zeroIndex}";
+
+	if (isset($langLines[$label])) {
+		$label = $langLines[$label];
+	} else {
+		// the move name is not specified in the language file;
+		// so let's intuit the english name
+		$label = ucwords(
+			strtolower(
+				str_replace('_', ' ', $value)
+			)
+		);
+	}	
+
 	$data = [
 		'value' => $value,
 		'type' => $move->type,
-		'label' => $name,
-		'energyDelta' => $move->energyDelta
+		'label' => $label,
+		'energyDelta' => $move->energyDelta,
+		'index' => (int)$zeroIndex
 	];
 
 	// durationTurns in the game master seems to be a 0-index?
@@ -49,4 +63,23 @@ function parseMoveData($jsonObj, $langLines, $appends) {
 	}	
 
 	return $data;
+}
+
+// game master may now mix string move names with numeric values...
+function fixNumericMoves($pokemonData, $moveData) {
+	$fix = function ($moves) use ($moveData) {
+		foreach ($moves as &$move) {
+			if (is_numeric($move)) {
+				$move = $moveData[$move]['value'];
+			}
+		}
+		return $moves;
+	};
+
+	foreach ($pokemonData as &$pData) {
+		$pData['fastMoves'] = $fix($pData['fastMoves']);
+		$pData['chargeMoves'] = $fix($pData['chargeMoves']);		
+	}
+
+	return $pokemonData;
 }

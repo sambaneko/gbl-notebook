@@ -112,7 +112,8 @@ h2,
 h3 {
 	text-transform: uppercase;
 	font-weight: normal;
-	color: #436953;
+	color: #000;
+	opacity: .7;
 }
 
 h1,

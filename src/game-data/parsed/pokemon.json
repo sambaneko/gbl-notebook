@@ -69,6 +69,7 @@
             "SLUDGE_BOMB",
             "PETAL_BLIZZARD",
             "SOLAR_BEAM",
+            "SLUDGE",
             "FRENZY_PLANT",
             "SLUDGE"
         ],
@@ -148,6 +149,7 @@
             "FIRE_BLAST",
             "DRAGON_CLAW",
             "OVERHEAT",
+            "AIR_CUTTER",
             "BLAST_BURN",
             "FLAMETHROWER",
             "AIR_CUTTER"
@@ -232,11 +234,13 @@
         ]
     },
     {
-        "value": "V0010_POKEMON_CATERPIE",
-        "templateId": "V0010_POKEMON_CATERPIE",
+        "value": "V0010_POKEMON_CATERPIE_NORMAL",
+        "templateId": "V0010_POKEMON_CATERPIE_NORMAL",
         "pokemonId": "CATERPIE",
         "dexNumber": 10,
         "shadowAvailable": true,
+        "form": "CATERPIE_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Caterpie",
         "types": [
             "POKEMON_TYPE_BUG"
@@ -250,11 +254,13 @@
         ]
     },
     {
-        "value": "V0011_POKEMON_METAPOD",
-        "templateId": "V0011_POKEMON_METAPOD",
+        "value": "V0011_POKEMON_METAPOD_NORMAL",
+        "templateId": "V0011_POKEMON_METAPOD_NORMAL",
         "pokemonId": "METAPOD",
         "dexNumber": 11,
         "shadowAvailable": true,
+        "form": "METAPOD_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Metapod",
         "types": [
             "POKEMON_TYPE_BUG"
@@ -268,11 +274,13 @@
         ]
     },
     {
-        "value": "V0012_POKEMON_BUTTERFREE",
-        "templateId": "V0012_POKEMON_BUTTERFREE",
+        "value": "V0012_POKEMON_BUTTERFREE_NORMAL",
+        "templateId": "V0012_POKEMON_BUTTERFREE_NORMAL",
         "pokemonId": "BUTTERFREE",
         "dexNumber": 12,
         "shadowAvailable": true,
+        "form": "BUTTERFREE_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Butterfree",
         "types": [
             "POKEMON_TYPE_BUG",
@@ -557,6 +565,7 @@
             "DRILL_RUN",
             "SKY_ATTACK",
             "FLY",
+            "DRILL_PECK",
             "TWISTER",
             "DRILL_PECK"
         ]
@@ -799,6 +808,7 @@
             "GRASS_KNOT",
             "TRAILBLAZE",
             "SURF",
+            "PSYSHOCK",
             "PSYSHOCK"
         ]
     },
@@ -991,6 +1001,7 @@
             "POISON_JAB_FAST",
             "BITE_FAST",
             "POISON_STING_FAST",
+            "MUD_SLAP_FAST",
             "MUD_SLAP_FAST"
         ],
         "chargeMoves": [
@@ -1702,6 +1713,28 @@
         "form": "PSYDUCK_NORMAL",
         "shortForm": "NORMAL",
         "label": "Psyduck",
+        "types": [
+            "POKEMON_TYPE_WATER"
+        ],
+        "fastMoves": [
+            "WATER_GUN_FAST",
+            "ZEN_HEADBUTT_FAST"
+        ],
+        "chargeMoves": [
+            "PSYBEAM",
+            "AQUA_TAIL",
+            "CROSS_CHOP"
+        ]
+    },
+    {
+        "value": "V0054_POKEMON_PSYDUCK_SWIM_2025",
+        "templateId": "V0054_POKEMON_PSYDUCK_SWIM_2025",
+        "pokemonId": "PSYDUCK",
+        "dexNumber": 54,
+        "shadowAvailable": true,
+        "form": 3019,
+        "shortForm": "",
+        "label": "Psyduck ()",
         "types": [
             "POKEMON_TYPE_WATER"
         ],
@@ -2532,6 +2565,7 @@
             "SLUDGE_BOMB",
             "SCALD",
             "BRUTAL_SWING",
+            "DRAIN_PUNCH",
             "SURF",
             "DRAIN_PUNCH",
             "DRAIN_PUNCH"
@@ -2559,6 +2593,7 @@
             "PSYCHIC",
             "ICE_BEAM",
             "SCALD",
+            "DRAIN_PUNCH",
             "SURF"
         ],
         "costumes": [
@@ -2699,12 +2734,14 @@
         "fastMoves": [
             "FEINT_ATTACK_FAST",
             "STEEL_WING_FAST",
+            "PECK_FAST",
             "PECK_FAST"
         ],
         "chargeMoves": [
             "DRILL_PECK",
             "AERIAL_ACE",
             "BRAVE_BIRD",
+            "TRAILBLAZE",
             "AIR_CUTTER",
             "TRAILBLAZE"
         ]
@@ -2903,11 +2940,13 @@
         ]
     },
     {
-        "value": "V0092_POKEMON_GASTLY",
-        "templateId": "V0092_POKEMON_GASTLY",
+        "value": "V0092_POKEMON_GASTLY_NORMAL",
+        "templateId": "V0092_POKEMON_GASTLY_NORMAL",
         "pokemonId": "GASTLY",
         "dexNumber": 92,
         "shadowAvailable": true,
+        "form": "GASTLY_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Gastly",
         "types": [
             "POKEMON_TYPE_GHOST",
@@ -2926,11 +2965,13 @@
         ]
     },
     {
-        "value": "V0093_POKEMON_HAUNTER",
-        "templateId": "V0093_POKEMON_HAUNTER",
+        "value": "V0093_POKEMON_HAUNTER_NORMAL",
+        "templateId": "V0093_POKEMON_HAUNTER_NORMAL",
         "pokemonId": "HAUNTER",
         "dexNumber": 93,
         "shadowAvailable": true,
+        "form": "HAUNTER_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Haunter",
         "types": [
             "POKEMON_TYPE_GHOST",
@@ -2972,6 +3013,7 @@
             "SHADOW_BALL",
             "FOCUS_BLAST",
             "SLUDGE_BOMB",
+            "DRAIN_PUNCH",
             "SLUDGE_WAVE",
             "DARK_PULSE",
             "PSYCHIC",
@@ -3535,11 +3577,13 @@
         ]
     },
     {
-        "value": "V0113_POKEMON_CHANSEY",
-        "templateId": "V0113_POKEMON_CHANSEY",
+        "value": "V0113_POKEMON_CHANSEY_NORMAL",
+        "templateId": "V0113_POKEMON_CHANSEY_NORMAL",
         "pokemonId": "CHANSEY",
         "dexNumber": 113,
         "shadowAvailable": false,
+        "form": "CHANSEY_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Chansey",
         "types": [
             "POKEMON_TYPE_NORMAL"
@@ -3695,7 +3739,7 @@
         "templateId": "V0120_POKEMON_STARYU",
         "pokemonId": "STARYU",
         "dexNumber": 120,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Staryu",
         "types": [
             "POKEMON_TYPE_WATER"
@@ -3715,7 +3759,7 @@
         "templateId": "V0121_POKEMON_STARMIE",
         "pokemonId": "STARMIE",
         "dexNumber": 121,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Starmie",
         "types": [
             "POKEMON_TYPE_WATER",
@@ -4593,6 +4637,7 @@
             "OUTRAGE",
             "DRAGON_CLAW",
             "SUPER_POWER",
+            "THUNDER_PUNCH",
             "DRACO_METEOR",
             "DRAGON_PULSE",
             "THUNDER_PUNCH"
@@ -5305,12 +5350,14 @@
         "fastMoves": [
             "AIR_SLASH_FAST",
             "FEINT_ATTACK_FAST",
+            "PECK_FAST",
             "PECK_FAST"
         ],
         "chargeMoves": [
             "OMINOUS_WIND",
             "FUTURESIGHT",
             "AERIAL_ACE",
+            "PSYSHOCK",
             "PSYSHOCK"
         ]
     },
@@ -5727,6 +5774,7 @@
             "STONE_EDGE",
             "ACID_SPRAY",
             "MUD_BOMB",
+            "DRAIN_PUNCH",
             "AQUA_TAIL",
             "DRAIN_PUNCH"
         ]
@@ -5831,6 +5879,7 @@
             "SHADOW_BALL",
             "SLUDGE_WAVE",
             "SCALD",
+            "PSYSHOCK",
             "SURF",
             "PSYSHOCK"
         ]
@@ -6631,7 +6680,7 @@
         "templateId": "V0211_POKEMON_QWILFISH_HISUIAN",
         "pokemonId": "QWILFISH",
         "dexNumber": 211,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "QWILFISH_HISUIAN",
         "shortForm": "HISUIAN",
         "label": "Qwilfish (HISUIAN)",
@@ -6656,7 +6705,7 @@
         "templateId": "V0211_POKEMON_QWILFISH_NORMAL",
         "pokemonId": "QWILFISH",
         "dexNumber": 211,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "QWILFISH_NORMAL",
         "shortForm": "NORMAL",
         "label": "Qwilfish",
@@ -7165,6 +7214,7 @@
             "BLIZZARD",
             "OUTRAGE",
             "OCTAZOOKA",
+            "SWIFT",
             "SWIFT"
         ]
     },
@@ -7401,11 +7451,13 @@
         ]
     },
     {
-        "value": "V0242_POKEMON_BLISSEY",
-        "templateId": "V0242_POKEMON_BLISSEY",
+        "value": "V0242_POKEMON_BLISSEY_NORMAL",
+        "templateId": "V0242_POKEMON_BLISSEY_NORMAL",
         "pokemonId": "BLISSEY",
         "dexNumber": 242,
         "shadowAvailable": false,
+        "form": "BLISSEY_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Blissey",
         "types": [
             "POKEMON_TYPE_NORMAL"
@@ -7442,6 +7494,7 @@
             "THUNDERBOLT",
             "WILD_CHARGE",
             "SHADOW_BALL",
+            "AURA_SPHERE",
             "AURA_SPHERE"
         ]
     },
@@ -7465,7 +7518,8 @@
             "THUNDER",
             "THUNDERBOLT",
             "WILD_CHARGE",
-            "SHADOW_BALL"
+            "SHADOW_BALL",
+            "AURA_SPHERE"
         ]
     },
     {
@@ -7767,6 +7821,7 @@
             "DAZZLING_GLEAM",
             "SEED_BOMB",
             "LEAF_STORM",
+            "AURA_SPHERE",
             "AURA_SPHERE"
         ]
     },
@@ -8941,6 +8996,7 @@
             "FOUL_PLAY",
             "SHADOW_SNEAK",
             "DAZZLING_GLEAM",
+            "DRAIN_PUNCH",
             "DRAIN_PUNCH"
         ],
         "costumes": [
@@ -9334,11 +9390,13 @@
         ]
     },
     {
-        "value": "V0320_POKEMON_WAILMER",
-        "templateId": "V0320_POKEMON_WAILMER",
+        "value": "V0320_POKEMON_WAILMER_NORMAL",
+        "templateId": "V0320_POKEMON_WAILMER_NORMAL",
         "pokemonId": "WAILMER",
         "dexNumber": 320,
         "shadowAvailable": true,
+        "form": "WAILMER_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Wailmer",
         "types": [
             "POKEMON_TYPE_WATER"
@@ -9356,11 +9414,13 @@
         ]
     },
     {
-        "value": "V0321_POKEMON_WAILORD",
-        "templateId": "V0321_POKEMON_WAILORD",
+        "value": "V0321_POKEMON_WAILORD_NORMAL",
+        "templateId": "V0321_POKEMON_WAILORD_NORMAL",
         "pokemonId": "WAILORD",
         "dexNumber": 321,
         "shadowAvailable": true,
+        "form": "WAILORD_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Wailord",
         "types": [
             "POKEMON_TYPE_WATER"
@@ -9439,6 +9499,7 @@
             "OVERHEAT",
             "SOLAR_BEAM",
             "EARTHQUAKE",
+            "FLAME_WHEEL",
             "FLAME_WHEEL"
         ]
     },
@@ -9997,6 +10058,7 @@
             "STONE_EDGE",
             "BOOMBURST",
             "SCORCHING_SANDS",
+            "SAND_TOMB",
             "EARTH_POWER",
             "SAND_TOMB"
         ]
@@ -10057,7 +10119,7 @@
         "templateId": "V0333_POKEMON_SWABLU",
         "pokemonId": "SWABLU",
         "dexNumber": 333,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Swablu",
         "types": [
             "POKEMON_TYPE_NORMAL",
@@ -10078,7 +10140,7 @@
         "templateId": "V0334_POKEMON_ALTARIA",
         "pokemonId": "ALTARIA",
         "dexNumber": 334,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Altaria",
         "types": [
             "POKEMON_TYPE_DRAGON",
@@ -10092,6 +10154,7 @@
             "SKY_ATTACK",
             "DAZZLING_GLEAM",
             "DRAGON_PULSE",
+            "FLAMETHROWER",
             "MOONBLAST",
             "FLAMETHROWER"
         ]
@@ -10275,7 +10338,7 @@
         "templateId": "V0343_POKEMON_BALTOY",
         "pokemonId": "BALTOY",
         "dexNumber": 343,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Baltoy",
         "types": [
             "POKEMON_TYPE_GROUND",
@@ -10296,7 +10359,7 @@
         "templateId": "V0344_POKEMON_CLAYDOL",
         "pokemonId": "CLAYDOL",
         "dexNumber": 344,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Claydol",
         "types": [
             "POKEMON_TYPE_GROUND",
@@ -10694,7 +10757,6 @@
         "chargeMoves": [
             "ENERGY_BALL",
             "SHADOW_BALL",
-            "PSYSHOCK",
             "PSYSHOCK"
         ]
     },
@@ -10995,6 +11057,7 @@
             "FLAMETHROWER",
             "DRAGON_PULSE",
             "TWISTER",
+            "CRUNCH",
             "CRUNCH"
         ]
     },
@@ -11021,6 +11084,8 @@
             "HYDRO_PUMP",
             "DRACO_METEOR",
             "FLY",
+            "BRUTAL_SWING",
+            "CRUNCH",
             "OUTRAGE",
             "BRUTAL_SWING",
             "CRUNCH"
@@ -11086,7 +11151,8 @@
         "fastMoves": [
             "BULLET_PUNCH_FAST",
             "ZEN_HEADBUTT_FAST",
-            "FURY_CUTTER_FAST"
+            "FURY_CUTTER_FAST",
+            "SHADOW_CLAW_FAST"
         ],
         "chargeMoves": [
             "PSYCHIC",
@@ -11183,6 +11249,7 @@
             "PSYCHIC",
             "OUTRAGE",
             "THUNDER",
+            "AURA_SPHERE",
             "MIST_BALL",
             "AURA_SPHERE"
         ]
@@ -11209,6 +11276,7 @@
             "PSYCHIC",
             "OUTRAGE",
             "THUNDER",
+            "AURA_SPHERE",
             "MIST_BALL"
         ]
     },
@@ -11233,6 +11301,7 @@
             "PSYCHIC",
             "DRAGON_CLAW",
             "SOLAR_BEAM",
+            "AURA_SPHERE",
             "LUSTER_PURGE",
             "AURA_SPHERE"
         ]
@@ -11258,6 +11327,7 @@
             "PSYCHIC",
             "DRAGON_CLAW",
             "SOLAR_BEAM",
+            "AURA_SPHERE",
             "LUSTER_PURGE"
         ]
     },
@@ -11346,6 +11416,7 @@
             "DAZZLING_GLEAM",
             "PSYCHIC",
             "DOOM_DESIRE",
+            "AURA_SPHERE",
             "AURA_SPHERE"
         ]
     },
@@ -11497,6 +11568,7 @@
         "fastMoves": [
             "BITE_FAST",
             "RAZOR_LEAF_FAST",
+            "MUD_SLAP_FAST",
             "MUD_SLAP_FAST"
         ],
         "chargeMoves": [
@@ -11631,6 +11703,7 @@
             "WATERFALL_FAST",
             "METAL_CLAW_FAST",
             "STEEL_WING_FAST",
+            "METAL_SOUND_FAST",
             "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
@@ -12207,6 +12280,7 @@
             "THUNDER",
             "THUNDERBOLT",
             "THUNDER_PUNCH",
+            "HYPER_FANG",
             "HYPER_FANG"
         ]
     },
@@ -12759,11 +12833,13 @@
         ]
     },
     {
-        "value": "V0440_POKEMON_HAPPINY",
-        "templateId": "V0440_POKEMON_HAPPINY",
+        "value": "V0440_POKEMON_HAPPINY_NORMAL",
+        "templateId": "V0440_POKEMON_HAPPINY_NORMAL",
         "pokemonId": "HAPPINY",
         "dexNumber": 440,
         "shadowAvailable": false,
+        "form": "HAPPINY_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Happiny",
         "types": [
             "POKEMON_TYPE_NORMAL"
@@ -12887,6 +12963,7 @@
             "EARTHQUAKE",
             "FIRE_BLAST",
             "SAND_TOMB",
+            "BREAKING_SWIPE",
             "EARTH_POWER",
             "BREAKING_SWIPE"
         ]
@@ -13103,6 +13180,7 @@
             "MUD_BOMB",
             "SLUDGE_BOMB",
             "SHADOW_BALL",
+            "DRAIN_PUNCH",
             "DRAIN_PUNCH"
         ]
     },
@@ -13426,6 +13504,7 @@
             "AIR_SLASH_FAST",
             "HIDDEN_POWER_FAST",
             "CHARM_FAST",
+            "PECK_FAST",
             "PECK_FAST"
         ],
         "chargeMoves": [
@@ -14018,7 +14097,7 @@
         "templateId": "V0487_POKEMON_GIRATINA_ALTERED",
         "pokemonId": "GIRATINA",
         "dexNumber": 487,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "GIRATINA_ALTERED",
         "shortForm": "ALTERED",
         "label": "Giratina (Altered Forme)",
@@ -14042,7 +14121,7 @@
         "templateId": "V0487_POKEMON_GIRATINA_ORIGIN",
         "pokemonId": "GIRATINA",
         "dexNumber": 487,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "GIRATINA_ORIGIN",
         "shortForm": "ORIGIN",
         "label": "Giratina (Origin Forme)",
@@ -14127,7 +14206,7 @@
         "templateId": "V0491_POKEMON_DARKRAI",
         "pokemonId": "DARKRAI",
         "dexNumber": 491,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Darkrai",
         "types": [
             "POKEMON_TYPE_DARK"
@@ -14607,6 +14686,7 @@
             "FOCUS_BLAST",
             "PSYCHIC",
             "V_CREATE",
+            "PSYSHOCK",
             "PSYSHOCK"
         ]
     },
@@ -15340,11 +15420,13 @@
         ]
     },
     {
-        "value": "V0529_POKEMON_DRILBUR",
-        "templateId": "V0529_POKEMON_DRILBUR",
+        "value": "V0529_POKEMON_DRILBUR_NORMAL",
+        "templateId": "V0529_POKEMON_DRILBUR_NORMAL",
         "pokemonId": "DRILBUR",
         "dexNumber": 529,
         "shadowAvailable": true,
+        "form": "DRILBUR_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Drilbur",
         "types": [
             "POKEMON_TYPE_GROUND"
@@ -15360,11 +15442,13 @@
         ]
     },
     {
-        "value": "V0530_POKEMON_EXCADRILL",
-        "templateId": "V0530_POKEMON_EXCADRILL",
+        "value": "V0530_POKEMON_EXCADRILL_NORMAL",
+        "templateId": "V0530_POKEMON_EXCADRILL_NORMAL",
         "pokemonId": "EXCADRILL",
         "dexNumber": 530,
         "shadowAvailable": true,
+        "form": "EXCADRILL_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Excadrill",
         "types": [
             "POKEMON_TYPE_GROUND",
@@ -15937,6 +16021,7 @@
             "CRUNCH",
             "OUTRAGE",
             "BRICK_BREAK",
+            "SAND_TOMB",
             "SAND_TOMB"
         ]
     },
@@ -16138,6 +16223,7 @@
             "ROCK_BLAST",
             "X_SCISSOR",
             "ROCK_SLIDE",
+            "ROCK_WRECKER",
             "ROCK_WRECKER"
         ]
     },
@@ -16646,7 +16732,8 @@
         ],
         "fastMoves": [
             "HIDDEN_POWER_FAST",
-            "ZEN_HEADBUTT_FAST"
+            "ZEN_HEADBUTT_FAST",
+            "CHARM_FAST"
         ],
         "chargeMoves": [
             "FUTURESIGHT",
@@ -17611,11 +17698,13 @@
         ]
     },
     {
-        "value": "V0615_POKEMON_CRYOGONAL",
-        "templateId": "V0615_POKEMON_CRYOGONAL",
+        "value": "V0615_POKEMON_CRYOGONAL_NORMAL",
+        "templateId": "V0615_POKEMON_CRYOGONAL_NORMAL",
         "pokemonId": "CRYOGONAL",
         "dexNumber": 615,
         "shadowAvailable": false,
+        "form": "CRYOGONAL_NORMAL",
+        "shortForm": "NORMAL",
         "label": "Cryogonal",
         "types": [
             "POKEMON_TYPE_ICE"
@@ -17740,6 +17829,7 @@
             "BRICK_BREAK",
             "LOW_SWEEP",
             "FOCUS_BLAST",
+            "DRAIN_PUNCH",
             "HIGH_JUMP_KICK",
             "DRAIN_PUNCH"
         ]
@@ -17765,6 +17855,7 @@
             "STONE_EDGE",
             "BLAZE_KICK",
             "BRUTAL_SWING",
+            "DRAIN_PUNCH",
             "DRAIN_PUNCH"
         ]
     },
@@ -17786,6 +17877,7 @@
             "DRAGON_CLAW",
             "NIGHT_SLASH",
             "HYPER_BEAM",
+            "ROCK_TOMB",
             "ROCK_TOMB"
         ]
     },
@@ -18057,7 +18149,7 @@
         "templateId": "V0633_POKEMON_DEINO",
         "pokemonId": "DEINO",
         "dexNumber": 633,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Deino",
         "types": [
             "POKEMON_TYPE_DARK",
@@ -18078,7 +18170,7 @@
         "templateId": "V0634_POKEMON_ZWEILOUS",
         "pokemonId": "ZWEILOUS",
         "dexNumber": 634,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Zweilous",
         "types": [
             "POKEMON_TYPE_DARK",
@@ -18099,7 +18191,7 @@
         "templateId": "V0635_POKEMON_HYDREIGON",
         "pokemonId": "HYDREIGON",
         "dexNumber": 635,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Hydreigon",
         "types": [
             "POKEMON_TYPE_DARK",
@@ -18233,7 +18325,7 @@
         "templateId": "V0641_POKEMON_TORNADUS_INCARNATE",
         "pokemonId": "TORNADUS",
         "dexNumber": 641,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "TORNADUS_INCARNATE",
         "shortForm": "INCARNATE",
         "label": "Tornadus (Incarnate Forme)",
@@ -18256,7 +18348,7 @@
         "templateId": "V0641_POKEMON_TORNADUS_THERIAN",
         "pokemonId": "TORNADUS",
         "dexNumber": 641,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "TORNADUS_THERIAN",
         "shortForm": "THERIAN",
         "label": "Tornadus (Therian Forme)",
@@ -18839,6 +18931,7 @@
             "FLAME_CHARGE",
             "FIRE_BLAST",
             "MYSTICAL_FIRE",
+            "PSYSHOCK",
             "BLAST_BURN",
             "PSYSHOCK"
         ]
@@ -18955,7 +19048,7 @@
         "templateId": "V0661_POKEMON_FLETCHLING",
         "pokemonId": "FLETCHLING",
         "dexNumber": 661,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Fletchling",
         "types": [
             "POKEMON_TYPE_NORMAL",
@@ -18977,7 +19070,7 @@
         "templateId": "V0662_POKEMON_FLETCHINDER",
         "pokemonId": "FLETCHINDER",
         "dexNumber": 662,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Fletchinder",
         "types": [
             "POKEMON_TYPE_FIRE",
@@ -19000,7 +19093,7 @@
         "templateId": "V0663_POKEMON_TALONFLAME",
         "pokemonId": "TALONFLAME",
         "dexNumber": 663,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Talonflame",
         "types": [
             "POKEMON_TYPE_FIRE",
@@ -20598,7 +20691,8 @@
             "PETAL_BLIZZARD",
             "PSYCHIC",
             "DISARMING_VOICE",
-            "TRAILBLAZE"
+            "TRAILBLAZE",
+            "CHILLING_WATER"
         ]
     },
     {
@@ -20624,7 +20718,8 @@
             "PETAL_BLIZZARD",
             "PSYCHIC",
             "DISARMING_VOICE",
-            "TRAILBLAZE"
+            "TRAILBLAZE",
+            "CHILLING_WATER"
         ]
     },
     {
@@ -20650,7 +20745,8 @@
             "PETAL_BLIZZARD",
             "PSYCHIC",
             "DISARMING_VOICE",
-            "TRAILBLAZE"
+            "TRAILBLAZE",
+            "CHILLING_WATER"
         ]
     },
     {
@@ -20676,7 +20772,8 @@
             "PETAL_BLIZZARD",
             "PSYCHIC",
             "DISARMING_VOICE",
-            "TRAILBLAZE"
+            "TRAILBLAZE",
+            "CHILLING_WATER"
         ]
     },
     {
@@ -20702,7 +20799,8 @@
             "PETAL_BLIZZARD",
             "PSYCHIC",
             "DISARMING_VOICE",
-            "TRAILBLAZE"
+            "TRAILBLAZE",
+            "CHILLING_WATER"
         ]
     },
     {
@@ -21218,6 +21316,7 @@
             "THUNDERBOLT",
             "PSYCHIC",
             "DRAINING_KISS",
+            "PSYSHOCK",
             "PSYSHOCK"
         ]
     },
@@ -21502,6 +21601,7 @@
             "STOMP",
             "ANCIENT_POWER",
             "DRAGON_CLAW",
+            "ROCK_TOMB",
             "ROCK_TOMB"
         ]
     },
@@ -21527,6 +21627,7 @@
             "OUTRAGE",
             "EARTHQUAKE",
             "METEOR_BEAM",
+            "ROCK_TOMB",
             "ROCK_TOMB"
         ]
     },
@@ -21754,7 +21855,7 @@
         "templateId": "V0708_POKEMON_PHANTUMP",
         "pokemonId": "PHANTUMP",
         "dexNumber": 708,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Phantump",
         "types": [
             "POKEMON_TYPE_GHOST",
@@ -21775,7 +21876,7 @@
         "templateId": "V0709_POKEMON_TREVENANT",
         "pokemonId": "TREVENANT",
         "dexNumber": 709,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Trevenant",
         "types": [
             "POKEMON_TYPE_GHOST",
@@ -22524,6 +22625,8 @@
             "DARK_PULSE",
             "BLAZE_KICK",
             "DARKEST_LARIAT",
+            "BRUTAL_SWING",
+            "DRAIN_PUNCH",
             "BLAST_BURN",
             "BRUTAL_SWING",
             "DRAIN_PUNCH"
@@ -22598,7 +22701,7 @@
         "templateId": "V0731_POKEMON_PIKIPEK",
         "pokemonId": "PIKIPEK",
         "dexNumber": 731,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Pikipek",
         "types": [
             "POKEMON_TYPE_NORMAL",
@@ -22619,7 +22722,7 @@
         "templateId": "V0732_POKEMON_TRUMBEAK",
         "pokemonId": "TRUMBEAK",
         "dexNumber": 732,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Trumbeak",
         "types": [
             "POKEMON_TYPE_NORMAL",
@@ -22640,7 +22743,7 @@
         "templateId": "V0733_POKEMON_TOUCANNON",
         "pokemonId": "TOUCANNON",
         "dexNumber": 733,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Toucannon",
         "types": [
             "POKEMON_TYPE_NORMAL",
@@ -22702,7 +22805,7 @@
         "templateId": "V0736_POKEMON_GRUBBIN",
         "pokemonId": "GRUBBIN",
         "dexNumber": 736,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Grubbin",
         "types": [
             "POKEMON_TYPE_BUG"
@@ -22722,7 +22825,7 @@
         "templateId": "V0737_POKEMON_CHARJABUG",
         "pokemonId": "CHARJABUG",
         "dexNumber": 737,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Charjabug",
         "types": [
             "POKEMON_TYPE_BUG",
@@ -22744,7 +22847,7 @@
         "templateId": "V0738_POKEMON_VIKAVOLT",
         "pokemonId": "VIKAVOLT",
         "dexNumber": 738,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Vikavolt",
         "types": [
             "POKEMON_TYPE_BUG",
@@ -23378,12 +23481,14 @@
         ]
     },
     {
-        "value": "V0760_POKEMON_BEWEAR",
-        "templateId": "V0760_POKEMON_BEWEAR",
+        "value": "V0760_POKEMON_BEWEAR_NORMAL",
+        "templateId": "V0760_POKEMON_BEWEAR_NORMAL",
         "pokemonId": "BEWEAR",
         "dexNumber": 760,
         "shadowAvailable": false,
-        "label": "Bewear",
+        "form": 3020,
+        "shortForm": "",
+        "label": "Bewear ()",
         "types": [
             "POKEMON_TYPE_NORMAL",
             "POKEMON_TYPE_FIGHTING"
@@ -23398,6 +23503,9 @@
             "PAYBACK",
             "STOMP",
             "DRAIN_PUNCH"
+        ],
+        "costumes": [
+            ""
         ]
     },
     {
@@ -23528,6 +23636,7 @@
             "CLOSE_COMBAT",
             "SUPER_POWER",
             "BRUTAL_SWING",
+            "DRAIN_PUNCH",
             "DRAIN_PUNCH"
         ]
     },
@@ -24292,6 +24401,8 @@
             "DRAGON_PULSE",
             "FLASH_CANNON",
             "BRUTAL_SWING",
+            "DRAGON_CLAW",
+            "BRUTAL_SWING",
             "DRAGON_CLAW"
         ]
     },
@@ -24469,6 +24580,7 @@
             "DRAGON_CLAW",
             "BRICK_BREAK",
             "DRAGON_PULSE",
+            "ROCK_TOMB",
             "ROCK_TOMB"
         ]
     },
@@ -24486,6 +24598,7 @@
         "fastMoves": [
             "POISON_JAB_FAST",
             "DRAGON_TAIL_FAST",
+            "METAL_SOUND_FAST",
             "METAL_SOUND_FAST"
         ],
         "chargeMoves": [
@@ -24494,6 +24607,7 @@
             "FLAMETHROWER",
             "BOOMBURST",
             "BRICK_BREAK",
+            "UPPER_HAND",
             "CLANGING_SCALES",
             "UPPER_HAND"
         ]
@@ -25404,6 +25518,7 @@
             "SKY_ATTACK",
             "PAYBACK",
             "IRON_HEAD",
+            "AIR_CUTTER",
             "AIR_CUTTER"
         ]
     },
@@ -26656,7 +26771,7 @@
         "chargeMoves": [
             "SEED_BOMB",
             "OUTRAGE",
-            406,
+            "AURA_WHEEL_ELECTRIC",
             "PSYCHIC_FANGS"
         ]
     },
@@ -26681,7 +26796,7 @@
         "chargeMoves": [
             "SEED_BOMB",
             "OUTRAGE",
-            407,
+            "AURA_WHEEL_DARK",
             "PSYCHIC_FANGS"
         ]
     },
@@ -27008,9 +27123,9 @@
         ],
         "chargeMoves": [
             "SLUDGE_BOMB",
-            "DRAGON_PULSE",
+            "HYPER_BEAM",
             "FLAMETHROWER",
-            "HYPER_BEAM"
+            "DYNAMAX_CANNON"
         ]
     },
     {
@@ -27033,7 +27148,8 @@
         "chargeMoves": [
             "SLUDGE_BOMB",
             "DRAGON_PULSE",
-            "FLAMETHROWER"
+            "FLAMETHROWER",
+            "DYNAMAX_CANNON"
         ]
     },
     {
@@ -27380,7 +27496,7 @@
         "templateId": "V0904_POKEMON_OVERQWIL",
         "pokemonId": "OVERQWIL",
         "dexNumber": 904,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "label": "Overqwil",
         "types": [
             "POKEMON_TYPE_DARK",
@@ -27634,7 +27750,9 @@
             "AQUA_JET",
             "AERIAL_ACE",
             "LIQUIDATION",
-            "CLOSE_COMBAT"
+            "CLOSE_COMBAT",
+            "AQUA_STEP",
+            "HYDRO_CANNON"
         ]
     },
     {
@@ -29816,6 +29934,392 @@
             "DRAGON_PULSE",
             "THUNDER",
             "OUTRAGE"
+        ]
+    },
+    {
+        "value": "V1009_POKEMON_WALKINGWAKE",
+        "templateId": "V1009_POKEMON_WALKINGWAKE",
+        "pokemonId": 1009,
+        "dexNumber": 1009,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1009",
+        "types": [
+            "POKEMON_TYPE_WATER",
+            "POKEMON_TYPE_DRAGON"
+        ],
+        "fastMoves": [
+            "SPLASH_FAST"
+        ],
+        "chargeMoves": [
+            "STRUGGLE"
+        ]
+    },
+    {
+        "value": "V1010_POKEMON_IRONLEAVES",
+        "templateId": "V1010_POKEMON_IRONLEAVES",
+        "pokemonId": 1010,
+        "dexNumber": 1010,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1010",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_PSYCHIC"
+        ],
+        "fastMoves": [
+            "SPLASH_FAST"
+        ],
+        "chargeMoves": [
+            "STRUGGLE"
+        ]
+    },
+    {
+        "value": "V1011_POKEMON_DIPPLIN",
+        "templateId": "V1011_POKEMON_DIPPLIN",
+        "pokemonId": 1011,
+        "dexNumber": 1011,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1011",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_DRAGON"
+        ],
+        "fastMoves": [
+            "BULLET_SEED_FAST",
+            "DRAGON_TAIL_FAST",
+            "ROLLOUT_FAST"
+        ],
+        "chargeMoves": [
+            "DRAGON_PULSE",
+            "OUTRAGE",
+            "SEED_BOMB"
+        ]
+    },
+    {
+        "value": "V1012_POKEMON_POLTCHAGEIST_ARTISAN",
+        "templateId": "V1012_POKEMON_POLTCHAGEIST_ARTISAN",
+        "pokemonId": 1012,
+        "dexNumber": 1012,
+        "shadowAvailable": false,
+        "form": 2872,
+        "shortForm": "",
+        "label": "pokemon_name_1012 ()",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "ASTONISH_FAST",
+            "MAGICAL_LEAF_FAST"
+        ],
+        "chargeMoves": [
+            "SHADOW_BALL",
+            "ENERGY_BALL",
+            "POLTERGEIST"
+        ]
+    },
+    {
+        "value": "V1012_POKEMON_POLTCHAGEIST_COUNTERFEIT",
+        "templateId": "V1012_POKEMON_POLTCHAGEIST_COUNTERFEIT",
+        "pokemonId": 1012,
+        "dexNumber": 1012,
+        "shadowAvailable": false,
+        "form": 2871,
+        "shortForm": "",
+        "label": "pokemon_name_1012 ()",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "ASTONISH_FAST",
+            "MAGICAL_LEAF_FAST"
+        ],
+        "chargeMoves": [
+            "SHADOW_BALL",
+            "ENERGY_BALL",
+            "POLTERGEIST"
+        ]
+    },
+    {
+        "value": "V1013_POKEMON_SINISTCHA_MASTERPIECE",
+        "templateId": "V1013_POKEMON_SINISTCHA_MASTERPIECE",
+        "pokemonId": 1013,
+        "dexNumber": 1013,
+        "shadowAvailable": false,
+        "form": 2874,
+        "shortForm": "",
+        "label": "pokemon_name_1013 ()",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "ASTONISH_FAST",
+            "MAGICAL_LEAF_FAST"
+        ],
+        "chargeMoves": [
+            "SHADOW_BALL",
+            "ENERGY_BALL",
+            "POLTERGEIST"
+        ]
+    },
+    {
+        "value": "V1013_POKEMON_SINISTCHA_UNREMARKABLE",
+        "templateId": "V1013_POKEMON_SINISTCHA_UNREMARKABLE",
+        "pokemonId": 1013,
+        "dexNumber": 1013,
+        "shadowAvailable": false,
+        "form": 2873,
+        "shortForm": "",
+        "label": "pokemon_name_1013 ()",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "ASTONISH_FAST",
+            "MAGICAL_LEAF_FAST"
+        ],
+        "chargeMoves": [
+            "SHADOW_BALL",
+            "ENERGY_BALL",
+            "POLTERGEIST"
+        ]
+    },
+    {
+        "value": "V1014_POKEMON_OKIDOGI",
+        "templateId": "V1014_POKEMON_OKIDOGI",
+        "pokemonId": 1014,
+        "dexNumber": 1014,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1014",
+        "types": [
+            "POKEMON_TYPE_POISON",
+            "POKEMON_TYPE_FIGHTING"
+        ],
+        "fastMoves": [
+            "POISON_JAB_FAST",
+            "FORCE_PALM_FAST"
+        ],
+        "chargeMoves": [
+            "SUPER_POWER",
+            "UPPER_HAND",
+            "SLUDGE_BOMB"
+        ]
+    },
+    {
+        "value": "V1015_POKEMON_MUNKIDORI",
+        "templateId": "V1015_POKEMON_MUNKIDORI",
+        "pokemonId": 1015,
+        "dexNumber": 1015,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1015",
+        "types": [
+            "POKEMON_TYPE_POISON",
+            "POKEMON_TYPE_PSYCHIC"
+        ],
+        "fastMoves": [
+            "POISON_JAB_FAST",
+            "CONFUSION_FAST"
+        ],
+        "chargeMoves": [
+            "FUTURESIGHT",
+            "PSYCHIC",
+            "SLUDGE_BOMB"
+        ]
+    },
+    {
+        "value": "V1016_POKEMON_FEZANDIPITI",
+        "templateId": "V1016_POKEMON_FEZANDIPITI",
+        "pokemonId": 1016,
+        "dexNumber": 1016,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1016",
+        "types": [
+            "POKEMON_TYPE_POISON",
+            "POKEMON_TYPE_FAIRY"
+        ],
+        "fastMoves": [
+            "POISON_JAB_FAST",
+            "CHARM_FAST"
+        ],
+        "chargeMoves": [
+            "MOONBLAST",
+            "DISARMING_VOICE",
+            "SLUDGE_BOMB"
+        ]
+    },
+    {
+        "value": "V1017_POKEMON_OGERPON",
+        "templateId": "V1017_POKEMON_OGERPON",
+        "pokemonId": 1017,
+        "dexNumber": 1017,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1017",
+        "types": [
+            "POKEMON_TYPE_GRASS"
+        ],
+        "fastMoves": [
+            "VINE_WHIP_FAST",
+            "MAGICAL_LEAF_FAST",
+            "DOUBLE_KICK_FAST"
+        ],
+        "chargeMoves": [
+            "POWER_WHIP",
+            "GRASS_KNOT",
+            "PLAY_ROUGH"
+        ]
+    },
+    {
+        "value": "V1018_POKEMON_ARCHALUDON",
+        "templateId": "V1018_POKEMON_ARCHALUDON",
+        "pokemonId": 1018,
+        "dexNumber": 1018,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1018",
+        "types": [
+            "POKEMON_TYPE_STEEL",
+            "POKEMON_TYPE_DRAGON"
+        ],
+        "fastMoves": [
+            "DRAGON_TAIL_FAST",
+            "METAL_CLAW_FAST"
+        ],
+        "chargeMoves": [
+            "FLASH_CANNON",
+            "DRAGON_CLAW",
+            "HYPER_BEAM"
+        ]
+    },
+    {
+        "value": "V1019_POKEMON_HYDRAPPLE",
+        "templateId": "V1019_POKEMON_HYDRAPPLE",
+        "pokemonId": 1019,
+        "dexNumber": 1019,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1019",
+        "types": [
+            "POKEMON_TYPE_GRASS",
+            "POKEMON_TYPE_DRAGON"
+        ],
+        "fastMoves": [
+            "BULLET_SEED_FAST",
+            "DRAGON_TAIL_FAST",
+            "ROLLOUT_FAST"
+        ],
+        "chargeMoves": [
+            "DRAGON_PULSE",
+            "OUTRAGE",
+            "SEED_BOMB"
+        ]
+    },
+    {
+        "value": "V1020_POKEMON_GOUGINGFIRE",
+        "templateId": "V1020_POKEMON_GOUGINGFIRE",
+        "pokemonId": 1020,
+        "dexNumber": 1020,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1020",
+        "types": [
+            "POKEMON_TYPE_FIRE",
+            "POKEMON_TYPE_DRAGON"
+        ],
+        "fastMoves": [
+            "SPLASH_FAST"
+        ],
+        "chargeMoves": [
+            "STRUGGLE"
+        ]
+    },
+    {
+        "value": "V1021_POKEMON_RAGINGBOLT",
+        "templateId": "V1021_POKEMON_RAGINGBOLT",
+        "pokemonId": 1021,
+        "dexNumber": 1021,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1021",
+        "types": [
+            "POKEMON_TYPE_ELECTRIC",
+            "POKEMON_TYPE_DRAGON"
+        ],
+        "fastMoves": [
+            "SPLASH_FAST"
+        ],
+        "chargeMoves": [
+            "STRUGGLE"
+        ]
+    },
+    {
+        "value": "V1022_POKEMON_IRONBOULDER",
+        "templateId": "V1022_POKEMON_IRONBOULDER",
+        "pokemonId": 1022,
+        "dexNumber": 1022,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1022",
+        "types": [
+            "POKEMON_TYPE_ROCK",
+            "POKEMON_TYPE_PSYCHIC"
+        ],
+        "fastMoves": [
+            "SPLASH_FAST"
+        ],
+        "chargeMoves": [
+            "STRUGGLE"
+        ]
+    },
+    {
+        "value": "V1023_POKEMON_IRONCROWN",
+        "templateId": "V1023_POKEMON_IRONCROWN",
+        "pokemonId": 1023,
+        "dexNumber": 1023,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1023",
+        "types": [
+            "POKEMON_TYPE_STEEL",
+            "POKEMON_TYPE_PSYCHIC"
+        ],
+        "fastMoves": [
+            "SPLASH_FAST"
+        ],
+        "chargeMoves": [
+            "STRUGGLE"
+        ]
+    },
+    {
+        "value": "V1024_POKEMON_TERAPAGOS",
+        "templateId": "V1024_POKEMON_TERAPAGOS",
+        "pokemonId": 1024,
+        "dexNumber": 1024,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1024",
+        "types": [
+            "POKEMON_TYPE_NORMAL"
+        ],
+        "fastMoves": [
+            "TAKE_DOWN_FAST"
+        ],
+        "chargeMoves": [
+            "STRUGGLE"
+        ]
+    },
+    {
+        "value": "V1025_POKEMON_PECHARUNT",
+        "templateId": "V1025_POKEMON_PECHARUNT",
+        "pokemonId": 1025,
+        "dexNumber": 1025,
+        "shadowAvailable": false,
+        "label": "pokemon_name_1025",
+        "types": [
+            "POKEMON_TYPE_POISON",
+            "POKEMON_TYPE_GHOST"
+        ],
+        "fastMoves": [
+            "ASTONISH_FAST"
+        ],
+        "chargeMoves": [
+            "SHADOW_BALL",
+            "GUNK_SHOT",
+            "POLTERGEIST"
         ]
     }
 ]

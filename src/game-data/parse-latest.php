@@ -67,11 +67,16 @@ foreach ($latestJson as $jsonObj) {
 		$move = parseMoveData(
 			$jsonObj, $langLines, $appends['moves']
 		);
-		if (!is_null($move)) $output['moves'][] = $move;
+		if (!is_null($move)) 
+			$output['moves'][$move['index']] = $move;
 	}	
 }
 
 $output['pokemon'] = parsePokemonForms($forms, $output['pokemon'], []);
+$output['pokemon'] = fixNumericMoves($output['pokemon'], $output['moves']);
+
+// move indexing was temporary; remove from final
+$output['moves'] = array_values($output['moves']);
 
 foreach ($output as $name => $data) {
 	file_put_contents("parsed/{$name}.json", json_encode($data, JSON_PRETTY_PRINT));

@@ -10,9 +10,11 @@ I'm building this app for personal use in my free time; updates will be sporadic
 
 I'm mostly using this on desktop, so while there's some styling available, I'm not typically focused on the layout for small screens; it may be wonky there.
 
-## Preview
+## Build
 
-A preview (or usable version) of the app can be found on my site: [GBL Notebook](https://gbl.spacecatsamba.com)
+The latest master build can be found at https://sambaneko.github.io/gbl-notebook
+
+The app uses React Router's BrowserRouter by default, but this instance uses HashRouter because I couldn't get the former to work properly on Github Pages (if you run it locally, you can use either).
 
 ## Local Setup
 
