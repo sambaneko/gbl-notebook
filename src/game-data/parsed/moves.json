@@ -276,7 +276,7 @@
         "value": "SHADOW_SNEAK",
         "type": "POKEMON_TYPE_GHOST",
         "label": "Shadow Sneak",
-        "energyDelta": -45,
+        "energyDelta": -50,
         "index": 66
     },
     {
@@ -297,7 +297,7 @@
         "value": "SHADOW_BALL",
         "type": "POKEMON_TYPE_GHOST",
         "label": "Shadow Ball",
-        "energyDelta": -55,
+        "energyDelta": -50,
         "index": 70
     },
     {
@@ -318,7 +318,7 @@
         "value": "PARABOLIC_CHARGE",
         "type": "POKEMON_TYPE_ELECTRIC",
         "label": "Parabolic Charge",
-        "energyDelta": -45,
+        "energyDelta": -50,
         "index": 75
     },
     {
@@ -1431,7 +1431,7 @@
         "value": "METEOR_MASH",
         "type": "POKEMON_TYPE_STEEL",
         "label": "Meteor Mash",
-        "energyDelta": -50,
+        "energyDelta": -45,
         "index": 301
     },
     {
@@ -1990,7 +1990,7 @@
         "value": "SPACIAL_REND",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "Spacial Rend",
-        "energyDelta": -50,
+        "energyDelta": -55,
         "index": 388
     },
     {

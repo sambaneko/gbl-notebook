@@ -11,3 +11,7 @@ For example, to add the fast move Rollout for Blastoise, create append/pokemon.j
 }
 
 Use the Pokemon's templateId as a key, containing the data that should be appended.
+
+For Pokemon appends, use the scraper tool to retrieve new move additions from the GBL season update page.
+
+For appended moves, we're only concerned with their energyDelta values, which can usually be sourced from reddit after a season switchover.
