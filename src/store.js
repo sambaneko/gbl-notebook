@@ -14,9 +14,9 @@ import {
 } from 'redux-persist'
 import { v4 as uuidv4 } from 'uuid'
 
-export const pokemonList = require('./game-data/parsed/pokemon.json')
-export const moveList = require('./game-data/parsed/moves.json')
-export const leaguesList = require('./game-data/parsed/leagues.json')
+export const pokemonList = require('./game-data/pokemon.json')
+export const moveList = require('./game-data/moves.json')
+export const leaguesList = require('./game-data/leagues.json')
 
 const seasonList = require('./game-data/seasons.json')
 const allSeasons = seasonList.shift()

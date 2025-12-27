@@ -22,11 +22,7 @@ To run the app locally, clone the repo and `npm install`.  Now you can run (`npm
 
 The repo includes pre-parsed copies of the game master data in English.  As Niantic releases updated masters, the parsed data will become outdated, and you'll need to either grab new copies from this repo, or grab the new game master and parse it locally.
 
-If you want to parse the game master locally, you will also need PHP, and some external resources:
-
-* From the [PokeMiners Game Assets repo](https://github.com/PokeMiners/pogo_assets), download `Texts/Latest APK/English.txt` and put it in the repo's `src/game-data/languages` directory
-* From the [PokeMiners Game Master repo](https://github.com/PokeMiners/game_masters), download `latest/latest.json` and put it in the repo's `src/game-data` directory
-* In the `src/game-data` directory, run `php parse-latest.php`, which will create 3 files in the `src/game-data/parsed` directory: `leagues.json`, `moves.json` and `pokemon.json` 
+If you want to parse the game master locally, see my related repo [GBL Notebook Parser](https://github.com/sambaneko/gbl-notebook-parser).
 
 ## Pokemon Images
 
@@ -45,17 +41,6 @@ After you've added the images, enable their display in Settings. If you enable "
 ## Data Storage
 
 Data is saved in local storage, so it's only accessible to the browser in which it was created.  There is an export function in the Settings, which allows data to be backed up, or ported to another browser.  I'd recommend making regular backups.
-
-## Languages and Text
-When parsing the game master, you could select a different language file from the assets repo.  If you do, modify this line in `src/game-data/parse-latest.php` to match your chosen language:
-
-```
-$language = 'English';
-```
-
-I haven't thoroughly tested other languages, and the interface text will remain in English.
-
-In the `src/game-data/languages` directory, there is also a file named `English_patch.txt`.  For whatever reason, not all translatable resources have a corresponding entry in the language files.  To accomodate this, you can use this patch file to add any missing resource/text pairs; after doing so, rerun the parser.
 
 ## Acknowledgements
 
