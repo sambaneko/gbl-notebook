@@ -983,6 +983,10 @@ label:has(input[type="checkbox"]:disabled) {
 	flex-direction: column;
 }
 
+.teams-wrapper div:last-child {
+	margin-bottom: 0;
+}
+
 .pokemon-sprite {
 	object-fit: contain;
 	height: 100%;

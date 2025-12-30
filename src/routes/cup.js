@@ -47,9 +47,19 @@ export default function Cup() {
 	const [currentSeason, setCurrentSeason] = useState(null)
 
 	useEffect(() => {
-		let team = cupData && cupData.current !== null
-			? cupData.teams.find(({ id }) => id === cupData.current)
-			: null
+		let team = null
+
+		if (cupData) {
+			if (cupData.current !== null)
+				team = cupData.teams.find(({ id }) => id === cupData.current)
+			else if (cupData?.teams.length > 0) {
+				team = cupData.teams[cupData.teams.length - 1]
+				actionHandler.doTeamAction(
+					'switch', { dispatch, cup: selectedCup.templateId }
+				)
+			}
+		}
+
 		setCurrentTeam(team)
 
 		let season = team !== null
