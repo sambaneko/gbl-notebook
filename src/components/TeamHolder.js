@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { seasonList, pokemonList } from '../store'
 import PokemonSprite from './PokemonSprite'
-import { RoundedSquarePlus } from '../images'
 
 export default function TeamHolder({
 	cupData,
+	selectedCup,
 	doAction,
-	showEditor,
 	currentSeason,
 	useImages
 }) {
@@ -43,17 +42,14 @@ export default function TeamHolder({
 
 	return <div id="team-holder">
 		<div className="teams-wrapper">
-			<button
-				className="app-like"
-				onClick={() => showEditor({
-					editType: 'team',
-					editAction: 'add'
-				})}
-				style={{ width: '100%' }}
-			>
-				<RoundedSquarePlus /> New Team
-			</button>
-
+			{selectedCup?.allowedTypes && <div className="allowed-types">
+				{selectedCup.allowedTypes.map((type) =>
+					<span
+						key={type.toLowerCase()}
+						className={'type_icon ' + type.toLowerCase()}>
+					</span>
+				)}
+			</div>}
 			{groupedTeams.map(
 				(teamGroup, groupIndex) => <div
 					key={groupIndex}

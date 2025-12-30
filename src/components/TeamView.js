@@ -7,7 +7,13 @@ import Trash from '../images/Trash'
 import Duplicate from '../images/Duplicate'
 import styled from 'styled-components'
 
-export default function TeamView({ team, doAction, showEditor, useImages }) {
+export default function TeamView({
+	team,
+	doAction,
+	showEditor,
+	showModal,
+	useImages
+}) {
 	const [notes, setNotes] = useState('')
 	const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
@@ -17,9 +23,9 @@ export default function TeamView({ team, doAction, showEditor, useImages }) {
 				team: { id: team.id, ...data }
 			}
 		})
-	
+
 	const duplicateTeam = () =>
-		doAction('duplicate', { id: team.id })	
+		doAction('duplicate', { id: team.id })
 
 	const deleteTeam = () => {
 		doAction('delete', { id: team.id })
@@ -51,74 +57,29 @@ export default function TeamView({ team, doAction, showEditor, useImages }) {
 		setNotes(team?.notes || '')
 	}, [team])
 
-	return <section className={'cup-section' + (team.fave ? ' fave-team' : '')}>
-		<div className="cup-section-head">
-			<h2 className="flex-v-center" style={{ flexGrow: 1 }}>Team</h2>
-			<div style={{ display: 'flex', marginLeft: '1rem' }}>
+	return <>
+		<div className="section-head flex">
+			<div className="flex-grow">
+				<h1>Team</h1>
+			</div>
+			<div className="app-button-group">
 				<button
 					onClick={() => updateTeam({ fave: !team.fave })}
-					style={{ margin: 'auto' }}
-					className="plain"
+					className="app-like"
 				>{team.fave
 					? <StarFilled />
 					: <Star />
 					}
 				</button>
-			</div>
-		</div>
-		<div className="cup-section-body">
-			<div className="flex-container on-narrow-flex-col">
-				<div className={`grid-list team-mons ${useImages ? 'with-images' : 'without-images'}`}>
-					{Array.from({ length: 3 }).map(
-						(m, teamIndex) => <PokemonView
-							{...{
-								key: `tm${teamIndex}`,
-								pokemon: team?.mons[teamIndex] ?? null,
-								showStats: true,
-								onEdit: () => showEditor({
-									editType: 'teamMember',
-									editData: {
-										teamId: team?.id ?? null,
-										teamIndex,
-										mon: team?.mons[teamIndex] ?? null
-									},
-									withExclude: team?.mons.map((m) => m?.templateId || null) ?? []
-								}),
-								onRemove: () => removeTeamMember(teamIndex),
-								onMoveUp: () => teamIndex > 0 &&
-									moveTeamMember(teamIndex, -1),
-								onMoveDown: () => teamIndex < 2 &&
-									moveTeamMember(teamIndex, 1),
-								useImages
-							}}
-						/>
-					)}
-				</div>
-				<div style={{ background: '#ececec', padding: '1rem', borderRadius: '.5rem', flexGrow: '1', display: 'flex', flexDirection: 'column' }}>
-					<label>Notes</label>
-					<textarea
-						onBlur={() => updateTeam({ notes })}
-						onChange={(ev) => setNotes(ev.target.value)}
-						value={notes}
-						style={{ resize: 'none', flexGrow: '1', borderRadius: '.5rem', border: 'none' }}
-					></textarea>
-				</div>
-			</div>
-
-			<div style={{ display: 'flex', color: '#999', marginTop: '.5rem', marginBottom: '-.5rem', padding: '0 1rem' }}>
-				<div style={{ flexGrow: 1, lineHeight: '4rem', fontSize: '1.4rem' }}>
-					<span>Created: {team?.created || '???'}</span>
-					<span style={{ marginLeft: '.5rem' }}>Modified: {team?.modified || '???'}</span>
-				</div>
-				<div style={{ display: 'flex', minWidth: '30rem' }}>
-					<button type="button"
-						className="plain"
-						style={{ margin: 'auto 0 auto auto' }}
-						onClick={() => duplicateTeam()}
-					> <Duplicate />
-					</button>
-					{showDeleteConfirm
-						? <ConfirmationBox>
+				<button type="button"
+					className="app-like"
+					onClick={() => duplicateTeam()}
+				> <Duplicate />
+				</button>
+				<button type="button"
+					className="app-like"
+					onClick={() => showModal(
+						<ConfirmationBox>
 							<div style={{ margin: 'auto 0' }}>
 								<p>Are you sure?</p>
 							</div>
@@ -134,15 +95,61 @@ export default function TeamView({ team, doAction, showEditor, useImages }) {
 								>Delete Team</button>
 							</div>
 						</ConfirmationBox>
-						: <button type="button"
-							className="plain"
-							style={{ margin: 'auto 0 auto 1.4rem' }}
-							onClick={() => setShowDeleteConfirm(true)}
-						> <Trash />
-						</button>
-					}
-				</div>
+					)}
+				> <Trash />
+				</button>
 			</div>
 		</div>
-	</section>
+		<section className={'cup-section' + (team.fave ? ' fave-team' : '')}>
+			<div className="cup-section-body">
+				<div className="flex-container on-narrow-flex-col">
+					<div className={`grid-list team-mons ${useImages ? 'with-images' : 'without-images'}`}>
+						{Array.from({ length: 3 }).map(
+							(m, teamIndex) => <PokemonView
+								{...{
+									key: `tm${teamIndex}`,
+									pokemon: team?.mons[teamIndex] ?? null,
+									showStats: true,
+									onEdit: () => showEditor({
+										editType: 'teamMember',
+										editData: {
+											teamId: team?.id ?? null,
+											teamIndex,
+											mon: team?.mons[teamIndex] ?? null
+										},
+										withExclude: team?.mons.map((m) => m?.templateId || null) ?? []
+									}),
+									onRemove: () => removeTeamMember(teamIndex),
+									onMoveUp: () => teamIndex > 0 &&
+										moveTeamMember(teamIndex, -1),
+									onMoveDown: () => teamIndex < 2 &&
+										moveTeamMember(teamIndex, 1),
+									useImages
+								}}
+							/>
+						)}
+					</div>
+					<div style={{ background: '#ececec', padding: '1rem', borderRadius: '.5rem', flexGrow: '1', display: 'flex', flexDirection: 'column' }}>
+						<label>Notes</label>
+						<textarea
+							onBlur={() => updateTeam({ notes })}
+							onChange={(ev) => setNotes(ev.target.value)}
+							value={notes}
+							style={{ resize: 'none', flexGrow: '1', borderRadius: '.5rem', border: 'none' }}
+						></textarea>
+						<div style={{
+							flexGrow: 0,
+							fontSize: '1.2rem',
+							color: '#999',
+							textAlign: 'center',
+							paddingTop: '1rem'
+						}}>
+							<span>Created: {team?.created || '???'}</span>
+							<span style={{ marginLeft: '.5rem' }}>Modified: {team?.modified || '???'}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</>
 }

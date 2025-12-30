@@ -10,6 +10,7 @@ import TeamView from '../components/TeamView'
 import OpponentsView from '../components/OpponentsView'
 import PokemonEditor from '../components/PokemonEditor'
 import StyledSelect from '../ui/StyledSelect'
+import { RoundedSquarePlus } from '../images'
 
 const actionHandler = new actions()
 
@@ -150,6 +151,18 @@ export default function Cup() {
 		</components.SingleValue>
 	)
 
+	const getCupHeadingLeague = (fromCup) => {
+		if (fromCup.maxCp == 500)
+			return <div className="cup-league lt"><div>LT</div></div>
+		if (fromCup.maxCp == 1500)
+			return <div className="cup-league gl"><div>GL</div></div>
+		if (fromCup.maxCp == 2500)
+			return <div className="cup-league ul"><div>UL</div></div>
+		if (fromCup.maxCp > 2500)
+			return <div className="cup-league ml"><div>ML</div></div>
+
+	}
+
 	return <div id="cup-wrapper">
 		<div id="teams-wrapper">
 			<div style={{ backgroundColor: '#7dd5aa', padding: '1rem' }}>
@@ -165,45 +178,68 @@ export default function Cup() {
 				/>
 			</div>
 			<TeamHolder
-				{...{ cupData, showEditor }}
+				{...{ cupData, selectedCup }}
 				doAction={actionHandler.doTeamAction}
 				currentSeason={appData.settings.season}
 				useImages={appData.settings.images}
 			/>
 		</div>
 		<div id="cup-data">
-			{currentTeam !== null &&
-				<TeamView
-					{...{ showEditor }}
+			{selectedCup !== null &&
+				<div id="cup-heading" className="flex">
+					{getCupHeadingLeague(selectedCup)}
+					<div className="flex-grow">
+						<h1>{selectedCup.label}</h1>
+					</div>
+					<div style={{ display: 'flex' }}>
+						<button
+							className="app-like"
+							onClick={() => showEditor({
+								editType: 'team',
+								editAction: 'add'
+							})}
+							style={{
+								width: '100%',
+								margin: 'auto',
+								borderRadius: '3rem',
+								marginRight: '1px',
+								minWidth: '15rem'
+							}}
+						>
+							<RoundedSquarePlus /> Team
+						</button>
+					</div>
+				</div>
+			}
+			{currentTeam !== null
+				? <TeamView
+					{...{ showEditor, showModal }}
 					team={currentTeam}
 					doAction={actionHandler.doTeamAction}
 					useImages={appData.settings.images}
 				/>
+				: <p
+					style={{
+						textAlign: 'center',
+						backgroundColor: '#eee',
+						borderRadius: '3.2rem',
+						lineHeight: '5rem'
+					}}
+				>No teams have been saved for this Cup.</p>
 			}
-			{(cupData && cupData.opponents !== null) &&
-				<OpponentsView
-					{...{ showEditor }}
-					doAction={actionHandler.doOpponentAction}
-					opponents={
-						currentSeason && cupData
-							? cupData.opponents.filter(
-								({ season }) => season == currentSeason.value
-							)
-							: []
-					}
-					season={currentSeason?.value || null}
-					useImages={appData.settings.images}
-				/>
-			}
-			{!cupData &&
-				<>
-					<h1>No Data</h1>
-					<p style={{
-						fontSize: '2rem',
-						fontWeight: 300
-					}}>Looks like there's nothing saved for this Cup yet.</p>
-				</>
-			}
+			<OpponentsView
+				{...{ showEditor }}
+				doAction={actionHandler.doOpponentAction}
+				opponents={
+					currentSeason && cupData && cupData.opponents !== null
+						? cupData.opponents.filter(
+							({ season }) => season == currentSeason.value
+						)
+						: []
+				}
+				season={currentSeason?.value || null}
+				useImages={appData.settings.images}
+			/>
 		</div>
-	</div>
+	</div >
 }

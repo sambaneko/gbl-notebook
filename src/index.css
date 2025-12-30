@@ -81,6 +81,7 @@ a:active {
 	flex-grow: 0;
 	flex-shrink: 0;
 	overflow: auto;
+	min-width: 34rem;
 }
 
 #team-holder {
@@ -98,11 +99,120 @@ a:active {
 
 #cup-data {
 	width: 100%;
-	padding: 2rem;
+	padding: 1rem 1.5rem;
 	background: #fff;
 	box-shadow: -5px 0px 13px -7px #1c8696, 5px 0px 13px -7px #1c8696, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 	box-sizing: border-box;
 	overflow-y: scroll;
+}
+
+.section-head {
+	background: #d9edf0;
+	border-radius: .7rem 3rem 3rem .7rem;
+	margin-bottom: 1rem;
+}
+
+.section-head h1 {
+	font-size: 1.6rem;
+	margin: 1.4rem 2rem;
+	opacity: 1;
+}
+
+.section-head button.app-like {
+	background-color: #96d6df;
+	border-color: #80b9c1;
+}
+
+.section-head button.app-like:hover {
+	background-color: #7fd3df;
+}
+
+#cup-heading {
+	background: #003e65;
+	border-radius: .7rem 3rem 3rem .7rem;
+	color: #fff;
+	padding-right: .5rem;
+	margin-bottom: 1rem;
+}
+
+#cup-heading h1 {
+	font-size: 2rem;
+	margin: 1rem;
+	color: #fff;
+	opacity: 1;
+}
+
+.cup-league {
+	display: flex;
+	border-radius: .5rem 0 0 .5rem;
+	margin-right: 1rem;
+	padding: 0 1rem;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.cup-league div {
+	margin: auto;
+}
+
+.cup-league.ul {
+	color: #000;
+	background: #AE751D;
+	background: linear-gradient(0deg, rgba(174, 117, 29, 1) 0%, rgba(246, 236, 109, 1) 100%);
+}
+
+.cup-league.gl {
+	color: #fff;
+	background: #2C43B0;
+	background: linear-gradient(0deg, rgba(44, 67, 176, 1) 0%, rgba(79, 136, 242, 1) 100%);
+}
+
+.cup-league.ml {
+	color: #f475c4;
+	background: #39197E;
+	background: linear-gradient(0deg, rgba(57, 25, 126, 1) 0%, rgba(122, 65, 184, 1) 100%);
+}
+
+.cup-league.lt {
+	color: #fff;
+	background: #B43C32;
+	background: linear-gradient(0deg, rgba(180, 60, 50, 1) 0%, rgba(237, 83, 58, 1) 100%);
+}
+
+.allowed-types {
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.allowed-types span {
+	margin: .3rem;
+}
+
+.allowed-types span:first-child {
+	margin-left: auto;
+}
+
+.allowed-types span:last-child {
+	margin-right: auto;
+}
+
+.app-button-group {
+	display: flex;
+}
+
+.app-button-group button.app-like {
+	margin: auto;
+	margin-right: 1px;
+	border-radius: 0;
+}
+
+.app-button-group button.app-like:first-child {
+	border-radius: 3.2rem 0 0 3.2rem;
+}
+
+.app-button-group button.app-like:last-child {
+	border-radius: 0 3.2rem 3.2rem 0;
+	margin-right: .5rem;
 }
 
 /**/
@@ -959,7 +1069,11 @@ label:has(input[type="checkbox"]:disabled) {
 	padding: 1rem;
 	border: 0.1rem solid #7dd5aa;
 	border-radius: .5rem;
-	margin: 1rem 0;
+	margin-bottom: 1rem;
+}
+
+.team-group:last-child {
+	margin-bottom: 0;
 }
 
 .team-group.isClosed {
