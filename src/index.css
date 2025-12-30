@@ -81,7 +81,7 @@ a:active {
 	flex-grow: 0;
 	flex-shrink: 0;
 	overflow: auto;
-	min-width: 34rem;
+	width: 34rem;
 }
 
 #team-holder {
@@ -177,6 +177,21 @@ a:active {
 	color: #fff;
 	background: #B43C32;
 	background: linear-gradient(0deg, rgba(180, 60, 50, 1) 0%, rgba(237, 83, 58, 1) 100%);
+}
+
+#eligibility-label {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#eligibility-desc {
+	padding: .5rem 1rem;
+	border-radius: .5rem;
+	margin-bottom: 1rem;
+	background: #d9edf0;
+	font-size: 1.4rem;
+	text-align: center;
 }
 
 .allowed-types {
