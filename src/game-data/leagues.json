@@ -1429,8 +1429,8 @@
             "POKEMON_TYPE_ICE",
             "POKEMON_TYPE_PSYCHIC"
         ],
-        "label": "2025 Championship Series Cup",
-        "slug": "2025-championship-series-cup"
+        "label": "great_league_championship_series",
+        "slug": "great_league_championship_series"
     },
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_ELECTRIC",
@@ -3072,7 +3072,8 @@
             "SHEDINJA"
         ],
         "label": "Love Cup: Great League Edition",
-        "slug": "love-cup-great-league-edition"
+        "slug": "love-cup-great-league-edition",
+        "eligibility": "Only red- or pink-colored Pok\u00e9mon are eligible."
     },
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_REMIX",

@@ -26987,7 +26987,7 @@
         "shadowAvailable": false,
         "form": "ZACIAN_CROWNED_SWORD",
         "shortForm": "CROWNED_SWORD",
-        "label": "Zacian (CROWNED_SWORD)",
+        "label": "Zacian (Crowned Sword)",
         "types": [
             "POKEMON_TYPE_FAIRY",
             "POKEMON_TYPE_STEEL"
@@ -27010,7 +27010,7 @@
         "shadowAvailable": false,
         "form": "ZACIAN_HERO",
         "shortForm": "HERO",
-        "label": "Zacian (HERO)",
+        "label": "Zacian (Hero of Many Battles)",
         "types": [
             "POKEMON_TYPE_FAIRY"
         ],
@@ -27035,7 +27035,7 @@
         "shadowAvailable": false,
         "form": "ZAMAZENTA_CROWNED_SHIELD",
         "shortForm": "CROWNED_SHIELD",
-        "label": "Zamazenta (CROWNED_SHIELD)",
+        "label": "Zamazenta (Crowned Shield)",
         "types": [
             "POKEMON_TYPE_FIGHTING",
             "POKEMON_TYPE_STEEL"
@@ -27058,7 +27058,7 @@
         "shadowAvailable": false,
         "form": "ZAMAZENTA_HERO",
         "shortForm": "HERO",
-        "label": "Zamazenta (HERO)",
+        "label": "Zamazenta (Hero of Many Battles)",
         "types": [
             "POKEMON_TYPE_FIGHTING"
         ],
@@ -27083,7 +27083,7 @@
         "shadowAvailable": false,
         "form": "ETERNATUS_ETERNAMAX",
         "shortForm": "ETERNAMAX",
-        "label": "Eternatus (ETERNAMAX)",
+        "label": "Eternatus (Eternamax)",
         "types": [
             "POKEMON_TYPE_POISON",
             "POKEMON_TYPE_DRAGON"
