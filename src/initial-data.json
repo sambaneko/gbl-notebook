@@ -41,7 +41,7 @@
               "charge2": "DYNAMIC_PUNCH"
             }
           ],
-          "notes": "Welcome to GBL Notebook!  Here's my original Great League team; you can edit or remove team members, or remove the team entirely by clicking the trash icon below.  Write any notes you want to add in this text box.\n\nYour data is stored in local storage, so it is only available on the browser you're currently using.  If you want to move it, go to Settings and Export it, then Import it on your new browser.  It's a good idea to occasionally Export your data, so you have a back up.\n\nIf you want to use Pokemon images, you will need to save them locally, or provide a path where they can be loaded from.  Please see Settings and the repo for more details.",
+          "notes": "Welcome to GBL Notebook!  Here's my original Great League team; you can edit or remove team members, or remove the team entirely by clicking the trash button above.  Write any notes you want to add in this text box.\n\nYour data is stored in local storage, so it is only available on the browser you're currently using.  If you want to move it, go to Settings and Export it, then Import it on your new browser.  It's a good idea to occasionally Export your data, so you have a back up.\n\nIf you want to use Pokemon images, you will need to save them locally, or provide a path where they can be loaded from.  Please see Settings and the repo for more details.",
           "fave": false,
           "season": 24
         }
