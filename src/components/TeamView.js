@@ -15,7 +15,6 @@ export default function TeamView({
 	useImages
 }) {
 	const [notes, setNotes] = useState('')
-	const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
 	const updateTeam = (data) =>
 		doAction('update', {
@@ -29,7 +28,7 @@ export default function TeamView({
 
 	const deleteTeam = () => {
 		doAction('delete', { id: team.id })
-		setShowDeleteConfirm(false)
+		showModal(null)
 	}
 
 	const moveTeamMember = (memberIndex, dir) =>
@@ -48,8 +47,6 @@ export default function TeamView({
 		text-transform: uppercase;
 		font-size: 1.4rem;
 		border-radius: .5rem;
-		padding: .5rem 0 .5rem 2rem;
-  		width: 100%;
 		color: #333;
 	`
 
@@ -85,7 +82,7 @@ export default function TeamView({
 							</div>
 							<div style={{ marginLeft: 'auto' }}>
 								<button
-									onClick={() => setShowDeleteConfirm(false)}
+									onClick={() => showModal(null)}
 									className="outlined"
 									style={{ marginRight: '1rem' }}
 								>Cancel</button>
