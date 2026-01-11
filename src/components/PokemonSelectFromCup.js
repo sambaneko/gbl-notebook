@@ -3,6 +3,7 @@ import PokemonSelect from './PokemonSelect'
 export default function PokemonSelectFromCup({
 	pokemon,
 	selectedCup,
+	exclude,
 	...otherProps
 }) {
 	const filterPokemonByCup = () => {
@@ -53,11 +54,13 @@ export default function PokemonSelectFromCup({
 		return filteredOpts
 	}
 
+	if (!selectedCup.unique) exclude = []
+
 	return <div>
 		<label>Pokemon</label>
 		<PokemonSelect
 			pokemon={filterPokemonByCup()}
-			{...otherProps}
+			{...{ exclude, ...otherProps }}
 		/>
 	</div>
 }

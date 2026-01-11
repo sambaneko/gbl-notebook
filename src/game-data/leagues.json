@@ -2,6 +2,7 @@
     {
         "templateId": "COMBAT_LEAGUE_DEFAULT_GREAT",
         "value": "COMBAT_LEAGUE_DEFAULT_GREAT",
+        "unique": true,
         "maxCp": 1500,
         "banList": [
             "DITTO",
@@ -15,6 +16,7 @@
     {
         "templateId": "COMBAT_LEAGUE_DEFAULT_MASTER",
         "value": "COMBAT_LEAGUE_DEFAULT_MASTER",
+        "unique": true,
         "maxCp": 10000,
         "banList": [
             "DITTO",
@@ -26,6 +28,7 @@
     {
         "templateId": "COMBAT_LEAGUE_DEFAULT_ULTRA",
         "value": "COMBAT_LEAGUE_DEFAULT_ULTRA",
+        "unique": true,
         "maxCp": 2500,
         "banList": [
             "DITTO",
@@ -37,6 +40,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_COLOR_GREAT",
         "value": "COMBAT_LEAGUE_VS_SEEKER_COLOR_GREAT",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FIRE",
@@ -54,6 +58,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ELEMENT_REMIX",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ELEMENT_REMIX",
+        "unique": true,
         "maxCp": 500,
         "whiteList": [
             "BULBASAUR",
@@ -171,6 +176,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_EVOLUTION",
         "value": "COMBAT_LEAGUE_VS_SEEKER_EVOLUTION",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "IVYSAUR",
@@ -303,6 +309,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_FANTASY_ULTRA",
         "value": "COMBAT_LEAGUE_VS_SEEKER_FANTASY_ULTRA",
+        "unique": true,
         "maxCp": 2500,
         "allowedTypes": [
             "POKEMON_TYPE_STEEL",
@@ -321,6 +328,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GALAR_GREAT",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GALAR_GREAT",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "GROOKEY",
@@ -733,6 +741,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GALAR_LITTLE",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GALAR_LITTLE",
+        "unique": true,
         "maxCp": 500,
         "whiteList": [
             "GROOKEY",
@@ -1145,6 +1154,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT",
+        "unique": true,
         "maxCp": 1500,
         "banList": [
             "DITTO",
@@ -1158,6 +1168,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_BIDOOF",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_BIDOOF",
+        "unique": false,
         "maxCp": 500,
         "whiteList": [
             "BIDOOF"
@@ -1168,6 +1179,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_CHAMPIONSHIP_SERIES",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_CHAMPIONSHIP_SERIES",
+        "unique": true,
         "maxCp": 1500,
         "banList": [
             "RATTATA, ALOLA",
@@ -1435,6 +1447,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_ELECTRIC",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_ELECTRIC",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_ELECTRIC"
@@ -1451,6 +1464,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_ELEMENT",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_ELEMENT",
+        "unique": true,
         "maxCp": 500,
         "whiteList": [
             "BULBASAUR",
@@ -1588,6 +1602,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FANTASY",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FANTASY",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_STEEL",
@@ -1604,6 +1619,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FIGHTING",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FIGHTING",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FIGHTING"
@@ -1621,6 +1637,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FIGHTING_REMIX",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FIGHTING_REMIX",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FIGHTING"
@@ -1642,6 +1659,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FLYING",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FLYING",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FLYING"
@@ -1656,6 +1674,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FOSSIL",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_FOSSIL",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_ROCK",
@@ -1672,6 +1691,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HALLOWEEN",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HALLOWEEN",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_BUG",
@@ -1690,6 +1710,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HALLOWEEN_LITTLE",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HALLOWEEN_LITTLE",
+        "unique": true,
         "maxCp": 500,
         "allowedTypes": [
             "POKEMON_TYPE_BUG",
@@ -1708,6 +1729,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HISUI",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HISUI",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "TURTWIG",
@@ -1839,6 +1861,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HOENN",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HOENN",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "TREECKO",
@@ -1987,6 +2010,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HOLIDAY",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_HOLIDAY",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_ELECTRIC",
@@ -2007,6 +2031,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_JOHTO",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_JOHTO",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "CHIKORITA",
@@ -2116,6 +2141,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_JUNGLE",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_JUNGLE",
+        "unique": true,
         "maxCp": 1500,
         "banList": [
             "GLIGAR",
@@ -2139,6 +2165,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_KANTO",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_KANTO",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "BULBASAUR",
@@ -2370,6 +2397,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_LITTLE",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_LITTLE",
+        "unique": true,
         "maxCp": 500,
         "whiteList": [
             "BULBASAUR",
@@ -2653,6 +2681,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_LITTLE_REMIX",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_LITTLE_REMIX",
+        "unique": true,
         "maxCp": 500,
         "whiteList": [
             "BULBASAUR",
@@ -2925,6 +2954,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_LOVE",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_LOVE",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "CHARMANDER",
@@ -3078,6 +3108,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_REMIX",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_REMIX",
+        "unique": true,
         "maxCp": 1500,
         "banList": [
             "CRADILY",
@@ -3107,6 +3138,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_RETRO",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_RETRO",
+        "unique": true,
         "maxCp": 1500,
         "banList": [
             "RATTATA, ALOLA",
@@ -3315,6 +3347,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SCROLL",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SCROLL",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_WATER",
@@ -3332,6 +3365,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SINGLE_TYPE",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SINGLE_TYPE",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "CHARMANDER",
@@ -3827,6 +3861,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SINNOH",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SINNOH",
+        "unique": true,
         "maxCp": 1500,
         "whiteList": [
             "TURTWIG",
@@ -3939,6 +3974,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SUMMER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_SUMMER",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FIRE",
@@ -3958,6 +3994,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_WEATHER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_WEATHER",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FIRE",
@@ -3975,6 +4012,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_HALLOWEEN_ULTRA",
         "value": "COMBAT_LEAGUE_VS_SEEKER_HALLOWEEN_ULTRA",
+        "unique": true,
         "maxCp": 2500,
         "allowedTypes": [
             "POKEMON_TYPE_POISON",
@@ -3993,6 +4031,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_LITTLE_HOLIDAY",
         "value": "COMBAT_LEAGUE_VS_SEEKER_LITTLE_HOLIDAY",
+        "unique": true,
         "maxCp": 500,
         "allowedTypes": [
             "POKEMON_TYPE_ELECTRIC",
@@ -4013,6 +4052,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_LITTLE_JUNGLE",
         "value": "COMBAT_LEAGUE_VS_SEEKER_LITTLE_JUNGLE",
+        "unique": true,
         "maxCp": 500,
         "allowedTypes": [
             "POKEMON_TYPE_NORMAL",
@@ -4038,6 +4078,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_LITTLE_JUNGLE_REMIX",
         "value": "COMBAT_LEAGUE_VS_SEEKER_LITTLE_JUNGLE_REMIX",
+        "unique": true,
         "maxCp": 500,
         "allowedTypes": [
             "POKEMON_TYPE_NORMAL",
@@ -4065,6 +4106,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_MASTER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_MASTER",
+        "unique": true,
         "maxCp": 6000,
         "banList": [
             "DITTO",
@@ -4076,6 +4118,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_MASTER_CLASSIC",
         "value": "COMBAT_LEAGUE_VS_SEEKER_MASTER_CLASSIC",
+        "unique": true,
         "maxCp": 6000,
         "banList": [
             "DITTO",
@@ -4087,6 +4130,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_MASTER_MEGAS",
         "value": "COMBAT_LEAGUE_VS_SEEKER_MASTER_MEGAS",
+        "unique": true,
         "maxCp": 7000,
         "banList": [
             "DITTO",
@@ -4098,6 +4142,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_MASTER_NO_LEGENDARY",
         "value": "COMBAT_LEAGUE_VS_SEEKER_MASTER_NO_LEGENDARY",
+        "unique": true,
         "maxCp": 6000,
         "banList": [
             "DITTO",
@@ -4166,6 +4211,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_MASTER_PREMIER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_MASTER_PREMIER",
+        "unique": true,
         "maxCp": 6000,
         "banList": [
             "DITTO",
@@ -4270,6 +4316,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_MASTER_PREMIER_CLASSIC",
         "value": "COMBAT_LEAGUE_VS_SEEKER_MASTER_PREMIER_CLASSIC",
+        "unique": true,
         "maxCp": 6000,
         "banList": [
             "DITTO",
@@ -4360,6 +4407,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_MOUNTAIN_GREAT",
         "value": "COMBAT_LEAGUE_VS_SEEKER_MOUNTAIN_GREAT",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_ICE",
@@ -4378,6 +4426,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_PSYCHIC",
         "value": "COMBAT_LEAGUE_VS_SEEKER_PSYCHIC",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_PSYCHIC"
@@ -4393,6 +4442,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_SPRING_GREAT",
         "value": "COMBAT_LEAGUE_VS_SEEKER_SPRING_GREAT",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FAIRY",
@@ -4412,6 +4462,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_SUNSHINE_GREAT",
         "value": "COMBAT_LEAGUE_VS_SEEKER_SUNSHINE_GREAT",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FIRE",
@@ -4430,6 +4481,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ULTRA",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ULTRA",
+        "unique": true,
         "maxCp": 2500,
         "banList": [
             "DITTO",
@@ -4441,6 +4493,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_HOLIDAY",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_HOLIDAY",
+        "unique": true,
         "maxCp": 2500,
         "allowedTypes": [
             "POKEMON_TYPE_ELECTRIC",
@@ -4460,6 +4513,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_NO_LEGENDARY",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_NO_LEGENDARY",
+        "unique": true,
         "maxCp": 2500,
         "banList": [
             "DITTO",
@@ -4528,6 +4582,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_PREMIER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_PREMIER",
+        "unique": true,
         "maxCp": 2500,
         "banList": [
             "DITTO",
@@ -4632,6 +4687,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_PREMIER_CLASSIC",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_PREMIER_CLASSIC",
+        "unique": true,
         "maxCp": 2500,
         "banList": [
             "DITTO",
@@ -4722,6 +4778,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_REMIX",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_REMIX",
+        "unique": true,
         "maxCp": 2500,
         "banList": [
             "VENUSAUR",
@@ -4741,6 +4798,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_SUMMER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_ULTRA_SUMMER",
+        "unique": true,
         "maxCp": 2500,
         "allowedTypes": [
             "POKEMON_TYPE_FIRE",
@@ -4760,6 +4818,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_WEATHER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_WEATHER",
+        "unique": true,
         "maxCp": 2500,
         "allowedTypes": [
             "POKEMON_TYPE_FIRE",
@@ -4777,6 +4836,7 @@
     {
         "templateId": "COMBAT_LEAGUE_VS_SEEKER_WILLPOWER",
         "value": "COMBAT_LEAGUE_VS_SEEKER_WILLPOWER",
+        "unique": true,
         "maxCp": 1500,
         "allowedTypes": [
             "POKEMON_TYPE_FIGHTING",
