@@ -49,7 +49,11 @@ export default function Cup() {
 	useEffect(() => {
 		let team = null
 
-		if (cupData && cupData?.current !== 'new') {
+		if (
+			cupData && 
+			typeof cupData.current !== 'undefined' &&
+			cupData?.current !== 'new'
+		) {
 			if (cupData.current !== null)
 				team = cupData.teams.find(({ id }) => id === cupData.current)
 			else if (cupData?.teams.length > 0) {

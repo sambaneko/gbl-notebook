@@ -189,7 +189,6 @@ export const slice = createSlice({
 		},
 		updateCurrent: (state, action) => {
 			let currentId = action.payload.id
-			console.log(action.payload)
 
 			if (currentId === null) {
 				currentId = (
