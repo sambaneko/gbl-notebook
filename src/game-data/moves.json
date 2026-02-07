@@ -1956,5 +1956,17 @@
         "type": "POKEMON_TYPE_FLYING",
         "label": "Beak Blast",
         "energyDelta": -55
+    },
+    {
+        "value": "MIND_BLOWN",
+        "type": "POKEMON_TYPE_FIRE",
+        "label": "Mind Blown",
+        "energyDelta": -35
+    },
+    {
+        "value": "DRUM_BEATING",
+        "type": "POKEMON_TYPE_GRASS",
+        "label": "Drum Beating",
+        "energyDelta": -35
     }
 ]

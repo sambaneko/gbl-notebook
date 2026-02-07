@@ -153,7 +153,6 @@ export const slice = createSlice({
 			let team = { ...pl.team }
 
 			if (team.id === undefined) {
-				team.season = state.settings.season
 				state.cups[pl.cup].teams.push({
 					...createTeam(teams, state.settings.timezone),
 					...team
@@ -190,6 +189,7 @@ export const slice = createSlice({
 		},
 		updateCurrent: (state, action) => {
 			let currentId = action.payload.id
+			console.log(action.payload)
 
 			if (currentId === null) {
 				currentId = (

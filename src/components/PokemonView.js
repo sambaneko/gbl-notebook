@@ -32,7 +32,15 @@ export default function PokemonView({
 		pokemon = appData.pokemon.find(({ id }) => id == pokemon)
 	}
 
-	const myPokemon = pokemonList.find(({ value }) => value == pokemon.templateId)
+	const myPokemon = pokemonList.find(
+		({ value }) => value == pokemon.templateId
+	)
+
+	if (myPokemon === undefined)
+		throw new Error(
+			`The Pokemon templateId ${pokemon.templateId} was not found. This is usually the result of game data update, and must be manually corrected.`
+		)
+
 	const myFastMove = moveList.find(({ value }) => value == pokemon.fast)
 	const myChargeMove1 = moveList.find(({ value }) => value == pokemon.charge1)
 	const myChargeMove2 = pokemon['charge2']

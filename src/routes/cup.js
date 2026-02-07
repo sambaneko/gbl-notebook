@@ -49,7 +49,7 @@ export default function Cup() {
 	useEffect(() => {
 		let team = null
 
-		if (cupData) {
+		if (cupData && cupData?.current !== 'new') {
 			if (cupData.current !== null)
 				team = cupData.teams.find(({ id }) => id === cupData.current)
 			else if (cupData?.teams.length > 0) {
@@ -97,6 +97,7 @@ export default function Cup() {
 		withData = {
 			...withData,
 			withCup: selectedCup,
+			withSeason: currentSeason.value,
 			onSave: (data) => saveEditedPokemon(data)
 		}
 		showModal(
@@ -192,6 +193,18 @@ export default function Cup() {
 				doAction={actionHandler.doTeamAction}
 				currentSeason={appData.settings.season}
 				useImages={appData.settings.images}
+				gotoCurrentSeason={() => {
+					setCurrentTeam(null)
+					setCurrentSeason(latestSeason)
+
+					actionHandler.doTeamAction(
+						'switch', { id: 'new' }
+					)
+					actionHandler.updateContext({
+						cup: selectedCup.templateId,
+						season: latestSeason
+					})
+				}}
 			/>
 		</div>
 		<div id="cup-data">

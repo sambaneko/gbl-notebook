@@ -46,7 +46,6 @@ export default function OpponentsView({
 					onClick={() => showEditor({ editType: 'opponent' })}
 				> <RoundedSquarePlus /> Opponent
 				</button>
-
 			</div>
 		</div>
 		{opponents.length > 0 &&
