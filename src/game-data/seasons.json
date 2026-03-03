@@ -10,6 +10,18 @@
 		]
 	},
 	{
+		"label": "Season 26: Memories in Motion",
+		"value": 26,
+		"slug": "26-memories-in-motion",
+		"cups": [
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_KANTO",
+			"COMBAT_LEAGUE_VS_SEEKER_SPRING_GREAT",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_JUNGLE",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_ELECTRIC",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_FANTASY"
+		]
+	},	
+	{
 		"label": "Season 25: Precious Paths",
 		"value": 25,
 		"slug": "25-precious-paths",
