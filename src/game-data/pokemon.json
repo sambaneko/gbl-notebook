@@ -434,6 +434,7 @@
             "AERIAL_ACE",
             "BRAVE_BIRD",
             "FEATHER_DANCE",
+            "HEAT_WAVE",
             "AIR_CUTTER"
         ]
     },
@@ -626,79 +627,6 @@
         ]
     },
     {
-        "value": "V0025_POKEMON_PIKACHU",
-        "templateId": "V0025_POKEMON_PIKACHU",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_ADVENTURE_HAT_2020",
-        "templateId": "V0025_POKEMON_PIKACHU_ADVENTURE_HAT_2020",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_ADVENTURE_HAT_2020",
-        "shortForm": "ADVENTURE_HAT_2020",
-        "label": "Pikachu (ADVENTURE_HAT_2020)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_COPY_2019",
-        "templateId": "V0025_POKEMON_PIKACHU_COPY_2019",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_COPY_2019",
-        "shortForm": "COPY_2019",
-        "label": "Pikachu (COPY_2019)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
         "value": "V0025_POKEMON_PIKACHU_COSTUME_2020",
         "templateId": "V0025_POKEMON_PIKACHU_COSTUME_2020",
         "pokemonId": "PIKACHU",
@@ -706,222 +634,7 @@
         "shadowAvailable": false,
         "form": "PIKACHU_COSTUME_2020",
         "shortForm": "COSTUME_2020",
-        "label": "Pikachu (COSTUME_2020)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "FLY"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_DIWALI_2024",
-        "templateId": "V0025_POKEMON_PIKACHU_DIWALI_2024",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_DIWALI_2024",
-        "shortForm": "DIWALI_2024",
-        "label": "Pikachu (DIWALI_2024)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_DOCTOR",
-        "templateId": "V0025_POKEMON_PIKACHU_DOCTOR",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_DOCTOR",
-        "shortForm": "DOCTOR",
-        "label": "Pikachu (DOCTOR)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "CHARM_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "THUNDER_PUNCH",
-            "PLAY_ROUGH"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_FALL_2019",
-        "templateId": "V0025_POKEMON_PIKACHU_FALL_2019",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_FALL_2019",
-        "shortForm": "FALL_2019",
-        "label": "Pikachu (FALL_2019)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_FLYING_01",
-        "templateId": "V0025_POKEMON_PIKACHU_FLYING_01",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_FLYING_01",
-        "shortForm": "FLYING_01",
-        "label": "Pikachu (FLYING_01)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "FLY"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_FLYING_02",
-        "templateId": "V0025_POKEMON_PIKACHU_FLYING_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_FLYING_02",
-        "shortForm": "FLYING_02",
-        "label": "Pikachu (FLYING_02)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "FLY"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_FLYING_03",
-        "templateId": "V0025_POKEMON_PIKACHU_FLYING_03",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_FLYING_03",
-        "shortForm": "FLYING_03",
-        "label": "Pikachu (FLYING_03)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "FLY"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_FLYING_04",
-        "templateId": "V0025_POKEMON_PIKACHU_FLYING_04",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_FLYING_04",
-        "shortForm": "FLYING_04",
-        "label": "Pikachu (FLYING_04)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "FLY"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_FLYING_5TH_ANNIV",
-        "templateId": "V0025_POKEMON_PIKACHU_FLYING_5TH_ANNIV",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_FLYING_5TH_ANNIV",
-        "shortForm": "FLYING_5TH_ANNIV",
-        "label": "Pikachu (FLYING_5TH_ANNIV)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "FLY"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_FLYING_OKINAWA",
-        "templateId": "V0025_POKEMON_PIKACHU_FLYING_OKINAWA",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_FLYING_OKINAWA",
-        "shortForm": "FLYING_OKINAWA",
-        "label": "Pikachu (FLYING_OKINAWA)",
+        "label": "Pikachu (FLYING)",
         "types": [
             "POKEMON_TYPE_ELECTRIC"
         ],
@@ -944,7 +657,7 @@
         "shadowAvailable": false,
         "form": "PIKACHU_GOFEST_2022",
         "shortForm": "GOFEST_2022",
-        "label": "Pikachu (GOFEST_2022)",
+        "label": "Pikachu (SHAYMIN SCARF)",
         "types": [
             "POKEMON_TYPE_ELECTRIC"
         ],
@@ -959,508 +672,6 @@
             "WILD_CHARGE",
             "SURF",
             "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2024_MTIARA",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2024_MTIARA",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2024_MTIARA",
-        "shortForm": "GOFEST_2024_MTIARA",
-        "label": "Pikachu (GOFEST_2024_MTIARA)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2024_STIARA",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2024_STIARA",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2024_STIARA",
-        "shortForm": "GOFEST_2024_STIARA",
-        "label": "Pikachu (GOFEST_2024_STIARA)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2025_GOGGLES_BLUE",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2025_GOGGLES_BLUE",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2025_GOGGLES_BLUE",
-        "shortForm": "GOFEST_2025_GOGGLES_BLUE",
-        "label": "Pikachu (GOFEST_2025_GOGGLES_BLUE)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2025_GOGGLES_RED",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2025_GOGGLES_RED",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2025_GOGGLES_RED",
-        "shortForm": "GOFEST_2025_GOGGLES_RED",
-        "label": "Pikachu (GOFEST_2025_GOGGLES_RED)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2025_GOGGLES_YELLOW",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2025_GOGGLES_YELLOW",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2025_GOGGLES_YELLOW",
-        "shortForm": "GOFEST_2025_GOGGLES_YELLOW",
-        "label": "Pikachu (GOFEST_2025_GOGGLES_YELLOW)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2025_MONOCLE_BLUE",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2025_MONOCLE_BLUE",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2025_MONOCLE_BLUE",
-        "shortForm": "GOFEST_2025_MONOCLE_BLUE",
-        "label": "Pikachu (GOFEST_2025_MONOCLE_BLUE)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2025_MONOCLE_RED",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2025_MONOCLE_RED",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2025_MONOCLE_RED",
-        "shortForm": "GOFEST_2025_MONOCLE_RED",
-        "label": "Pikachu (GOFEST_2025_MONOCLE_RED)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOFEST_2025_MONOCLE_YELLOW",
-        "templateId": "V0025_POKEMON_PIKACHU_GOFEST_2025_MONOCLE_YELLOW",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOFEST_2025_MONOCLE_YELLOW",
-        "shortForm": "GOFEST_2025_MONOCLE_YELLOW",
-        "label": "Pikachu (GOFEST_2025_MONOCLE_YELLOW)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2024_A",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2024_A",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2024_A",
-        "shortForm": "GOTOUR_2024_A",
-        "label": "Pikachu (GOTOUR_2024_A)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2024_A_02",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2024_A_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2024_A_02",
-        "shortForm": "GOTOUR_2024_A_02",
-        "label": "Pikachu (GOTOUR_2024_A_02)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2024_B",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2024_B",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2024_B",
-        "shortForm": "GOTOUR_2024_B",
-        "label": "Pikachu (GOTOUR_2024_B)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2024_B_02",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2024_B_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2024_B_02",
-        "shortForm": "GOTOUR_2024_B_02",
-        "label": "Pikachu (GOTOUR_2024_B_02)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2025_A",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2025_A",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2025_A",
-        "shortForm": "GOTOUR_2025_A",
-        "label": "Pikachu (GOTOUR_2025_A)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2025_A_02",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2025_A_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2025_A_02",
-        "shortForm": "GOTOUR_2025_A_02",
-        "label": "Pikachu (GOTOUR_2025_A_02)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2025_B",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2025_B",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2025_B",
-        "shortForm": "GOTOUR_2025_B",
-        "label": "Pikachu (GOTOUR_2025_B)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2025_B_02",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2025_B_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_GOTOUR_2025_B_02",
-        "shortForm": "GOTOUR_2025_B_02",
-        "label": "Pikachu (GOTOUR_2025_B_02)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2026_A",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2026_A",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2026_A_02",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2026_A_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2026_B",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2026_B",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2026_B_02",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2026_B_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2026_C",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2026_C",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_GOTOUR_2026_C_02",
-        "templateId": "V0025_POKEMON_PIKACHU_GOTOUR_2026_C_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
         ]
     },
     {
@@ -1487,75 +698,6 @@
         ]
     },
     {
-        "value": "V0025_POKEMON_PIKACHU_JEJU",
-        "templateId": "V0025_POKEMON_PIKACHU_JEJU",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_JEJU",
-        "shortForm": "JEJU",
-        "label": "Pikachu (JEJU)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_KARIYUSHI",
-        "templateId": "V0025_POKEMON_PIKACHU_KARIYUSHI",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_KARIYUSHI",
-        "shortForm": "KARIYUSHI",
-        "label": "Pikachu (KARIYUSHI)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_KURTA",
-        "templateId": "V0025_POKEMON_PIKACHU_KURTA",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_KURTA",
-        "shortForm": "KURTA",
-        "label": "Pikachu (KURTA)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
         "value": "V0025_POKEMON_PIKACHU_NORMAL",
         "templateId": "V0025_POKEMON_PIKACHU_NORMAL",
         "pokemonId": "PIKACHU",
@@ -1578,6 +720,9 @@
             "WILD_CHARGE",
             "SURF",
             "THUNDER"
+        ],
+        "costumes": [
+            "COPY_2019"
         ]
     },
     {
@@ -1588,7 +733,7 @@
         "shadowAvailable": false,
         "form": "PIKACHU_POP_STAR",
         "shortForm": "POP_STAR",
-        "label": "Pikachu (POP_STAR)",
+        "label": "Pikachu (POP STAR)",
         "types": [
             "POKEMON_TYPE_ELECTRIC"
         ],
@@ -1610,7 +755,7 @@
         "shadowAvailable": false,
         "form": "PIKACHU_ROCK_STAR",
         "shortForm": "ROCK_STAR",
-        "label": "Pikachu (ROCK_STAR)",
+        "label": "Pikachu (ROCK STAR)",
         "types": [
             "POKEMON_TYPE_ELECTRIC"
         ],
@@ -1625,197 +770,6 @@
         ]
     },
     {
-        "value": "V0025_POKEMON_PIKACHU_SUMMER_2023_A",
-        "templateId": "V0025_POKEMON_PIKACHU_SUMMER_2023_A",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_SUMMER_2023_A",
-        "shortForm": "SUMMER_2023_A",
-        "label": "Pikachu (SUMMER_2023_A)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_SUMMER_2023_B",
-        "templateId": "V0025_POKEMON_PIKACHU_SUMMER_2023_B",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_SUMMER_2023_B",
-        "shortForm": "SUMMER_2023_B",
-        "label": "Pikachu (SUMMER_2023_B)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_SUMMER_2023_C",
-        "templateId": "V0025_POKEMON_PIKACHU_SUMMER_2023_C",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_SUMMER_2023_C",
-        "shortForm": "SUMMER_2023_C",
-        "label": "Pikachu (SUMMER_2023_C)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_SUMMER_2023_D",
-        "templateId": "V0025_POKEMON_PIKACHU_SUMMER_2023_D",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_SUMMER_2023_D",
-        "shortForm": "SUMMER_2023_D",
-        "label": "Pikachu (SUMMER_2023_D)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_SUMMER_2023_E",
-        "templateId": "V0025_POKEMON_PIKACHU_SUMMER_2023_E",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_SUMMER_2023_E",
-        "shortForm": "SUMMER_2023_E",
-        "label": "Pikachu (SUMMER_2023_E)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_TSHIRT_01",
-        "templateId": "V0025_POKEMON_PIKACHU_TSHIRT_01",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_TSHIRT_01",
-        "shortForm": "TSHIRT_01",
-        "label": "Pikachu (TSHIRT_01)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_TSHIRT_02",
-        "templateId": "V0025_POKEMON_PIKACHU_TSHIRT_02",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_TSHIRT_02",
-        "shortForm": "TSHIRT_02",
-        "label": "Pikachu (TSHIRT_02)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_TSHIRT_03",
-        "templateId": "V0025_POKEMON_PIKACHU_TSHIRT_03",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_TSHIRT_03",
-        "shortForm": "TSHIRT_03",
-        "label": "Pikachu (TSHIRT_03)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE"
-        ]
-    },
-    {
         "value": "V0025_POKEMON_PIKACHU_VS_2019",
         "templateId": "V0025_POKEMON_PIKACHU_VS_2019",
         "pokemonId": "PIKACHU",
@@ -1823,7 +777,7 @@
         "shadowAvailable": false,
         "form": "PIKACHU_VS_2019",
         "shortForm": "VS_2019",
-        "label": "Pikachu (VS_2019)",
+        "label": "Pikachu (LIBRE)",
         "types": [
             "POKEMON_TYPE_ELECTRIC"
         ],
@@ -1835,131 +789,6 @@
             "FLYING_PRESS",
             "THUNDER_PUNCH",
             "PLAY_ROUGH"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_WCS_2022",
-        "templateId": "V0025_POKEMON_PIKACHU_WCS_2022",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_WCS_2022",
-        "shortForm": "WCS_2022",
-        "label": "Pikachu (WCS_2022)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_WCS_2023",
-        "templateId": "V0025_POKEMON_PIKACHU_WCS_2023",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_WCS_2023",
-        "shortForm": "WCS_2023",
-        "label": "Pikachu (WCS_2023)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_WCS_2024",
-        "templateId": "V0025_POKEMON_PIKACHU_WCS_2024",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_WCS_2024",
-        "shortForm": "WCS_2024",
-        "label": "Pikachu (WCS_2024)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_WCS_2025",
-        "templateId": "V0025_POKEMON_PIKACHU_WCS_2025",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Pikachu",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
-        ]
-    },
-    {
-        "value": "V0025_POKEMON_PIKACHU_WINTER_2020",
-        "templateId": "V0025_POKEMON_PIKACHU_WINTER_2020",
-        "pokemonId": "PIKACHU",
-        "dexNumber": 25,
-        "shadowAvailable": false,
-        "form": "PIKACHU_WINTER_2020",
-        "shortForm": "WINTER_2020",
-        "label": "Pikachu (WINTER_2020)",
-        "types": [
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "THUNDER_SHOCK_FAST",
-            "QUICK_ATTACK_FAST",
-            "PRESENT_FAST"
-        ],
-        "chargeMoves": [
-            "DISCHARGE",
-            "THUNDERBOLT",
-            "WILD_CHARGE",
-            "SURF",
-            "THUNDER"
         ]
     },
     {
@@ -2896,26 +1725,6 @@
         ]
     },
     {
-        "value": "V0054_POKEMON_PSYDUCK",
-        "templateId": "V0054_POKEMON_PSYDUCK",
-        "pokemonId": "PSYDUCK",
-        "dexNumber": 54,
-        "shadowAvailable": true,
-        "label": "Psyduck",
-        "types": [
-            "POKEMON_TYPE_WATER"
-        ],
-        "fastMoves": [
-            "WATER_GUN_FAST",
-            "ZEN_HEADBUTT_FAST"
-        ],
-        "chargeMoves": [
-            "PSYBEAM",
-            "AQUA_TAIL",
-            "CROSS_CHOP"
-        ]
-    },
-    {
         "value": "V0054_POKEMON_PSYDUCK_NORMAL",
         "templateId": "V0054_POKEMON_PSYDUCK_NORMAL",
         "pokemonId": "PSYDUCK",
@@ -2943,9 +1752,9 @@
         "pokemonId": "PSYDUCK",
         "dexNumber": 54,
         "shadowAvailable": true,
-        "form": "PSYDUCK_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Psyduck",
+        "form": "PSYDUCK_SWIM_2025",
+        "shortForm": "SWIM_2025",
+        "label": "Psyduck (SWIM_2025)",
         "types": [
             "POKEMON_TYPE_WATER"
         ],
@@ -5378,6 +4187,10 @@
         ],
         "chargeMoves": [
             "STRUGGLE"
+        ],
+        "costumes": [
+            "SPRING_2026_A",
+            "SPRING_2026_B"
         ]
     },
     {
@@ -5704,7 +4517,8 @@
         ],
         "fastMoves": [
             "FROST_BREATH_FAST",
-            "ICE_SHARD_FAST"
+            "ICE_SHARD_FAST",
+            "POWDER_SNOW_FAST"
         ],
         "chargeMoves": [
             "ICE_BEAM",
@@ -5760,7 +4574,8 @@
             "THUNDERBOLT",
             "THUNDER",
             "ANCIENT_POWER",
-            "DRILL_PECK"
+            "DRILL_PECK",
+            "HEAT_WAVE"
         ]
     },
     {
@@ -5809,6 +4624,7 @@
             "HEAT_WAVE",
             "OVERHEAT",
             "ANCIENT_POWER",
+            "FLY",
             "SKY_ATTACK"
         ]
     },
@@ -6587,7 +5403,8 @@
             "DAZZLING_GLEAM",
             "AERIAL_ACE",
             "DRAINING_KISS",
-            "PSYSHOCK"
+            "PSYSHOCK",
+            "HEAT_WAVE"
         ]
     },
     {
@@ -6782,29 +5599,6 @@
         ]
     },
     {
-        "value": "V0185_POKEMON_SUDOWOODO",
-        "templateId": "V0185_POKEMON_SUDOWOODO",
-        "pokemonId": "SUDOWOODO",
-        "dexNumber": 185,
-        "shadowAvailable": true,
-        "label": "Sudowoodo",
-        "types": [
-            "POKEMON_TYPE_ROCK"
-        ],
-        "fastMoves": [
-            "ROCK_THROW_FAST",
-            "COUNTER_FAST"
-        ],
-        "chargeMoves": [
-            "STONE_EDGE",
-            "EARTHQUAKE",
-            "ROCK_SLIDE",
-            "ROCK_TOMB",
-            "METEOR_BEAM",
-            "TRAILBLAZE"
-        ]
-    },
-    {
         "value": "V0185_POKEMON_SUDOWOODO_NORMAL",
         "templateId": "V0185_POKEMON_SUDOWOODO_NORMAL",
         "pokemonId": "SUDOWOODO",
@@ -6827,31 +5621,9 @@
             "ROCK_TOMB",
             "METEOR_BEAM",
             "TRAILBLAZE"
-        ]
-    },
-    {
-        "value": "V0185_POKEMON_SUDOWOODO_WINTER_2025",
-        "templateId": "V0185_POKEMON_SUDOWOODO_WINTER_2025",
-        "pokemonId": "SUDOWOODO",
-        "dexNumber": 185,
-        "shadowAvailable": true,
-        "form": "SUDOWOODO_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Sudowoodo",
-        "types": [
-            "POKEMON_TYPE_ROCK"
         ],
-        "fastMoves": [
-            "ROCK_THROW_FAST",
-            "COUNTER_FAST"
-        ],
-        "chargeMoves": [
-            "STONE_EDGE",
-            "EARTHQUAKE",
-            "ROCK_SLIDE",
-            "ROCK_TOMB",
-            "METEOR_BEAM",
-            "TRAILBLAZE"
+        "costumes": [
+            "WINTER_2025"
         ]
     },
     {
@@ -8127,14 +6899,16 @@
         ],
         "fastMoves": [
             "COUNTER_FAST",
-            "STRUGGLE_BUG_FAST"
+            "STRUGGLE_BUG_FAST",
+            "FURY_CUTTER_FAST"
         ],
         "chargeMoves": [
             "MEGAHORN",
             "CLOSE_COMBAT",
             "EARTHQUAKE",
             "ROCK_BLAST",
-            "UPPER_HAND"
+            "UPPER_HAND",
+            "ROCK_TOMB"
         ]
     },
     {
@@ -8371,6 +7145,9 @@
             "ROCK_BLAST",
             "POWER_GEM",
             "BUBBLE_BEAM"
+        ],
+        "costumes": [
+            "SPRING_2026"
         ]
     },
     {
@@ -10930,7 +9707,9 @@
             "EARTHQUAKE",
             "OVERHEAT",
             "SOLAR_BEAM",
-            "EARTH_POWER"
+            "EARTH_POWER",
+            "ROCK_TOMB",
+            "SCORCHING_SANDS"
         ]
     },
     {
@@ -11516,6 +10295,7 @@
             "BOOMBURST",
             "SCORCHING_SANDS",
             "SAND_TOMB",
+            "TWISTER",
             "EARTH_POWER"
         ]
     },
@@ -13687,7 +12467,8 @@
         ],
         "fastMoves": [
             "CONFUSION_FAST",
-            "BUG_BITE_FAST"
+            "BUG_BITE_FAST",
+            "SUCKER_PUNCH_FAST"
         ],
         "chargeMoves": [
             "PSYBEAM",
@@ -13710,7 +12491,8 @@
         ],
         "fastMoves": [
             "CONFUSION_FAST",
-            "BUG_BITE_FAST"
+            "BUG_BITE_FAST",
+            "SUCKER_PUNCH_FAST"
         ],
         "chargeMoves": [
             "PSYBEAM",
@@ -13734,7 +12516,8 @@
         "fastMoves": [
             "CONFUSION_FAST",
             "BUG_BITE_FAST",
-            "METAL_SOUND_FAST"
+            "METAL_SOUND_FAST",
+            "SUCKER_PUNCH_FAST"
         ],
         "chargeMoves": [
             "PSYBEAM",
@@ -14548,6 +13331,7 @@
             "FIRE_BLAST",
             "SAND_TOMB",
             "BREAKING_SWIPE",
+            "TWISTER",
             "EARTH_POWER"
         ]
     },
@@ -15214,7 +13998,8 @@
             "EARTHQUAKE",
             "AERIAL_ACE",
             "NIGHT_SLASH",
-            "SAND_TOMB"
+            "SAND_TOMB",
+            "ACROBATICS"
         ]
     },
     {
@@ -15457,7 +14242,8 @@
         "chargeMoves": [
             "OMINOUS_WIND",
             "THUNDERBOLT",
-            "THUNDER"
+            "THUNDER",
+            "LEAF_STORM"
         ]
     },
     {
@@ -17509,7 +16295,8 @@
             "MEGAHORN",
             "SLUDGE_BOMB",
             "GYRO_BALL",
-            "X_SCISSOR"
+            "X_SCISSOR",
+            "AQUA_TAIL"
         ]
     },
     {
@@ -20352,7 +19139,7 @@
         "templateId": "V0645_POKEMON_LANDORUS_INCARNATE",
         "pokemonId": "LANDORUS",
         "dexNumber": 645,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "LANDORUS_INCARNATE",
         "shortForm": "INCARNATE",
         "label": "Landorus (Incarnate Forme)",
@@ -20376,7 +19163,7 @@
         "templateId": "V0645_POKEMON_LANDORUS_THERIAN",
         "pokemonId": "LANDORUS",
         "dexNumber": 645,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "LANDORUS_THERIAN",
         "shortForm": "THERIAN",
         "label": "Landorus (Therian Forme)",
@@ -23496,7 +22283,7 @@
         "templateId": "V0694_POKEMON_HELIOPTILE_NORMAL",
         "pokemonId": "HELIOPTILE",
         "dexNumber": 694,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "HELIOPTILE_NORMAL",
         "shortForm": "NORMAL",
         "label": "Helioptile",
@@ -23519,7 +22306,7 @@
         "templateId": "V0695_POKEMON_HELIOLISK_NORMAL",
         "pokemonId": "HELIOLISK",
         "dexNumber": 695,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "HELIOLISK_NORMAL",
         "shortForm": "NORMAL",
         "label": "Heliolisk",
@@ -24465,7 +23252,8 @@
             "HYDRO_PUMP",
             "OVERHEAT",
             "EARTH_POWER",
-            "SLUDGE_BOMB"
+            "SLUDGE_BOMB",
+            "SCALD"
         ]
     },
     {
@@ -24850,28 +23638,6 @@
         ]
     },
     {
-        "value": "V0737_POKEMON_CHARJABUG",
-        "templateId": "V0737_POKEMON_CHARJABUG",
-        "pokemonId": "CHARJABUG",
-        "dexNumber": 737,
-        "shadowAvailable": true,
-        "label": "Charjabug",
-        "types": [
-            "POKEMON_TYPE_BUG",
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "BUG_BITE_FAST",
-            "SPARK_FAST",
-            "VOLT_SWITCH_FAST"
-        ],
-        "chargeMoves": [
-            "X_SCISSOR",
-            "DISCHARGE",
-            "CRUNCH"
-        ]
-    },
-    {
         "value": "V0737_POKEMON_CHARJABUG_NORMAL",
         "templateId": "V0737_POKEMON_CHARJABUG_NORMAL",
         "pokemonId": "CHARJABUG",
@@ -24893,54 +23659,9 @@
             "X_SCISSOR",
             "DISCHARGE",
             "CRUNCH"
-        ]
-    },
-    {
-        "value": "V0737_POKEMON_CHARJABUG_WINTER_2025",
-        "templateId": "V0737_POKEMON_CHARJABUG_WINTER_2025",
-        "pokemonId": "CHARJABUG",
-        "dexNumber": 737,
-        "shadowAvailable": true,
-        "form": "CHARJABUG_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Charjabug",
-        "types": [
-            "POKEMON_TYPE_BUG",
-            "POKEMON_TYPE_ELECTRIC"
         ],
-        "fastMoves": [
-            "BUG_BITE_FAST",
-            "SPARK_FAST",
-            "VOLT_SWITCH_FAST"
-        ],
-        "chargeMoves": [
-            "X_SCISSOR",
-            "DISCHARGE",
-            "CRUNCH"
-        ]
-    },
-    {
-        "value": "V0738_POKEMON_VIKAVOLT",
-        "templateId": "V0738_POKEMON_VIKAVOLT",
-        "pokemonId": "VIKAVOLT",
-        "dexNumber": 738,
-        "shadowAvailable": true,
-        "label": "Vikavolt",
-        "types": [
-            "POKEMON_TYPE_BUG",
-            "POKEMON_TYPE_ELECTRIC"
-        ],
-        "fastMoves": [
-            "BUG_BITE_FAST",
-            "SPARK_FAST",
-            "MUD_SLAP_FAST",
-            "VOLT_SWITCH_FAST"
-        ],
-        "chargeMoves": [
-            "X_SCISSOR",
-            "DISCHARGE",
-            "CRUNCH",
-            "FLY"
+        "costumes": [
+            "WINTER_2025"
         ]
     },
     {
@@ -24967,32 +23688,9 @@
             "DISCHARGE",
             "CRUNCH",
             "FLY"
-        ]
-    },
-    {
-        "value": "V0738_POKEMON_VIKAVOLT_WINTER_2025",
-        "templateId": "V0738_POKEMON_VIKAVOLT_WINTER_2025",
-        "pokemonId": "VIKAVOLT",
-        "dexNumber": 738,
-        "shadowAvailable": true,
-        "form": "VIKAVOLT_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Vikavolt",
-        "types": [
-            "POKEMON_TYPE_BUG",
-            "POKEMON_TYPE_ELECTRIC"
         ],
-        "fastMoves": [
-            "BUG_BITE_FAST",
-            "SPARK_FAST",
-            "MUD_SLAP_FAST",
-            "VOLT_SWITCH_FAST"
-        ],
-        "chargeMoves": [
-            "X_SCISSOR",
-            "DISCHARGE",
-            "CRUNCH",
-            "FLY"
+        "costumes": [
+            "WINTER_2025"
         ]
     },
     {
@@ -25439,7 +24137,7 @@
         "templateId": "V0751_POKEMON_DEWPIDER_NORMAL",
         "pokemonId": "DEWPIDER",
         "dexNumber": 751,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "DEWPIDER_NORMAL",
         "shortForm": "NORMAL",
         "label": "Dewpider",
@@ -25462,7 +24160,7 @@
         "templateId": "V0752_POKEMON_ARAQUANID_NORMAL",
         "pokemonId": "ARAQUANID",
         "dexNumber": 752,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "ARAQUANID_NORMAL",
         "shortForm": "NORMAL",
         "label": "Araquanid",
@@ -25535,7 +24233,7 @@
         "templateId": "V0755_POKEMON_MORELULL_NORMAL",
         "pokemonId": "MORELULL",
         "dexNumber": 755,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "MORELULL_NORMAL",
         "shortForm": "NORMAL",
         "label": "Morelull",
@@ -25556,7 +24254,7 @@
         "templateId": "V0756_POKEMON_SHIINOTIC_NORMAL",
         "pokemonId": "SHIINOTIC",
         "dexNumber": 756,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "SHIINOTIC_NORMAL",
         "shortForm": "NORMAL",
         "label": "Shiinotic",
@@ -25625,7 +24323,7 @@
         "templateId": "V0759_POKEMON_STUFFUL_NORMAL",
         "pokemonId": "STUFFUL",
         "dexNumber": 759,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "STUFFUL_NORMAL",
         "shortForm": "NORMAL",
         "label": "Stufful",
@@ -25644,34 +24342,11 @@
         ]
     },
     {
-        "value": "V0760_POKEMON_BEWEAR",
-        "templateId": "V0760_POKEMON_BEWEAR",
-        "pokemonId": "BEWEAR",
-        "dexNumber": 760,
-        "shadowAvailable": false,
-        "label": "Bewear",
-        "types": [
-            "POKEMON_TYPE_NORMAL",
-            "POKEMON_TYPE_FIGHTING"
-        ],
-        "fastMoves": [
-            "TACKLE_FAST",
-            "LOW_KICK_FAST",
-            "SHADOW_CLAW_FAST"
-        ],
-        "chargeMoves": [
-            "SUPER_POWER",
-            "PAYBACK",
-            "STOMP",
-            "DRAIN_PUNCH"
-        ]
-    },
-    {
         "value": "V0760_POKEMON_BEWEAR_NORMAL",
         "templateId": "V0760_POKEMON_BEWEAR_NORMAL",
         "pokemonId": "BEWEAR",
         "dexNumber": 760,
-        "shadowAvailable": false,
+        "shadowAvailable": true,
         "form": "BEWEAR_NORMAL",
         "shortForm": "NORMAL",
         "label": "Bewear",
@@ -25689,31 +24364,9 @@
             "PAYBACK",
             "STOMP",
             "DRAIN_PUNCH"
-        ]
-    },
-    {
-        "value": "V0760_POKEMON_BEWEAR_WILDAREA_2025",
-        "templateId": "V0760_POKEMON_BEWEAR_WILDAREA_2025",
-        "pokemonId": "BEWEAR",
-        "dexNumber": 760,
-        "shadowAvailable": false,
-        "form": "BEWEAR_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Bewear",
-        "types": [
-            "POKEMON_TYPE_NORMAL",
-            "POKEMON_TYPE_FIGHTING"
         ],
-        "fastMoves": [
-            "TACKLE_FAST",
-            "LOW_KICK_FAST",
-            "SHADOW_CLAW_FAST"
-        ],
-        "chargeMoves": [
-            "SUPER_POWER",
-            "PAYBACK",
-            "STOMP",
-            "DRAIN_PUNCH"
+        "costumes": [
+            "WILDAREA_2025"
         ]
     },
     {
@@ -26677,12 +25330,12 @@
         ],
         "fastMoves": [
             "SHADOW_CLAW_FAST",
-            "CHARM_FAST"
+            "HEX_FAST"
         ],
         "chargeMoves": [
             "SHADOW_SNEAK",
             "PLAY_ROUGH",
-            "SHADOW_BALL"
+            "THUNDER"
         ]
     },
     {
@@ -26700,12 +25353,12 @@
         ],
         "fastMoves": [
             "SHADOW_CLAW_FAST",
-            "CHARM_FAST"
+            "HEX_FAST"
         ],
         "chargeMoves": [
             "SHADOW_SNEAK",
             "PLAY_ROUGH",
-            "SHADOW_BALL"
+            "THUNDER"
         ]
     },
     {
@@ -27365,7 +26018,8 @@
         "fastMoves": [
             "SUCKER_PUNCH_FAST",
             "COUNTER_FAST",
-            "POISON_JAB_FAST"
+            "POISON_JAB_FAST",
+            "SHADOW_CLAW_FAST"
         ],
         "chargeMoves": [
             "CLOSE_COMBAT",
@@ -27662,7 +26316,9 @@
         "chargeMoves": [
             "FLAME_CHARGE",
             "FLAMETHROWER",
-            "FOCUS_BLAST"
+            "FOCUS_BLAST",
+            "PYROBALL",
+            "BLAST_BURN"
         ]
     },
     {
@@ -27901,11 +26557,13 @@
         ],
         "fastMoves": [
             "STRUGGLE_BUG_FAST",
-            "CONFUSION_FAST"
+            "CONFUSION_FAST",
+            "PSYCHO_CUT_FAST"
         ],
         "chargeMoves": [
             "BUG_BUZZ",
-            "PSYCHIC"
+            "PSYCHIC",
+            "PSYSHOCK"
         ]
     },
     {
@@ -31373,7 +30031,8 @@
             "PLAY_ROUGH",
             "FLASH_CANNON",
             "BULLDOZE",
-            "HEAVY_SLAM"
+            "HEAVY_SLAM",
+            "GIGATON_HAMMER"
         ]
     },
     {
@@ -32360,42 +31019,6 @@
         ]
     },
     {
-        "value": "V0999_POKEMON_GIMMIGHOUL",
-        "templateId": "V0999_POKEMON_GIMMIGHOUL",
-        "pokemonId": "GIMMIGHOUL",
-        "dexNumber": 999,
-        "shadowAvailable": false,
-        "label": "Gimmighoul",
-        "types": [
-            "POKEMON_TYPE_GHOST"
-        ],
-        "fastMoves": [
-            "ASTONISH_FAST"
-        ],
-        "chargeMoves": [
-            "SHADOW_BALL"
-        ]
-    },
-    {
-        "value": "V0999_POKEMON_GIMMIGHOUL_COIN_A1",
-        "templateId": "V0999_POKEMON_GIMMIGHOUL_COIN_A1",
-        "pokemonId": "GIMMIGHOUL",
-        "dexNumber": 999,
-        "shadowAvailable": false,
-        "form": "GIMMIGHOUL_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Gimmighoul",
-        "types": [
-            "POKEMON_TYPE_GHOST"
-        ],
-        "fastMoves": [
-            "ASTONISH_FAST"
-        ],
-        "chargeMoves": [
-            "SHADOW_BALL"
-        ]
-    },
-    {
         "value": "V0999_POKEMON_GIMMIGHOUL_NORMAL",
         "templateId": "V0999_POKEMON_GIMMIGHOUL_NORMAL",
         "pokemonId": "GIMMIGHOUL",
@@ -32412,6 +31035,9 @@
         ],
         "chargeMoves": [
             "SHADOW_BALL"
+        ],
+        "costumes": [
+            "COIN_A1"
         ]
     },
     {
@@ -32683,35 +31309,14 @@
         ]
     },
     {
-        "value": "V1012_POKEMON_POLTCHAGEIST",
-        "templateId": "V1012_POKEMON_POLTCHAGEIST",
-        "pokemonId": "POLTCHAGEIST",
-        "dexNumber": 1012,
-        "shadowAvailable": false,
-        "label": "Poltchageist",
-        "types": [
-            "POKEMON_TYPE_GRASS",
-            "POKEMON_TYPE_GHOST"
-        ],
-        "fastMoves": [
-            "ASTONISH_FAST",
-            "MAGICAL_LEAF_FAST"
-        ],
-        "chargeMoves": [
-            "SHADOW_BALL",
-            "ENERGY_BALL",
-            "POLTERGEIST"
-        ]
-    },
-    {
         "value": "V1012_POKEMON_POLTCHAGEIST_ARTISAN",
         "templateId": "V1012_POKEMON_POLTCHAGEIST_ARTISAN",
         "pokemonId": "POLTCHAGEIST",
         "dexNumber": 1012,
         "shadowAvailable": false,
-        "form": "POLTCHAGEIST_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Poltchageist",
+        "form": "POLTCHAGEIST_ARTISAN",
+        "shortForm": "ARTISAN",
+        "label": "Poltchageist (ARTISAN)",
         "types": [
             "POKEMON_TYPE_GRASS",
             "POKEMON_TYPE_GHOST"
@@ -32732,30 +31337,9 @@
         "pokemonId": "POLTCHAGEIST",
         "dexNumber": 1012,
         "shadowAvailable": false,
-        "form": "POLTCHAGEIST_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Poltchageist",
-        "types": [
-            "POKEMON_TYPE_GRASS",
-            "POKEMON_TYPE_GHOST"
-        ],
-        "fastMoves": [
-            "ASTONISH_FAST",
-            "MAGICAL_LEAF_FAST"
-        ],
-        "chargeMoves": [
-            "SHADOW_BALL",
-            "ENERGY_BALL",
-            "POLTERGEIST"
-        ]
-    },
-    {
-        "value": "V1013_POKEMON_SINISTCHA",
-        "templateId": "V1013_POKEMON_SINISTCHA",
-        "pokemonId": "SINISTCHA",
-        "dexNumber": 1013,
-        "shadowAvailable": false,
-        "label": "Sinistcha",
+        "form": "POLTCHAGEIST_COUNTERFEIT",
+        "shortForm": "COUNTERFEIT",
+        "label": "Poltchageist (COUNTERFEIT)",
         "types": [
             "POKEMON_TYPE_GRASS",
             "POKEMON_TYPE_GHOST"
@@ -32776,9 +31360,9 @@
         "pokemonId": "SINISTCHA",
         "dexNumber": 1013,
         "shadowAvailable": false,
-        "form": "SINISTCHA_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Sinistcha",
+        "form": "SINISTCHA_MASTERPIECE",
+        "shortForm": "MASTERPIECE",
+        "label": "Sinistcha (MASTERPIECE)",
         "types": [
             "POKEMON_TYPE_GRASS",
             "POKEMON_TYPE_GHOST"
@@ -32799,9 +31383,9 @@
         "pokemonId": "SINISTCHA",
         "dexNumber": 1013,
         "shadowAvailable": false,
-        "form": "SINISTCHA_NORMAL",
-        "shortForm": "NORMAL",
-        "label": "Sinistcha",
+        "form": "SINISTCHA_UNREMARKABLE",
+        "shortForm": "UNREMARKABLE",
+        "label": "Sinistcha (UNREMARKABLE)",
         "types": [
             "POKEMON_TYPE_GRASS",
             "POKEMON_TYPE_GHOST"

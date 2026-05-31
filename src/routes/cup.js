@@ -37,6 +37,10 @@ export default function Cup() {
 		? appData.cups[selectedCup.templateId]
 		: null
 
+	const confSeason = seasonList.find(
+		({ value }) => value == appData.settings.season
+	)
+
 	const latestSeason = seasonList.reduce(
 		(max, season) => season.value > max.value
 			? season
@@ -50,7 +54,7 @@ export default function Cup() {
 		let team = null
 
 		if (
-			cupData && 
+			cupData &&
 			typeof cupData.current !== 'undefined' &&
 			cupData?.current !== 'new'
 		) {
@@ -81,13 +85,13 @@ export default function Cup() {
 
 	const sortedLeagues = leaguesList.sort((a, b) => {
 		if (
-			latestSeason.cups.includes(a.templateId) &&
-			!latestSeason.cups.includes(b.templateId)
+			confSeason.cups.includes(a.templateId) &&
+			!confSeason.cups.includes(b.templateId)
 		) {
 			return -1
 		} else if (
-			!latestSeason.cups.includes(a.templateId) &&
-			latestSeason.cups.includes(b.templateId)
+			!confSeason.cups.includes(a.templateId) &&
+			confSeason.cups.includes(b.templateId)
 		) {
 			return 1
 		} else {
@@ -153,7 +157,7 @@ export default function Cup() {
 
 	const Option = (props) => {
 		return <div className={
-			latestSeason.cups.includes(props.data.templateId)
+			confSeason.cups.includes(props.data.templateId)
 				? 'current-season-cup' : ''
 		}>
 			<components.Option {...props} />

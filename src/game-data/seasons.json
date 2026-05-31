@@ -10,6 +10,22 @@
 		]
 	},
 	{
+		"label": "Season 27: Forever Forward",
+		"value": 27,
+		"slug": "27-forever-forward",
+		"cups": [
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_CHAMPIONSHIP_SERIES_S27",
+			"COMBAT_LEAGUE_VS_SEEKER_SUNSHINE_GREAT",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_SUMMER",
+			"COMBAT_LEAGUE_VS_SEEKER_FANTASY_ULTRA",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_RETRO",
+			"COMBAT_LEAGUE_VS_SEEKER_MASTER_PREMIER",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_WEATHER",
+			"COMBAT_LEAGUE_VS_SEEKER_EVOLUTION",
+			"COMBAT_LEAGUE_VS_SEEKER_GREAT_SCROLL"
+		]
+	},		
+	{
 		"label": "Season 26: Memories in Motion",
 		"value": 26,
 		"slug": "26-memories-in-motion",

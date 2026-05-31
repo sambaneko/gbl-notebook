@@ -123,7 +123,7 @@
         "value": "HEAT_WAVE",
         "type": "POKEMON_TYPE_FIRE",
         "label": "Heat Wave",
-        "energyDelta": -75
+        "energyDelta": -45
     },
     {
         "value": "AERIAL_ACE",
@@ -297,7 +297,7 @@
         "value": "TWISTER",
         "type": "POKEMON_TYPE_DRAGON",
         "label": "Twister",
-        "energyDelta": -45
+        "energyDelta": -40
     },
     {
         "value": "DRAGON_PULSE",
@@ -381,7 +381,7 @@
         "value": "MUD_BOMB",
         "type": "POKEMON_TYPE_GROUND",
         "label": "Mud Bomb",
-        "energyDelta": -40
+        "energyDelta": -45
     },
     {
         "value": "SIGNAL_BEAM",
@@ -622,7 +622,7 @@
         "value": "LOW_KICK_FAST",
         "type": "POKEMON_TYPE_FIGHTING",
         "label": "Low Kick",
-        "energyDelta": 5,
+        "energyDelta": 8,
         "durationTurns": 2
     },
     {
@@ -643,7 +643,7 @@
         "value": "WING_ATTACK_FAST",
         "type": "POKEMON_TYPE_FLYING",
         "label": "Wing Attack",
-        "energyDelta": 7,
+        "energyDelta": 8,
         "durationTurns": 2
     },
     {
@@ -685,7 +685,7 @@
         "value": "MUD_SHOT_FAST",
         "type": "POKEMON_TYPE_GROUND",
         "label": "Mud Shot",
-        "energyDelta": 8,
+        "energyDelta": 9,
         "durationTurns": 2
     },
     {
@@ -1124,7 +1124,7 @@
         "value": "WATERFALL_FAST",
         "type": "POKEMON_TYPE_WATER",
         "label": "Waterfall",
-        "energyDelta": 8,
+        "energyDelta": 10,
         "durationTurns": 3
     },
     {
@@ -1783,7 +1783,7 @@
         "value": "VOLT_TACKLE",
         "type": "POKEMON_TYPE_ELECTRIC",
         "label": "Volt Tackle",
-        "energyDelta": -50
+        "energyDelta": -40
     },
     {
         "value": "DARKEST_LARIAT",
@@ -1968,5 +1968,17 @@
         "type": "POKEMON_TYPE_GRASS",
         "label": "Drum Beating",
         "energyDelta": -35
+    },
+    {
+        "value": "PYROBALL",
+        "type": "POKEMON_TYPE_FIRE",
+        "label": "Pyroball",
+        "energyDelta": -40
+    },
+    {
+        "value": "GIGATON_HAMMER",
+        "type": "POKEMON_TYPE_STEEL",
+        "label": "Gigaton Hammer",
+        "energyDelta": -60
     }
 ]
