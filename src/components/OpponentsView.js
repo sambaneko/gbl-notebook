@@ -6,7 +6,6 @@ export default function OpponentsView({
 	opponents,
 	doAction,
 	showEditor,
-	season,
 	useImages
 }) {
 	let dragging = useRef()

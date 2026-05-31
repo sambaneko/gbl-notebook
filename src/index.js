@@ -16,6 +16,7 @@ import './index.css'
 import Root from './routes/root'
 import Index from './routes/index'
 import Cup, { loader as cupLoader } from './routes/cup'
+import Templates from './routes/templates'
 import Settings from './routes/settings'
 import Error from './routes/error'
 
@@ -30,6 +31,10 @@ const routes = [
 				element: <Cup />,
 				loader: cupLoader,
 			},
+			{
+				path: "templates",
+				element: <Templates />
+			},			
 			{
 				path: "settings",
 				element: <Settings />

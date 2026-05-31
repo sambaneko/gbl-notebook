@@ -4,6 +4,55 @@ import { importAppData, updateSettings, seasonList } from '../store'
 import StyledSelect from '../ui/StyledSelect'
 import styled from 'styled-components'
 
+const SettingRow = styled.div`
+	display: flex;
+	flex-direction: column;
+	padding: 3rem 0;
+	border-bottom: 1px solid #E5E5E5;
+	& > div:first-child {
+		flex-shrink: 0;
+		margin: auto 0;
+		font-weight: 600;
+		color: #4C676A;
+		display: flex;
+		& > *:first-child {
+			font-size: 1.8rem;
+			width: 20rem;
+			flex-shrink: 0;
+			margin: auto 0;
+		}				
+		& > *:last-child {
+			width: 100%;
+			padding-left: 2rem;
+			text-align: right;
+		}			
+	}
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+		border: none;
+	}
+	
+	& .setting-desc {
+		color: grey;
+		margin-top: 2rem;
+	}
+`
+
+const ConfirmationBox = styled.div`
+	display: flex;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	background-color: #e6e6e6;
+	border-radius: .5rem;
+	padding: 1rem 2rem;
+`
+
 export default function Settings() {
 	const appData = useSelector((state) => state.appData)
 	const dispatch = useDispatch()
@@ -53,55 +102,6 @@ export default function Settings() {
 	const updateTimezone = () => dispatch(
 		updateSettings({ timezone })
 	)
-
-	const SettingRow = styled.div`
-		display: flex;
-		flex-direction: column;
-		padding: 3rem 0;
-		border-bottom: 1px solid #E5E5E5;
-		& > div:first-child {
-			flex-shrink: 0;
-			margin: auto 0;
-			font-weight: 600;
-			color: #4C676A;
-			display: flex;
-			& > *:first-child {
-				font-size: 1.8rem;
-				width: 20rem;
-				flex-shrink: 0;
-				margin: auto 0;
-			}				
-			& > *:last-child {
-				width: 100%;
-				padding-left: 2rem;
-				text-align: right;
-			}			
-		}
-
-		&:first-child {
-			padding-top: 0;
-		}
-
-		&:last-child {
-			padding-bottom: 0;
-			border: none;
-		}
-		
-		& .setting-desc {
-			color: grey;
-			margin-top: 2rem;
-		}
-	`
-
-	const ConfirmationBox = styled.div`
-		display: flex;
-		font-weight: 600;
-		text-transform: uppercase;
-  		font-size: 1.4rem;
-		background-color: #e6e6e6;
-		border-radius: .5rem;
-		padding: 1rem 2rem;
-	`
 
 	return <section className="page" style={{ flexDirection: 'column' }}>
 		<h3 className="page-heading" tabIndex="1">Settings</h3>

@@ -129,6 +129,13 @@ const createTeam = (teams, tz) => {
 	}
 }
 
+const findTemplateIndex = (templates, mon, name) => {
+	return templates.findIndex(template =>
+		template.templateId === mon.templateId &&
+		template.name === name
+	)
+}
+
 export const slice = createSlice({
 	name: 'appData',
 	initialState,
@@ -215,6 +222,25 @@ export const slice = createSlice({
 						...template.pokemon
 					}
 			)
+		},
+		updateTemplate: (state, action) => {
+			const i = findTemplateIndex(
+				state.templates,
+				action.payload.updateWith,
+				action.payload.originalName
+			)
+			if (i >= 0) state.templates[i] = {
+				...state.templates[i],
+				...action.payload.updateWith
+			}
+		},
+		deleteTemplate: (state, action) => {
+			const i = findTemplateIndex(
+				state.templates,
+				action.payload,
+				action.payload.name ?? undefined
+			)
+			if (i >= 0) state.templates.splice(i, 1)
 		},
 		updateTeamMember: (state, action) => {
 			let pl = action.payload
@@ -369,6 +395,8 @@ export const {
 	deleteTeam,
 	updateCurrent,
 	updateTemplates,
+	updateTemplate,
+	deleteTemplate,
 	updateTeamMember,
 	moveTeamMember,
 	removeTeamMember,
