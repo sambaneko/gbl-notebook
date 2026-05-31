@@ -7,6 +7,15 @@ import Trash from '../images/Trash'
 import Duplicate from '../images/Duplicate'
 import styled from 'styled-components'
 
+const ConfirmationBox = styled.div`
+	display: flex;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	border-radius: .5rem;
+	color: #333;
+`
+
 export default function TeamView({
 	team,
 	doAction,
@@ -40,15 +49,6 @@ export default function TeamView({
 		doAction('removeMember', {
 			id: team.id, memberIndex
 		})
-
-	const ConfirmationBox = styled.div`
-		display: flex;
-		font-weight: 600;
-		text-transform: uppercase;
-		font-size: 1.4rem;
-		border-radius: .5rem;
-		color: #333;
-	`
 
 	useEffect(() => {
 		setNotes(team?.notes || '')

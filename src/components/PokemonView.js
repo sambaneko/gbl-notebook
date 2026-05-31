@@ -156,8 +156,8 @@ export default function PokemonView({
 			<div style={{ background: '#ececec', display: 'grid', gap: '1rem', padding: '1rem', gridTemplateColumns: 'repeat(2, minmax(1rem, 1fr))', borderRadius: '.5rem' }}>
 				<button type="button" className="white-btn" onClick={onEdit}><Edit /></button>
 				<button type="button" className="white-btn" onClick={onRemove}><X /></button>
-				<button type="button" className="white-btn" onClick={onMoveUp}><ArrowUp /></button>
-				<button type="button" className="white-btn" onClick={onMoveDown}><ArrowDown /></button>
+				<button type="button" className="white-btn" onClick={onMoveUp} disabled={!onMoveUp}><ArrowUp /></button>
+				<button type="button" className="white-btn" onClick={onMoveDown} disabled={!onMoveDown}><ArrowDown /></button>
 
 			</div>
 		</div>
@@ -245,8 +245,8 @@ export default function PokemonView({
 		</div>
 		<div style={{ background: '#ececec', display: 'flex', gap: '1rem', padding: '.5rem 1rem', margin: '1rem -1rem 0 -1rem' }}>
 			<button type="button" className="white-btn" onClick={onEdit}><Edit /></button>
-			<button type="button" className="white-btn" onClick={onMoveUp}><ArrowUp /></button>
-			<button type="button" className="white-btn" onClick={onMoveDown}><ArrowDown /></button>
+			<button type="button" className="white-btn" onClick={onMoveUp} disabled={!onMoveUp}><ArrowUp /></button>
+			<button type="button" className="white-btn" onClick={onMoveDown} disabled={!onMoveDown}><ArrowDown /></button>
 			<button type="button" className="white-btn" onClick={onRemove}><X /></button>
 		</div>
 	</div>

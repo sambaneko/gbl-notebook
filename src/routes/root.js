@@ -79,6 +79,12 @@ export default function Root() {
 				</li>
 				<li>
 					<NavLink
+						to="/templates"
+						className={({ isActive }) => isActive ? "current" : ""}
+					>Templates</NavLink>
+				</li>				
+				<li>
+					<NavLink
 						to="/settings"
 						className={({ isActive }) => isActive ? "current" : ""}
 					>Settings</NavLink>
