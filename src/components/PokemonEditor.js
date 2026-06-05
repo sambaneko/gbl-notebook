@@ -85,6 +85,7 @@ export default function PokemonEditor({
 		let mon = {
 			editType,
 			mon: editedMon,
+			originalName: editData?.mon?.name ?? undefined,
 			template: { ...templates }
 		}
 

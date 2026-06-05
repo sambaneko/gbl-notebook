@@ -81,13 +81,12 @@ export default function Templates() {
 	}
 
 	const showEditor = (withData) => {
-		const originalName = withData.editData.mon.name ?? undefined
 		withData = {
 			...withData,
 			editType: selectedCategory,
 			onSave: (data) => {
 				dispatch(updateTemplate({
-					originalName,
+					originalName: data.originalName,
 					updateWith: data.mon
 				}))
 				showModal(null)

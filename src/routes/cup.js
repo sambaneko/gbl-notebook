@@ -125,12 +125,13 @@ export default function Cup() {
 				editedMon.template.update
 			)
 				update.templates = {
-					templateIndex: (
+					templateIndex: ( /** bookmark: should no longer be needed? */
 						editedMon.template.update
 							? editedMon.template.using
 							: null
 					),
-					pokemon: editedMon.mon
+					updateWith: editedMon.mon,
+					originalName: editedMon.originalName
 				}
 
 			if (editedMon.editType === 'opponent') {
