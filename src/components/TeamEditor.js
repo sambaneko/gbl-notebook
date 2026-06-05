@@ -23,7 +23,8 @@ export default function TeamEditor(withData) {
 							? teamMon.template.using
 							: null
 					),
-					pokemon: teamMon.mon
+					updateWith: teamMon.mon,
+					originalName: teamMon.originalName
 				})
 			}
 		})
