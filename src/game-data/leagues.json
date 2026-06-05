@@ -5380,5 +5380,19 @@
         ],
         "label": "2026 Championship Series Cup",
         "slug": "great-league-championship-series-2026"
+    },
+	    {
+        "templateId": "COMBAT_LEAGUE_VS_SEEKER_GREAT_CHAMPIONSHIP_SERIES_S27",
+        "value": "COMBAT_LEAGUE_VS_SEEKER_GREAT_CHAMPIONSHIP_SERIES_S27",
+        "unique": true,
+        "maxCp": 1500,
+        "allowedTypes": [
+            "POKEMON_TYPE_FAIRY",
+            "POKEMON_TYPE_NORMAL",
+            "POKEMON_TYPE_PSYCHIC",
+            "POKEMON_TYPE_WATER"
+        ],
+        "label": "2026 North America International Championship Cup",
+        "slug": "great-league-championship-series-s27"
     }
 ]
