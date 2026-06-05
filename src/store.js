@@ -212,16 +212,23 @@ export const slice = createSlice({
 
 			if (!Array.isArray(pl)) pl = [pl]
 
-			pl.map((template) =>
-				template.templateIndex === null
-					? state.templates.push({
-						...template.pokemon
-					})
-					: state.templates[template.templateIndex] = {
-						...state.templates[template.templateIndex],
-						...template.pokemon
+			pl.map((template) => {
+				const i = findTemplateIndex(
+					state.templates,
+					template.updateWith,
+					template.originalName
+				)
+				if (i >= 0) {
+					state.templates[i] = {
+						...state.templates[i],
+						...template.updateWith
 					}
-			)
+				} else {
+					state.templates.push({
+						...template.updateWith
+					})
+				}
+			})
 		},
 		updateTemplate: (state, action) => {
 			const i = findTemplateIndex(
